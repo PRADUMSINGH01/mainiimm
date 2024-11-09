@@ -1,15 +1,32 @@
-[debug] [2024-11-09T03:56:42.445Z] ----------------------------------------------------------------------
-[debug] [2024-11-09T03:56:42.449Z] Command:       /nix/store/alik5i1lm5kfm61fh3pg221czk7pmv4g-nodejs-20.16.0/bin/node /home/runner/Nextjs/.config/npm/node_global/bin/firebase login
-[debug] [2024-11-09T03:56:42.451Z] CLI Version:   13.24.2
-[debug] [2024-11-09T03:56:42.451Z] Platform:      linux
-[debug] [2024-11-09T03:56:42.451Z] Node Version:  v20.16.0
-[debug] [2024-11-09T03:56:42.451Z] Time:          Sat Nov 09 2024 03:56:42 GMT+0000 (Coordinated Universal Time)
-[debug] [2024-11-09T03:56:42.451Z] ----------------------------------------------------------------------
+[debug] [2024-11-09T05:20:50.214Z] ----------------------------------------------------------------------
+[debug] [2024-11-09T05:20:50.216Z] Command:       /nix/store/alik5i1lm5kfm61fh3pg221czk7pmv4g-nodejs-20.16.0/bin/node /home/runner/Nextjs/.config/npm/node_global/bin/firebase login
+[debug] [2024-11-09T05:20:50.216Z] CLI Version:   13.24.2
+[debug] [2024-11-09T05:20:50.216Z] Platform:      linux
+[debug] [2024-11-09T05:20:50.216Z] Node Version:  v20.16.0
+[debug] [2024-11-09T05:20:50.216Z] Time:          Sat Nov 09 2024 05:20:50 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-11-09T05:20:50.217Z] ----------------------------------------------------------------------
 [debug] 
 [info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
  
 [info] 
 [info] Visit this URL on this device to log in:
-[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=463966679&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=163723962&redirect_uri=http%3A%2F%2Flocalhost%3A9005
 [info] 
 [info] Waiting for authentication...
+[debug] [2024-11-09T05:20:57.098Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2024-11-09T05:20:57.098Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"3dc2b3c1-ffdf-45ff-b1ea-7f3d330e2f8c"}
+[debug] [2024-11-09T05:20:57.991Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2024-11-09T05:20:57.991Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"qywA8ezZsRW4Ey3arJ_EV8cICGV7T2kLZFpqGpRG7AQ"}
+[info] 
+[info] To sign in to the Firebase CLI:
+[info] 
+[info] 1. Take note of your session ID:
+[info] 
+[info]    3DC2B
+[info] 
+[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[info] 
+[info]    https://auth.firebase.tools/login?code_challenge=n5UmA64sVmAkz2OGlvXSbg_N4RIatSmfYAg6Q-yWcw4&session=3dc2b3c1-ffdf-45ff-b1ea-7f3d330e2f8c&attest=qywA8ezZsRW4Ey3arJ_EV8cICGV7T2kLZFpqGpRG7AQ
+[info] 
+[info] 3. Paste or enter the authorization code below once you have it:
+[info] 
