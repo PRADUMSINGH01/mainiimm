@@ -6,7 +6,8 @@ import Dashboard from '@/components/chat/Dash/dashboardUI';
 const page = () => {
 
 
-
+/**
+ * 
 
   useEffect(() => {
     const session = Cookies.get('session');
@@ -18,6 +19,7 @@ const page = () => {
   }, []);
 
 
+ */
 
 
   return (

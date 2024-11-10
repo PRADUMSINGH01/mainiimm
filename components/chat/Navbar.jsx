@@ -26,11 +26,11 @@ const [auth , setAuth]  = useState(false)
         </Link>
         <ul className="flex space-x-4">
           <li>
-          { auth ?
+        
             <Link href="/DashBoard" className="text-gray-600 hover:text-blue-500">
               Dashboard
             </Link>
-          :""}
+        
           </li>
 
 

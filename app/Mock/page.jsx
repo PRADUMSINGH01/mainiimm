@@ -1,9 +1,9 @@
 import React from 'react'
-import WorkingOnItPage from '@/components/chat/Dash/WeAreWorking'
+import MockTest from '@/components/chat/mock/mockSection'
 const page = () => {
   return (
     <div>
-        <WorkingOnItPage/>
+       <MockTest/>
     </div>
   )
 }
