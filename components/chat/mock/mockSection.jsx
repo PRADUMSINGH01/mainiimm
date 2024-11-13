@@ -7,11 +7,12 @@ export default function MockTest() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]); // Array to store answers for each question
   const [final, setfinal] = useState([]); // Array to store answers for each question
+  const [total, settotal] = useState(0); // Array to store answers for each question
 
   // Mock Questions Data
   const questions = [
     {
-      question: "What is 2 + 2?",
+      question: "What is 2 + 2? What is 2 + 2? What is 2 + 2 ? What is 2 + 2?What is 2 + 2? What is 2 + 2? What is 2 + 2?",
       options: [3, 4, 5, 6],
       correctAnswer: 4,
     },
@@ -78,11 +79,29 @@ export default function MockTest() {
    }
 
 
-
+useEffect(()=>{
   
+  function totatlnumber(numberss){
+    let numtotal = 0;
+    for(let i=0;i<numberss.length;i++){
+      if (numberss[i]===true){
+          numtotal+=1
+      }else if(numberss[i]===null){
+        i++
+      }else{
+          numtotal-=1
+      }
+    }
+
+    return settotal(numtotal) 
+  }
+  totatlnumber([true,true,null,null,true,true,true,true])
+
+},[])
+
   return (
-    <div className="flex flex-col items-center justify-center p-6 space-y-6">
-      <div className="w-full max-w-4xl p-4 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col h-screen items-center justify-center p-6 space-y-6">
+      <div className="w-full max-w-6xl p-4 bg-white rounded-lg shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <div className="text-xl font-bold">Mock Test</div>
           <div className="text-lg font-medium">
@@ -95,14 +114,16 @@ export default function MockTest() {
           <h2 className="text-xl">{questions[currentQuestion].question}</h2>
           <div className="mt-4 flex flex-col">
             {questions[currentQuestion].options.map((option, index) => (
-              <div key={index} className="ml-2 flex items-center">
-                <label className="mr-2">{option}</label>
+              <div key={index} className="ml-2 flex  items-center ">
+                <div className="w-full bg-gray-200 m-2 p-2 flex  item-center hover:bg-blue-200 rounded-md">
+                <label className="mr-2 text-xl">{option}</label>
                 <input
                   type="checkbox"
                   checked={answers[currentQuestion] === option}
                   onChange={() => handleCheckboxChange(option)}
-                  className="ml-2"
+                  className="ml-2 w-[3rem] flex h-8"
                 />
+                </div>
               </div>
             ))}
           </div>
@@ -111,27 +132,27 @@ export default function MockTest() {
         {/* Navigation Buttons */}
         <div className="flex justify-between mt-4">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded-md"
+            className="px-4 py-2 bg-blue-500 text-white rounded-md  mr-1"
             onClick={handlePreviousQuestion}
             disabled={currentQuestion === 0}
           >
-            Previous
+            Prev
           </button>
           <button
-            className="px-4 py-2 bg-yellow-500 text-white rounded-md"
+            className="px-4 py-2 bg-yellow-500 text-white rounded-md mr-1"
             onClick={handleSkipQuestion}
           >
             Skip
           </button>
           <button
-            className="px-4 py-2 bg-green-500 text-white rounded-md"
+            className="px-4 py-2 bg-green-500 text-white rounded-md mr-1"
             onClick={handleNextQuestion}
             disabled={currentQuestion === questions.length - 1}
           >
             Next
           </button>
           <button
-            className="px-4 py-2 bg-red-500 text-white rounded-md"
+            className="px-4 py-2 bg-red-500 text-white rounded-md "
             onClick={submitAnswers}
           >
             Submit
@@ -153,6 +174,8 @@ export default function MockTest() {
       </div>
     ))
   }
+
+    {total}
   </div>
 
 
