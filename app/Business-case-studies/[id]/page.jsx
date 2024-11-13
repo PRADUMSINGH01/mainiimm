@@ -44,7 +44,7 @@ const CaseStudyPage = async ({ params }) => {
         {/* Main Content Column */}
         <div className="w-full lg:w-3/4 bg-white rounded-lg shadow-lg p-6">
           <div className="flex items-center justify-between mb-6">
-            <p className="text-white text-sm bg-green-600 font-semibold tracking-widest p-1 rounded-lg ">
+            <p className="text-white text-sm bg-green-900 font-semibold tracking-widest p-1 rounded-lg ">
               {new Date(caseStudy.createdAt.seconds * 1000).toLocaleDateString()}
             </p>
             <div className="flex gap-4">
@@ -59,16 +59,20 @@ const CaseStudyPage = async ({ params }) => {
 
           {/* Content Sections */}
           <div className="mb-10">
-            <p className="text-lg leading-relaxed text-gray-800 tracking-wide">
+            <p className="  
+              first-line:lowercase  first-line:tracking-widest
+              first-letter:text-7xl first-letter:font-bold first-letter:text-green-900
+              first-letter:mr-3 first-letter:float-left
+              text-lg leading-relaxed text-gray-800 first tracking-wider font-firstfont md:text-2xl">
               {caseStudy.passage}
             </p>
           </div>
 
           <div className="mb-10">
-            <h2 className="text-2xl font-bold text-green-600 mb-4"> {/* Green subheading */}
+            <h2 className="  text-2xl font-bold bg-black p-1 text-white mb-4"> {/* Green subheading */}
               {caseStudy.subtitleOne}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="   text-lg leading-relaxed md:text-2xl font-firstfont text-gray-800">
               {caseStudy.subpassageOne}
             </p>
           </div>
@@ -76,19 +80,19 @@ const CaseStudyPage = async ({ params }) => {
 
 
           <div className="mb-10">
-            <h2 className="text-2xl font-bold text-green-600 mb-4"> {/* Green subheading */}
+            <h2 className="text-2xl font-bold text-white bg-black p-1 mb-4"> {/* Green subheading */}
               {caseStudy.subtitletwo}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="text-lg leading-relaxed md:text-2xl text-gray-800 font-firstfont">
               {caseStudy.subpassagetwo}
             </p>
           </div>
 
           <div className="mb-10">
-            <h2 className="text-2xl font-bold text-green-600 mb-4"> {/* Green subheading */}
+            <h2 className="text-2xl font-bold bg-black text-white p-1 mb-4"> {/* Green subheading */}
               {caseStudy.subtitlethree}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="text-lg md:text-2xl leading-relaxed text-gray-800 font-firstfont">
               {caseStudy.subpassagethree}
             </p>
           </div>
@@ -99,7 +103,7 @@ const CaseStudyPage = async ({ params }) => {
             <h2 className="text-2xl font-bold text-purple-600 mb-4"> {/* Purple subheading */}
               {caseStudy.subtitlefour}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="text-lg md:text-2xl leading-relaxed text-gray-800 font-firstfont">
               {caseStudy.subpassagefour}
             </p>
           </div> 

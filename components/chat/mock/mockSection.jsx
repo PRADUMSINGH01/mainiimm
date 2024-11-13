@@ -171,7 +171,7 @@ useEffect(()=>{
     final.map((index, item)=>(
       <div className=" bg-gray-200 w-32    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
         {questions[item].correctAnswer === index ?<div className="w-32 h-6 bg-green-600 rounded-md text-center">correct</div>: 
-        <div className="  w-32 h-6 bg-red-500 rounded-md text-center">wrong  </div>
+        <div className="  w-32 h-6 bg-red-500 rounded-md text-center"> wrong  </div>
         
         }
       </div>
