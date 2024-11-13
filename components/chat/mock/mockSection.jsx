@@ -100,7 +100,7 @@ useEffect(()=>{
 },[])
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center p-6 space-y-6">
+    <div className="flex flex-col h-screen items-center justify-center p-1 space-y-6">
       <div className="w-full max-w-6xl p-4 bg-white rounded-lg shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <div className="text-xl font-bold">Mock Test</div>
@@ -114,14 +114,14 @@ useEffect(()=>{
           <h2 className="text-xl">{questions[currentQuestion].question}</h2>
           <div className="mt-4 flex flex-col">
             {questions[currentQuestion].options.map((option, index) => (
-              <div key={index} className="ml-2 flex  items-center ">
-                <div className="w-full bg-gray-200 m-2 p-2 flex  item-center hover:bg-blue-200 rounded-md">
+              <div key={index} className="ml-2 flex  items-center w-full ">
+                <div className="w-full bg-gray-200 mt-2 p-2 flex  item-center hover:bg-blue-200 rounded-md">
                 <label className="mr-2 text-xl">{option}</label>
                 <input
                   type="checkbox"
                   checked={answers[currentQuestion] === option}
                   onChange={() => handleCheckboxChange(option)}
-                  className="ml-2 w-[3rem] flex h-8"
+                  className="ml-2 w-[3rem] flex h-8 "
                 />
                 </div>
               </div>
@@ -132,27 +132,27 @@ useEffect(()=>{
         {/* Navigation Buttons */}
         <div className="flex justify-between mt-4">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded-md  mr-1"
+            className="px-4 py-2 bg-blue-500 text-white rounded-md  hover:bg-blue-700"
             onClick={handlePreviousQuestion}
             disabled={currentQuestion === 0}
           >
             Prev
           </button>
           <button
-            className="px-4 py-2 bg-yellow-500 text-white rounded-md mr-1"
+            className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700"
             onClick={handleSkipQuestion}
           >
             Skip
           </button>
           <button
-            className="px-4 py-2 bg-green-500 text-white rounded-md mr-1"
+            className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700"
             onClick={handleNextQuestion}
             disabled={currentQuestion === questions.length - 1}
           >
             Next
           </button>
           <button
-            className="px-4 py-2 bg-red-500 text-white rounded-md "
+            className="px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-700 "
             onClick={submitAnswers}
           >
             Submit
@@ -163,10 +163,13 @@ useEffect(()=>{
       
 
 <div>   
-  <div className="w-full flex ">
+<div className="w-full flex flex-wrap h-full  shadow-md rounded-md border ">
+
+  <h1 className=" text-blue-600 w-full text-left p-2">  All Answers  </h1>
+  
   {
     final.map((index, item)=>(
-      <div className=" bg-gray-200 w-full  h-6 m-2 rounded-md text-white font-semibold "  >
+      <div className=" bg-gray-200 w-32    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
         {questions[item].correctAnswer === index ?<div className="w-32 h-6 bg-green-600 rounded-md text-center">correct</div>: 
         <div className="  w-32 h-6 bg-red-500 rounded-md text-center">wrong  </div>
         
@@ -175,7 +178,7 @@ useEffect(()=>{
     ))
   }
 
-    {total}
+   
   </div>
 
 
