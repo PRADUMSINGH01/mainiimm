@@ -2,7 +2,7 @@ import React from 'react';
 import FETCHDATA from '@/module/fetchdata';
 import Link from 'next/link';
 // Fetch user data
-const userss = await FETCHDATA('/RC');
+const userss = await FETCHDATA('/Reading');
 
 export async function generateStaticParams() {
   return userss.map(user => ({ id: user.Id }));
@@ -72,7 +72,7 @@ const UserPage = async ({ params }) => {
 <span     className='mt-10   font-semibold text-blue-800   '>2. {post.question_Two}</span>
 <div className="flex justify-start items-center">
 <input type="checkbox" name="" id="" className=' w-10' />
-<label className='w-full  flex  '>{post.question_Two_option_One }<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, quas.</p> </label>
+<label className='w-full  flex  '>{post.question_Two_option_One }</label>
 
 </div>
 <label>{post.question_Two_option_Two} </label>

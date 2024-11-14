@@ -1,9 +1,24 @@
 'use client'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import FETCHDATA from '@/module/fetchdata';
+
 const Para = ({ para }) => {
 
   const [show , setShow] =useState(false)
+   const [data, setdata] =useState([])
 
+  
+useEffect(()=>{
+async function fetchdata(){
+  const userss = await FETCHDATA('/Jumble')
+  return setdata(...userss)
+}
+
+  fetchdata()
+  
+},[])
+
+  
   const showpara = ()=>{
 if(show){
   setShow(false)
@@ -13,75 +28,49 @@ if(show){
 
   
 } 
-    
+
+  console.log(data)
   
   return (
     <div>
 
       
-      <h1 className="w-full h-14 bg-yellow-300 flex justify-center items-center text-2xl fixed ">
+      <h1 className="w-full h-14 bg-white shadow-lg border border-b-blue-200 flex justify-center items-center text-2xl fixed ">
       
         Para Jumble
       </h1>
 
     <div className=" w-full h-screen flex flex-col justify-between items-center p-10"> 
 
-    <div className="flex items-center w-full   justify-around m-10">
+    <div className="flex flex-col items-left w-full   justify-between  m-10 ">
+
       
-    <p className="p-1 ml-10 rounded-full border bg-yellow-300  W-[8%] item-center h-8">A</p>
-      <span className="w-[90%]">Lorem20  ddddddddddd  dddddddddddd  dddddddddd  dddddddd
-        
-        dddddddddddddddddddd dddddddddddddddd  ddddddddd ddddddddd
-        
-        ddddd dddddddddddddddddddd  dddddddddddddddddd dddddddddddd
-        
-        ddddddddddd ddd ddddddddd ddddd ddddd</span>
+      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      A : ) {data.question_One}
+      </div>
+      
+      <div className='md:m-5 m-1   text-md md:text-2xl'>
+        B : ) {data.question_Two}
+        </div>
+
+      <div className='md:m-5 m-1   text-md md:text-2xl'>
+        C . {data.question_Three}
+        </div>
+
+      <div className='md:m-5 m-1   text-md md:text-2xl'>
+        D . {data.question_Four}
+        </div>
+      <div className='md:m-5 m-1   text-md md:text-2xl'>
+        E. {data.question_Five}
+        </div>
     </div>
 
-      
-      <div className="flex items-center w-full  justify-around   m-10 ">
 
-      <p className="p-1 ml-10 rounded-full border bg-yellow-300  W-[8%] item-center h-8">B</p>
-        <span className="w-[90%]">Lorem20  ddddddddddd  dddddddddddd  dddddddddd  dddddddd
-
-          dddddddddddddddddddd dddddddddddddddd  ddddddddd ddddddddd
-
-          ddddd dddddddddddddddddddd  dddddddddddddddddd dddddddddddd
-
-          ddddddddddd ddd ddddddddd ddddd ddddd</span>
+      <div className=' flex flex-wrap justify-between w-full text-white mb-10 '>  
+         <button className='bg-yellow-500 p-2 rounded-md  shadow-lg ' >Prev </button>
+         <button className='bg-red-500 p-2 rounded-md  shadow-lg '> Answer </button>
+      <button className=' bg-green-500 p-2 rounded-md  shadow-lg  ' > Next </button>
       </div>
-      <div className="flex items-center w-full  justify-around  m-10">
-
-      <p className="p-1 ml-10 rounded-full border bg-yellow-300  W-[8%] items-center h-8">C</p>
-        <span className="w-[90%]">Lorem20  ddddddddddd  dddddddddddd  dddddddddd  dddddddd
-
-          dddddddddddddddddddd dddddddddddddddd  ddddddddd ddddddddd
-
-          ddddd dddddddddddddddddddd  dddddddddddddddddd dddddddddddd
-
-          ddddddddddd ddd ddddddddd ddddd ddddd</span>
-      </div>
-      <div className="flex items-center w-full  justify-around  m-10">
-
-      <p className="p-1 ml-10 rounded-full border bg-yellow-300  W-[8%] item-center h-8">D</p>
-        <span className="w-[90%]">Lorem20  ddddddddddd  dddddddddddd  dddddddddd  dddddddd
-
-          dddddddddddddddddddd dddddddddddddddd  ddddddddd ddddddddd
-
-          ddddd dddddddddddddddddddd  dddddddddddddddddd dddddddddddd
-
-          ddddddddddd ddd ddddddddd ddddd ddddd</span>
-      </div>
-      <div className = {show ?"flex w-[80%] ml-20 h-10" :"hidden "}>
-      <span>  Answer </span>
-      </div>
-    <div className = 'flex w-full justify-around'>
-      <button onClick={showpara} className =' bg-yellow-300  shadow-md font-semibold w-[10rem] p-1 rounded-md hover:bg-yellow-600 hover:text-white' > {`  ${show?"Hide":"Check Answer" }`} </button>
-
-       <button onClick={showpara} className =' bg-yellow-300  shadow-md font-semibold w-[10rem] p-1 rounded-md hover:bg-yellow-600 hover:text-white' > Next </button>
-    </div>
-
-      
     </div>
     
     
