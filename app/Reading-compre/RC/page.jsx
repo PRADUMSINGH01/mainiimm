@@ -14,7 +14,7 @@ const [More ,  SetMore] = useState(10)
 
 useEffect(()=>{
 async function data(){
- const res= await FETCHDATA('Reading')
+ const res= await FETCHDATA('RC')
  setdata(res)
 }
 data()
@@ -34,9 +34,9 @@ function add(){
 
 
   return (
-    <div className='flex flex-wrap justify-evenly items-center'>
+    <div className='flex flex-wrap justify-evenly items-center '>
       {data.slice(0 , More).map((item)=>(
-        <RCBlog title={item.Question}  link={`/Reading-compre/RC/${item.Id}`} Id={item.Id}/>
+        <RCBlog title={item.Title}  link={`/Reading-compre/RC/${item.Id}`} Id={item.Id} tag={item.Tag}/>
       ))
       
       }

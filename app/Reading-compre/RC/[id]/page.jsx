@@ -2,7 +2,7 @@ import React from 'react';
 import FETCHDATA from '@/module/fetchdata';
 import Link from 'next/link';
 // Fetch user data
-const userss = await FETCHDATA('/Reading');
+const userss = await FETCHDATA('/RC');
 
 export async function generateStaticParams() {
   return userss.map(user => ({ id: user.Id }));
@@ -21,7 +21,7 @@ const UserPage = async ({ params }) => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col">
+    <div className="bg-gray-50 min-h-screen flex flex-col ">
       {/* Header Section */}
       <header className="bg-[#5a77f6d0] shadow-md py-4 h-auto ">
 

@@ -3,20 +3,21 @@ import React from 'react'
 import { AiFillTags } from "react-icons/ai";
 
 
-const RCBlog = ({title , link , Id}) => {
+const RCBlog = ({title , link , Id ,tag}) => {
   return (
-    <Link href={link} className='w-full h-full m-5 border p-3 flex flex-col  shadow-lg rounded-md'>
+    <Link href={link} className='border border-gray-300 w-full md:w-[25rem] h-full md:h-max m-5  p-3 flex flex-col  shadow-lg rounded-md'>
         <div className="flex  justify-between items-center">
-<span className=' border rounded-md flex p-1 h-[1.5rem] w-[1.5rem]  items-center justify-center text-center bg-yellow-100  text-black font-thin'>{Id}</span>
+<span className=' border rounded-md flex p-2 h-[2rem] w-[1rem] bg-red-500  items-center justify-center text-center   text-white font-bold'>{Id}</span>
 
-        <h1 className=' m-3 text-black md:text-xl text-sm font-serif'>
+        <h1 className=' m-3 text-black md:text-lg md:h-[7rem] overflow-hidden  text-sm font-firstfont uppercase'>
     {title}
 
         </h1>
-<span className='text-green-500 font-semibold flex items-center'><AiFillTags/>Tages</span>
+<span className=' font-semibold flex items-center'>{tag==="Easy" ?<p className='text-green-500 items-center flex '><AiFillTags />Easy</p>:<p className='text-red-500 items-center flex'><AiFillTags />Hard</p>}</span>
         </div>
-<hr />
-<button className=' bg-green-500 w-20 text-white rounded-md hover:bg-green-900 mt-1'>Solve...</button>
+        <div className='w-full flex justify-center'>
+<button className=' bg-green-500 w-20 text-white shadow-md rounded-md hover:bg-green-900 mt-1'>Solve</button>
+        </div>
     </Link>
   )
 }
