@@ -173,7 +173,7 @@ const questionsPerPage = 10;
          <div className="flex ml-3 items-center justify-between">
 
            <div className=' border p-[1px] border-yellow-300 rounded-sm  shadow-md  w-8 items-center justify-center text-black flex text-sm bg-yellow-100'>{questionData.Id}</div>
-            <div className=" border  p-1 rounded-sm border-yellow-200 cursor-pointer text-sm text-black bg-yellow-100" onClick={Done}><IoMdDoneAll/></div>
+            <div className=" border  p-1 rounded-full cursor-pointer text-sm text-black bg-gray-100" onClick={Done}><IoMdDoneAll/></div>
          </div>
             <p className="mb-2 text-lg md:text-2xl ml-3">{questionData.Question}</p>
 
@@ -182,7 +182,7 @@ const questionsPerPage = 10;
 
             <button 
               onClick={() => toggleAnswer(indexOfFirstQuestion + index)} 
-              className={`flex items-center justify-center bg-[#586ed3e1] hover:bg-[#264653] text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${showAnswers[indexOfFirstQuestion + index] ? 'bg-[#F2CC8F] hover:bg-[#264653]' : ''}`}
+              className={`flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${showAnswers[indexOfFirstQuestion + index] ? 'bg-[#F2CC8F] hover:bg-[#264653]' : ''}`}
             >
               {showAnswers[indexOfFirstQuestion + index] ? <FaEyeSlash className="mr-2" /> : <FaEye className="mr-2" />}
               {showAnswers[indexOfFirstQuestion + index] ? 'Hide Answer' : 'Reveal Answer'}
@@ -191,14 +191,14 @@ const questionsPerPage = 10;
          
             <button
                   onClick={() => toggleTrick(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-[#53d795] hover:bg-yellow-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showTricks[indexOfFirstQuestion + index] ? 'Hide Trick' : 'Show Trick'}
                 </button>
 
                 <button
                   onClick={() => toggleSolution(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-yellow-300 hover:bg-yellow-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showSolution[indexOfFirstQuestion + index] ? 'Hide Solution' : 'Show Solution'}
                 </button>
