@@ -198,7 +198,7 @@ const questionsPerPage = 10;
 
                 <button
                   onClick={() => toggleSolution(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-[#53d762] hover:bg-yellow-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showSolution[indexOfFirstQuestion + index] ? 'Hide Solution' : 'Show Solution'}
                 </button>
