@@ -138,7 +138,7 @@ const questionsPerPage = 10;
 <Link href={`/Quant/${LevelTwoURL}`} className='w-full md:w-auto'>
       <p className="w-full md:w-auto text-sm bg-[#344437] text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">{LEVELTWO}</p>
 </Link>
-        <div className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${isDarkMode ? 'bg-gray-700' : 'bg-white'} border border-yellow-400`}>
+        <div className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${isDarkMode ? 'bg-gray-700' : 'bg-white'} border `}>
           <FaSearch className={`${isDarkMode ? 'text-gray-300' : 'text-gray-400'} mr-2`} />
           <input 
             type="text" 
@@ -148,7 +148,7 @@ const questionsPerPage = 10;
             className={`focus:outline-none w-full  ${isDarkMode ? 'bg-gray-700 text-white  ' : ''}`} 
           />
         </div>
-        <div className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${isDarkMode ? 'bg-gray-700' : 'bg-white'} border border-yellow-400`}>
+        <div className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${isDarkMode ? 'bg-gray-700' : 'bg-white'} border `}>
           <FaFilter className={`${isDarkMode ? 'text-gray-300' : 'text-gray-400'} mr-2`} />
           <select 
             value={selectedTopic}
@@ -170,10 +170,10 @@ const questionsPerPage = 10;
           
           <div key={index} className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white hover:shadow-xl'}`}>
          
-         <div className="flex ml-3 items-center justify-between">
+         <div className="flex  items-center justify-between p-1">
 
-           <div className=' border p-[1px] border-black rounded-full  shadow-md  w-8 items-center justify-center text-black flex text-sm bg-gray-300'>{questionData.Id}</div>
-            <div className=" border  p-1 rounded-full cursor-pointer text-sm text-black bg-gray-100" onClick={Done}><IoMdDoneAll/></div>
+           <div className=' border-2 p-[1px] border-gray-100 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold '>{questionData.Id}</div>
+            <div className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold" onClick={Done}><IoMdDoneAll/></div>
          </div>
             <p className="mb-2 text-lg md:text-2xl ml-3">{questionData.Question}</p>
 
@@ -198,7 +198,7 @@ const questionsPerPage = 10;
 
                 <button
                   onClick={() => toggleSolution(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-orange-300 hover:bg-orange-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showSolution[indexOfFirstQuestion + index] ? 'Hide Solution' : 'Show Solution'}
                 </button>

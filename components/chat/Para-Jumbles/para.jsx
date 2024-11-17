@@ -38,7 +38,7 @@ if(show){
 
 
 const Next =()=>{
-  if(next<data.length){
+  if(next<data.length-1){
     setnext(next+1)
   }else{
     setalert(true)
@@ -55,7 +55,7 @@ const Next =()=>{
   return (
     <div>
       
-<div className={`${alert?"flex":"hidden"} absolute top-12 w-full h-16 bg-green-500 text-white  text-center items-center justify-center font-semibold `} > <PiBoulesFill />You have Completed this section  <button onClick={()=>setalert(false)} className='items-left ml-10'> <IoMdClose />
+<div className={`${alert?"flex":"hidden"} absolute top-12 w-full h-20 bg-green-500 text-white  text-center items-center justify-center font-semibold `} > <PiBoulesFill />You have Completed this section  <button onClick={()=>setalert(false)} className='items-left ml-10'> <IoMdClose />
 </button> </div> 
       
       <h1 className="w-full h-14 bg-white shadow-lg border border-b-blue-200 flex justify-center items-center text-2xl fixed ">
@@ -63,34 +63,34 @@ const Next =()=>{
         Para Jumble
       </h1>
 
-    <div className=" w-full h-screen flex flex-col justify-between items-center p-10"> 
-
+    <div className=" w-full h-screen flex flex-col justify-between items-center p-5"> 
 
 {
   Loading ? <span className=' animate-spin w-10 h-10 border rounded-full border-black mt-20 ' >   </span>:     data.slice(next,next+1).map((data)=>(
     <div className="flex flex-col items-left w-full   justify-between  mt-10 ">
+<span className=' md:ml-2 m-1  w-[2rem] h-[2rem] text-indigo-500 border-2 border-indigo-600 flex justify-center items-center rounded-full shadow-md'>{data.Id}</span>
           
-      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      <div className='md:m-3 m-1   text-md md:text-2xl'>
         <span className='text-red-500'>A : ) </span>
        {data.question_One}
       </div>
       
-      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      <div className='md:m-3 m-1   text-md md:text-2xl'>
         <span className='text-yellow-500'>B : ) </span>
         {data.question_Two}
         </div>
 
-      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      <div className='md:m-3 m-1   text-md md:text-2xl'>
         <span className='text-orange-500'>C : ) </span>
         {data.question_Three}
         </div>
 
-      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      <div className='md:m-3 m-1   text-md md:text-2xl'>
         
         <span className='text-blue-500'>D : ) </span>
         {data.question_Four}
         </div>
-      <div className='md:m-5 m-1   text-md md:text-2xl'>
+      <div className='md:m-3 m-1   text-md md:text-2xl'>
         <span className='text-green-500'>E : ) </span>
          {data.question_Five}
         </div>
@@ -103,7 +103,7 @@ const Next =()=>{
 
       <div className=' flex flex-wrap justify-around w-full text-white mt-4 '>  
          <button className=' w-[4rem] flex items-center bg-yellow-500 p-2 rounded-md  shadow-lg ' onClick={Prev} > <FaCaretLeft/> Prev  </button>
-         <button className=' w-[4.3rem] flex items-center bg-red-500 p-2 rounded-md  shadow-lg ' onClick={showpara}> Answer {next} </button>
+         <button className=' w-[4.3rem] flex items-center bg-red-500 p-2 rounded-md  shadow-lg ' onClick={showpara}> {show?"Hide":"Answer"}  </button>
       <button className='w-[4rem] flex items-center bg-green-500 p-2 rounded-md  shadow-lg  '   onClick={Next} > Next <FaCaretRight/> </button>
       </div>
     </div>

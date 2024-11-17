@@ -48,13 +48,13 @@ useEffect(()=>{
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container  p-0 font-roboto">
+    <div className="container  w-full  font-roboto">
       
       <h1 className="text-3xl font-bold   mb-10 text-center text-blue-600 p-1  ">{PageTitle}</h1>
 
       
       {/* Search Bar */}
-      <div className="mb-4">
+      <div className="mb-4 ml-4">
         <input 
           type="text" 
           placeholder="Search by title..." 

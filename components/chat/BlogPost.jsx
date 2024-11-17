@@ -5,7 +5,7 @@ import dino from './dino.jpg'
 import {  FaArrowAltCircleRight } from 'react-icons/fa'
 const BlogPost = ({URL , ImCheck , Question}) => {
   return (
-    <div className='w-full md:w-[26rem] h-auto text-black   p-4 mb-5 flex items-center shadow-xl  border border-blue-500 rounded-md bg-[#cbcae650]'>
+    <div className='w-full md:w-[23rem] h-auto text-black   p-4 mb-5 flex items-center shadow-xl  border border-gray-500 rounded-md bg-[#cbcae650]'>
 <Link href={URL} className='w-full flex flex-col'>
 {
   ImCheck ?
@@ -14,11 +14,11 @@ const BlogPost = ({URL , ImCheck , Question}) => {
         <span className='text-sm md:text-lg font-roboto  overflow-hidden h-11 md:h-16 '>{Question}</span>
   <hr  />
 <div className="flex items-center justify-between mt-3">
-  <p className='text-blue-600'>
+  <p className='text-black font-bold '>
 
        Read More...
   </p>
-        <FaArrowAltCircleRight className='text-blue-600 text-center text-xl animate-pulse'/>
+        <FaArrowAltCircleRight className='text-red-600 text-center text-xl animate-pulse'/>
 
 </div>
 </Link>
