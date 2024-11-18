@@ -104,7 +104,7 @@ const Next =()=>{
       <div className=' flex flex-wrap justify-around w-full text-white mt-4 '>  
          <button className=' w-[4rem] flex items-center bg-yellow-500 p-2 rounded-md  shadow-lg ' onClick={Prev} > <FaCaretLeft/> Prev  </button>
          <button className=' w-[4.3rem] flex items-center bg-red-500 p-2 rounded-md  shadow-lg ' onClick={showpara}> {show?"Hide":"Answer"}  </button>
-      <button className='w-[4rem] flex items-center bg-green-500 p-2 rounded-md  shadow-lg  '   onClick={Next} > Next <FaCaretRight/> </button>
+      <button className='w-[4rem] flex items-center bg-green-500 p-2 rounded-md  shadow-lg  '   onClick={Next} > {Next} <FaCaretRight/> </button>
       </div>
     </div>
     

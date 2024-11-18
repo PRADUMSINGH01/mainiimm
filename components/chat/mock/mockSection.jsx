@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import { PiBoulesFill } from "react-icons/pi";
+import { IoMdClose } from "react-icons/io";
 
 export default function MockTest() {
   const [timeLeft, setTimeLeft] = useState(3600); // 1 hour in seconds
@@ -8,6 +10,8 @@ export default function MockTest() {
   const [answers, setAnswers] = useState([]); // Array to store answers for each question
   const [final, setfinal] = useState([]); // Array to store answers for each question
   const [total, settotal] = useState(0); // Array to store answers for each question
+const [alert , setalert] = useState(false)
+  const [submit , setsubmit] = useState(false)
 
   // Mock Questions Data
   const questions = [
@@ -48,8 +52,14 @@ export default function MockTest() {
   }, [timeLeft]);
 
   const handleNextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < questions.length - 1 ) {
+      if(answers[currentQuestion]===undefined){
+          setalert(true)
+      }else{
+        
       setCurrentQuestion(currentQuestion + 1);
+      }
+      
     }
   };
 
@@ -75,6 +85,7 @@ export default function MockTest() {
   };
    const submitAnswers = ()=>{
      setfinal(answers)
+     setsubmit(true)
      setAnswers([])
    }
 
@@ -95,12 +106,15 @@ useEffect(()=>{
 
     return settotal(numtotal) 
   }
-  totatlnumber([true,true,null,null,true,true,true,true])
 
 },[])
 
   return (
     <div className="flex flex-col h-screen items-center justify-center p-1 space-y-6">
+
+      <div className={`${alert?"flex":"hidden"} absolute top-12 w-full h-20 bg-green-500 text-white  text-center items-center justify-center font-semibold `} > <PiBoulesFill />Please select an answer  <button onClick={()=>setalert(false)} className='items-left ml-10'> <IoMdClose />
+      </button> </div> 
+
       <div className="w-full max-w-6xl p-4 bg-white rounded-lg shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <div className="text-xl font-bold">Mock Test</div>
@@ -163,13 +177,13 @@ useEffect(()=>{
       
 
 <div>   
-<div className="w-full flex flex-wrap h-full  shadow-md rounded-md border ">
+<div className={` ${submit?"w-full flex flex-col  h-full  bg-white shadow-md shadow-blue-500 rounded-md border":"hidden" }`}>
 
   <h1 className=" text-blue-600 w-full text-left p-2">  All Answers  </h1>
-  
+  <div className="w-full flex flex-wrap h-full ">
   {
     final.map((index, item)=>(
-      <div className=" bg-gray-200 w-32    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
+      <div className=" bg-gray-200 w-[6rem] flex    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
         {questions[item].correctAnswer === index ?<div className="w-32 h-6 bg-green-600 rounded-md text-center">correct</div>: 
         <div className="  w-32 h-6 bg-red-500 rounded-md text-center"> wrong  </div>
         
@@ -177,7 +191,41 @@ useEffect(()=>{
       </div>
     ))
   }
+  </div>
 
+  <hr/>
+  <div className=" flex flex-col justify-between items-center w-full h-full p-2  bg-yellow-300">
+
+<div className="flex h-full justify-between items-center    w-full m-2  ">
+
+<section className="w-full h-full flex flex-col items-center justify-between  border-2 border-l-white">
+  <p  className="font-bold">Total Questions</p>
+  <p>26</p>
+</section>
+
+  <section className="w-full h-full flex flex-col items-center justify-between  border-2 border-l-white">
+    <p  className="font-bold">Total Questions</p>
+    <p>26</p>
+  </section>
+  
+  <section className="w-full h-full flex flex-col items-center justify-between  border-2 border-l-white">
+    <p  className="font-bold">Total Questions</p>
+    <p>26</p>
+  </section>
+  
+  <section className="w-full h-full flex flex-col items-center justify-between  border-2 border-l-white">
+    <p  className="font-bold">Total Questions</p>
+    <p>26</p>
+  </section>
+
+  
+</div>
+
+  
+
+
+    
+  </div>
    
   </div>
 

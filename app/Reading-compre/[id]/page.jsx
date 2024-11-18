@@ -23,7 +23,7 @@ const UserPage = async ({ params }) => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Header Section */}
-      <header className="bg-[#5a77f6d0] shadow-md py-4 h-auto ">
+      <header className="bg-white shadow-md py-4 h-auto ">
 
           <h1 className="text-lg md:text-3xl  p-1 font-sans text-[#fdfbff] text-center   ">{post.Question}</h1>
           

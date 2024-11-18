@@ -21,8 +21,8 @@ const UserPage = async ({ params }) => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 py-4 shadow-md">
-        <h1 className="text-xl md:text-3xl text-white text-center  font-semibold">{post.Title}</h1>
+      <header className="bg-white py-4 shadow-md shadow-black rounded-b-md">
+        <h1 className="text-xl md:text-3xl text-black text-center  first-letter:uppercase font-bold">{post.Title}</h1>
       </header>
 
       {/* Main Content */}
