@@ -1,25 +1,44 @@
-import Link from 'next/link'
-import React from 'react'
-import { AiFillTags } from "react-icons/ai";
+import Link from 'next/link';
+import React from 'react';
+import { AiFillTags } from 'react-icons/ai';
 
-
-const RCBlog = ({title , link , Id ,tag}) => {
+const RCBlog = ({ title, link, Id, tag }) => {
   return (
-    <Link href={link} className='border border-gray-300 w-full md:w-[30rem] h-[10rem]  m-5  p-3 flex flex-col shadow-gray-700   shadow-md rounded-md'>
-        <div className="flex  justify-between items-center">
-<span className=' border rounded-full flex p-2 h-[2rem] w-[2rem] bg-gray-700  items-center justify-center text-center   text-white font-bold'>{Id}</span>
-
-        <h1 className=' m-3 text-black md:text-lg md:h-[5rem] overflow-hidden  text-sm font-firstfont '>
-    {title}
-
+    <Link
+      href={link}
+      className="group border border-gray-300 w-full md:w-[28rem] h-full md:h-[10rem] m-5 p-4 flex flex-col justify-between shadow-lg rounded-lg bg-white hover:shadow-xl transition-shadow duration-300"
+    >
+      {/* Header */}
+      <div className="flex w-full justify-between items-start">
+        <div className="flex items-center">
+          <span className="flex items-center justify-center h-[2.5rem] w-[2.5rem] rounded-full bg-blue-100 text-blue-600 font-bold shadow">
+            {Id}
+          </span>
+        </div>
+        <h1 className="ml-4 flex-1 text-black text-lg font-semibold line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+          {title}
         </h1>
-<span className=' font-semibold flex items-center'>{tag==="Easy" ?<p className='text-green-500 items-center flex   '><AiFillTags />Easy</p>:<p className='text-red-500 items-center flex'><AiFillTags />Hard</p>}</span>
-        </div>
-        <div className='w-full flex justify-center'>
-<button className=' bg-blue-500 w-40 text-white shadow-md rounded-md shadow-md shadow-gray-700 hover:bg-blue-700 mt-1'>Solve</button>
-        </div>
-    </Link>
-  )
-}
+      </div>
 
-export default RCBlog
+      {/* Footer */}
+      <div className="w-full flex justify-between items-center mt-4">
+        <span className="flex items-center text-sm font-medium">
+          {tag === "Easy" ? (
+            <p className="text-green-600 flex items-center">
+              <AiFillTags className="mr-1" /> Easy
+            </p>
+          ) : (
+            <p className="text-red-600 flex items-center">
+              <AiFillTags className="mr-1" /> Hard
+            </p>
+          )}
+        </span>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:scale-105 transition-transform duration-200">
+          Solve
+        </button>
+      </div>
+    </Link>
+  );
+};
+
+export default RCBlog;

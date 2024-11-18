@@ -1,150 +1,168 @@
 import React from 'react';
 import FETCHDATA from '@/module/fetchdata';
 import Link from 'next/link';
-// Fetch user data
+
 const userss = await FETCHDATA('/RC');
 
 export async function generateStaticParams() {
-  return userss.map(user => ({ id: user.Id }));
-
+  return userss.map((user) => ({ id: user.Id }));
 }
 
-// Main UserPage component
 const UserPage = async ({ params }) => {
-  const post = userss.find(user => user.Id === params.id); // Find the user by ID
-  // const post = userss[params.id];
+  const post = userss.find((user) => user.Id === params.id);
 
-  const rn =   await Math.floor(Math.random() * 10) || 3 ;
-  const rnt =  await Math.floor(Math.random() * 11) || 6 ;
   if (!post) {
-    return <div>User not found</div>;
+    return <div className="text-center text-gray-500 mt-10">User not found</div>;
   }
 
-  return (
-    <div className="bg-gray-50 min-h-screen flex flex-col ">
-      {/* Header Section */}
-      <header className="bg-[#5a77f6d0] shadow-md py-4 h-auto ">
+  const rn = Math.floor(Math.random() * userss.length) || 0;
+  const relatedPosts = userss.slice(rn, rn + 4);
 
-          <h1 className="text-lg md:text-3xl  p-1 font-sans text-[#fdfbff] text-center   ">{post.Title}</h1>
-          
+  return (
+    <div className="bg-gray-50 min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-blue-600 py-4 shadow-md">
+        <h1 className="text-xl md:text-3xl text-white text-center  font-semibold">{post.Title}</h1>
       </header>
 
-      {/* Main Content Section */}
-      <main className="container mx-auto px-4 py-8 flex flex-col lg:flex-row mt-10  ">
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8 flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
+        {/* Post Content */}
+        <section className="w-full lg:w-3/4 bg-white rounded-lg shadow-lg p-6">
+          {[post.Section_One, post.Section_Two, post.Section_Three, post.Section_Four, post.Section_Five].map(
+            (section, index) =>
+              section && (
+                <p
+                  key={index}
+                  className="text-lg mt-5 tracking-wide text-gray-700 first-letter:text-2xl"
+                >
+                  {section}
+                </p>
+              )
+          )}
+
+          <h2 className="mt-10 text-xl font-bold bg-blue-600 text-white p-2 rounded">Questions</h2>
+         
+          
+          
+          
+          
+          
+          
+          
+          <section className="w-full lg:w-full bg-white rounded-lg md:p-6">
+            {/* Dynamic Content Sections */}
+
+            {/* Questions Section */}
+            <div className="mt-6 space-y-8 w-full">
+              {/* Question 1 */}
+              {post.question_One && (
+                <div className='w-full'>
+                  <p className="font-semibold text-blue-800 w-full flex">1. {post.question_One}</p>
+                  <div className="md:ml-4 space-y-2">
+                    <label className="block text-gray-700">{post.question_One_option_One}</label>
+                    <label className="block text-gray-700">{post.question_One_option_Two}</label>
+                    <label className="block text-gray-700">{post.question_One_option_Three}</label>
+                    {post.answerOne && (
+                      <p className="text-green-600 mt-2 font-medium">Answer: {post.answerOne}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Question 2 */}
+              {post.question_Two && (
+                <div>
+                  <p className="font-semibold text-blue-800">2. {post.question_Two}</p>
+                  <div className="md:ml-4">
+                    <div className="flex items-center space-x-2">
+                      <input type="checkbox" className="w-5 h-5" />
+                      <label className="text-gray-700">{post.question_Two_option_One}</label>
+                    </div>
+                    <label className="block text-gray-700 mt-2">{post.question_Two_option_Two}</label>
+                    <label className="block text-gray-700 mt-2">{post.question_Two_option_Three}</label>
+                    {post.answerTwo && (
+                      <p className="text-green-600 mt-2 font-medium">Answer: {post.answerTwo}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Question 3 */}
+              {post.question_Three && (
+                <div>
+                  <p className="font-semibold text-blue-800">3. {post.question_Three}</p>
+                  <div className="md:ml-4 space-y-2">
+                    <label className="block text-gray-700">{post.question_Three_option_One}</label>
+                    <label className="block text-gray-700">{post.question_Three_option_Two}</label>
+                    <label className="block text-gray-700">{post.question_Three_option_Three}</label>
+                    {post.answerThree && (
+                      <p className="text-green-600 mt-2 font-medium">Answer: {post.answerThree}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Question 4 */}
+              {post.question_Four && (
+                <div>
+                  <p className="font-semibold text-blue-800">4. {post.question_Four}</p>
+                  <div className="md:ml-4 space-y-2">
+                    <label className="block text-gray-700">{post.question_Four_option_One}</label>
+                    <label className="block text-gray-700">{post.question_Four_option_Two}</label>
+                    <label className="block text-gray-700">{post.question_Four_option_Three}</label>
+                    {post.answerFour && (
+                      <p className="text-green-600 mt-2 font-medium">Answer: {post.answerFour}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+
+          
+          
+          
+          
 
 
-        <div className="w-[100%] px-1 flex  flex-col">
-        <span className='text-xl mt-5 w-full tracking-wider word-wrap: break-word first-letter:text-2xl'>
-          {post.Section_One}
-        </span>
+          
+        </section>
 
-        <span className='text-xl mt-5 w-full tracking-wider word-wrap: break-word'>
-          {post.Section_Two}
-        </span>
-
-        <span className='text-xl mt-5 w-full tracking-wider word-wrap: break-word'>
-          {post.Section_Three}
-        </span>
-
-        <span className='text-xl mt-5 w-full tracking-wider word-wrap: break-word'>
-          {post.Section_Four}
-        </span>
-
-        <span className='text-xl mt-5 w-full tracking-wider word-wrap: break-word'>
-          {post.Section_Five}
-        </span>
-
-
-
-
-<h1 className='mt-10 bg-[#5e77bb] p-1 font-bold rounded-md text-white'>Questions </h1>
-
-<div className="flex flex-col justify-between h-auto  ">
-
-<span     className='mt-10   font-semibold text-blue-800   '> 1. {post.question_One}</span>
-<label>{post.question_One_option_One} </label>
-<label>{post.question_One_option_Two} </label>
-<label>{post.question_One_option_Three} </label>
-<label>{post.answerOne} </label>
-
-
-
-<span     className='mt-10   font-semibold text-blue-800   '>2. {post.question_Two}</span>
-<div className="flex justify-start items-center">
-<input type="checkbox" name="" id="" className=' w-10' />
-<label className='w-full  flex  '>{post.question_Two_option_One }</label>
-
-</div>
-<label>{post.question_Two_option_Two} </label>
-<label>{post.question_Two_option_Three} </label>
-<label>{post.answerTwo} </label>
-
-<span   className='mt-10   font-semibold text-blue-800   '>3. {post.question_Three}</span>
-<label>{post.question_Three_option_One} </label>
-<label>{post.question_Three_option_Two} </label>
-<label>{post.question_Three_option_Three} </label>
-<label>{post.answerThree} </label>
-
-<span     className='mt-10   font-semibold text-blue-800   '>4. {post.question_Four}</span>
-<label>{post.question_Four_option_One} </label>
-<label>{post.question_Four_option_Two} </label>
-<label>{post.question_Four_option_Three} </label>
-<label>{post.answerFour} </label>
-
-</div>
-
-        </div>
-       
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <aside className="w-full lg:w-1/4 pl-0 lg:pl-6">
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        {/* Sidebar */}
+        <aside className="w-full lg:w-1/4 space-y-6">
+          {/* Related Posts */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-bold mb-4">Related Posts</h3>
-            <ul>
-              {
-                userss.slice(params+rn,params+rnt).map((item)=>(
-                  <li><Link href={`/Business-case-studies/${item.Id}`} className="text-blue-500 hover:underline">Related Post {item.Id}</Link></li>
-
-                ))
-               }
-{/*                
-              // <li><Link href="/post2" className="text-blue-500 hover:underline">Related Post 2</Link></li>
-              // <li><Link href="/post3" className="text-blue-500 hover:underline">Related Post 3</Link></li> */}
+            <ul className="space-y-2">
+              {relatedPosts.map((item) => (
+                <li key={item.Id}>
+                  <Link
+                    href={`/Business-case-studies/${item.Id}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    {item.Title || `Related Post ${item.Id}`}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-4">
+          {/* Subscribe Section */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-bold mb-4">Subscribe</h3>
-            <p className="mb-2">Get the latest updates directly in your inbox.</p>
-            <form>
+            <p className="text-gray-600 mb-4">Get the latest updates directly in your inbox.</p>
+            <form className="space-y-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="border p-2 w-full rounded mb-2"
+                className="border rounded w-full px-4 py-2"
                 required
               />
-              <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              >
                 Subscribe
               </button>
             </form>
@@ -152,18 +170,28 @@ const UserPage = async ({ params }) => {
         </aside>
       </main>
 
-      {/* Footer Section */}
+      {/* Footer */}
       <footer className="bg-gray-800 text-white py-6">
-        <div className="container mx-auto text-center">
-          <p className="mb-2">© 2024 IIM Target. All rights reserved.</p>
-          <div className="flex justify-center mb-2">
-            <Link href="/Term-and-Condition" className="text-gray-400 hover:text-white mx-4">Privacy Policy</Link>
-            <Link href="/Term-and-Condition" className="text-gray-400 hover:text-white mx-4">Terms of Service</Link>
+        <div className="container mx-auto text-center space-y-4">
+          <p>© 2024 IIM Target. All rights reserved.</p>
+          <div className="space-x-4">
+            <Link href="/Term-and-Condition" className="text-gray-400 hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/Term-and-Condition" className="text-gray-400 hover:text-white">
+              Terms of Service
+            </Link>
           </div>
-          <div className="flex justify-center">
-            <Link href="https://twitter.com" className="text-gray-400 hover:text-white mx-2" target="_blank">Twitter</Link>
-            <Link href="https://facebook.com" className="text-gray-400 hover:text-white mx-2" target="_blank">Facebook</Link>
-            <Link href="https://instagram.com" className="text-gray-400 hover:text-white mx-2" target="_blank">Instagram</Link>
+          <div className="space-x-4">
+            <Link href="https://twitter.com" target="_blank" className="text-gray-400 hover:text-white">
+              Twitter
+            </Link>
+            <Link href="https://facebook.com" target="_blank" className="text-gray-400 hover:text-white">
+              Facebook
+            </Link>
+            <Link href="https://instagram.com" target="_blank" className="text-gray-400 hover:text-white">
+              Instagram
+            </Link>
           </div>
         </div>
       </footer>
