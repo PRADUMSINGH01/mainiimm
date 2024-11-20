@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { PiBoulesFill } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
+import FETCHDATA from '@/module/fetchdata';
 
 export default function MockTest() {
   const [timeLeft, setTimeLeft] = useState(3600); // 1 hour in seconds
@@ -12,7 +13,7 @@ export default function MockTest() {
   const [total, settotal] = useState(0); // Array to store answers for each question
 const [alert , setalert] = useState(false)
   const [submit , setsubmit] = useState(false)
-
+const [data , setquestion] = useState([])
   // Mock Questions Data
   const questions = [
     {
@@ -35,9 +36,39 @@ const [alert , setalert] = useState(false)
       options: [7, 8, 9, 6],
       correctAnswer: 8,
     },
+    {
+      correctAnswer: 8,
+
+    options: [1, 2, 3, 4],
+    question:"hello this is mocktest"
+      }
   ];
 
-  // Timer Logic
+  useEffect(() => {
+
+    const fetchQuestions = async () => {
+      try {
+        const response = await FETCHDATA('Mock') // Replace with your API route
+       
+        if (!response) {
+          throw new Error("Failed to fetch questions.");
+        }
+
+        const data = await response;
+        setquestion(data);
+        
+      } catch (err) {
+        
+          alert(err.message || "An unexpected error occurred.");
+        
+      } 
+    };
+
+    fetchQuestions();
+
+    return 
+  }, []);
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       if (timeLeft > 0) {
@@ -109,9 +140,14 @@ useEffect(()=>{
 
 },[])
 
-  return (
-    <div className="flex flex-col h-screen items-center justify-center p-1 space-y-6">
+ 
 
+  
+  return (
+    
+    <div className="flex flex-col h-screen items-center justify-center p-1 space-y-6">
+     
+    
       <div className={`${alert?"flex":"hidden"} absolute top-12 w-full h-20 bg-green-500 text-white  text-center items-center justify-center font-semibold `} > <PiBoulesFill />Please select an answer  <button onClick={()=>setalert(false)} className='items-left ml-10'> <IoMdClose />
       </button> </div> 
 
@@ -125,9 +161,11 @@ useEffect(()=>{
 
         {/* Question */}
         <div className="mb-4">
-          <h2 className="text-xl">{questions[currentQuestion].question}</h2>
+          { data?data.slice(currentQuestion,currentQuestion+1).map((item)=>(
+      <>
+          <h2 className="text-xl">{item.question}</h2>
           <div className="mt-4 flex flex-col">
-            {questions[currentQuestion].options.map((option, index) => (
+            {item.option.map((option, index) => (
               <div key={index} className="ml-2 flex  items-center w-full ">
                 <div className="w-full bg-gray-200 mt-2 p-2 flex  item-center hover:bg-blue-200 rounded-md">
                 <label className="mr-2 text-xl">{option}</label>
@@ -141,6 +179,8 @@ useEffect(()=>{
               </div>
             ))}
           </div>
+        </>
+        )):""}
         </div>
 
         {/* Navigation Buttons */}
@@ -181,16 +221,20 @@ useEffect(()=>{
 
   <h1 className=" text-blue-600 w-full text-left p-2">  All Answers  </h1>
   <div className="w-full flex flex-wrap h-full ">
-  {
-    final.map((index, item)=>(
+ 
       <div className=" bg-gray-200 w-[6rem] flex    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
-        {questions[item].correctAnswer === index ?<div className="w-32 h-6 bg-green-600 rounded-md text-center">correct</div>: 
-        <div className="  w-32 h-6 bg-red-500 rounded-md text-center"> wrong  </div>
+  { 
+        data? data.map((index,item)=>(
+        <div className="w-32 h-6 bg-green-600 rounded-md text-center">
+          {index.correctans===final[item]?<>{final[item]}</>:<>{"wrong"}</>}
+        </div>
         
-        }
+      )):<>Loading </>
+   }
+    
+        
       </div>
-    ))
-  }
+
   </div>
 
   <hr/>
