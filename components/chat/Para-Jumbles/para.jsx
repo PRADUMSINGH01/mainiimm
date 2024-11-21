@@ -6,7 +6,7 @@ import { FaCaretLeft } from "react-icons/fa";
 import { PiBoulesFill } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
 
-const Para = ({ para }) => {
+const Para = ({ database }) => {
 
   const [show , setShow] =useState(false)
    const [data, setdata] =useState([])
@@ -15,7 +15,7 @@ const [next , setnext] = useState(0)
   const [alert , setalert ]= useState(false)
 useEffect(()=>{
 async function fetchdata(){
-  const userss = await FETCHDATA('/Jumble')
+  const userss = await FETCHDATA(database)
   setLoading(false)
   return setdata(userss)
 }

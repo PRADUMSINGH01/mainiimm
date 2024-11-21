@@ -27,7 +27,7 @@ const questionsPerPage = 10;
 
         const Payment = true
        
-        if(!Auth){
+        if(!Payment){
             router.push('/sign')
         }
         else if(!Payment){

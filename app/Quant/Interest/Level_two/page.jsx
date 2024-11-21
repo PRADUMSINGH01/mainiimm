@@ -40,7 +40,7 @@ const page = () => {
 
   return (
     <div>
-        <LevelQuestions FETCHURL={'/Quant/percentages/Questions'} LEVELINFO={'Interest Level-Two'} LEVELONE={"Level-Ono"} LEVELTWO={"Level-three"} LevelTwoURL={"/Interest/Level_three"} LevelOneURL={"/Interest/"}/>
+        <LevelQuestions FETCHURL={'/Quant/Compound-interest/Leveltwo'} LEVELINFO={'Interest Level-Two'} LEVELONE={"Level-Ono"} LEVELTWO={"Level-three"} LevelTwoURL={"/Interest/Level_three"} LevelOneURL={"/Interest/"}/>
     </div>
   )
 }

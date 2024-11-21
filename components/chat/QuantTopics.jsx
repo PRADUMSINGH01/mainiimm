@@ -28,6 +28,10 @@ const mathTopics = [
   { name: 'Linear Equations', icon: <FaInfinity />, link: '/Quant/Linear-Equations', description: 'Solve linear equations with speed and precision.' },
   { name: 'Quadratic Equations', icon: <FaSuperscript />, link: '/Quant/Quadratic-equations', description: 'Master quadratic equations with easy-to-apply techniques.' },
   { name: 'Functions & Graphs', icon: <FaCube />, link: '/Quant/Functions-and-Graphs', description: 'Interpret functions and graphs to solve tricky CAT questions.' },
+  { name: 'Inequalities', icon: <FaCube />, link: '/Quant/Inequalities', description: 'Interpret Inequalities to solve tricky CAT questions.' },
+  { name: 'Mean-mode-median', icon: <FaCube />, link: '/Quant/Mean-mode-median', description: 'Interpret Mean-mode-median to solve tricky CAT questions.' },
+
+
 ];
 
 export default function MathTopics() {

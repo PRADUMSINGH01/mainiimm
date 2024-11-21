@@ -28,13 +28,13 @@ const UserPage = async ({ params }) => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
         {/* Post Content */}
-        <section className="w-full lg:w-3/4 bg-white rounded-lg shadow-lg p-6">
+        <section className="w-full lg:w-full bg-white rounded-lg shadow-lg p-6">
           {[post.Section_One, post.Section_Two, post.Section_Three, post.Section_Four, post.Section_Five].map(
             (section, index) =>
               section && (
                 <p
                   key={index}
-                  className="text-lg mt-5 tracking-wide text-gray-700 first-letter:text-2xl"
+                  className="text-xl mt-5 tracking-wide text-gray-700 first-letter:text-2xl first-letter:text-blue-500 w-full"
                 >
                   {section}
                 </p>
@@ -138,7 +138,7 @@ const UserPage = async ({ params }) => {
               {relatedPosts.map((item) => (
                 <li key={item.Id}>
                   <Link
-                    href={`/Business-case-studies/${item.Id}`}
+                    href={`${item.Id}`}
                     className="text-blue-500 hover:underline"
                   >
                     {item.Title || `Related Post ${item.Id}`}
