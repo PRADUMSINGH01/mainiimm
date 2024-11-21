@@ -133,10 +133,10 @@ const questionsPerPage = 10;
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
 
 <Link href={`/Quant/${LevelOneURL}`} className='w-full md:w-auto'>
-      <p className="w-full md:w-auto   bg-[#344437] text-white p-2 text-sm rounded-lg shadow-md font-semithin  font-roboto text-center">{LEVELONE}</p>
+      <p className="w-full md:w-[10rem]   bg-blue-500  font-bold text-white p-2 text-md rounded-lg shadow-md font-semithin  font-roboto text-center">{LEVELONE}</p>
 </Link>
 <Link href={`/Quant/${LevelTwoURL}`} className='w-full md:w-auto'>
-      <p className="w-full md:w-auto text-sm bg-[#344437] text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">{LEVELTWO}</p>
+      <p className="w-full md:w-[10rem] text-md bg-blue-500  font-bold text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">{LEVELTWO}</p>
 </Link>
         <div className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${isDarkMode ? 'bg-gray-700' : 'bg-white'} border `}>
           <FaSearch className={`${isDarkMode ? 'text-gray-300' : 'text-gray-400'} mr-2`} />
@@ -168,11 +168,11 @@ const questionsPerPage = 10;
 
         {currentQuestions.map((questionData, index) => (
           
-          <div key={index} className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white hover:shadow-xl'}`}>
+          <div key={index} className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 hover:shadow-xl'}`}>
          
          <div className="flex  items-center justify-between p-1">
 
-           <div className=' border-2 p-[1px] border-gray-100 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold '>{questionData.Id}</div>
+           <div className=' border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold '>{questionData.Id}</div>
             <div className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold" onClick={Done}><IoMdDoneAll/></div>
          </div>
             <p className="mb-2 text-lg md:text-2xl ml-3">{questionData.Question}</p>

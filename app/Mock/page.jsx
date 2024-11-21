@@ -1,9 +1,19 @@
 import React from 'react'
+import Mocklanding from '@/components/chat/mock/mockLanding'
+
+
 import MockTest from '@/components/chat/mock/mockSection'
 const page = () => {
   return (
     <div>
-       <MockTest/>
+      {
+      /*
+        <MockTest/>
+        
+      */
+      }
+
+      <Mocklanding />
     </div>
   )
 }
