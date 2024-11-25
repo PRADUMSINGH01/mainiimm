@@ -5,7 +5,7 @@ import { PiBoulesFill } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
 import FETCHDATA from '@/module/fetchdata';
 
-export default function MockTest() {
+export default function MockTest({Propsdata}) {
   const [timeLeft, setTimeLeft] = useState(3600); // 1 hour in seconds
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]); // Array to store answers for each question
@@ -13,61 +13,17 @@ export default function MockTest() {
   const [total, settotal] = useState(0); // Array to store answers for each question
 const [alert , setalert] = useState(false)
   const [submit , setsubmit] = useState(false)
-const [data , setquestion] = useState([])
-  // Mock Questions Data
-  const questions = [
-    {
-      question: "What is 2 + 2? What is 2 + 2? What is 2 + 2 ? What is 2 + 2?What is 2 + 2? What is 2 + 2? What is 2 + 2?",
-      options: [3, 4, 5, 6],
-      correctAnswer: 4,
-    },
-    {
-      question: "What is 5 * 5?",
-      options: [20, 25, 30, 35],
-      correctAnswer: 25,
-    },
-    {
-      question: "What is 12 / 4?",
-      options: [2, 3, 4, 5],
-      correctAnswer: 3,
-    },
-    {
-      question: "What is 15 - 7?",
-      options: [7, 8, 9, 6],
-      correctAnswer: 8,
-    },
-    {
-      correctAnswer: 8,
+const [questions , setQuestion] = useState([])
 
-    options: [1, 2, 3, 4],
-    question:"hello this is mocktest"
+
+
+
+    useEffect(() => {
+      if (Propsdata && Propsdata.questions) {
+          setQuestion(Propsdata.questions); // Extract and set questions
       }
-  ];
+    }, [Propsdata]); // Re-run when data changes
 
-  useEffect(() => {
-
-    const fetchQuestions = async () => {
-      try {
-        const response = await FETCHDATA('Mock') // Replace with your API route
-       
-        if (!response) {
-          throw new Error("Failed to fetch questions.");
-        }
-
-        const data = await response;
-        setquestion(data);
-        
-      } catch (err) {
-        
-          alert(err.message || "An unexpected error occurred.");
-        
-      } 
-    };
-
-    fetchQuestions();
-
-    return 
-  }, []);
  
   useEffect(() => {
     const interval = setInterval(() => {
@@ -84,10 +40,11 @@ const [data , setquestion] = useState([])
 
   const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1 ) {
-      if(answers[currentQuestion]===undefined){
+      if(answers[currentQuestion]!==undefined){
           setalert(true)
       }else{
-        
+        setalert(false)
+
       setCurrentQuestion(currentQuestion + 1);
       }
       
@@ -160,12 +117,12 @@ useEffect(()=>{
         </div>
 
         {/* Question */}
-        <div className="mb-4">
-          { data?data.slice(currentQuestion,currentQuestion+1).map((item)=>(
+        <div className="h-[60vh] pt-5		m-2  w-full">
+          { questions?questions.slice(currentQuestion,currentQuestion+1).map((item)=>(
       <>
-          <h2 className="text-xl">{item.question}</h2>
+          <h2 className="text-xl"> <span className="w-[2rem] shadow-md  flex  items-center justify-center h-[2rem] border-2 border-blue-500 rounded-full p-1">{item.Id}</span>  {item.Question}</h2>
           <div className="mt-4 flex flex-col">
-            {item.option.map((option, index) => (
+            {item.option ? item.option.map((option, index) => (
               <div key={index} className="ml-2 flex  items-center w-full ">
                 <div className="w-full bg-gray-200 mt-2 p-2 flex  item-center hover:bg-blue-200 rounded-md">
                 <label className="mr-2 text-xl">{option}</label>
@@ -177,7 +134,7 @@ useEffect(()=>{
                 />
                 </div>
               </div>
-            ))}
+            )):"NO option"}
           </div>
         </>
         )):""}
@@ -224,7 +181,7 @@ useEffect(()=>{
  
       <div className=" bg-gray-200 w-[6rem] flex    h-6 m-2 rounded-md text-white font-semibold bg-black "  >
   { 
-        data? data.map((index,item)=>(
+    questions? questions.map((index,item)=>(
         <div className="w-32 h-6 bg-green-600 rounded-md text-center">
           {index.correctans===final[item]?<>{final[item]}</>:<>{"wrong"}</>}
         </div>

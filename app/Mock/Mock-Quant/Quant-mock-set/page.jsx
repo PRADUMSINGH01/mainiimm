@@ -1,70 +1,63 @@
-"use client"
+'use client';
 
-import React,{useState} from 'react';
-import { FaCheckCircle, FaClock, FaCircle } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import Mock_Fetch_Data from '@/module/Mock_Fetch_Data'
 import Link from 'next/link'
-import MockAnalysisComponent from '@/components/chat/mock/Mock-Ana';
-const MockTestListComponent = () => {
-  const mockTests = [
-    { id: 1, name: 'Mock Test 1', completed: true },
-    { id: 2, name: 'Mock Test 2', completed: false },
-    { id: 3, name: 'Mock Test 3', completed: false },
-    { id: 4, name: 'Mock Test 1', completed: true },
-    { id: 5, name: 'Mock Test 2', completed: false },
-    { id: 6, name: 'Mock Test 3', completed: false },
-    { id: 7, name: 'Mock Test 1', completed: true },
-    { id: 8, name: 'Mock Test 2', completed: false },
-    { id: 9, name: 'Mock Test 3', completed: false },
-  ];
+export default function MockQuestionsPage() {
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchMockQuestions = async () => {
+      try {
+        const response = await Mock_Fetch_Data();
+        if (!response) {
+          throw new Error('Failed to fetch mock questions');
+        }
+
+        const data = await response ;
+        //console.log(data)
+        setQuestions(data);
+      } catch (err) {
+        setError(err.message || 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMockQuestions();
+  }, []);
+
+  if (loading) {
+    return <div className="p-4 text-center">Loading mock questions...</div>;
+  }
+
+  if (error) {
+    return <div className="p-4 text-center text-red-500">{error}</div>;
+  }
 
   return (
-    <div className="bg-gray-100 py-10 px-6 md:px-12">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        All Mock Tests
-      </h2>
-      <div className="bg-white shadow-md rounded-lg p-6">
-        {mockTests.map((mock) => (
-          <div
-            key={mock.id}
-            className="flex justify-between items-center py-4 border-b last:border-none"
-          >
-            {/* Icon and Name */}
-            <div className="flex items-center space-x-4">
-              <div className="text-indigo-500">
-                {mock.completed ? (
-                  <FaCheckCircle size={24} />
-                ) : (
-                  <FaCircle size={24} className="text-gray-400" />
-                )}
-              </div>
-              <span className="text-lg font-medium text-gray-700">
-                {mock.name}
-              </span>
-            </div>
+    <div className="max-w-4xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-6">Mock Questions</h1>
 
-            {/* Status */}
-            <div>
-              {mock.completed ? (
-                <span className="text-green-500 font-semibold flex items-center">
-                  Completed <FaCheckCircle size={16} className="ml-2" />
-                
-                </span>
-              ) : (
-                <span className="text-yellow-500 font-semibold flex items-center">
-                  In Progress <FaClock size={16} className="ml-2" />
-                </span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      {questions.length === 0 ? (
+        <p>No mock questions found.</p>
+      ) : (
+        <ul className="space-y-4">
+          {questions.map((question, index) => (
+            <li
+              key={question.id}
+              className="p-4 border rounded-md shadow-md hover:bg-gray-50 transition"
+            >
+              <h2 className="text-lg font-semibold">
+                {question.id}. <button className=''> Attempt Mock {question.id} <Link href={`/FullMock/${question.id}`} > Click</Link></button>
+              </h2>
 
-
-      
-         <MockAnalysisComponent/>
-        
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-};
-
-export default MockTestListComponent;
+}
