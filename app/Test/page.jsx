@@ -11,7 +11,7 @@ export default function MockQuestionsPage() {
   useEffect(() => {
     const fetchMockQuestions = async () => {
       try {
-        const response = await Mock_Fetch_Data();
+        const response = await Mock_Fetch_Data('/Quant/Averages/Questions');
         if (!response) {
           throw new Error('Failed to fetch mock questions');
         }

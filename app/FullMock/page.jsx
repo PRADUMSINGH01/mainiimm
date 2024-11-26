@@ -1,12 +1,14 @@
+// app/FullMock/page.js
+
+
 import React from 'react'
+const page =()=>{
 
-
-const FullMock =({Pros})=>{
-
-  return (
-    <>MOck </>
-  )
+  return (<>
+  
+  Hello 
+  </>)
 }
 
 
-export default FullMock
+export default page

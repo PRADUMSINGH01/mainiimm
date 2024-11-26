@@ -2,10 +2,10 @@ import { app } from "@/module/firebase";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 const db = getFirestore(app);
 
-export default async function Mock_Fetch_Data(){
+export default async function Mock_Fetch_Data(database){
   
 try {
-  const querySnapshot = await getDocs(collection(db, 'Quant/percentages/Questions'));
+  const querySnapshot = await getDocs(collection(db, database));
   const mockQuestions = querySnapshot.docs.map((doc) => ({
     id: doc.id, // Document ID
     ...doc.data(), // Document data
