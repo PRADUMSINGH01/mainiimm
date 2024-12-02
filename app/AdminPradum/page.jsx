@@ -26,7 +26,12 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 const db = getFirestore(app)
 const AddDataComponent = () => {
     const [Question, setQuestion] = useState('');
+      const [option, Setoption] = useState([]); // Initialize as an array
     const [Answer, setAnswer] = useState('');
+      const [newOption, setNewOption] = useState([
+          
+      ]); // For handling individual option input
+
     const [trick, setTrick] = useState('');
     const [solution, setSolution] = useState('');
     const [error, setError] = useState(null);
@@ -49,6 +54,7 @@ const handleSubmit = async (e) => {
                 Answer,
                 trick,
                 solution,
+                option,
                 Id,
                 createdAt: Timestamp.now(),
             });
@@ -63,6 +69,22 @@ const handleSubmit = async (e) => {
             setLoading(false);
         }
     };
+
+
+
+      const handleAddOption = () => {
+        if (newOption.trim() && !isNaN(newOption)) {
+          Setoption([...option, Number(newOption)]); // Convert to number and add to array
+          setNewOption(""); // Clear the input field
+        } else {
+          setError("Option must be a valid number!");
+        }
+      };
+
+      const handleRemoveOption = (index) => {
+        const updatedOptions = option.filter((_, i) => i !== index);
+        Setoption(updatedOptions);
+      };
 
     return (
         <div className='p-10 flex flex-col items-center'>
@@ -96,6 +118,40 @@ const handleSubmit = async (e) => {
                     required
                      className='w-full h-10 mt-10  text-center'
                 />
+
+                <div className="w-full mb-4">
+                  <input
+                    type="number"
+                    value={newOption}
+                    onChange={(e) => setNewOption(e.target.value)}
+                    placeholder="Add an option (number only)"
+                    className="w-full h-10 p-2 mb-2"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleAddOption}
+                    className="bg-blue-500 text-white p-2"
+                  >
+                    Add Option
+                  </button>
+                  <div className="mt-2">
+                    <ul>
+                      {option.map((opt, index) => (
+                        <li key={index} className="flex justify-between">
+                          {opt}
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveOption(index)}
+                            className="text-red-500"
+                          >
+                            Remove
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
                 <input
                     type="text"
                     value={Answer}
@@ -104,6 +160,14 @@ const handleSubmit = async (e) => {
                     required
                      className='w-full h-10 mt-10  text-center'
                 />
+
+
+<div>
+<span> Added options</span>
+    
+
+</div>
+                
                 <input
                     type="text"
                     value={trick}

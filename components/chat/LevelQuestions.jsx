@@ -168,7 +168,7 @@ const questionsPerPage = 10;
 
         {currentQuestions.map((questionData, index) => (
           
-          <div key={index} className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 hover:shadow-xl'}`}>
+          <div key={index} className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'border border-blue-300 hover:shadow-xl shadow-gray-100'}`}>
          
          <div className="flex  items-center justify-between p-1">
 

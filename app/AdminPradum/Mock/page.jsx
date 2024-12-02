@@ -28,7 +28,7 @@ const AddDataComponent = () => {
       setError("Option must be a valid number!");
     }
   };
-
+console.log(option)
   const handleRemoveOption = (index) => {
     const updatedOptions = option.filter((_, i) => i !== index);
     Setoption(updatedOptions);

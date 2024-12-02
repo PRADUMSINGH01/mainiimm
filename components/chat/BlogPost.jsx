@@ -1,26 +1,18 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import dino from './dino.jpg'
 import {  FaArrowAltCircleRight } from 'react-icons/fa'
-const BlogPost = ({URL , ImCheck , Question}) => {
+const BlogPost = ({URL , Id, Question}) => {
   return (
-    <div className='w-full md:w-[23rem] h-auto text-black   p-4 mb-5 flex items-center shadow-xl  border border-gray-500 rounded-md bg-[#cbcae650]'>
-<Link href={URL} className='w-full flex flex-col'>
-{
-  ImCheck ?
-  <Image src={dino} alt='' width={400} height={100}></Image>:""
-}
-        <span className='text-sm md:text-lg font-roboto  overflow-hidden h-11 md:h-16 '>{Question}</span>
-  <hr  />
-<div className="flex items-center justify-between mt-3">
-  <p className='text-black font-bold '>
+    <div className='w-full h-auto text-black hover:bg-white hover:border-blue-200 p-4 mb-5 flex   items-center shadow-xl  border border-gray-100 rounded-md bg-[#cbcae650]'>
+<Link href={URL} className='w-full flex justify-between items-center'>
+  <span className='text-sm md:text-xl font-bold w-20  overflow-hidden '>{Id }</span>
 
-       Read More...
-  </p>
-        <FaArrowAltCircleRight className='text-red-600 text-center text-xl animate-pulse'/>
+        <span className='text-sm md:text-xl font-bold    overflow-hidden '>{Question}</span>
+ 
+ 
+        <FaArrowAltCircleRight className='text-red-600 text-center text-2xl w-20'/>
 
-</div>
+
 </Link>
     </div>
   )

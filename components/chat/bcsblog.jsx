@@ -48,7 +48,7 @@ useEffect(()=>{
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container  p-0 font-roboto">
+    <div className="container  ml-10 font-roboto">
       
       <h1 className="text-3xl font-bold   mb-10 text-center  ">{PageTitle}</h1>
 
@@ -65,7 +65,7 @@ useEffect(()=>{
       </div>
 
       {/* Filter Options */}
-      <div className="flex justify-between mb-4 w-full items-center">
+      <div className="flex justify-between m-4 w-full items-center">
         <div>
           <label htmlFor="difficulty">Difficulty:</label>
           <select 
@@ -80,8 +80,8 @@ useEffect(()=>{
             <option value="Hard">Hard</option>
           </select>
         </div>
-        <div>
-          <label htmlFor="category">Category:</label>
+        <div className='m-4'>
+          <label htmlFor="category">Category: </label>
           <select 
             id="category" 
             value={selectedCategory}
@@ -104,11 +104,11 @@ useEffect(()=>{
   </div> */}
         
 
-  <div className=' flex flex-wrap w-full justify-around items-center'>
+  <div className=' flex flex-col w-full justify-around items-center'>
 
 {
 currentQuestions.map((item)=>(
-    <BlogPost  URL={`${UrlName}/${item.Id}`} ImCheck={true} Question={item.title} />
+    <BlogPost  URL={`${UrlName}/${item.Id}`} ImCheck={true} Question={item.title} Id={item.Id} />
 ))
 }
 

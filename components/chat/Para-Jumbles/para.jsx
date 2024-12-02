@@ -68,7 +68,7 @@ const Next =()=>{
 {
   Loading ? <span className=' animate-spin w-10 h-10 border rounded-full border-black mt-20 ' >   </span>:     data.slice(next,next+1).map((data)=>(
     <div className="flex flex-col items-left w-full   justify-between  mt-10 ">
-<span className=' md:ml-2 m-1  w-[2rem] h-[2rem] text-indigo-500 border-2 border-indigo-600 flex justify-center items-center rounded-full shadow-md'>{data.Id}</span>
+<span className=' md:ml-2 m-1  w-[2rem] h-[2rem] text-indigo-500 border-2 border-indigo-600 flex justify-center items-center rounded-full shadow-md'>{data.id}</span>
           
       <div className='md:m-3 m-1   text-md md:text-2xl'>
         <span className='text-red-500'>A : ) </span>
