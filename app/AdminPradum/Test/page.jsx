@@ -1,3 +1,4 @@
+   /**
 
 import app from '@/module/firebase'
 import { getFirestore, collection, addDoc } from "firebase/firestore"; 
@@ -10,7 +11,6 @@ const db = getFirestore(app);
  * @param {Array} dataArray - Array of objects to be added.
  * @param {string} collectionName - The name of the Firestore collection.
  
-   /**
    
    
    
