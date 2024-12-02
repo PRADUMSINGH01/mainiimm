@@ -8,7 +8,7 @@ const FETCHDATA =async (DocumentName)=>{
         try {
           const querySnapshot = await getDocs(collection(db, DocumentName));
           const fetchedData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          const sortedData = fetchedData.sort((a, b) => a.Id - b.Id);
+          const sortedData = fetchedData.sort((a, b) => a.id - b.id);
 
           return sortedData ;
         } catch (error) {

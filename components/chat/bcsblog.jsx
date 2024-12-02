@@ -48,7 +48,7 @@ useEffect(()=>{
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container  ml-10 font-roboto">
+    <div className="container  md:ml-10 font-roboto">
       
       <h1 className="text-3xl font-bold   mb-10 text-center  ">{PageTitle}</h1>
 
