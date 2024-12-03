@@ -172,7 +172,7 @@ const questionsPerPage = 10;
          
          <div className="flex  items-center justify-between p-1">
 
-           <div className=' border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold '>{questionData.Id}</div>
+           <div className=' border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold '>{questionData.id}</div>
             <div className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold" onClick={Done}><IoMdDoneAll/></div>
          </div>
             <p className="mb-2 text-lg md:text-2xl ml-3">{questionData.Question}</p>
