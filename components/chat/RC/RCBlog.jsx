@@ -6,7 +6,7 @@ const RCBlog = ({ title, link, Id, tag }) => {
   return (
     <Link
       href={link}
-      className="group border border-gray-300 w-full md:w-[28rem] h-full md:h-[10rem] m-5 p-4 flex flex-col justify-between shadow-lg rounded-lg bg-white hover:shadow-xl transition-shadow duration-300"
+      className="group border border-gray-300 w-full md:w-[25rem] h-full md:h-[10rem] m-5 p-4 flex flex-col justify-between shadow-lg rounded-lg bg-white hover:shadow-xl transition-shadow duration-300"
     >
       {/* Header */}
       <div className="flex w-full justify-between items-start">

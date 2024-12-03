@@ -34,18 +34,27 @@ function add(){
 
 
   return (
-    <div className='flex flex-wrap justify-evenly items-center '>
+
+    <div className='flex flex-col'>
+
+
+<h1 className=' text-center w-full text-4xl fixed  bg-green-500 text-white p-2'>  RC</h1>
+      
+    <div className='flex flex-wrap justify-betbeen items-center w-full mt-10'>
+      
       {data.slice(0 , More).map((item)=>(
         <RCBlog title={item.Title}  link={`/Reading-compre/RC/${item.Id}`} Id={item.Id} tag={item.Tag}/>
       ))
       
       }
-{
-  data?
-  <button className='bg-green-500 p-1 rounded-md mb-5 text-white' onClick={add}>{data.length < More ? 'Completed this Section ' : "More"}</button>
-:"Loading..."}
+
     </div>
+
+      {
+        data?
+        <button className='bg-green-500 p-1 rounded-md mb-5 text-white w-1/2 ml-[25%]' onClick={add}>More</button>
+      :"Loading..."}
+      </div>
   )
 }
-
 export default page

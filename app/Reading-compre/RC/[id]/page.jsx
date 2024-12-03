@@ -76,7 +76,7 @@ const UserPage = async ({ params }) => {
                   <p className="font-semibold text-blue-800">2. {post.question_Two}</p>
                   <div className="md:ml-4">
                     <div className="flex items-center space-x-2">
-                      <input type="checkbox" className="w-5 h-5" />
+                    
                       <label className="text-gray-700">{post.question_Two_option_One}</label>
                     </div>
                     <label className="block text-gray-700 mt-2">{post.question_Two_option_Two}</label>
