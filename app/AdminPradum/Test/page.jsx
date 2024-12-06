@@ -1,24 +1,12 @@
-
-/**
-import app from '@/module/firebase'
-import { getFirestore, collection, addDoc } from "firebase/firestore"; 
+import app from "@/module/firebase";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 // Initialize Firebase
-   
 
 const db = getFirestore(app);
 
-// * Function to add data from an array to a Firebase Firestore collection.
-// * @param {Array} dataArray - Array of objects to be added.
-// * @param {string} collectionName - The name of the Firestore collection.
- 
-   
-   
-   
-   async function addDataToFirebase(dataArray, collectionName) {
+async function addDataToFirebase(dataArray, collectionName) {
   try {
-   
-
     const collectionRef = collection(db, collectionName);
 
     const promises = dataArray.map(async (data) => {
@@ -36,1983 +24,1324 @@ const db = getFirestore(app);
   }
 }
 
+
 // Example usage
 const sampleData = [
+  {
+    Answer: 40,
+  Question
+: "If 20% of a number is 8, what is the number?",
+    Id: 1,
+    option: [16, 40, 80, 160],
+    solution:
+      "Let the number be 'x'.\n20% of x = 8\n(20/100) * x = 8\nx = (8 * 100) / 20\nx = 40",
+    trick:
+      "Remember that 'of' in percentage problems usually means multiplication.",
+  },
+  {
+    Answer: 40,
+    Question:
+      "A shirt is originally priced at $50. It is on sale for 20% off. What is the sale price of the shirt?",
+    Id: 5,
+    option: [10, 40, 45, 60],
+    solution:
+      "Discount = 20% of $50 = (20/100) * $50 = $10\nSale price = Original price - Discount = $50 - $10 = $40",
+    trick:
+      "Calculate the discount amount first, then subtract it from the original price.",
+  },
+  {
+    Answer: 20,
+    Question:
+      "A store increased the price of a book by 20%. If the new price is $24, what was the original price of the book?",
+    Id: 6,
+    option: [19.2, 20, 22, 28.8],
+    solution:
+      "Let the original price be 'x'.\nNew price = Original price + 20% of Original price\n$24 = x + (20/100) * x\n$24 = 1.2x\nx = $24 / 1.2\nx = $20",
+    trick: "Think of the increased price as 120% of the original price.",
+  },
+  {
+    Answer: 10,
+    Question:
+      "In a class of 50 students, 20% are absent.  Of the students present, 25% wear glasses. How many students in the class wear glasses?",
+    Id: 7,
+    option: [10, 12.5, 25, 40],
+    solution:
+      "Number of absent students = 20% of 50 = (20/100) * 50 = 10\nNumber of present students = 50 - 10 = 40\nNumber of students wearing glasses = 25% of 40 = (25/100) * 40 = 10",
+    trick:
+      "This problem involves two separate percentage calculations. Solve them step-by-step.",
+  },
+  {
+    Answer: 200,
+    Question:
+      "A fruit seller had some mangoes. He sold 20% of them and still had 160 mangoes left. How many mangoes dId he have at first?",
+    Id: 8,
+    option: [128, 192, 200, 320],
+    solution:
+      "Let the original number of mangoes be 'x'.\nMangoes left = 100% - 20% = 80% of the original amount\n160 = (80/100) * x\nx = (160 * 100) / 80\nx = 200",
+    trick: "The remaining mangoes represent 80% of the original amount.",
+  },
+  {
+    Answer: 60,
+    Question: "If 20% of a number is 12, what is the number?",
+    Id: 9,
+    option: [2.4, 24, 60, 240],
+    solution:
+      "Let the number be 'x'.\n20% of x = 12\n(20/100) * x = 12\nx = (12 * 100) / 20\nx = 60",
+    trick:
+      "Set up a simple equation to represent the relationship between the percentage and the unknown number.",
+  },
+  {
+    Answer: 30,
+    Question:
+      "A dress is on sale for 20% off its original price of $37.50. What is the sale price of the dress?",
+    Id: 10,
+    option: [7.5, 22.5, 30, 45],
+    solution:
+      "Discount = 20% of $37.50 = (20/100) * $37.50 = $7.50\nSale price = Original price - Discount = $37.50 - $7.50 = $30",
+    trick:
+      "Calculate the discount amount first, then subtract it from the original price to find the sale price.",
+  },
+  {
+    Answer: 25,
+    Question:
+      "The price of a toy was increased by 20%. If the new price is $30, what was the original price of the toy?",
+    Id: 11,
+    option: [6, 24, 25, 36],
+    solution:
+      "Let the original price be 'x'.\nNew price = Original price + 20% of Original price\n$30 = x + (20/100) * x\n$30 = 1.2x\nx = $30 / 1.2\nx = $25",
+    trick:
+      "ConsIder the new price as 120% of the original price to set up the equation.",
+  },
+  {
+    Answer: 32,
+    Question:
+      "In a basket of 40 apples, 20% are rotten. How many apples are not rotten?",
+    Id: 12,
+    option: [8, 16, 24, 32],
+    solution:
+      "Number of rotten apples = 20% of 40 = (20/100) * 40 = 8\nNumber of apples not rotten = Total apples - Rotten apples = 40 - 8 = 32",
+    trick:
+      "First find the number of rotten apples, then subtract that from the total to find the number of good apples.",
+  },
+  {
+    Answer: 150,
+    Question:
+      "A shopkeeper sold 20% of his oranges and still had 120 oranges left. How many oranges dId he have at first?",
+    Id: 13,
+    option: [24, 96, 150, 180],
+    solution:
+      "Let the original number of oranges be 'x'.\nOranges left = 100% - 20% = 80% of the original amount\n120 = (80/100) * x\nx = (120 * 100) / 80\nx = 150",
+    trick:
+      "The remaining oranges represent 80% of the original amount. Use this to form an equation.",
+  },
+  {
+    Answer: 18,
+    Question: "If 30% of a number is 27, what is 20% of the same number?",
+    Id: 14,
+    option: [18, 20, 54, 90],
+    solution:
+      "Let the number be 'x'.\n30% of x = 27\n(30/100) * x = 27\nx = (27 * 100) / 30\nx = 90\nNow, 20% of 90 = (20/100) * 90 = 18",
+    trick: "First find the whole number, then calculate 20% of that number.",
+  },
+  {
+    Answer: 50.4,
+    Question:
+      "A sweater originally priced at $70 is on sale for 20% off.  If there is an additional 10% discount on the sale price, what is the final price of the sweater?",
+    Id: 15,
+    option: [44.8, 50.4, 56, 63],
+    solution:
+      "First discount = 20% of $70 = (20/100) * $70 = $14\nPrice after first discount = $70 - $14 = $56\nSecond discount = 10% of $56 = (10/100) * $56 = $5.60\nFinal price = $56 - $5.60 = $50.40",
+    trick:
+      "This involves successive discounts. Calculate each discount step-by-step.",
+  },
+  {
+    Answer: 180,
+    Question:
+      "A farmer had some chickens. After selling 20% of them, he had 144 chickens left. How many chickens dId he have at first?",
+    Id: 16,
+    option: [28.8, 115.2, 180, 216],
+    solution:
+      "Let the original number of chickens be 'x'.\nChickens left = 100% - 20% = 80% of the original amount\n144 = (80/100) * x\nx = (144 * 100) / 80\nx = 180",
+    trick:
+      "The remaining chickens represent 80% of the original amount. Set up an equation to find the original number.",
+  },
+  {
+    Answer: 120,
+    Question:
+      "In a school, 60% of the students are girls. If there are 24 more girls than boys, how many students are there in the school?",
+    Id: 17,
+    option: [40, 120, 100, 144],
+    solution:
+      "Let the total number of students be 'x'.\nNumber of girls = 60% of x = (60/100) * x\nNumber of boys = 40% of x = (40/100) * x\nDifference = Number of girls - Number of boys = (60/100)x - (40/100)x = (20/100)x\n(20/100)x = 24\nx = (24 * 100) / 20\nx = 120",
+    trick:
+      "The difference in the number of girls and boys represents 20% of the total students.",
+  },
+  {
+    Answer: 50,
+    Question:
+      "A container is 20% full of water. If 15 liters of water are added, it becomes 50% full. What is the capacity of the container?",
+    Id: 18,
+    option: [30, 37.5, 50, 75],
+    solution:
+      "The added water represents 50% - 20% = 30% of the container's capacity.\nLet the capacity be 'x'.\n30% of x = 15 liters\n(30/100) * x = 15\nx = (15 * 100) / 30\nx = 50 liters",
+    trick:
+      "The change in the percentage of water level represents a portion of the container's capacity.",
+  },
+  {
+    Answer: 840,
+    Question:
+      "A man spends 20% of his income on rent and 30% on food. If he has $420 left, what is his total income?",
+    Id: 19,
+    option: [546, 700, 840, 1080],
+    solution:
+      "Total percentage spent = 20% + 30% = 50%\nPercentage of income left = 100% - 50% = 50%\nLet his total income be 'x'.\n50% of x = $420\n(50/100) * x = $420\nx = ($420 * 100) / 50\nx = $840",
+    trick:
+      "Calculate the total percentage spent and the percentage of income remaining to set up the equation.",
+  },
+  {
+    Answer: 72,
+    Question:
+      "A shopkeeper bought a watch for $60 and wants to sell it at a profit of 20%. What should be the selling price of the watch?",
+    Id: 20,
+    option: [12, 48, 72, 80],
+    solution:
+      "Profit = 20% of $60 = (20/100) * $60 = $12\nSelling price = Cost price + Profit = $60 + $12 = $72",
+    trick:
+      "Calculate the profit amount and add it to the cost price to find the selling price.",
+  },
+  {
+    Answer: "4% decrease",
+    Question:
+      "A number is increased by 20% and then decreased by 20%.  What is the percentage change in the number?",
+    Id: 21,
+    option: ["0", "4% increase", "4% decrease", "6.25"],
+    solution:
+      "Let the original number be 100.\nAfter a 20% increase, the number becomes 120.\nAfter a 20% decrease from 120, the number becomes 96.\nOverall decrease = 100 - 96 = 4\nPercentage change = (4 / 100) * 100 = 4% decrease",
+    trick:
+      "This Question involves successive percentage changes.  Assume a convenient number (like 100) to make calculations easier.",
+  },
+  {
+    Answer: 300,
+    Question:
+      "In an exam, a student scored 80% marks. If the passing marks were 60% and the student passed by 60 marks, find the maximum marks in the exam.",
+    Id: 22,
+    option: [150, 240, 300, 360],
+    solution:
+      "Difference in percentages = 80% - 60% = 20%\n20% of the maximum marks = 60 marks\nLet the maximum marks be 'x'.\n(20/100) * x = 60\nx = (60 * 100) / 20\nx = 300",
+    trick:
+      "The difference between the student's score and the passing marks represents 20% of the maximum marks.",
+  },
+  {
+    Answer: 36,
+    Question:
+      "A mixture contains 20% alcohol and the rest is water. If the mixture contains 9 liters of alcohol, how much water does it contain?",
+    Id: 23,
+    option: [1.8, 18, 36, 45],
+    solution:
+      "Let the total quantity of the mixture be 'x'.\n20% of x = 9 liters\n(20/100) * x = 9\nx = (9 * 100) / 20\nx = 45 liters\nQuantity of water = Total quantity - Quantity of alcohol = 45 liters - 9 liters = 36 liters",
+    trick:
+      "First find the total quantity of the mixture, then subtract the quantity of alcohol to find the quantity of water.",
+  },
 
-{
-  "Id": "1",
-  "Title": "The Future of Artificial Intelligence and Human Autonomy",
-  "Section_One": "The rapid advancements in artificial intelligence (AI) have sparked debates about the implications of this technology on human autonomy and decision-making. AI systems excel in pattern recognition, predictive analytics, and even creative tasks like art and writing. However, their increasing involvement in critical domains—such as judicial sentencing, hiring decisions, and healthcare diagnostics—raises ethical concerns.",
-  "Section_Two": "Critics argue that the reliance on AI risks diminishing human agency. For instance, algorithms may reinforce societal biases present in the data they are trained on, subtly shaping decisions without users being fully aware. Yet, proponents emphasize that AI can enhance human capacity by eliminating tedious tasks and providing more data-driven insights. The dilemma, therefore, lies in balancing augmentation with autonomy.",
-  "Section_Three": "The impact of AI also extends to global labor markets. Automation threatens traditional jobs, yet it simultaneously creates demand for new roles requiring technical expertise. Historically, such transitions, like the Industrial Revolution, led to societal shifts and new economic paradigms. Whether this cycle will repeat or lead to unprecedented disruptions depends on policy frameworks and societal readiness.",
-  "Section_Four": "Ultimately, the discourse on AI is a reflection of broader societal values. It raises questions about control, accountability, and the future of human interaction with machines. As AI systems evolve, so too must our strategies for integrating them into society responsibly.",
-  "Section_Five": "Thank You",
-  "Tag": "Hard",
-  "question_One": "What are some critical domains where AI is increasingly involved?",
-  "question_One_option_One": "Judicial sentencing, hiring decisions, and healthcare diagnostics.",
-  "question_One_option_Two": "Sports analytics and gaming.",
-  "question_One_option_Three": "Creative writing exclusively.",
-  "answerOne": "Judicial sentencing, hiring decisions, and healthcare diagnostics.",
-  "question_Two": "Why do critics argue that AI may diminish human agency?",
-  "question_Two_option_One": "Because it provides real-time analytics.",
-  "question_Two_option_Two": "Because algorithms may reinforce societal biases without users being aware.",
-  "question_Two_option_Three": "Because AI systems are unreliable in technical fields.",
-  "answerTwo": "Because algorithms may reinforce societal biases without users being aware.",
-  "question_Three": "How can AI impact global labor markets?",
-  "question_Three_option_One": "By automating traditional jobs and creating new roles requiring technical expertise.",
-  "question_Three_option_Two": "By preserving traditional roles entirely.",
-  "question_Three_option_Three": "By focusing solely on economic growth in developed nations.",
-  "answerThree": "By automating traditional jobs and creating new roles requiring technical expertise.",
-  "createdAt": "December 4, 2024 at 07:30:00 AM UTC+5:30"
-},{
-  "Id": "2",
-  "Title": "The Ethical Challenges of Genetic Engineering",
-  "Section_One": "Genetic engineering, once a speculative concept, is now a reality shaping fields like medicine, agriculture, and biotechnology. Advances in technologies such as CRISPR-Cas9 have made gene editing more precise, cost-effective, and accessible. While these developments promise to revolutionize disease treatment and crop yields, they also raise profound ethical concerns.",
-  "Section_Two": "One major concern revolves around the idea of 'designer babies,' where genetic traits of future generations can be pre-selected. Critics argue that this could exacerbate social inequalities, as only the wealthy might afford such enhancements, creating a genetic underclass. Supporters, however, counter that genetic engineering could eliminate hereditary diseases and improve overall quality of life. This debate underscores the tension between societal progress and moral boundaries.",
-  "Section_Three": "The implications extend beyond human health. In agriculture, genetically modified organisms (GMOs) have increased crop resistance to pests and improved yields, contributing to food security. Yet, they have also led to monocultures, which are vulnerable to disease outbreaks, and have sparked concerns about corporate control over seeds. The interplay of technological progress with ecological sustainability remains a critical area of inquiry.",
-  "Section_Four": "Another layer of complexity lies in the ethical frameworks of different cultures. While Western nations often emphasize individual choice and scientific progress, many indigenous communities prioritize ecological balance and the sanctity of natural systems. Reconciling these divergent perspectives is crucial for global consensus on genetic engineering policies.",
-  "Section_Five": "Ultimately, the ethical challenges of genetic engineering demand a careful balance between innovation and responsibility. Transparent regulations, inclusive debates, and interdisciplinary approaches are essential to navigate this transformative era.",
-  "Tag": "Hard",
-  "question_One": "What is one major ethical concern regarding genetic engineering in humans?",
-  "question_One_option_One": "The possibility of creating monocultures in agriculture.",
-  "question_One_option_Two": "The affordability of gene-editing technologies for all social classes.",
-  "question_One_option_Three": "The development of 'designer babies' and its impact on social equality.",
-  "answerOne": "The development of 'designer babies' and its impact on social equality.",
-  "question_Two": "How has genetic engineering impacted agriculture?",
-  "question_Two_option_One": "By completely replacing traditional farming methods.",
-  "question_Two_option_Two": "By improving crop resistance to pests and contributing to food security.",
-  "question_Two_option_Three": "By eliminating the need for corporate control over seeds.",
-  "answerTwo": "By improving crop resistance to pests and contributing to food security.",
-  "question_Three": "Why is global consensus on genetic engineering policies challenging?",
-  "question_Three_option_One": "Because genetic engineering is still in its infancy.",
-  "question_Three_option_Two": "Due to divergent cultural perspectives on ethics and natural systems.",
-  "question_Three_option_Three": "Because there is no concern about ecological balance.",
-  "answerThree": "Due to divergent cultural perspectives on ethics and natural systems.",
-  "createdAt": "December 4, 2024 at 07:45:00 AM UTC+5:30"
-},{
-  "Id": "3",
-  "Title": "Climate Change and Global Policy",
-  "Section_One": "Climate change, once dismissed as a distant threat, has become a pressing global crisis. Rising temperatures, melting ice caps, and extreme weather patterns are no longer speculative but observable phenomena. Scientists unanimously agree that human activities—primarily the burning of fossil fuels and deforestation—are driving these changes, necessitating urgent global action.",
-  "Section_Two": "International agreements such as the Paris Accord reflect efforts to combat climate change. Yet, these accords often face criticism for being insufficiently binding and unevenly implemented. Developing countries argue that they are unfairly expected to limit industrial growth despite contributing less historically to greenhouse gas emissions. On the other hand, developed nations advocate for equitable yet significant commitments from all countries, highlighting shared but differentiated responsibilities.",
-  "Section_Three": "The economic implications of climate policies add further complexity. Transitioning to renewable energy involves significant upfront costs, which many argue are prohibitive for poorer nations. However, proponents emphasize that inaction will result in far greater economic and humanitarian losses, including displacement due to rising sea levels and agricultural disruptions.",
-  "Section_Four": "Technological innovation offers hope, with advancements in solar power, wind energy, and carbon capture systems. However, the pace of adoption remains uneven, hindered by political inertia and vested interests in fossil fuel industries. Bridging this gap requires not only financial investments but also robust policy frameworks that incentivize sustainable practices.",
-  "Section_Five": "Ultimately, the fight against climate change is a test of global solidarity and foresight. It demands a coordinated effort that transcends political boundaries, balancing economic growth with environmental stewardship.",
-  "Tag": "Hard",
-  "question_One": "What is a significant criticism of international agreements like the Paris Accord?",
-  "question_One_option_One": "They are overly binding and heavily penalize developed nations.",
-  "question_One_option_Two": "They are insufficiently binding and unevenly implemented.",
-  "question_One_option_Three": "They focus exclusively on renewable energy transitions.",
-  "answerOne": "They are insufficiently binding and unevenly implemented.",
-  "question_Two": "Why do developing countries critique climate policies?",
-  "question_Two_option_One": "Because they bear the highest responsibility for historical emissions.",
-  "question_Two_option_Two": "Because they face expectations to limit industrial growth despite contributing less historically.",
-  "question_Two_option_Three": "Because they have fully transitioned to renewable energy already.",
-  "answerTwo": "Because they face expectations to limit industrial growth despite contributing less historically.",
-  "question_Three": "What do proponents of renewable energy transition argue?",
-  "question_Three_option_One": "That inaction on climate change will lead to greater economic and humanitarian losses.",
-  "question_Three_option_Two": "That renewable energy is entirely cost-free for all nations.",
-  "question_Three_option_Three": "That fossil fuels are still more sustainable in the long term.",
-  "answerThree": "That inaction on climate change will lead to greater economic and humanitarian losses.",
-  "createdAt": "December 4, 2024 at 08:00:00 AM UTC+5:30"
-}
-,{
-  "Id": "4",
-  "Title": "The Psychological Effects of Social Media",
-  "Section_One": "Social media has revolutionized how humans interact, offering unparalleled connectivity. However, its psychological impact is a double-edged sword. Studies show that while platforms like Instagram and Twitter foster a sense of belonging, they also exacerbate issues like anxiety, depression, and loneliness, particularly among adolescents.",
-  "Section_Two": "One major concern is the phenomenon of social comparison. Highlight reels curated by users often present an unrealistic portrayal of life, causing viewers to feel inadequate. Algorithms further intensify this effect by prioritizing content that maximizes engagement, often at the expense of mental well-being. Yet, advocates argue that social media can promote self-expression and provide a voice to marginalized groups, creating new avenues for activism.",
-  "Section_Three": "The role of social media in shaping identity is another contentious issue. For many, online personas differ significantly from real-life behaviors, creating cognitive dissonance. Psychologists highlight that this divergence can either serve as a coping mechanism or deepen identity crises, depending on individual resilience.",
-  "Section_Four": "Efforts to mitigate these challenges include algorithmic transparency and features like time usage reminders. However, critics argue that these measures are superficial, calling for systemic changes that prioritize mental health over profit. The responsibility lies with tech companies, governments, and users to foster a healthier digital ecosystem.",
-  "Section_Five": "Social media's psychological effects underscore the need for balanced usage and critical awareness. As platforms evolve, so must societal strategies to mitigate harm and harness benefits effectively.",
-  "Tag": "Hard",
-  "question_One": "What is a significant psychological concern associated with social media?",
-  "question_One_option_One": "Lack of connectivity and communication.",
-  "question_One_option_Two": "Social comparison leading to feelings of inadequacy.",
-  "question_One_option_Three": "The complete elimination of traditional communication.",
-  "answerOne": "Social comparison leading to feelings of inadequacy.",
-  "question_Two": "How does social media impact identity formation?",
-  "question_Two_option_One": "By aligning online personas with real-life behaviors seamlessly.",
-  "question_Two_option_Two": "By creating cognitive dissonance through differing online and offline behaviors.",
-  "question_Two_option_Three": "By completely erasing the concept of individual identity.",
-  "answerTwo": "By creating cognitive dissonance through differing online and offline behaviors.",
-  "question_Three": "What do critics suggest about measures like time usage reminders?",
-  "question_Three_option_One": "They are comprehensive solutions to mental health issues.",
-  "question_Three_option_Two": "They are superficial and insufficient.",
-  "question_Three_option_Three": "They prioritize user well-being over profit.",
-  "answerThree": "They are superficial and insufficient.",
-  "createdAt": "December 4, 2024 at 08:15:00 AM UTC+5:30"
-}
-,
   {
-    "Id": "5",
-    "Section_Five": "Conclusion",
-    "Section_Four": "The phenomenon of cultural relativism suggests that moral standards and ethical judgments are not universal but are instead shaped by cultural norms and practices. This view contrasts with the universalist perspective that holds that there are objective moral truths that apply to all cultures. Critics of cultural relativism argue that it leads to moral nihilism, where all ethical viewpoints are considered equally valid, potentially excusing harmful practices.",
-    "Section_One": "Cultural relativism is the idea that moral values and norms are not universally applicable but are instead determined by cultural contexts.",
-    "Section_Three": "While cultural relativism seeks to promote tolerance and respect for different cultures, critics argue that it can prevent the condemnation of practices that violate human rights, such as slavery or female genital mutilation.",
-    "Section_Two": "The debate between cultural relativism and universalism has significant implications for global human rights policies, where the question arises whether certain rights are inherent to all people or are dependent on cultural context.",
-    "Tag": "Hard",
-    "Title": "Cultural Relativism vs. Universalism",
-    "answerOne": "Cultural relativism argues that moral values are determined by cultural contexts.",
-    "answerTwo": "Critics argue that it leads to moral nihilism and excuses harmful practices.",
-    "answerThree": "The debate has implications for human rights policies and ethical global practices.",
-    "createdAt": "December 5, 2024 at 08:30:00 AM UTC+5:30",
-    "question_One": "What is cultural relativism?",
-    "question_One_option_One": "The belief in universal moral standards.",
-    "question_One_option_Two": "The view that moral values are culturally determined.",
-    "question_One_option_Three": "The idea that all cultures share the same moral norms.",
-    "question_Two": "What is a critique of cultural relativism?",
-    "question_Two_option_One": "It promotes tolerance for diverse cultures.",
-    "question_Two_option_Two": "It leads to moral nihilism and justifies harmful practices.",
-    "question_Three": "What is the main issue with cultural relativism in relation to human rights?",
-    "question_Three_option_One": "It encourages the imposition of Western values on other cultures.",
-    "question_Three_option_Three": "It fails to universally condemn practices like slavery or female genital mutilation."
+    Answer: 4.67,
+    Question:
+      "A train covers 20% of its journey at a speed of 60 km/h and the remaining 80% at a speed of 80 km/h.  If the total distance of the journey is 350 km, find the total time taken to complete the journey.",
+    Id: 24,
+    option: [3.5, 4, 4.67, 7],
+    solution:
+      "Distance covered at 60 km/h = 20% of 350 km = (20/100) * 350 km = 70 km\nTime taken for this part = Distance / Speed = 70 km / 60 km/h = 7/6 hours\nDistance covered at 80 km/h = 80% of 350 km = (80/100) * 350 km = 280 km\nTime taken for this part = Distance / Speed = 280 km / 80 km/h = 7/2 hours\nTotal time = 7/6 hours + 7/2 hours = 28/6 hours = 4.67 hours (approximately)",
+    trick:
+      "This problem combines percentages with speed, distance, and time concepts. Calculate the time taken for each part of the journey separately.",
   },
   {
-    "Id": "6",
-    "Section_Five": "Conclusion",
-    "Section_Four": "In the context of artificial intelligence (AI), the ethical implications of machine learning algorithms are increasingly debated. AI systems, when trained on biased data, can perpetuate and even amplify societal inequalities. For instance, facial recognition technology has been shown to be less accurate for people of color, leading to concerns about discrimination in law enforcement and hiring practices. There is a growing call for more transparency and fairness in AI development to ensure that these systems serve all individuals equitably.",
-    "Section_One": "The ethical challenges of AI arise from the ways in which algorithms and data can reflect and reinforce existing societal biases.",
-    "Section_Three": "The increasing integration of AI into various sectors—such as healthcare, justice, and finance—raises questions about accountability. Who is responsible if an AI system causes harm or makes biased decisions? Should the creators of the algorithm be held accountable, or is it the responsibility of those who use it?",
-    "Section_Two": "AI developers must prioritize fairness, transparency, and inclusivity in the design and training of machine learning models to mitigate bias. By doing so, they can reduce the risk of perpetuating inequalities and ensure that AI contributes to societal advancement rather than reinforcing existing prejudices.",
-    "Tag": "Hard",
-    "Title": "Ethical Implications of AI Bias",
-    "answerOne": "AI systems can perpetuate and amplify societal biases if trained on biased data.",
-    "answerTwo": "The use of AI in various sectors raises concerns about accountability for harmful or biased decisions.",
-    "answerThree": "Developers must prioritize fairness, transparency, and inclusivity to mitigate AI bias and ensure equitable outcomes.",
-    "createdAt": "December 5, 2024 at 09:00:00 AM UTC+5:30",
-    "question_One": "What is the main ethical challenge in AI?",
-    "question_One_option_One": "AI systems are objective and unbiased.",
-    "question_One_option_Two": "AI systems can perpetuate societal biases.",
-    "question_One_option_Three": "AI will always make fair and unbiased decisions.",
-    "question_Two": "What is a key concern about the responsibility of AI systems?",
-    "question_Two_option_One": "AI systems are solely responsible for their decisions.",
-    "question_Two_option_Two": "Accountability for AI decisions is debated, with unclear responsibility.",
-    "question_Three": "What must AI developers prioritize to address bias?",
-    "question_Three_option_One": "Transparency, fairness, and inclusivity in AI design and training.",
-    "question_Three_option_Three": "Complete autonomy of AI systems."
+    Answer: 144000,
+    Question:
+      "The population of a town increases by 20% every year. If the current population is 100,000, what will be the population after 2 years?",
+    Id: 25,
+    option: [120000, 140000, 144000, 125000],
+    solution:
+      "Population after 1 year = 100,000 + 20% of 100,000 = 100,000 + 20,000 = 120,000\nPopulation after 2 years = 120,000 + 20% of 120,000 = 120,000 + 24,000 = 144,000",
+    trick:
+      "This involves calculating compound increase.  Calculate the increase step-by-step for each year.",
   },
   {
-    "Id": "7",
-    "Section_Five": "Conclusion",
-    "Section_Four": "The rise of post-truth politics, where objective facts are less influential in shaping public opinion than emotional appeals, has created a new challenge for democracies. In this context, the distinction between truth and opinion has become blurred, undermining trust in institutions and the media. This shift is driven by social media platforms that allow misinformation to spread rapidly and reach large audiences. The result is a fragmented public discourse where it is increasingly difficult to find common ground.",
-    "Section_One": "Post-truth politics is a phenomenon where emotions, beliefs, and personal opinions are prioritized over objective facts and evidence in shaping political opinions and decisions.",
-    "Section_Three": "This shift in political discourse has implications for democratic institutions, as citizens may base their votes and decisions on misinformation rather than factual evidence, potentially undermining the democratic process.",
-    "Section_Two": "Social media platforms have played a significant role in this transformation by enabling the spread of misinformation and creating echo chambers where individuals are exposed only to ideas that reinforce their pre-existing beliefs. This has led to polarization and an erosion of trust in traditional institutions and sources of information.",
-    "Tag": "Hard",
-    "Title": "Post-Truth Politics and Its Impact on Democracy",
-    "answerOne": "Post-truth politics emphasizes emotional appeals and personal beliefs over objective facts.",
-    "answerTwo": "The rise of misinformation and echo chambers has led to political polarization and a decline in trust in institutions.",
-    "answerThree": "Social media has played a significant role in spreading misinformation and fostering ideological polarization.",
-    "createdAt": "December 5, 2024 at 09:30:00 AM UTC+5:30",
-    "question_One": "What is post-truth politics?",
-    "question_One_option_One": "Politics based solely on objective facts.",
-    "question_One_option_Two": "Politics driven by emotional appeals and beliefs rather than facts.",
-    "question_One_option_Three": "Politics in which all opinions are equally valid.",
-    "question_Two": "How do social media platforms contribute to post-truth politics?",
-    "question_Two_option_One": "By spreading misinformation and creating echo chambers.",
-    "question_Two_option_Three": "By ensuring that only factual content is shared.",
-    "question_Three": "What are the consequences of post-truth politics?",
-    "question_Three_option_One": "Increased trust in traditional institutions.",
-    "question_Three_option_Three": "Political polarization and undermined democratic institutions."
+    Answer: "4% loss",
+    Question:
+      "A man sold two articles for $120 each. On one he gained 20% and on the other he lost 20%. What is his overall gain or loss percentage in the whole transaction?",
+    Id: 26,
+    option: ["4% gain", "4% loss", "No gain, no loss", "20% loss"],
+    solution:
+      "For the article with gain:\nSelling price = $120, Gain = 20%\nLet the cost price be 'x'.\nSelling price = Cost price + 20% of Cost price\n$120 = x + (20/100) * x\n$120 = 1.2x\nx = $120 / 1.2\nx = $100\nFor the article with loss:\nSelling price = $120, Loss = 20%\nLet the cost price be 'y'.\nSelling price = Cost price - 20% of Cost price\n$120 = y - (20/100) * y\n$120 = 0.8y\ny = $120 / 0.8\ny = $150\nTotal cost price = $100 + $150 = $250\nTotal selling price = $120 + $120 = $240\nOverall loss = $250 - $240 = $10\nLoss percentage = (10 / 250) * 100 = 4% loss",
+    trick:
+      "This Question involves calculating profit and loss percentages on different articles. Calculate the cost price for each article separately, then find the overall gain or loss.",
   },
   {
-    "Id": "8",
-    "Title": "The Role of Ethics in AI Development",
-    "Section_One": "As artificial intelligence continues to permeate various aspects of modern life, ethical concerns surrounding its development and application have become increasingly important. The rapid growth of AI has prompted debates on whether its use can be morally justified, especially when it affects fundamental aspects of human life such as privacy, autonomy, and decision-making. In particular, the question of whether AI systems should be designed to make ethical decisions has stirred discussions about the nature of morality and responsibility in the context of machine learning.",
-    "Section_Two": "AI is not inherently good or bad; it is a tool created by humans. However, the implications of AI’s deployment—particularly in areas like healthcare, criminal justice, and autonomous vehicles—can have profound consequences. Ethical concerns arise when algorithms that drive AI are flawed, biased, or insufficiently transparent. The very issue of machine autonomy in critical decision-making presents ethical dilemmas, as machines do not have the moral reasoning capabilities of humans. When these machines make decisions that affect lives, such as in healthcare diagnosis or sentencing, who is to be held accountable if an error occurs?",
-    "Section_Three": "The challenge of creating ethical AI involves reconciling human values with technological capabilities. One argument is that AI should be programmed to adhere to ethical standards established by human society. For example, in healthcare, an AI-powered system that assists doctors in diagnosing diseases must adhere to strict ethical guidelines to ensure that it acts in the best interest of the patient. On the other hand, others argue that no machine can replicate human ethical judgment, and therefore, human oversight is necessary at all stages of decision-making. Such oversight would involve human interpretation of AI recommendations and maintaining ultimate responsibility for outcomes.",
-    "Section_Four": "The debate also extends to the broader societal impact of AI. The increasing automation of jobs, for instance, raises questions about fairness and equality. While AI has the potential to improve efficiency and productivity, it also threatens to displace workers in industries ranging from manufacturing to retail. In this sense, the ethical responsibility of AI developers extends beyond the design of algorithms to include considerations of how AI impacts employment, income distribution, and societal stability. The challenge lies in balancing technological innovation with the preservation of human dignity and fairness.",
-    "Section_Five": "In conclusion, the development and deployment of AI necessitate an ongoing dialogue between technology, ethics, and society. While AI can provide significant benefits, its impact must be carefully managed to ensure that it serves the broader good of humanity. Ethical considerations must not be an afterthought but rather a foundational component of AI’s design and implementation. As AI continues to evolve, the responsibility to ensure its ethical use will rest not only with developers but with society at large.",
-    "Tag": "Ethics, AI, Responsibility",
-    "answerOne": "AI should adhere to established ethical standards to ensure decisions made by AI systems benefit human society.",
-    "answerTwo": "Machine autonomy in critical decisions poses moral dilemmas, especially when errors have serious consequences.",
-    "answerThree": "Ethical responsibility in AI extends to both its design and the societal impacts it causes, such as employment displacement.",
-    "createdAt": "2024-12-04",
-    "question_One": "What is the primary ethical concern with AI decision-making?",
-    "question_One_option_One": "AI should be left to make decisions without human involvement.",
-    "question_One_option_Two": "Machines making decisions in critical areas may not have the moral reasoning of humans, raising accountability issues.",
-    "question_One_option_Three": "AI’s ethical concerns are only relevant in non-critical fields such as entertainment.",
-    "question_Two": "What does the author suggest as a solution to the ethical challenges posed by AI?",
-    "question_Two_option_One": "Allowing AI to make decisions without oversight.",
-    "question_Two_option_Two": "Ensuring that AI is developed with human ethical values in mind and maintaining human oversight.",
-    "question_Two_option_Three": "Not developing AI at all until perfect ethical solutions are found.",
-    "question_Three": "According to the passage, which of the following is a societal impact of AI development?",
-    "question_Three_option_One": "The loss of jobs in industries due to automation and the need to address fairness in employment.",
-    "question_Three_option_Two": "A rapid increase in employment in the tech industry alone.",
-    "question_Three_option_Three": "The elimination of all biases in AI systems leading to perfect decision-making.",
-    "question_Three_option_Four": "None of the above."
+    Answer: 100,
+    Question:
+      "In a class, 40% of the students are boys. If there are 60 girls in the class, find the total number of students in the class.",
+    Id: 27,
+    option: [100, 150, 240, 400],
+    solution:
+      "Percentage of girls in the class = 100% - 40% = 60%\nLet the total number of students be 'x'.\n60% of x = 60\n(60/100) * x = 60\nx = (60 * 100) / 60\nx = 100\nTotal number of students = 100",
+    trick:
+      "The number of girls represents 60% of the total students. Use this information to form an equation.",
+  },
+  {
+    Answer: 80,
+    Question:
+      "A fruit seller had some apples. He sold 20% of them and then bought 20% more apples than he had originally. If he now has 80 apples, how many apples dId he have at first?",
+    Id: 28,
+    option: [80, 64, 100, 128],
+    solution:
+      "Let the original number of apples be 'x'.\nAfter selling 20%, he had 80% of x = (80/100) * x apples.\nHe then bought 20% more than 'x', which is 120% of x = (120/100) * x apples.\nNow he has (80/100) * x + (120/100) * x = 80\n(200/100) * x = 80\n2x = 80\nx = 80 / 2\nx = 40\nHe had 40 apples at first.\nAfter selling 20%, he had 40 - (20/100) * 40 = 32 apples.\nHe then bought 20% more than 40, which is 40 + (20/100) * 40 = 48 apples.\nTherefore, he now has 32 + 48 = 80 apples.",
+    trick:
+      "This problem involves multiple steps of selling and buying. Carefully calculate the changes in the number of apples at each step.",
+  },
+  {
+    Answer: 40,
+    Question:
+      "A shopkeeper marks up the price of an item by 60% and then offers a discount of 25%. If the selling price after the discount is $48, what was the original cost price of the item?",
+    Id: 29,
+    option: [25, 32, 38.4, 40],
+    solution:
+      "Let the original cost price be 'x'.\nMarked price = x + 60% of x = x + (60/100) * x = 1.6x\nSelling price = Marked price - 25% of Marked price = 1.6x - (25/100) * 1.6x = 1.2x\n1.2x = $48\nx = $48 / 1.2\nx = $40\nTherefore, the original cost price was $40.",
+    trick:
+      "This Question involves both markup and discount percentages.  Work backward from the selling price to find the original cost price.",
+  },
+  {
+    Answer: 6000,
+    Question:
+      "In an election with two candIdates, 60% of the eligible voters cast their votes.  The winning candIdate received 55% of the votes cast, and won by 360 votes. Find the total number of eligible voters.",
+    Id: 30,
+    option: [2000, 2400, 3000, 600],
+    solution:
+      "Let the total number of eligible voters be 'x'.\nNumber of votes cast = 60% of x = (60/100) * x\nThe winning candIdate received 55% of the votes cast = (55/100) * (60/100) * x = (33/100) * x\nThe losing candIdate received 45% of the votes cast = (45/100) * (60/100) * x = (27/100) * x\nDifference in votes = (33/100) * x - (27/100) * x = (6/100) * x\n(6/100) * x = 360\nx = (360 * 100) / 6\nx = 6000\nTherefore, the total number of eligible voters is 6000.",
+    trick:
+      "This problem combines percentages with election scenarios. Carefully calculate the number of votes received by each candIdate and then use the difference to find the total number of eligible voters.",
+  },
+  {
+    Answer: 20,
+    Question:
+      "A solution contains 40% acId. If 30 liters of water is added to the solution, the concentration of acId becomes 25%. What was the initial quantity of acId in the solution?",
+    Id: 31,
+    option: [20, 30, 50, 75],
+    solution:
+      "Let the initial quantity of the solution be 'x' liters.\nInitial quantity of acId = 40% of x = (40/100) * x liters\nAfter adding water, the total quantity of the solution becomes x + 30 liters.\nNew quantity of acId = 25% of (x + 30) = (25/100) * (x + 30) liters\nSince the quantity of acId remains the same, we have:\n(40/100) * x = (25/100) * (x + 30)\n40x = 25x + 750\n15x = 750\nx = 50 liters\nTherefore, the initial quantity of acId = (40/100) * 50 liters = 20 liters.",
+    trick:
+      "This Question involves mixtures and concentrations. Remember that the amount of acId remains constant even after adding water.",
+  },
+  {
+    Answer: 666.67,
+    Question:
+      "A man spends 20% of his income on rent, 25% of the remaining on food, and 30% of the remaining on education. If he saves $280, what is his total income?",
+    Id: 32,
+    option: [666.67, 1000, 1600, 2000],
+    solution:
+      "Let the man's total income be 'x'.\nAmount spent on rent = 20% of x = (20/100) * x\nRemaining income after rent = x - (20/100) * x = (80/100) * x\nAmount spent on food = 25% of (80/100) * x = (20/100) * x\nRemaining income after food = (80/100) * x - (20/100) * x = (60/100) * x\nAmount spent on education = 30% of (60/100) * x = (18/100) * x\nRemaining income after education = (60/100) * x - (18/100) * x = (42/100) * x\n(42/100) * x = $280\nx = ($280 * 100) / 42\nx = $666.67 (approximately)\nTherefore, his total income is approximately $666.67.",
+    trick:
+      "This is a multi-step percentage problem where you need to calculate the remaining income after each expense. Work step-by-step to arrive at the solution.",
+  },
+  {
+    Answer: "4% decrease",
+    Question:
+      "The length of a rectangle is increased by 20% and its breadth is decreased by 20%. What is the percentage change in the area of the rectangle?",
+    Id: 33,
+    option: ["4% increase", "4% decrease", "12.5% increase", "12.5% decrease"],
+    solution:
+      "Let the original length of the rectangle be 'l' and the original breadth be 'b'.\nOriginal area = l * b\nNew length = l + 20% of l = 1.2l\nNew breadth = b - 20% of b = 0.8b\nNew area = 1.2l * 0.8b = 0.96lb\nChange in area = 0.96lb - lb = -0.04lb\nPercentage change in area = (-0.04lb / lb) * 100 = -4%\nTherefore, the area of the rectangle decreases by 4%.",
+    trick:
+      "This Question involves calculating the combined effect of percentage changes on length and breadth. Remember that the percentage change in area is not simply the difference between the percentage changes in length and breadth.",
+  },
+  {
+    Answer: 15,
+    Question:
+      "A vessel contains a mixture of milk and water in the ratio 3:1. 20% of the mixture is removed and replaced with water. If the resulting mixture contains 12 liters of milk, what was the initial quantity of milk in the vessel?",
+    Id: 34,
+    option: [15, 18, 20, 24],
+    solution:
+      "Let the initial quantity of the mixture be 'x' liters.\nInitial quantity of milk = (3/4) * x liters\nInitial quantity of water = (1/4) * x liters\nQuantity of mixture removed = 20% of x = (20/100) * x = (1/5) * x liters\nQuantity of milk removed = (3/4) * (1/5) * x = (3/20) * x liters\nQuantity of water removed = (1/4) * (1/5) * x = (1/20) * x liters\nQuantity of milk remaining = (3/4) * x - (3/20) * x = (12/20) * x = (3/5) * x liters\nQuantity of water remaining = (1/4) * x - (1/20) * x + (1/5) * x = (1/4) * x + (3/20) * x = (8/20) * x = (2/5) * x liters\nSince the resulting mixture contains 12 liters of milk:\n(3/5) * x = 12 liters\nx = (12 * 5) / 3 = 20 liters\nTherefore, the initial quantity of milk = (3/4) * 20 liters = 15 liters.",
+    trick:
+      "This problem involves mixtures, ratios, and replacements. Carefully calculate the quantities of milk and water at each step.",
+  },
+  {
+    Answer: 56.25,
+    Question:
+      "A man bought a certain number of articles at 5 for $4 and sold them at 4 for $5.  What is his profit percentage?",
+    Id: 35,
+    option: [25, 33.33, 56.25, 62.5],
+    solution:
+      "Let the man buy 20 articles (LCM of 4 and 5).\nCost price of 20 articles = (20/5) * $4 = $16\nSelling price of 20 articles = (20/4) * $5 = $25\nProfit = $25 - $16 = $9\nProfit percentage = (Profit / Cost price) * 100 = (9/16) * 100 = 56.25%",
+    trick:
+      "This Question involves calculating profit percentage when buying and selling in different groups. Find the LCM of the group sizes to make calculations easier.",
   },
 
   {
-    "Id": "9", 
-    "Section_Five": "Thank You",
-    "Section_Four": "To mitigate the potential negative consequences of AI-driven job displacement, governments, educational institutions, and businesses need to collaborate on initiatives that promote lifelong learning and skills development.  Investing in education and training programs that focus on AI-related fields and transferable skills will be essential for ensuring a smooth transition for the workforce.",
-    "Section_One": "Artificial intelligence (AI) is rapidly transforming the global job market, automating tasks and reshaping industries in unprecedented ways.  From self-driving cars to AI-powered customer service chatbots, technology is changing the nature of work across various sectors. While AI has the potential to increase productivity and efficiency, it also raises concerns about job displacement and the need for workforce adaptation.",
-    "Section_Three": "The impact of AI on the job market is not uniform across all sectors.  Industries such as manufacturing, transportation, and customer service are experiencing significant automation, while fields requiring creativity, critical thinking, and emotional intelligence are likely to see increased demand for human workers.  The ability to adapt and acquire new skills will be crucial for individuals navigating this evolving landscape.",
-    "Section_Two": "One of the key benefits of AI is its ability to automate repetitive and mundane tasks, freeing up human workers to focus on more complex and creative endeavors. This can lead to increased job satisfaction and the creation of new roles in fields such as AI development, data analysis, and algorithm ethics. However, the transition may be challenging for workers in industries heavily reliant on manual or routine-based labor.",
-    "Tag": "Hard",
-    "Title": "The Impact of Artificial Intelligence on the Job Market",
-    "answerOne": "Potential for job displacement and the need for workforce reskilling.",
-    "answerTwo": "Manufacturing, transportation, and customer service.",
-    "answerThree": "Adaptability and continuous learning of new skills.",
-    "createdAt": "December 3, 2024 at 1:05:00 PM UTC+5:30", 
-    "question_One": "What is the main concern associated with the rise of AI in the job market?",
-    "question_One_option_One": "Increased productivity and efficiency.",
-    "question_One_option_Two": "Potential for job displacement and the need for workforce reskilling.",
-    "question_One_option_Three": "Creation of new jobs in AI development and data analysis.",
-    "question_Two": "Which industries are most likely to be impacted by AI-driven automation?",
-    "question_Two_option_One": "Creative industries like art and music.",
-    "question_Two_option_Two": "Industries requiring critical thinking and problem-solving.",
-    "question_Two_option_Three": "Manufacturing, transportation, and customer service.",
-    "question_Three": "What is crucial for individuals to thrive in the AI-driven job market?",
-    "question_Three_option_One": "Resisting technological advancements.",
-    "question_Three_option_Two": "Focusing solely on manual labor skills.",
-    "question_Three_option_Three": "Adaptability and continuous learning of new skills."
+    Answer: 1152,
+    Question:
+      "A person invested a certain amount of money at 10% per annum simple interest. After 3 years, the interest earned is $240. If the same amount is invested at 20% per annum compound interest for 2 years, what will be the amount at the end of 2 years?",
+    Id: 36,
+    option: [880, 968, 1152, 1056],
+    solution:
+      "Let the principal amount be 'P'.\nSimple interest = (P * R * T) / 100\n$240 = (P * 10 * 3) / 100\nP = ($240 * 100) / 30 = $800\nNow, using compound interest formula:\nAmount = P * (1 + R/100)^T\nAmount = $800 * (1 + 20/100)^2\nAmount = $800 * (1.2)^2\nAmount = $800 * 1.44\nAmount = $1152",
+    trick:
+      "This Question combines simple and compound interest. First, find the principal amount using the simple interest formula, then calculate the amount using the compound interest formula.",
   },
   {
-    "Id": "10",
-    "Section_Five": "Thank You",
-    "Section_Four": "While social media offers numerous benefits, it is essential to use these platforms responsibly and critically. Being mindful of the content we consume and share, and engaging in respectful online interactions, can help foster a more positive and productive social media landscape.",
-    "Section_One": "Social media has become an integral part of our lives, connecting people across the globe and facilitating communication, information sharing, and social interaction. Platforms like Facebook, Twitter, and Instagram have revolutionized how we connect with friends, family, and communities.",
-    "Section_Three": "Social media has also become a powerful tool for businesses and organizations. It provides a platform for marketing, customer engagement, and brand building. Social media marketing has become an essential strategy for businesses of all sizes to reach their target audiences.",
-    "Section_Two": "However, the widespread use of social media also presents challenges. Concerns about online privacy, cyberbullying, and the spread of misinformation have become increasingly prevalent. It is important to be aware of these issues and use social media responsibly.",
-    "Tag": "Easy",
-    "Title": "The Impact of Social Media on Society",
-    "answerOne": "Connecting people, facilitating communication, and information sharing.",
-    "answerTwo": "Online privacy concerns, cyberbullying, and the spread of misinformation.",
-    "answerThree": "Marketing, customer engagement, and brand building.",
-    "createdAt": "December 4, 2024 at 1:00:00 AM UTC+5:30",
-    "question_One": "What are the main functions of social media platforms?",
-    "question_One_option_One": "Limited to entertainment and leisure activities.",
-    "question_One_option_Two": "Connecting people, facilitating communication, and information sharing.",
-    "question_One_option_Three": "Primarily used for academic research and professional networking.",
-    "question_Two": "What are some of the negative aspects associated with social media?",
-    "question_Two_option_One": "Increased social interaction and community building.",
-    "question_Two_option_Two": "Online privacy concerns, cyberbullying, and the spread of misinformation.",
-    "question_Two_option_Three": "Improved access to information and diverse perspectives.",
-    "question_Three": "How do businesses utilize social media?",
-    "question_Three_option_One": "Limited use for business purposes and marketing strategies.",
-    "question_Three_option_Two": "Primarily used for internal communication and employee training.",
-    "question_Three_option_Three": "Marketing, customer engagement, and brand building."
+    Answer: 10000,
+    Question:
+      "The population of a town increases by 20% in the first year, decreases by 10% in the second year, and increases by 30% in the third year. If the final population is 13104, what was the initial population?",
+    Id: 37,
+    option: [8000, 9000, 10000, 11000],
+    solution:
+      "Let the initial population be 'P'.\nPopulation after the first year = P + 20% of P = 1.2P\nPopulation after the second year = 1.2P - 10% of 1.2P = 1.08P\nPopulation after the third year = 1.08P + 30% of 1.08P = 1.3104P\n1.3104P = 13104\nP = 13104 / 1.3104\nP = 10000\nTherefore, the initial population was 10000.",
+    trick:
+      "This Question involves successive percentage changes over multiple years.  Work backward from the final population to find the initial population.",
   },
   {
-    "Id": "11",
-    "Section_Five": "Thank You",
-    "Section_Four": "As we become increasingly reliant on technology, it is crucial to address the ethical considerations and potential risks associated with its use. By promoting responsible innovation and thoughtful implementation, we can harness the power of technology for the betterment of society.",
-    "Section_One": "Technology has become an indispensable part of our lives, transforming the way we work, communicate, and interact with the world. From smartphones and the internet to artificial intelligence and biotechnology, technology continues to advance at an unprecedented pace, shaping our society in profound ways.",
-    "Section_Three": "However, the rapid advancement of technology also raises ethical concerns and societal challenges. Issues such as job displacement, data privacy, and the potential for misuse of technology require careful consideration and proactive solutions.",
-    "Section_Two": "Despite these challenges, technology has the potential to address some of the world's most pressing problems, such as climate change, poverty, and disease. By fostering innovation and promoting responsible use, we can harness the power of technology to create a more sustainable and equitable future.",
-    "Tag": "Medium",
-    "Title": "The Role of Technology in Modern Society",
-    "answerOne": "Transforming work, communication, and interaction with the world.",
-    "answerTwo": "Job displacement, data privacy, and potential for misuse.",
-    "answerThree": "Addressing climate change, poverty, and disease.",
-    "createdAt": "December 4, 2024 at 1:30:00 AM UTC+5:30",
-    "question_One": "How has technology impacted our lives?",
-    "question_One_option_One": "Limited impact on daily routines and social interactions.",
-    "question_One_option_Two": "Transforming work, communication, and interaction with the world.",
-    "question_One_option_Three": "Primarily used for entertainment and leisure activities.",
-    "question_Two": "What are some of the challenges associated with technological advancements?",
-    "question_Two_option_One": "Increased connectivity and global collaboration.",
-    "question_Two_option_Two": "Job displacement, data privacy, and potential for misuse.",
-    "question_Two_option_Three": "Improved healthcare and education systems.",
-    "question_Three": "How can technology be used to address global issues?",
-    "question_Three_option_One": "Creating economic disparity and environmental degradation.",
-    "question_Three_option_Two": "Limited potential for solving global challenges.",
-    "question_Three_option_Three": "Addressing climate change, poverty, and disease."
+    Answer: 80,
+    Question:
+      "Two numbers are respectively 20% and 50% more than a third number. What percentage is the first number of the second number?",
+    Id: 38,
+    option: [60, 70, 80, 90],
+    solution:
+      "Let the third number be 'x'.\nFirst number = x + 20% of x = 1.2x\nSecond number = x + 50% of x = 1.5x\nRequired percentage = (First number / Second number) * 100 = (1.2x / 1.5x) * 100 = 80%",
+    trick:
+      "This Question involves expressing one number as a percentage of another. Assume a convenient value for the third number to make calculations easier.",
+  },
+  {
+    Answer: "4%",
+    Question:
+      "A shopkeeper sells two articles at the same price. On one he gains 20% and on the other he loses 20%.  What is his overall loss percentage in the whole transaction?",
+    Id: 39,
+    option: ["0", "4%", "20%", "25%"],
+    solution:
+      "Let the selling price of each article be $100.\nFor the article with gain:\nSelling price = $100, Gain = 20%\nCost price = $100 / 1.2 = $83.33 (approximately)\nFor the article with loss:\nSelling price = $100, Loss = 20%\nCost price = $100 / 0.8 = $125\nTotal cost price = $83.33 + $125 = $208.33 (approximately)\nTotal selling price = $100 + $100 = $200\nOverall loss = $208.33 - $200 = $8.33 (approximately)\nLoss percentage = (8.33 / 208.33) * 100 = 4% (approximately)",
+    trick:
+      "This Question involves calculating overall profit or loss when selling two articles at the same price with different profit/loss percentages. Assume a convenient selling price to make calculations easier.",
+  },
+  {
+    Answer: 20,
+    Question:
+      "If the price of petrol increases by 25%, by what percentage should a person reduce his consumption so that his expenditure on petrol remains the same?",
+    Id: 40,
+    option: [10, 15, 20, 25],
+    solution:
+      "Let the original price of petrol be $100 and the original consumption be 100 liters.\nOriginal expenditure = $100 * 100 liters = $10000\nNew price of petrol = $100 + 25% of $100 = $125\nLet the new consumption be 'x' liters.\nNew expenditure = $125 * x liters\nTo keep the expenditure the same:\n$125 * x = $10000\nx = $10000 / $125 = 80 liters\nReduction in consumption = 100 liters - 80 liters = 20 liters\nPercentage reduction in consumption = (20 liters / 100 liters) * 100 = 20%",
+    trick:
+      "This Question involves finding the percentage change in consumption to offset a price increase. Assume convenient values for the original price and consumption to make calculations easier.",
+  },
+  {
+    Answer: 480,
+    Question:
+      "In an examination, 40% of the students failed in Mathematics, 30% failed in English, and 20% failed in both subjects.  If 240 students passed in both subjects, find the total number of students.",
+    Id: 41,
+    option: [300, 480, 500, 600],
+    solution:
+      "Let the total number of students be 'x'.\nStudents who failed in Mathematics only = 40% - 20% = 20%\nStudents who failed in English only = 30% - 20% = 10%\nTotal percentage of students who failed = 20% + 10% + 20% = 50%\nPercentage of students who passed in both subjects = 100% - 50% = 50%\n50% of x = 240\n(50/100) * x = 240\nx = (240 * 100) / 50\nx = 480\nTherefore, the total number of students is 480.",
+    trick:
+      "This Question involves sets and percentages. Use a Venn diagram to visualize the different groups of students and their overlaps.",
+  },
+  {
+    Answer: 66.67,
+    Question:
+      "A merchant buys goods at 25% off the list price. He desires to mark the goods so that he can give a discount of 20% on the marked price and still clear a profit of 25% on the selling price. What percent of the list price must he mark the goods?",
+    Id: 42,
+    option: [20, 25, 66.67, 6667],
+    solution:
+      "Let the list price be $100.\nCost price for the merchant = $100 - 25% of $100 = $75\nLet the marked price be 'x'.\nSelling price = x - 20% of x = 0.8x\nProfit = 25% of the selling price = 0.25 * 0.8x = 0.2x\nSelling price = Cost price + Profit\n0.8x = $75 + 0.2x\n0.6x = $75\nx = $75 / 0.6 = $125\nMarkup percentage = (($125 - $75) / $75) * 100 = 66.67% (approximately)\nTherefore, the merchant must mark the goods at approximately 66.67% above the list price.",
+    trick:
+      "This Question involves multiple percentages related to list price, cost price, selling price, markup, and profit. Work step-by-step and keep track of the different prices and percentages.",
+  },
+  {
+    Answer: 48,
+    Question:
+      "A man travels from A to B at a speed of 40 km/h and returns from B to A at a speed of 60 km/h. What is his average speed for the whole journey?",
+    Id: 43,
+    option: [48, 50, 52, 54],
+    solution:
+      "Let the distance between A and B be 'd' km.\nTime taken to travel from A to B = d/40 hours\nTime taken to travel from B to A = d/60 hours\nTotal distance = d + d = 2d km\nTotal time = d/40 + d/60 = (5d)/120 hours\nAverage speed = Total distance / Total time = 2d / ((5d)/120) = 2d * (120 / 5d) = 48 km/h",
+    trick:
+      "This Question involves calculating average speed when the speeds for the two legs of the journey are different. Remember that average speed is not simply the average of the two speeds.",
+  },
+  {
+    Answer: 25,
+    Question:
+      "A dishonest shopkeeper professes to sell his goods at cost price but uses a false weight of 800 grams instead of 1 kilogram. What is his profit percentage?",
+    Id: 44,
+    option: [20, 25, 33.33, 40],
+    solution:
+      "For every 800 grams sold, the shopkeeper gains 200 grams.\nProfit percentage = (Gain / Cost price) * 100 = (200 grams / 800 grams) * 100 = 25%",
+    trick:
+      "This Question involves calculating profit percentage when a false weight is used. The gain is the difference between the actual weight and the false weight.",
+  },
+  {
+    Answer: 16.67,
+    Question:
+      "In a class, the number of boys is 20% more than the number of girls. By what percentage is the number of girls less than the number of boys?",
+    Id: 45,
+    option: [16.67, 20, 25, 33.33],
+    solution:
+      "Let the number of girls be 100.\nNumber of boys = 100 + 20% of 100 = 120\nDifference = 120 - 100 = 20\nRequired percentage = (Difference / Number of boys) * 100 = (20 / 120) * 100 = 16.67% (approximately)",
+    trick:
+      "This Question involves finding the percentage difference between two quantities. Assume a convenient value for the number of girls to make calculations easier.",
+  },
+  {
+    Answer: "4% loss",
+    Question:
+      "A man sells two articles for $600 each. On one he gains 20% and on the other he loses 20%. What is his overall gain or loss percentage in the whole transaction?",
+    Id: 46,
+    option: ["2% loss", "4% loss", "No gain, no loss", "2% gain"],
+    solution:
+      "For the article with gain:\nSelling price = $600, Gain = 20%\nCost price = $600 / 1.2 = $500\nFor the article with loss:\nSelling price = $600, Loss = 20%\nCost price = $600 / 0.8 = $750\nTotal cost price = $500 + $750 = $1250\nTotal selling price = $600 + $600 = $1200\nOverall loss = $1250 - $1200 = $50\nLoss percentage = (50 / 1250) * 100 = 4% loss",
+    trick:
+      "This Question involves calculating overall profit or loss when selling two articles at the same price with different profit/loss percentages. Calculate the cost price for each article separately, then find the overall gain or loss.",
+  },
+  {
+    Answer: 70,
+    Question:
+      "A vessel contains a mixture of milk and water in the ratio 7:3.  If 10 liters of the mixture is removed and replaced with water, the ratio of milk to water becomes 5:3.  What was the initial quantity of milk in the vessel?",
+    Id: 47,
+    option: [35, 49, 50, 70],
+    solution:
+      "Let the initial quantity of the mixture be 'x' liters.\nInitial quantity of milk = (7/10) * x liters\nInitial quantity of water = (3/10) * x liters\nQuantity of milk removed = (7/10) * 10 = 7 liters\nQuantity of water removed = (3/10) * 10 = 3 liters\nQuantity of milk remaining = (7/10) * x - 7 liters\nQuantity of water remaining = (3/10) * x - 3 + 10 = (3/10) * x + 7 liters\nNew ratio of milk to water = 5:3\n((7/10) * x - 7) / ((3/10) * x + 7) = 5/3\nSolving this equation, we get x = 100 liters\nTherefore, the initial quantity of milk = (7/10) * 100 liters = 70 liters.",
+    trick:
+      "This Question involves mixtures, ratios, and replacements. Carefully calculate the quantities of milk and water at each step and use the new ratio to form an equation.",
+  },
+  {
+    Answer: 5,
+    Question:
+      "A reduction of 20% in the price of sugar enables a housewife to buy 5 kg more for $100. What is the original price per kg of sugar?",
+    Id: 48,
+    option: [5, 30, 33.33, 40],
+    solution:
+      "Let the original price per kg of sugar be 'x'.\nOriginal quantity of sugar bought for $100 = 100/x kg\nNew price per kg of sugar = x - 20% of x = 0.8x\nNew quantity of sugar bought for $100 = 100/0.8x kg\n100/0.8x - 100/x = 5 kg\nSolving this equation, we get x = $5 per kg\nTherefore, the original price per kg of sugar is $5.",
+    trick:
+      "This Question involves calculating the original price when a price reduction leads to an increase in quantity. Form an equation based on the difference in quantities.",
+  },
+
+
+  {
+    "Answer": "237.5%",
+    "Question": "If the radius of a sphere is increased by 50%, what is the percentage increase in its volume?",
+    "Id": 49,
+    "option": [
+      "50%",
+      "125%",
+      "150%",
+      "237.5%%"
+    ],
+    "solution": "Let the original radius of the sphere be 'r'.\nOriginal volume = (4/3)πr³\nNew radius = r + (50/100) * r = 1.5r\nNew volume = (4/3)π(1.5r)³ = (4/3)π * 3.375r³ = 4.5πr³\nIncrease in volume = 4.5πr³ - (4/3)πr³ = (13.5πr³ - 4πr³) / 3 = 9.5πr³ / 3\nPercentage increase = (Increase in volume / Original volume) * 100 = (9.5πr³ / 3) / ((4/3)πr³) * 100 = 237.5%",
+    "trick": "Remember the formula for the volume of a sphere and how it changes with the radius."
+  },
+
+  
+  
+  {
+    Answer: 300,
+    Question:
+      "A train running at a speed of 72 km/h crosses a pole in 15 seconds.  The length of the train (in meters) is:",
+    Id: 50,
+    option: [100, 200, 300, 400],
+    solution:
+      "Speed of the train = 72 km/h = 72 * (5/18) m/s = 20 m/s\nTime taken to cross the pole = 15 seconds\nLength of the train = Speed * Time = 20 m/s * 15 s = 300 meters",
+    trick:
+      "This Question involves the concept of speed, time, and distance. When a train crosses a pole, the distance covered is equal to the length of the train.",
+  },
+
+  {
+    Answer: 30,
+    Question:
+      "A and B can do a piece of work in 12 days, B and C in 15 days, and C and A in 20 days. In how many days can A alone do the work?",
+    Id: 51,
+    option: [20, 30, 40, 60],
+    solution:
+      "(A + B)'s 1 day's work = 1/12\n(B + C)'s 1 day's work = 1/15\n(C + A)'s 1 day's work = 1/20\nAdding all three equations, we get:\n2(A + B + C)'s 1 day's work = 1/12 + 1/15 + 1/20 = 1/5\n(A + B + C)'s 1 day's work = 1/10\nA's 1 day's work = (A + B + C)'s 1 day's work - (B + C)'s 1 day's work = 1/10 - 1/15 = 1/30\nTherefore, A alone can do the work in 30 days.",
+    trick:
+      "This Question involves work and time concepts.  Form equations based on the combined work of different pairs of indivIduals and solve for the indivIdual's work.",
+  },
+
+  {
+    Answer: 6,
+    Question:
+      "A boat can travel 20 km downstream in 2 hours and 10 km upstream in 5 hours. What is the speed of the boat in still water?",
+    Id: 52,
+    option: [4, 6, 8, 10],
+    solution:
+      "Let the speed of the boat in still water be 'b' km/h and the speed of the stream be 's' km/h.\nDownstream speed = b + s = 20 km / 2 hours = 10 km/h\nUpstream speed = b - s = 10 km / 5 hours = 2 km/h\nAdding the two equations, we get:\n2b = 12 km/h\nb = 6 km/h\nTherefore, the speed of the boat in still water is 6 km/h.",
+    trick:
+      "This Question involves boats and streams concepts. Form equations based on downstream and upstream speeds and solve for the speed of the boat in still water.",
+  },
+
+  {
+    Answer: 90,
+    Question:
+      "A shopkeeper sells an article at a profit of 20%. If he had bought it at 20% less and sold it for Rs. 18 less, he would have gained 25%. Find the cost price of the article.",
+    Id: 53,
+    option: [80, 90, 100, 110],
+    solution:
+      "Let the cost price of the article be Rs. 'x'.\nSelling price = x + 20% of x = 1.2x\nNew cost price = x - 20% of x = 0.8x\nNew selling price = 1.2x - 18\nNew profit = 25% of 0.8x = 0.2x\nNew selling price = New cost price + New profit\n1.2x - 18 = 0.8x + 0.2x\n1.2x - x = 18\n0.2x = 18\nx = 18 / 0.2 = 90\nTherefore, the cost price of the article is Rs. 90.",
+    trick:
+      "This Question involves multiple profit percentages and requires careful calculation of the new cost price and selling price.",
+  },
+  {
+    Answer: "3200 and 4800",
+    Question:
+      "A man buys two horses for Rs. 8000. He sells one at a loss of 20% and the other at a profit of 20%. If the selling price of each horse is the same, find the cost price of each horse.",
+    Id: 54,
+    option: [
+      "3000 and 5000",
+      "3200 and 4800",
+      "3500 and 4500",
+      "4000 and 4000",
+    ],
+    solution:
+      "Let the cost price of the first horse be Rs. 'x'.\nCost price of the second horse = Rs. (8000 - x)\nSelling price of the first horse = x - 20% of x = 0.8x\nSelling price of the second horse = (8000 - x) + 20% of (8000 - x) = 1.2(8000 - x)\nSince the selling prices are the same:\n0.8x = 1.2(8000 - x)\n0.8x = 9600 - 1.2x\n2x = 9600\nx = 4800\nTherefore, the cost price of the first horse is Rs. 4800 and the cost price of the second horse is Rs. (8000 - 4800) = Rs. 3200.",
+    trick:
+      "This Question involves calculating the cost price of two items when their selling prices and profit/loss percentages are given.",
+  },
+  {
+    Answer: 50,
+    Question:
+      "A vessel contains a mixture of milk and water in the ratio 4:1.  20% of the mixture is removed and replaced with water.  If the resulting mixture contains 32 liters of milk, what was the initial quantity of the mixture?",
+    Id: 55,
+    option: [40, 50, 60, 80],
+    solution:
+      "Let the initial quantity of the mixture be 'x' liters.\nInitial quantity of milk = (4/5) * x liters\nQuantity of mixture removed = 20% of x = (1/5) * x liters\nQuantity of milk removed = (4/5) * (1/5) * x = (4/25) * x liters\nQuantity of milk remaining = (4/5) * x - (4/25) * x = (16/25) * x liters\nSince the resulting mixture contains 32 liters of milk:\n(16/25) * x = 32\nx = 32 * (25/16) = 50 liters\nTherefore, the initial quantity of the mixture was 50 liters.",
+    trick:
+      "This Question involves mixtures, ratios, and replacements. Carefully calculate the quantities of milk and water at each step.",
+  },
+  {
+    Answer: 8000,
+    Question:
+      "A man invests a certain sum of money at 10% per annum compound interest, compounded annually.  At the end of the second year, the amount is Rs. 9680.  What was the sum invested?",
+    Id: 56,
+    option: [7000, 8000, 9000, 10000],
+    solution:
+      "Let the sum invested be Rs. 'P'.\nAmount after 1 year = P * (1 + 10/100) = 1.1P\nAmount after 2 years = 1.1P * (1 + 10/100) = 1.21P\n1.21P = 9680\nP = 9680 / 1.21 = 8000\nTherefore, the sum invested was Rs. 8000.",
+    trick:
+      "This Question involves compound interest.  Work backward from the final amount to find the principal.",
+  },
+  {
+    Answer: 600,
+    Question:
+      "A shopkeeper allows a discount of 10% on the marked price of an article and still makes a profit of 20%.  If the cost price of the article is Rs. 450, what is the marked price?",
+    Id: 57,
+    option: [500, 550, 600, 650],
+    solution:
+      "Cost price = Rs. 450\nProfit = 20% of 450 = Rs. 90\nSelling price = Cost price + Profit = 450 + 90 = Rs. 540\nLet the marked price be Rs. 'x'.\nSelling price = x - 10% of x = 0.9x\n0.9x = 540\nx = 540 / 0.9 = 600\nTherefore, the marked price is Rs. 600.",
+    trick:
+      "This Question involves both discount and profit percentages.  Work backward from the selling price to find the marked price.",
+  },
+
+  {
+    Answer: 40,
+    Question:
+      "In an examination, 35% of the students failed in Hindi and 45% failed in English. If 20% failed in both subjects, what percentage of students passed in both subjects?",
+    Id: 58,
+    option: [20, 30, 40, 50],
+    solution:
+      "Students who failed in Hindi only = 35% - 20% = 15%\nStudents who failed in English only = 45% - 20% = 25%\nTotal percentage of students who failed = 15% + 25% + 20% = 60%\nPercentage of students who passed in both subjects = 100% - 60% = 40%",
+    trick:
+      "This Question involves sets and percentages. Use a Venn diagram to visualize the different groups of students and their overlaps.",
+  },
+
+  {
+    Answer: 1.2,
+    Question:
+      "A man rows downstream 30 km and upstream 18 km, taking 5 hours each time.  What is the speed of the current?",
+    Id: 59,
+    option: [1.2, 2.4, 3.6, 4.8],
+    solution:
+      "Let the speed of the man in still water be 'b' km/h and the speed of the current be 'c' km/h.\nDownstream speed = b + c = 30 km / 5 hours = 6 km/h\nUpstream speed = b - c = 18 km / 5 hours = 3.6 km/h\nSubtracting the second equation from the first equation, we get:\n2c = 2.4 km/h\nc = 1.2 km/h\nTherefore, the speed of the current is 1.2 km/h.",
+    trick:
+      "This Question involves boats and streams concepts. Form equations based on downstream and upstream speeds and solve for the speed of the current.",
+  },
+  {
+    Answer: 45,
+    Question:
+      "A train 150 meters long passes a telegraph post in 12 seconds.  Find the speed of the train in km/h.",
+    Id: 60,
+    option: [36, 40, 45, 50],
+    solution:
+      "Speed = Distance / Time = 150 meters / 12 seconds = 12.5 m/s\nSpeed in km/h = 12.5 m/s * (18/5) = 45 km/h",
+    trick:
+      "This Question involves speed, time, and distance. When a train crosses a stationary object, the distance covered is equal to the length of the train.",
+  },
+  {
+    Answer: 16,
+    Question:
+      "A and B can do a piece of work in 18 days, B and C in 24 days, and C and A in 36 days.  In how many days can they do it all working together?",
+    Id: 61,
+    option: [16, 24, 30, 36],
+    solution:
+      "(A + B)'s 1 day's work = 1/18\n(B + C)'s 1 day's work = 1/24\n(C + A)'s 1 day's work = 1/36\nAdding all three equations, we get:\n2(A + B + C)'s 1 day's work = 1/18 + 1/24 + 1/36 = 1/8\n(A + B + C)'s 1 day's work = 1/16\nTherefore, they can do the work together in 16 days.",
+    trick:
+      "This Question involves work and time concepts. Form equations based on the combined work of different pairs of indivIduals and solve for their combined work.",
+  },
+  {
+    Answer: 3000,
+    Question:
+      "The difference between the compound interest and simple interest on a certain sum of money for 2 years at 10% per annum is Rs. 30. Find the sum.",
+    Id: 62,
+    option: [300, 3000, 6000, 9000],
+    solution:
+      "Let the principal amount be Rs. 'P'.\nSimple Interest (SI) for 2 years = (P * 10 * 2) / 100 = 0.2P\nCompound Interest (CI) for 2 years = P * (1 + 10/100)^2 - P = 1.21P - P = 0.21P\nCI - SI = 0.21P - 0.2P = 0.01P\n0.01P = 30\nP = 30 / 0.01 = 3000\nTherefore, the sum is Rs. 3000.",
+    trick:
+      "This Question involves the difference between compound interest and simple interest. Use the formulas for both types of interest and form an equation based on their difference.",
+  },
+
+  {
+    Answer: 700,
+    Question:
+      "A fruit seller had some apples. He sells 40% apples and still has 420 apples. Originally, he had:",
+    Id: 63,
+    option: [588, 600, 672, 700],
+    solution:
+      "Let the original number of apples be 'x'\nApples left = 100% - 40% = 60%\n60% of x = 420\n(60/100) * x = 420\nx = (420 * 100) / 60\nx = 700",
+    trick:
+      "The remaining apples represent 60% of the original amount. Use this to form an equation.",
+  },
+
+  {
+    Answer: "A is equal to B.",
+    Question:
+      "If A = x% of y and B = y% of x, then which of the following is true?",
+    Id: 64,
+    option: [
+      "A is smaller than B.",
+      "A is greater than B.",
+      "If x is smaller than y, then A is greater than B.",
+      "A is equal to B.",
+    ],
+    solution: "A = (x/100) * y\nB = (y/100) * x\nTherefore, A = B",
+    trick:
+      "Express A and B in terms of x and y and compare the resulting expressions.",
+  },
+
+  {
+    Answer: "4% of a",
+    Question: "If 20% of a = b, then b% of 20 is the same as:",
+    Id: 65,
+    option: ["4% of a", "5% of a", "20% of a", "None of these"],
+    solution:
+      "20% of a = b\n(20/100) * a = b\nb% of 20 = (b/100) * 20 = ((20/100) * a / 100) * 20 = (4/100) * a = 4% of a",
+    trick:
+      "Substitute the value of 'b' in terms of 'a' to simplify the expression.",
+  },
+  {
+    Answer: "4:3",
+    Question:
+      "Two numbers A and B are such that the sum of 5% of A and 4% of B is two-third of the sum of 6% of A and 8% of B. Find the ratio of A : B.",
+    Id: 66,
+    option: ["1:1", "2:3", "3:4", "4:3"],
+    solution:
+      "5% of A + 4% of B = (2/3) * (6% of A + 8% of B)\n(5/100) * A + (4/100) * B = (2/3) * ((6/100) * A + (8/100) * B)\nSimplifying the equation, we get:\n15A + 12B = 12A + 16B\n3A = 4B\nA/B = 4/3\nTherefore, the ratio of A : B is 4:3.",
+    trick:
+      "Form an equation based on the given information and simplify it to find the ratio of A to B.",
+  },
+  {
+    Answer: 64,
+    Question:
+      "A student multiplied a number by 3/5 instead of 5/3. What is the percentage error in the calculation?",
+    Id: 67,
+    option: [34, 44, 54, 64],
+    solution:
+      "Let the number be 'x'.\nCorrect Answer = (5/3) * x\nIncorrect Answer = (3/5) * x\nError = (5/3) * x - (3/5) * x = (16/15) * x\nPercentage error = (Error / Correct Answer) * 100 = ((16/15) * x / (5/3) * x) * 100 = 64%",
+    trick:
+      "Calculate the difference between the correct and incorrect Answers and express it as a percentage of the correct Answer.",
+  },
+  {
+    Answer: 400,
+    Question:
+      "The price of an article is first increased by 20% and later decreased by 25%. If the final price is Rs. 360, what was the original price of the article?",
+    Id: 68,
+    option: [300, 375, 400, 450],
+    solution:
+      "Let the original price be 'x'.\nPrice after increase = x + 20% of x = 1.2x\nPrice after decrease = 1.2x - 25% of 1.2x = 0.75 * 1.2x = 0.9x\n0.9x = 360\nx = 360 / 0.9 = 400\nTherefore, the original price was Rs. 400.",
+    trick:
+      "This Question involves successive percentage changes. Work backward from the final price to find the original price.",
+  },
+  {
+    Answer: 2700,
+    Question:
+      "In an election between two candIdates, one got 55% of the total valId votes, 20% of the votes were invalId. If the total number of votes was 7500, the number of valId votes that the other candIdate got, was:",
+    Id: 69,
+    option: [2700, 2800, 2900, 3000],
+    solution:
+      "Number of invalId votes = 20% of 7500 = (20/100) * 7500 = 1500\nNumber of valId votes = 7500 - 1500 = 6000\nVotes for the first candIdate = 55% of 6000 = (55/100) * 6000 = 3300\nVotes for the second candIdate = 6000 - 3300 = 2700",
+    trick:
+      "Calculate the number of invalId votes first, then find the number of valId votes for each candIdate.",
+  },
+  {
+    Answer: 66.67,
+    Question:
+      "A's salary is 20% lower than B's salary, which is 25% lower than C's salary. By what percent is C's salary more than A's salary?",
+    Id: 70,
+    option: [40, 50, 60.67, 70],
+    solution:
+      "Let C's salary be Rs. 100.\nB's salary = 100 - 25% of 100 = Rs. 75\nA's salary = 75 - 20% of 75 = Rs. 60\nDifference between C's salary and A's salary = 100 - 60 = Rs. 40\nRequired percentage = (40 / 60) * 100 = 66.67% (approximately)",
+    trick:
+      "Assume a convenient value for C's salary and calculate the salaries of A and B step-by-step.",
+  },
+  {
+    Answer: 44,
+    Question:
+      "If the radius of a circle is increased by 20%, then the area is increased by:",
+    Id: 71,
+    option: [40, 44, 80, 88],
+    solution:
+      "Let the original radius be 'r'.\nOriginal area = πr^2\nNew radius = r + 20% of r = 1.2r\nNew area = π(1.2r)^2 = 1.44πr^2\nIncrease in area = 1.44πr^2 - πr^2 = 0.44πr^2\nPercentage increase in area = (0.44πr^2 / πr^2) * 100 = 44%",
+    trick:
+      "Calculate the new area after the radius is increased and find the percentage increase compared to the original area.",
+  },
+  {
+    Answer: 50,
+    Question:
+      "A man spends 75% of his income. His income is increased by 20% and he increased his expenditure by 10%. His savings are increased by:",
+    Id: 72,
+    option: [10, 25, 37.5, 50],
+    solution:
+      "Let the original income be Rs. 100.\nOriginal expenditure = 75% of 100 = Rs. 75\nOriginal savings = 100 - 75 = Rs. 25\nNew income = 100 + 20% of 100 = Rs. 120\nNew expenditure = 75 + 10% of 75 = Rs. 82.5\nNew savings = 120 - 82.5 = Rs. 37.5\nIncrease in savings = 37.5 - 25 = Rs. 12.5\nPercentage increase in savings = (12.5 / 25) * 100 = 50%",
+    trick:
+      "Calculate the new income, expenditure, and savings after the respective increases and find the percentage increase in savings.",
+  },
+  {
+    Answer: "10% decrease",
+    Question:
+      "If the price of a book is first decreased by 25% and then increased by 20%, what is the net change in the price?",
+    Id: 73,
+    option: ["10% decrease", "10% increase", "5% decrease", "No change"],
+    solution:
+      "Let the original price be $100.\nPrice after decrease: $100 - (25/100)*$100 = $75\nPrice after increase: $75 + (20/100)*$75 = $90\nNet change: $90 - $100 = -$10 (a decrease)\nPercentage change: ($10/$100) * 100% = 10% decrease",
+    trick:
+      "Calculate the price after each change and then find the overall percentage change from the original price.",
+  },
+  {
+    Answer: 26,
+    Question:
+      "A school has 1200 students, out of which 40% are girls.  If 20% of the girls and 30% of the boys wear glasses, what percentage of the total students wear glasses?",
+    Id: 74,
+    option: [16, 26, 24, 28],
+    solution:
+      "Number of girls: 1200 * (40/100) = 480\nNumber of boys: 1200 - 480 = 720\nGirls wearing glasses: 480 * (20/100) = 96\nBoys wearing glasses: 720 * (30/100) = 216\nTotal students wearing glasses: 96 + 216 = 312\nPercentage of students wearing glasses: (312/1200) * 100% = 26%",
+    trick:
+      "Calculate the number of boys and girls separately, then find how many in each group wear glasses.",
+  },
+  {
+    Answer: 36,
+    Question:
+      "In a village, 60% of the resIdents are literate.  If 40% of the literate resIdents are men, what percentage of the total resIdents are literate women?",
+    Id: 75,
+    option: [24, 36, 40, 60],
+    solution:
+      "Let the total number of resIdents be 100.\nLiterate resIdents: 100 * (60/100) = 60\nLiterate men: 60 * (40/100) = 24\nLiterate women: 60 - 24 = 36\nPercentage of literate women: (36/100) * 100% = 36%",
+    trick:
+      "Assume a convenient number for the total resIdents to make calculations easier.",
+  },
+  {
+    Answer: "No",
+    Question:
+      "A shopkeeper offers two successive discounts of 10% and 20% on an item.  Is this equivalent to a single discount of 30%?",
+    Id: 76,
+    option: ["Yes", "No","10","4"],
+    solution:
+      "Let the original price be $100.\nPrice after 1st discount: $100 - (10/100)*$100 = $90\nPrice after 2nd discount: $90 - (20/100)*$90 = $72\nPrice after a single 30% discount: $100 - (30/100)*$100 = $70\nSince $72 is not equal to $70, the two discounts are not equivalent.",
+    trick:
+      "Successive discounts are not additive. Calculate the final price in both scenarios to compare.",
+  },
+  {
+    Answer: 56.25,
+    Question:
+      "A container has 40 liters of milk.  10 liters of milk is taken out and replaced with water.  This process is repeated one more time.  What is the percentage of milk in the container now?",
+    Id: 77,
+    option: [56.25, 64, 75, 81],
+    solution:
+      "After 1st replacement:\nMilk: 40 - 10 = 30 liters\nWater: 10 liters\nRatio of milk to total: 30/(30+10) = 3/4\nAfter 2nd replacement:\nMilk removed: (3/4) * 10 = 7.5 liters\nMilk remaining: 30 - 7.5 = 22.5 liters\nPercentage of milk: (22.5/40) * 100% = 56.25%",
+    trick:
+      "Calculate the amount of milk and water after each replacement carefully.",
+  },
+  {
+    Answer: "4% loss",
+    Question:
+      "A trader sells two articles, one at a profit of 20% and the other at a loss of 20%.  If the selling price of both articles is the same, what is the overall profit or loss percentage?",
+    Id: 78,
+    option: [
+      "4% profit",
+      "4% loss",
+      "No profit, no loss",
+      "Cannot be determined",
+    ],
+    solution:
+      "Let the selling price of each article be $100.\nFor the article with profit:\nCost price = $100 / 1.2 = $83.33 (approx.)\nFor the article with loss:\nCost price = $100 / 0.8 = $125\nTotal cost price = $83.33 + $125 = $208.33\nTotal selling price = $100 + $100 = $200\nOverall loss = $208.33 - $200 = $8.33\nLoss percentage = ($8.33/$208.33) * 100% = 4% (approx.)",
+    trick:
+      "Assume a convenient selling price and calculate the cost price for each article to find the overall profit or loss.",
+  },
+  {
+    Answer: "4% decrease",
+    Question:
+      "A train increases its speed by 20% and then decreases it by 20%.  What is the net effect on its speed?",
+    Id: 79,
+    option: [
+      "4% increase",
+      "4% decrease",
+      "No change",
+      "Cannot be determined",
+    ],
+    solution:
+      "Let the original speed be 100 km/h.\nSpeed after increase: 100 + (20/100)*100 = 120 km/h\nSpeed after decrease: 120 - (20/100)*120 = 96 km/h\nNet change: 96 - 100 = -4 km/h (a decrease)\nPercentage change: (4/100) * 100% = 4% decrease",
+    trick:
+      "Successive percentage changes are not simply additive. Calculate the final speed after both changes to find the net effect.",
+  },
+  {
+    Answer: "4% decrease",
+    Question:
+      "If the length of a rectangle is increased by 20% and its breadth is decreased by 20%, what is the net effect on its area?",
+    Id: 80,
+    option: [
+      "4% increase",
+      "4% decrease",
+      "No change",
+      "Cannot be determined",
+    ],
+    solution:
+      "Let the original length be 'l' and breadth be 'b'.\nOriginal area = l * b\nNew length = l + (20/100)*l = 1.2l\nNew breadth = b - (20/100)*b = 0.8b\nNew area = 1.2l * 0.8b = 0.96lb\nChange in area = 0.96lb - lb = -0.04lb (a decrease)\nPercentage change = (-0.04lb / lb) * 100% = 4% decrease",
+    trick:
+      "Calculate the new area after the changes in length and breadth and compare it to the original area.",
+  },
+
+  {
+    Answer: "25%",
+    Question:
+      "A person's salary is reduced by 20%.  By what percentage should the reduced salary be increased to restore it to the original amount?",
+    Id: 81,
+    option: ["20%", "25%", "30%", "33.33%"],
+    solution:
+      "Let the original salary be $100.\nReduced salary = $100 - (20/100)*$100 = $80\nIncrease needed = $100 - $80 = $20\nPercentage increase = ($20/$80) * 100% = 25%",
+    trick:
+      "The percentage increase needed to restore the original value is not the same as the percentage decrease.",
+  },
+
+  {
+    "Answer": '21%',
+    "Question": "If the sIde of a cube is increased by 10%, what is the percentage increase in its surface area?",
+    "Id": 82,
+    "option": [
+      "10%",
+      "20%",
+      "21%",
+      "30%"
+    ],
+    "solution": "Let the original sIde of the cube be 's'.\nOriginal surface area = 6s²\nNew sIde = s + (10/100) * s = 1.1s\nNew surface area = 6(1.1s)² = 6 * 1.21s² = 7.26s²\nIncrease in surface area = 7.26s² - 6s² = 1.26s²\nPercentage increase = (Increase in surface area / Original surface area) * 100 = (1.26s² / 6s²) * 100 = 21%",
+    "trick": "Remember the formula for the surface area of a cube and how it changes with the sIde."
+  },
+  {
+    "Answer": "No change",
+    "Question": "If the length of a rectangle is increased by 20% and its breadth is decreased by 20%, what is the net effect on its area?",
+    "Id": 83,
+    "option": [
+      "4% increase",
+      "4% decrease",
+      "No change",
+      "20% decrease"
+    ],
+    "solution": "Let the original length be 'l' and the original breadth be 'b'.\nOriginal area = l * b\nNew length = l + (20/100) * l = 1.2l\nNew breadth = b - (20/100) * b = 0.8b\nNew area = 1.2l * 0.8b = 0.96lb\nChange in area = 0.96lb - lb = -0.04lb (a decrease)\nPercentage change = (-0.04lb / lb) * 100% = 4% decrease",
+    "trick": "Calculate the new area after the changes in length and breadth, and compare it to the original area."
+  },
+  {
+    "Answer":-4,
+    "Question": "If the radius of a cylinder is decreased by 20% and its height is increased by 50%, what is the percentage change in its volume?",
+    "Id": 84,
+    "option": [
+      -10,
+      10,
+      125,
+      -4
+    ],
+    "solution": "Let the original radius be 'r' and the original height be 'h'.\nOriginal volume = πr²h\nNew radius = r - (20/100) * r = 0.8r\nNew height = h + (50/100) * h = 1.5h\nNew volume = π(0.8r)² * 1.5h = π * 0.64r² * 1.5h = 0.96πr²h\nChange in volume = 0.96πr²h - πr²h = -0.04πr²h (a decrease)\nPercentage change = (-0.04πr²h / πr²h) * 100% = 4% decrease",
+    "trick": "Remember the formula for the volume of a cylinder and how it changes with the radius and height."
+  },
+  {
+    "Answer": 44,
+    "Question": "If the length of each sIde of a rectangle is increased by 20%, what is the percentage increase in its area?",
+    "Id": 85,
+    "option": [
+      20,
+      40,
+      44,
+      60
+    ],
+    "solution": "Let the original length be 'l' and the original breadth be 'b'.\nOriginal area = l * b\nNew length = l + (20/100) * l = 1.2l\nNew breadth = b + (20/100) * b = 1.2b\nNew area = 1.2l * 1.2b = 1.44lb\nChange in area = 1.44lb - lb = 0.44lb (an increase)\nPercentage change = (0.44lb / lb) * 100% = 44% increase",
+    "trick": "Calculate the new area after the changes in length and breadth, and compare it to the original area."
+  },
+  {
+    "Answer": 300,
+    "Question": "If the radius of a sphere is doubled, what is the percentage increase in its surface area?",
+    "Id": 86,
+    "option": [
+      100,
+      200,
+      300,
+      400
+    ],
+    "solution": "Let the original radius be 'r'.\nOriginal surface area = 4πr²\nNew radius = 2r\nNew surface area = 4π(2r)² = 4π * 4r² = 16πr²\nIncrease in surface area = 16πr² - 4πr² = 12πr²\nPercentage increase = (Increase in surface area / Original surface area) * 100 = (12πr² / 4πr²) * 100 = 300%",
+    "trick": "Remember the formula for the surface area of a sphere and how it changes with the radius."
+  },
+  {
+    "Answer": -4,
+    "Question": "If the base radius of a right circular cone is increased by 20% and its slant height is decreased by 20%, then the percentage change in its curved surface area is:",
+    "Id": 87,
+    "option": [
+      "12.5% increase",
+      "12.5% decrease",
+      "No change",
+      -4 
+    ],
+    "solution": "Let the original radius be 'r' and the original slant height be 'l'.\nOriginal curved surface area = πrl\nNew radius = r + (20/100) * r = 1.2r\nNew slant height = l - (20/100) * l = 0.8l\nNew curved surface area = π * 1.2r * 0.8l = 0.96πrl\nChange in curved surface area = 0.96πrl - πrl = -0.04πrl (a decrease)\nPercentage change = (-0.04πrl / πrl) * 100 = 4% decrease",
+    "trick": "Remember the formula for the curved surface area of a cone and how it changes with the radius and slant height."
+  },
+  {
+    "Answer": 2,
+    "Question": "A rectangular tank is 6 m long, 4 m wIde, and 3 m deep. If 1440 liters of water is taken out of it, what will be the percentage decrease in the volume of water in the tank?",
+    "Id": 88,
+    "option": [
+      1,
+      2.5,
+      2,
+      15
+    ],
+    "solution": "Volume of the tank = 6 m * 4 m * 3 m = 72 m³\n1 m³ = 1000 liters\nVolume of water taken out = 1440 liters = 1.44 m³\nPercentage decrease in volume = (Volume of water taken out / Volume of the tank) * 100 = (1.44 m³ / 72 m³) * 100 = 2%",
+    "trick": "Remember the formula for the volume of a rectangular tank and the conversion between cubic meters and liters."
+  },
+  {
+    "Answer": 100,
+    "Question": "A sphere of radius 'r' is inscribed in a cylinder. The surface area of the sphere is what percent of the curved surface area of the cylinder?",
+    "Id": 89,
+    "option": [
+      25,
+      33.33,
+      100,
+      50
+    ],
+    "solution": "For an inscribed sphere, the diameter of the sphere is equal to the height of the cylinder, and the radius of the sphere is equal to the radius of the cylinder.\nSurface area of the sphere = 4πr²\nCurved surface area of the cylinder = 2πrh = 2πr * 2r = 4πr²\nTherefore, the surface area of the sphere is 100% of the curved surface area of the cylinder.",
+    "trick": "Visualize the inscribed sphere within the cylinder to understand the relationship between their dimensions."
+  },
+  
+  {
+    "Answer": 100,
+    "Question": "A solId metallic sphere of radius 6 cm is melted and recast into a right circular cone of base radius 6 cm. What is the percentage increase in the height of the cone compared to the original height of the sphere?",
+    "Id": 90,
+    "option": [
+      100,
+      200,
+      300,
+      20
+    ],
+    "solution": "Volume of the sphere = (4/3)πr³ = (4/3)π * 6³ = 288π cm³\nVolume of the cone = (1/3)πr²h = 288π cm³ (since the volume remains the same after recasting)\n(1/3)π * 6² * h = 288π\nh = 288π * 3 / (π * 36) = 24 cm\nOriginal height of the sphere (diameter) = 12 cm\nPercentage increase in height = ((24 - 12) / 12) * 100 = 100%",
+    "trick": "Remember that the volume of the metal remains the same after recasting."
+  },
+  {
+    "Answer": 70000,
+    "Question": "A city's population increased by 20% in the first year, then decreased by 10% in the second year, and finally increased by 15% in the third year. If the current population is 82800, what was the population three years ago?",
+    "Id": 91,
+    "option": [
+      70000,
+      71000,
+      72000,
+      73000
+    ],
+    "solution": "Let the population three years ago be P.\nAfter the first year, the population becomes 1.2P.\nAfter the second year, the population becomes 0.9 * 1.2P = 1.08P.\nAfter the third year, the population becomes 1.15 * 1.08P = 1.242P.\nTherefore, 1.242P = 82800\nP = 82800 / 1.242 = 66666.67 (approximately)\nSo, the population three years ago was approximately 66666.67, which is closest to 70000.",
+    "trick": "Work backward through the percentage changes, year by year, to find the original population."
+  },
+      {
+        "Answer": 40.625,
+        "Question": "A fruit seller buys oranges at the rate of 10 for Rs. 80 and sells them at the rate of 8 for Rs. 100. However, 10% of the oranges get spoiled during transportation. What is his overall profit or loss percentage?",
+        "Id": 92,
+        "option": [
+          "12.5% profit",
+          "12.5% loss",
+          40.625,
+          "20% profit"
+        ],
+        "solution": "Let the fruit seller buy 80 oranges (LCM of 8 and 10).\nCost price of 80 oranges = (80/10) * Rs. 80 = Rs. 640\nOranges left after spoilage = 80 - (10/100) * 80 = 72\nSelling price of 72 oranges = (72/8) * Rs. 100 = Rs. 900\nProfit = Rs. 900 - Rs. 640 = Rs. 260\nProfit percentage = (Profit / Cost price) * 100 = (260/640) * 100 = 40.625%",
+        "trick": "Account for the spoilage of oranges before calculating the profit or loss percentage."
+      },
+
+        
+  {
+    Answer: 4.17,
+    Question:
+      "A dishonest dealer professes to sell his goods at cost price, but he uses a weight of 960 grams for a kilogram weight. Find his gain percent.",
+    Id: 93,
+    option: ["4%", 4.17, "5%", "6.25%"],
+    solution: "For every 960 grams sold, the dealer gains 40 grams.\nGain percent = (Gain / Cost price) * 100% = (40/960) * 100% = 4.17%",
+    trick:
+      "The gain is the difference between the actual weight and the false weight used.",
+  },
+  {
+    Answer: -4,
+    Question:
+      "A man buys a certain number of oranges at 20 for Rs. 60 and an equal number at 30 for Rs. 60. He mixes them and sells them at 25 for Rs. 60. What is his gain or loss percent?",
+    Id: 94,
+    option: ["No profit, no loss", -4 , "2.22% loss"],
+    solution:
+      "Let the man buy 60 oranges of each type (LCM of 20 and 30).\nCost price of 60 oranges of the first type = (60/20) * Rs. 60 = Rs. 180\nCost price of 60 oranges of the second type = (60/30) * Rs. 60 = Rs. 120\nTotal cost price = Rs. 180 + Rs. 120 = Rs. 300\nTotal selling price = (120/25) * Rs. 60 = Rs. 288\nLoss = Rs. 300 - Rs. 288 = Rs. 12\nLoss percent = (Loss / Cost price) * 100% = (12/300) * 100% = 4% loss",
+    trick:
+      "This Question involves buying and selling in different groups. Find the LCM of the group sizes to make calculations easier.",
+  },
+  {
+    Answer: 40,
+    Question:
+      "A shopkeeper marks his goods 50% above the cost price and allows a discount of 20% on the marked price. Find his gain percent.",
+    Id: 95,
+    option: [20, 25, 30, 40],
+    solution:"Let the cost price be $100.\nMarked price = $100 + (50/100)*$100 = $150\nSelling price = $150 - (20/100)*$150 = $120\nGain = $120 - $100 = $20\nGain percent = ($20/$100) * 100% = 20%",
+    trick:
+      "Calculate the marked price and selling price step-by-step to find the gain percentage.",
+  },
+  {
+    Answer: 20,
+    Question:
+      "In an examination, 70% of the students passed in English, 65% passed in Mathematics, and 27% failed in both subjects. What percentage of students passed in both the subjects?",
+    Id: 96,
+    option: [38, 40, 20, 45],
+    solution:
+      "Percentage of students who passed in at least one subject = 100% - 27% = 73%\nLet the percentage of students who passed in both subjects be x%\nSo, 70 - x + x + 65 - x = 73\nx = 62\nTherefore, 62% of the students passed in both subjects.",
+    trick:
+      "This Question involves sets and percentages. Use a Venn diagram to visualize the different groups of students and their overlaps.",
+  },
+  {
+    Answer: 1260,
+    Question:
+      "The price of a scooter depreciates by 10% each year. If the present price of the scooter is Rs. 12150, find its price after 2 years.",
+    Id: 97,
+    option: [9720, 9801, 9900, 1260],
+    solution:
+      "Price after 1 year = Rs. 12150 - (10/100) * Rs. 12150 = Rs. 10935\nPrice after 2 years = Rs. 10935 - (10/100) * Rs. 10935 = Rs. 9841.50",
+    trick:
+      "This involves calculating depreciation over multiple years. Calculate the decrease in price step-by-step for each year.",
+  },
+  {
+    Answer: "4% decrease",
+    Question:
+      "If the sIde of a square is increased by 20%, then what is the percentage change in its area?",
+    Id: 98,
+    option: ["20% increase", "40% increase", "44% increase", "4% decrease"],
+    solution:
+      "Let the original sIde of the square be 's'.\nOriginal area = s * s = s^2\nNew sIde = s + (20/100) * s = 1.2s\nNew area = 1.2s * 1.2s = 1.44s^2\nChange in area = 1.44s^2 - s^2 = 0.44s^2 (an increase)\nPercentage change = (0.44s^2 / s^2) * 100% = 44% increase",
+    trick:
+      "Calculate the new area after the change in sIde and compare it to the original area.",
+  },
+  {
+    Answer: 50,
+    Question:
+      "A mixture of 70 liters of wine and water contains 10% water. How much water should be added to the mixture to make 25% water in the resulting mixture?",
+    Id: 99,
+    option: [14, 15, 60, 50],
+    solution:
+      "Initial quantity of water = 10% of 70 liters = 7 liters\nInitial quantity of wine = 70 liters - 7 liters = 63 liters\nLet 'x' liters of water be added.\nTotal quantity of new mixture = 70 + x liters\nQuantity of water in new mixture = 7 + x liters\nAccording to the problem:\n(7 + x) / (70 + x) = 25/100\nSolving for x, we get x = 15 liters",
+    trick:
+      "Form an equation based on the new ratio of water to the total mixture after adding water.",
+  },
+  {
+    Answer: 5,
+    Question:
+      "A man rows downstream 20 km in 2 hours and upstream 8 km in 4 hours.  What is the speed of the current?",
+    Id: 100,
+    option: [3, 4, 5, 6],
+    solution:
+      "Let the speed of the man in still water be 'b' km/h and the speed of the current be 'c' km/h.\nDownstream speed = b + c = 20 km / 2 hours = 10 km/h\nUpstream speed = b - c = 8 km / 4 hours = 2 km/h\nSubtracting the second equation from the first equation, we get:\n2c = 8 km/h\nc = 4 km/h\nTherefore, the speed of the current is 4 km/h.",
+    trick:
+      "Form equations based on downstream and upstream speeds and solve for the speed of the current.",
+  },
+  {
+    Answer: 54,
+    Question:
+      "A train 130 meters long passes a platform 170 meters long in 30 seconds.  Find the speed of the train in km/h.",
+    Id: 101,
+    option: [36, 48, 54, 60],
+    solution:
+      "Total distance covered = Length of train + Length of platform = 130 meters + 170 meters = 300 meters\nSpeed = Distance / Time = 300 meters / 30 seconds = 10 m/s\nSpeed in km/h = 10 m/s * (18/5) = 36 km/h",
+    trick:
+      "When a train crosses a platform, the total distance covered is the sum of the length of the train and the length of the platform.",
+  },
+  {
+    Answer: 14.4,
+    Question:
+      "A, B and C can do a piece of work in 10, 12 and 15 days respectively.  In how many days can they do it all working together?",
+    Id: 102,
+    option: [14.4, 16.4, 18.4, 14.4],
+    solution:
+      "A's 1 day's work = 1/10\nB's 1 day's work = 1/12\nC's 1 day's work = 1/15\n(A + B + C)'s 1 day's work = 1/10 + 1/12 + 1/15 = 1/4\nTherefore, they can do the work together in 4 days.",
+    trick:
+      "Calculate the one day's work for each indivIdual and add them to find their combined work.",
+  },
+  {
+    Answer: 8000,
+    Question:
+      "The difference between the compound interest and simple interest on a certain sum of money for 2 years at 10% per annum is Rs. 80. Find the sum.",
+    Id: 103,
+    option: [800, 8000, 16000, 32000],
+    solution:
+      "Let the principal amount be Rs. 'P'.\nSimple Interest (SI) for 2 years = (P * 10 * 2) / 100 = 0.2P\nCompound Interest (CI) for 2 years = P * (1 + 10/100)^2 - P = 1.21P - P = 0.21P\nCI - SI = 0.21P - 0.2P = 0.01P\n0.01P = 80\nP = 80 / 0.01 = 8000\nTherefore, the sum is Rs. 8000.",
+    trick:
+      "Use the formulas for both simple and compound interest to form an equation based on their difference.",
+  },
+  {
+    Answer: 28,
+    Question:
+      "If the price of petrol is increased by 40%, by how much percent should a car owner reduce his consumption of petrol so that his expenditure on petrol remains constant?",
+    Id: 104,
+    option: [22.22, 25, 28, 33.33],
+    solution:
+      "Let the original price of petrol be $100 and the original consumption be 100 liters.\nOriginal expenditure = $100 * 100 liters = $10000\nNew price of petrol = $100 + (40/100)*$100 = $140\nLet the new consumption be 'x' liters.\nNew expenditure = $140 * x liters\nTo keep the expenditure the same:\n$140 * x = $10000\nx = $10000 / $140 = 71.43 liters (approximately)\nReduction in consumption = 100 liters - 71.43 liters = 28.57 liters (approximately)\nPercentage reduction in consumption = (28.57 liters / 100 liters) * 100% = 28.57% (approximately)",
+    trick:
+      "Assume convenient values for the original price and consumption to make calculations easier.",
+  },
+  {
+    Answer: 720,
+    Question:
+      "In an examination, 80% of the students passed in English, 85% in Mathematics, and 75% in both. If 40 students failed in both the subjects, find the total number of students.",
+    Id: 105,
+    option: [400, 600, 800, 720],
+    solution:
+      "Let the total number of students be 'x'\nThose who passed in English = 80% of x\nThose who passed in Maths = 85% of x\nThose who passed in both = 75% of x\nStudents who failed in both = x - {80% of x + 85% of x - 75% of x} = 40\nx - 90% of x = 40\n10% of x = 40\nx = 40 * (100/10) = 400\nTotal number of students = 400",
+    trick:
+      "Use a Venn diagram to visualize the different groups of students and their overlaps.",
+  },
+  {
+    Answer: 10,
+    Question:
+      "The cost price of 20 articles is the same as the selling price of x articles. If the profit is 25%, then the value of x is:",
+    Id: 106,
+    option: [15, 16, 18, 10],
+    solution:
+      "Let the cost price of each article be Rs. 1\nCost price of 20 articles = Rs. 20 = Selling price of x articles\nProfit = 25%\nSelling price of 20 articles = 20 + 25% of 20 = 20 + 5 = Rs. 25\nTherefore, 25 = x\nHence, the value of x is 25.",
+    trick:
+      "Assume a convenient cost price for each article to make calculations easier.",
+  },
+  {
+    Answer: "12.5% loss",
+    Question:
+      "A man buys an article for Rs. 80 and marks it at Rs. 120. He then allows a discount of 25%. What is his gain or loss percent?",
+    Id: 107,
+    option: ["12.5% gain", "12.5% loss", "25% gain", "25% loss"],
+    solution:
+      "Marked price = Rs. 120\nDiscount = 25% of Rs. 120 = Rs. 30\nSelling price = Marked price - Discount = Rs. 120 - Rs. 30 = Rs. 90\nLoss = Cost price - Selling price = Rs. 80 - Rs. 90 = Rs. 10\nLoss percent = (Loss / Cost price) * 100% = (10/80) * 100% = 12.5% loss",
+    trick:
+      "Calculate the selling price after the discount and compare it to the cost price to find the gain or loss percentage.",
+  },
+  {
+    "Answer": 20,
+    "Question": "A man spends 20% of his monthly income on house rent, 25% of the remaining on food, 15% of the remaining on clothes, and 10% of the remaining on education. If he saves Rs. 12600 per month, what is his monthly income?",
+    "Id": 108,
+    "option": [
+      30,
+      40,
+      50,
+      20
+    ],
+    "solution": "Let the monthly income be Rs. 'x'.\nAfter spending on rent, remaining income = x - (20/100) * x = 0.8x\nAfter spending on food, remaining income = 0.8x - (25/100) * 0.8x = 0.6x\nAfter spending on clothes, remaining income = 0.6x - (15/100) * 0.6x = 0.51x\nAfter spending on education, remaining income = 0.51x - (10/100) * 0.51x = 0.459x\nTherefore, 0.459x = Rs. 12600\nx = Rs. 12600 / 0.459 = Rs. 27451 (approximately)",
+    "trick": "Calculate the remaining income step-by-step after each expenditure to find the monthly income."
+  },
+  {
+    "Answer": 30,
+    "Question": "In an examination, 40% of the students failed in Mathematics, 30% failed in English, and 10% failed in both subjects. If 300 students passed in both subjects, find the total number of students.",
+    "Id": 109,
+    "option": [
+      40,
+      42,
+      31,
+      30
+    ],
+    "solution": "Students who failed in Mathematics only = 40% - 10% = 30%\nStudents who failed in English only = 30% - 10% = 20%\nTotal percentage of students who failed = 30% + 20% + 10% = 60%\nPercentage of students who passed in both subjects = 100% - 60% = 40%\nLet the total number of students be 'x'.\n40% of x = 300\n(40/100) * x = 300\nx = 300 * (100/40) = 750\nTherefore, the total number of students is 750.",
+    "trick": "Use a Venn diagram to visualize the different groups of students and their overlaps."
+  },
+  {
+    "Answer": 16.67,
+    "Question": "A person bought two articles for Rs. 1500 each. He sold one at a gain of 20% and the other at a loss of 20%. What is his overall gain or loss percentage in the whole transaction?",
+    "Id": 110,
+    "option": [
+      "No gain, no loss",
+      "16% gain",
+      "26% loss",
+      "16.67"
+    ],
+    "solution": "For the article sold at a gain:\nSelling price = Rs. 1500 + (20/100) * Rs. 1500 = Rs. 1800\nFor the article sold at a loss:\nSelling price = Rs. 1500 - (20/100) * Rs. 1500 = Rs. 1200\nTotal cost price = Rs. 1500 + Rs. 1500 = Rs. 3000\nTotal selling price = Rs. 1800 + Rs. 1200 = Rs. 3000\nSince the total cost price and total selling price are the same, there is no overall gain or loss.",
+    "trick": "Calculate the selling price of each article separately and compare the total cost price with the total selling price."
+  },
+  {
+    "Answer": 20,
+    "Question": "A train covers a certain distance at a uniform speed. If the train had been 6 km/h faster, it would have taken 4 hours less than the scheduled time. And, if the train were slower by 6 km/h, it would have taken 6 hours more than the scheduled time. Find the distance of the journey.",
+    "Id": 111,
+    "option": [
+      6,
+      72,
+      84,
+      "20"
+    ],
+    "solution": "Let the original speed of the train be 's' km/h and the scheduled time be 't' hours.\nDistance = speed * time = s * t\nAccording to the first condition:\ns * t = (s + 6) * (t - 4)\nAccording to the second condition:\ns * t = (s - 6) * (t + 6)\nSolving these two equations, we get s = 30 km/h and t = 24 hours\nTherefore, the distance = s * t = 30 km/h * 24 hours = 720 km",
+    "trick": "This Question involves the concept of speed, time, and distance. Formulate equations based on the given conditions and solve for the distance."
+  },
+  {
+    "Answer": 6.25,
+    "Question": "A shopkeeper sells an article at a discount of 20% and still gains 25% on the cost price. If the marked price of the article is Rs. 625, find the cost price.",
+    "Id": 112,
+    "option": [
+      3.5,
+      4.0,
+      4.5,
+      "6.25"
+    ],
+    "solution": "Selling price = Marked price - Discount = Rs. 625 - (20/100) * Rs. 625 = Rs. 500\nLet the cost price be Rs. 'x'.\nSelling price = Cost price + Profit = x + (25/100) * x = 1.25x\n1.25x = Rs. 500\nx = Rs. 500 / 1.25 = Rs. 400\nTherefore, the cost price is Rs. 400.",
+    "trick": "Work backward from the selling price to the cost price, consIdering both the discount and the profit percentage."
+  },
+  {
+    "Answer": 20,
+    "Question": "A reduction of 10% in the price of wheat enables a person to buy 5 kg more wheat for Rs. 300. What is the reduced price per kg of wheat?",
+    "Id": 113,
+    "option": [
+      12,
+      15,
+      18,
+      20
+    ],
+    "solution": "Let the original price per kg be Rs. 'x'.\nOriginal quantity of wheat bought = 300/x kg\nNew price per kg = x - (10/100) * x = 0.9x\nNew quantity of wheat bought = 300/0.9x kg\nAccording to the problem:\n300/0.9x - 300/x = 5\nSolving for x, we get x = Rs. 60\nTherefore, the reduced price per kg = 0.9x = 0.9 * Rs. 60 = Rs. 54",
+    "trick": "This Question involves calculating the reduced price when a price reduction leads to an increase in quantity."
+  },
+  {
+    "Answer": 25,
+    "Question": "A man bought two articles for Rs. 4000 each. On one, he gains 15% and on the other, he loses 15%. How much does he gain or lose in the whole transaction?",
+    "Id": 114,
+    "option": [
+      "No gain, no loss",
+      "2.25% gain",
+      "2.25% loss",
+      "25"
+    ],
+    "solution": "For the article sold at a gain:\nSelling price = Rs. 4000 + (15/100) * Rs. 4000 = Rs. 4600\nFor the article sold at a loss:\nSelling price = Rs. 4000 - (15/100) * Rs. 4000 = Rs. 3400\nTotal cost price = Rs. 4000 + Rs. 4000 = Rs. 8000\nTotal selling price = Rs. 4600 + Rs. 3400 = Rs. 8000\nSince the total cost price and total selling price are the same, there is no overall gain or loss.",
+    "trick": "Calculate the selling price of each article separately and compare the total cost price with the total selling price."
+  },
+  {
+    "Answer": 11.11,
+    "Question": "A shopkeeper marks his goods 20% above the cost price. He sells 50% of the goods at the marked price, 25% at a discount of 20%, and the remaining 25% at a discount of 40%. What is his overall gain or loss percentage?",
+    "Id": 115,
+    "option": [
+      "10% gain",
+      "10% loss",
+      "11.11",
+      "12.5% loss"
+    ],
+    "solution": "Let the cost price of the goods be $100.\nMarked price = $100 + (20/100) * $100 = $120\nSelling price of 50% of the goods = $120\nSelling price of 25% of the goods = $120 - (20/100) * $120 = $96\nSelling price of the remaining 25% of the goods = $120 - (40/100) * $120 = $72\nTotal selling price = (50/100) * $120 + (25/100) * $96 + (25/100) * $72 = $60 + $24 + $18 = $102\nGain = $102 - $100 = $2\nGain percent = ($2/$100) * 100% = 2% gain",
+    "trick": "This Question combines concepts of markup, discounts, and weighted averages to calculate the overall profit or loss percentage."
   }
-,{
-  "Id": "12",
-  "Section_Five": "Thank You",
-  "Section_Four": "The increasing prevalence of misinformation and disinformation online requires a multi-faceted approach to address this challenge. This includes media literacy education, fact-checking initiatives, and responsible content moderation policies by social media platforms.",
-  "Section_One": "The digital age has ushered in an era of unprecedented access to information. However, this abundance of information also presents challenges, particularly with the spread of misinformation and disinformation online. These false or misleading narratives can have serious consequences, impacting public opinion, influencing elections, and even inciting violence.",
-  "Section_Three": "The spread of misinformation is often amplified by social media algorithms, which prioritize engagement and virality over accuracy. This can create echo chambers where users are primarily exposed to information that confirms their existing biases, further reinforcing false beliefs.",
-  "Section_Two": "One of the key challenges in combating misinformation is the difficulty in distinguishing between genuine mistakes and deliberate attempts to deceive. Additionally, the sheer volume of information online makes it challenging to identify and debunk false narratives effectively.",
-  "Tag": "Medium",
-  "Title": "The Challenge of Misinformation in the Digital Age",
-  "answerOne": "Impacting public opinion, influencing elections, and inciting violence.",
-  "answerTwo": "Difficulty in distinguishing between genuine mistakes and deliberate deception.",
-  "answerThree": "Prioritizing engagement and virality over accuracy.",
-  "createdAt": "December 4, 2024 at 2:00:00 AM UTC+5:30",
-  "question_One": "What are the potential consequences of misinformation and disinformation online?",
-  "question_One_option_One": "Improved public discourse and informed decision-making.",
-  "question_One_option_Two": "Limited impact on individuals and society.",
-  "question_One_option_Three": "Impacting public opinion, influencing elections, and inciting violence.",
-  "question_Two": "What makes it challenging to combat misinformation online?",
-  "question_Two_option_One": "Easy identification and verification of information sources.",
-  "question_Two_option_Two": "Difficulty in distinguishing between genuine mistakes and deliberate deception.",
-  "question_Two_option_Three": "Limited reach and impact of online platforms.",
-  "question_Three": "How do social media algorithms contribute to the spread of misinformation?",
-  "question_Three_option_One": "Promoting critical thinking and diverse perspectives.",
-  "question_Three_option_Two": "Prioritizing engagement and virality over accuracy.",
-  "question_Three_option_Three": "Limiting exposure to biased or misleading information."
-}
-,{
-  "Id": "13",
-  "Section_Five": "Thank You",
-  "Section_Four": "The development and implementation of AI systems require careful consideration of ethical frameworks and guidelines. This includes ensuring fairness, transparency, and accountability in AI algorithms, as well as addressing potential biases and discriminatory outcomes.",
-  "Section_One": "Artificial intelligence (AI) is rapidly advancing, with the potential to revolutionize various industries and aspects of our lives. However, the development and deployment of AI systems also raise ethical concerns that need to be addressed to ensure responsible innovation.",
-  "Section_Three": "One of the key ethical challenges in AI is the potential for bias and discrimination. AI algorithms are trained on data, and if that data reflects existing societal biases, the AI system may perpetuate or even amplify those biases.",
-  "Section_Two": "Another concern is the lack of transparency in some AI systems. Complex algorithms can be difficult to understand, making it challenging to identify and address potential biases or discriminatory outcomes.",
-  "Tag": "Medium",
-  "Title": "Ethical Considerations in Artificial Intelligence",
-  "answerOne": "Potential for bias and discrimination.",
-  "answerTwo": "Lack of transparency in AI algorithms.",
-  "answerThree": "Ensuring fairness, transparency, and accountability.",
-  "createdAt": "December 4, 2024 at 2:30:00 AM UTC+5:30",
-  "question_One": "What is a major ethical concern associated with AI development?",
-  "question_One_option_One": "Improved efficiency and productivity in various industries.",
-  "question_One_option_Two": "Limited impact on human decision-making and societal values.",
-  "question_One_option_Three": "Potential for bias and discrimination.",
-  "question_Two": "Why is transparency important in AI systems?",
-  "question_Two_option_One": "To obscure the decision-making process and protect intellectual property.",
-  "question_Two_option_Two": "Lack of transparency in AI algorithms.",
-  "question_Two_option_Three": "To ensure fairness, accountability, and identify potential biases.",
-  "question_Three": "What measures can be taken to address ethical concerns in AI?",
-  "question_Three_option_One": "Ignoring potential biases and prioritizing efficiency over fairness.",
-  "question_Three_option_Two": "Developing AI systems without ethical frameworks or guidelines.",
-  "question_Three_option_Three": "Ensuring fairness, transparency, and accountability."
-}
-,{
-  "Id": "13",
-  "Section_Five": "Thank You",
-  "Section_Four": "Achieving gender equality requires a multi-faceted approach, including legal reforms, educational initiatives, and addressing social and cultural norms that perpetuate gender stereotypes and discrimination.",
-  "Section_One": "The empowerment of women and girls is essential for achieving social and economic progress. Despite significant strides in recent decades, gender inequality persists in many parts of the world, limiting women's access to education, healthcare, economic opportunities, and political participation.",
-  "Section_Three": "Gender inequality not only affects women but also hinders overall societal development. Empowering women leads to improved health outcomes, increased economic productivity, and more inclusive and representative governance.",
-  "Section_Two": "One of the key challenges in achieving gender equality is addressing deeply ingrained social and cultural norms that perpetuate gender stereotypes and discrimination. These norms often limit women's roles in society and restrict their access to opportunities.",
-  "Tag": "Medium",
-  "Title": "The Importance of Women's Empowerment",
-  "answerOne": "Limited access to education, healthcare, economic opportunities, and political participation.",
-  "answerTwo": "Addressing social and cultural norms that perpetuate gender stereotypes.",
-  "answerThree": "Improved health outcomes, increased economic productivity, and inclusive governance.",
-  "createdAt": "December 4, 2024 at 3:00:00 AM UTC+5:30",
-  "question_One": "What are some of the challenges women face due to gender inequality?",
-  "question_One_option_One": "Equal opportunities and access to resources compared to men.",
-  "question_One_option_Two": "Limited access to education, healthcare, economic opportunities, and political participation.",
-  "question_One_option_Three": "No significant barriers to achieving their full potential.",
-  "question_Two": "What is a key factor in achieving gender equality?",
-  "question_Two_option_One": "Reinforcing traditional gender roles and stereotypes.",
-  "question_Two_option_Two": "Addressing social and cultural norms that perpetuate gender stereotypes.",
-  "question_Two_option_Three": "Restricting women's access to education and healthcare.",
-  "question_Three": "What are the benefits of empowering women?",
-  "question_Three_option_One": "Negative impact on economic growth and societal well-being.",
-  "question_Three_option_Two": "Limited contribution to community development and social progress.",
-  "question_Three_option_Three": "Improved health outcomes, increased economic productivity, and inclusive governance."
-},{
-  "Id": "14",
-  "Section_Five": "Thank You",
-  "Section_Four": "Globalization has led to increased interconnectedness and interdependence among economies worldwide. This has created opportunities for economic growth and development but also requires international cooperation and policies to manage the challenges and ensure equitable benefits.",
-  "Section_One": "The global economy is characterized by increasing interconnectedness and interdependence among nations. Globalization, driven by advancements in technology and transportation, has led to greater trade, investment, and migration flows across borders.",
-  "Section_Three": "One of the key challenges of globalization is managing the uneven distribution of benefits and costs. While some countries and individuals have benefited significantly from increased trade and investment, others have faced job losses and economic disruption.",
-  "Section_Two": "Globalization has also facilitated the rise of global supply chains, where different stages of production are located in different countries. This has led to increased efficiency and lower costs but also raises concerns about labor standards and environmental sustainability.",
-  "Tag": "Medium",
-  "Title": "Globalization and the Global Economy",
-  "answerOne": "Increased trade, investment, and migration flows across borders.",
-  "answerTwo": "Uneven distribution of benefits and costs.",
-  "answerThree": "Concerns about labor standards and environmental sustainability.",
-  "createdAt": "December 4, 2024 at 3:30:00 AM UTC+5:30",
-  "question_One": "What are the main features of globalization?",
-  "question_One_option_One": "Reduced trade and limited interaction between countries.",
-  "question_One_option_Two": "Increased trade, investment, and migration flows across borders.",
-  "question_One_option_Three": "Isolationist policies and economic self-sufficiency.",
-  "question_Two": "What is a major challenge associated with globalization?",
-  "question_Two_option_One": "Equitable distribution of wealth and resources among nations.",
-  "question_Two_option_Two": "Uneven distribution of benefits and costs.",
-  "question_Two_option_Three": "Reduced competition and limited consumer choices.",
-  "question_Three": "What are some concerns related to global supply chains?",
-  "question_Three_option_One": "Improved labor standards and environmental protection.",
-  "question_Three_option_Two": "Reduced reliance on international trade and cooperation.",
-  "question_Three_option_Three": "Concerns about labor standards and environmental sustainability."
-}
-,{
-  "Id": "15",
-  "Section_Five": "Thank You",
-  "Section_Four": "Ensuring free and fair elections requires a multi-faceted approach, including voter education, campaign finance regulations, and independent election monitoring to safeguard the integrity of the democratic process.",
-  "Section_One": "Voting is a fundamental pillar of democracy, providing citizens with the power to choose their leaders and shape the direction of their society. Free and fair elections are essential for ensuring that governments are accountable to the people and that the voices of all citizens are heard.",
-  "Section_Three": "Voter suppression tactics, such as restrictive voter ID laws or limiting polling places, can undermine the democratic process by disenfranchising certain groups of voters. Protecting the right to vote and ensuring equal access to the ballot box is crucial for a healthy democracy.",
-  "Section_Two": "However, the integrity of elections can be threatened by various factors, including voter suppression, misinformation campaigns, and foreign interference. These challenges require vigilance and proactive measures to protect the democratic process.",
-  "Tag": "Medium",
-  "Title": "The Importance of Voting in a Democracy",
-  "answerOne": "Choosing leaders and shaping the direction of society.",
-  "answerTwo": "Voter suppression, misinformation campaigns, and foreign interference.",
-  "answerThree": "Protecting the right to vote and ensuring equal access to the ballot box.",
-  "createdAt": "December 4, 2024 at 4:00:00 AM UTC+5:30",
-  "question_One": "What is the primary purpose of voting in a democracy?",
-  "question_One_option_One": "Limited impact on government policies and societal outcomes.",
-  "question_One_option_Two": "Choosing leaders and shaping the direction of society.",
-  "question_One_option_Three": "A symbolic act with no real influence on decision-making.",
-  "question_Two": "What are some threats to the integrity of elections?",
-  "question_Two_option_One": "Transparent election processes and independent monitoring.",
-  "question_Two_option_Two": "Voter suppression, misinformation campaigns, and foreign interference.",
-  "question_Two_option_Three": "High voter turnout and diverse representation of candidates.",
-  "question_Three": "Why is it important to protect the right to vote?",
-  "question_Three_option_One": "To restrict civic participation and limit citizen influence.",
-  "question_Three_option_Two": "To ensure that only certain groups have a say in government.",
-  "question_Three_option_Three": "Protecting the right to vote and ensuring equal access to the ballot box."
-},{
-  "Id": "16",
-  "Section_Five": "Thank You",
-  "Section_Four": "Managing personal finances effectively requires budgeting, saving, and making informed financial decisions. Financial literacy and access to financial resources are crucial for individuals to achieve their financial goals and build a secure future.",
-  "Section_One": "Money plays a crucial role in our lives, enabling us to purchase goods and services, invest in our future, and provide for our families. Understanding how money works and managing personal finances effectively are essential skills for navigating today's complex economic landscape.",
-  "Section_Three": "However, financial instability and economic inequality can create significant challenges for individuals and families. Access to financial resources and opportunities is not always equitable, and economic downturns can have devastating consequences.",
-  "Section_Two": "The financial system, encompassing banks, investment firms, and government institutions, plays a vital role in facilitating economic activity. It provides mechanisms for saving, borrowing, and investing money, enabling individuals and businesses to participate in the economy.",
-  "Tag": "Medium",
-  "Title": "The Role of Money in Our Lives",
-  "answerOne": "Purchasing goods and services, investing, and providing for families.",
-  "answerTwo": "Financial instability and economic inequality.",
-  "answerThree": "Facilitating economic activity and providing mechanisms for saving, borrowing, and investing.",
-  "createdAt": "December 4, 2024 at 4:30:00 AM UTC+5:30",
-  "question_One": "What are the main functions of money in our lives?",
-  "question_One_option_One": "Limited use in modern society and primarily symbolic.",
-  "question_One_option_Two": "Purchasing goods and services, investing, and providing for families.",
-  "question_One_option_Three": "Only relevant for wealthy individuals and large corporations.",
-  "question_Two": "What are some challenges related to personal finances?",
-  "question_Two_option_One": "Easy access to financial resources and equitable opportunities.",
-  "question_Two_option_Two": "Financial instability and economic inequality.",
-  "question_Two_option_Three": "No significant impact on individual well-being and societal stability.",
-  "question_Three": "What is the role of the financial system in the economy?",
-  "question_Three_option_One": "Hindering economic growth and creating barriers to financial access.",
-  "question_Three_option_Two": "Limited role in facilitating transactions and managing finances.",
-  "question_Three_option_Three": "Facilitating economic activity and providing mechanisms for saving, borrowing, and investing."
-},{
-  "Id": "17",
-  "Section_Five": "Thank You",
-  "Section_Four": "Addressing climate change requires a global effort, with international cooperation and commitments to reduce greenhouse gas emissions, transition to renewable energy sources, and promote sustainable practices.",
-  "Section_One": "Climate change is one of the most pressing challenges facing our planet today. The increasing concentration of greenhouse gases in the atmosphere, primarily due to human activities such as burning fossil fuels, is causing rising global temperatures, extreme weather events, and sea level rise.",
-  "Section_Three": "The impacts of climate change are already being felt worldwide, with more frequent and intense heatwaves, droughts, floods, and storms. These events can disrupt ecosystems, displace communities, and threaten human health and well-being.",
-  "Section_Two": "The scientific consensus is clear that climate change is real, human-caused, and requires urgent action. Transitioning to a low-carbon economy, investing in renewable energy sources, and promoting sustainable practices are crucial steps in mitigating the effects of climate change.",
-  "Tag": "Hard",
-  "Title": "The Urgent Challenge of Climate Change",
-  "answerOne": "Rising global temperatures, extreme weather events, and sea level rise.",
-  "answerTwo": "Transitioning to a low-carbon economy and investing in renewable energy.",
-  "answerThree": "Disrupting ecosystems, displacing communities, and threatening human health.",
-  "createdAt": "December 4, 2024 at 5:00:00 AM UTC+5:30",
-  "question_One": "What are the main effects of climate change?",
-  "question_One_option_One": "Stable climate patterns and no significant environmental impacts.",
-  "question_One_option_Two": "Rising global temperatures, extreme weather events, and sea level rise.",
-  "question_One_option_Three": "Positive impacts on biodiversity and ecosystem health.",
-  "question_Two": "What actions are needed to address climate change?",
-  "question_Two_option_One": "Continuing reliance on fossil fuels and unsustainable practices.",
-  "question_Two_option_Two": "Transitioning to a low-carbon economy and investing in renewable energy.",
-  "question_Two_option_Three": "Ignoring scientific evidence and delaying climate action.",
-  "question_Three": "What are the potential impacts of climate change on human societies?",
-  "question_Three_option_One": "No significant threats to human health or well-being.",
-  "question_Three_option_Two": "Improved living conditions and reduced risks of natural disasters.",
-  "question_Three_option_Three": "Disrupting ecosystems, displacing communities, and threatening human health."
-},{
-  "Id": "18",
-  "Section_Five": "Thank You",
-  "Section_Four": "The future of work is likely to be characterized by increased automation, remote work opportunities, and the need for continuous learning and adaptation to thrive in the evolving job market.",
-  "Section_One": "The nature of work is undergoing a significant transformation, driven by technological advancements, globalization, and changing demographics. Automation, artificial intelligence, and the rise of the gig economy are reshaping the workplace and creating new challenges and opportunities for workers.",
-  "Section_Three": "While technological advancements can increase productivity and create new jobs, they also raise concerns about job displacement and the need for workers to adapt to new skills and industries.",
-  "Section_Two": "The COVID-19 pandemic accelerated the adoption of remote work and highlighted the potential for greater flexibility and work-life balance. However, it also underscored the challenges of managing remote teams and ensuring equitable access to technology and resources.",
-  "Tag": "Hard",
-  "Title": "The Future of Work in a Changing World",
-  "answerOne": "Technological advancements, globalization, and changing demographics.",
-  "answerTwo": "Increased automation, remote work opportunities, and the need for continuous learning.",
-  "answerThree": "Job displacement and the need for workers to adapt to new skills and industries.",
-  "createdAt": "December 4, 2024 at 5:30:00 AM UTC+5:30",
-  "question_One": "What are the main factors driving changes in the nature of work?",
-  "question_One_option_One": "Static work environments and traditional job roles.",
-  "question_One_option_Two": "Technological advancements, globalization, and changing demographics.",
-  "question_One_option_Three": "No significant changes in the workplace or workforce.",
-  "question_Two": "What are some potential trends in the future of work?",
-  "question_Two_option_One": "Decreased automation and limited use of technology in the workplace.",
-  "question_Two_option_Two": "Increased automation, remote work opportunities, and the need for continuous learning.",
-  "question_Two_option_Three": "No need for workers to adapt or acquire new skills.",
-  "question_Three": "What are some challenges associated with the changing nature of work?",
-  "question_Three_option_One": "Improved job security and no risk of job displacement.",
-  "question_Three_option_Two": "Limited impact on workers and the labor market.",
-  "question_Three_option_Three": "Job displacement and the need for workers to adapt to new skills and industries."
-},
-  
-  {
-  "Id": "19",
-  "Section_Five": "Thank You",
-  "Section_Four": "Balancing the benefits of globalization with its potential drawbacks requires international cooperation, fair trade practices, and policies that protect workers' rights and promote sustainable development.",
-  "Section_One": "Globalization, the increasing interconnectedness of economies and societies worldwide, has brought about significant changes in the way we live, work, and interact with each other. It has led to greater trade, investment, and cultural exchange, but also raised concerns about its impact on jobs, inequality, and the environment.",
-  "Section_Three": "One of the main criticisms of globalization is that it can lead to job losses in developed countries as companies relocate manufacturing to countries with lower labor costs. This can exacerbate income inequality and social tensions.",
-  "Section_Two": "Supporters of globalization argue that it has led to increased economic growth, lower prices for consumers, and greater access to goods and services. They also point to the potential for globalization to promote cultural understanding and cooperation between nations.",
-  "Tag": "Hard",
-  "Title": "The Complexities of Globalization",
-  "answerOne": "Increased trade, investment, and cultural exchange.",
-  "answerTwo": "Job losses in developed countries and income inequality.",
-  "answerThree": "Economic growth, lower prices for consumers, and greater access to goods and services.",
-  "createdAt": "December 4, 2024 at 6:00:00 AM UTC+5:30",
-  "question_One": "What are the main features of globalization?",
-  "question_One_option_One": "Reduced trade and limited interaction between countries.",
-  "question_One_option_Two": "Increased trade, investment, and cultural exchange.",
-  "question_One_option_Three": "Isolationist policies and economic self-sufficiency.",
-  "question_Two": "What are some criticisms of globalization?",
-  "question_Two_option_One": "Equitable distribution of wealth and reduced income inequality.",
-  "question_Two_option_Two": "Job losses in developed countries and income inequality.",
-  "question_Two_option_Three": "Environmental protection and sustainable development.",
-  "question_Three": "What are some potential benefits of globalization?",
-  "question_Three_option_One": "Increased poverty and limited access to goods and services.",
-  "question_Three_option_Two": "Economic stagnation and reduced competition.",
-  "question_Three_option_Three": "Economic growth, lower prices for consumers, and greater access to goods and services."
-},{
-  "Id": "20",
-  "Section_Five": "Thank You",
-  "Section_Four": "The responsible development and use of artificial intelligence require ongoing dialogue and collaboration among researchers, policymakers, and the public to ensure that AI benefits society and minimizes potential risks.",
-  "Section_One": "Artificial intelligence (AI) is rapidly advancing, with the potential to revolutionize various industries and aspects of our lives. However, the development and deployment of AI systems also raise ethical and societal concerns that need to be addressed.",
-  "Section_Three": "One of the key challenges in AI development is ensuring fairness and avoiding bias in algorithms. AI systems are trained on data, and if that data reflects existing societal biases, the AI system may perpetuate or even amplify those biases.",
-  "Section_Two": "Another concern is the impact of AI on employment. As AI systems become more sophisticated, they may automate tasks previously performed by humans, leading to job displacement and the need for workforce adaptation.",
-  "Tag": "Hard",
-  "Title": "The Ethical and Societal Implications of AI",
-  "answerOne": "Potential for bias and discrimination in algorithms.",
-  "answerTwo": "Impact on employment and the need for workforce adaptation.",
-  "answerThree": "Ensuring fairness, transparency, and accountability in AI development.",
-  "createdAt": "December 4, 2024 at 6:30:00 AM UTC+5:30",
-  "question_One": "What is a major ethical concern related to AI development?",
-  "question_One_option_One": "Improved efficiency and productivity in various industries.",
-  "question_One_option_Two": "Limited impact on human decision-making and societal values.",
-  "question_One_option_Three": "Potential for bias and discrimination in algorithms.",
-  "question_Two": "How might AI impact employment?",
-  "question_Two_option_One": "Creating more jobs and reducing unemployment rates.",
-  "question_Two_option_Two": "Impact on employment and the need for workforce adaptation.",
-  "question_Two_option_Three": "No significant impact on the labor market or workforce skills.",
-  "question_Three": "What measures can be taken to address the societal implications of AI?",
-  "question_Three_option_One": "Ignoring potential biases and prioritizing efficiency over fairness.",
-  "question_Three_option_Two": "Developing AI systems without ethical frameworks or guidelines.",
-  "question_Three_option_Three": "Ensuring fairness, transparency, and accountability in AI development."
-},{
-  "Id": "21",
-  "Section_Five": "Thank You",
-  "Section_Four": "Promoting environmental sustainability requires a combination of individual and collective action. This includes adopting sustainable practices in our daily lives, supporting businesses and organizations committed to sustainability, and advocating for policies that protect our planet.",
-  "Section_One": "Environmental sustainability is becoming increasingly critical as we face the challenges of climate change, resource depletion, and pollution. It is about meeting the needs of the present without compromising the ability of future generations to meet their own needs.",
-  "Section_Three": "Environmental degradation can have significant social and economic consequences, including health problems, food insecurity, and displacement of communities. Protecting our environment is essential for ensuring a healthy and prosperous future for all.",
-  "Section_Two": "Sustainable practices, such as reducing waste, conserving energy, and protecting biodiversity, are crucial for preserving our planet's resources and ensuring a livable future. Individuals, businesses, and governments all have a role to play in promoting environmental sustainability.",
-  "Tag": "Hard",
-  "Title": "The Importance of Environmental Sustainability",
-  "answerOne": "Climate change, resource depletion, and pollution.",
-  "answerTwo": "Reducing waste, conserving energy, and protecting biodiversity.",
-  "answerThree": "Health problems, food insecurity, and displacement of communities.",
-  "createdAt": "December 4, 2024 at 7:00:00 AM UTC+5:30",
-  "question_One": "What are some of the main environmental challenges facing our planet?",
-  "question_One_option_One": "Abundant resources and no significant environmental threats.",
-  "question_One_option_Two": "Climate change, resource depletion, and pollution.",
-  "question_One_option_Three": "Positive impacts on ecosystems and biodiversity.",
-  "question_Two": "What are some examples of sustainable practices?",
-  "question_Two_option_One": "Wasting resources and polluting the environment.",
-  "question_Two_option_Two": "Reducing waste, conserving energy, and protecting biodiversity.",
-  "question_Two_option_Three": "Ignoring environmental issues and prioritizing short-term gains.",
-  "question_Three": "What are the potential consequences of environmental degradation?",
-  "question_Three_option_One": "Improved public health and enhanced quality of life.",
-  "question_Three_option_Two": "No significant impact on human societies or economies.",
-  "question_Three_option_Three": "Health problems, food insecurity, and displacement of communities."
-},
-{
-  "Id": "22",
-  "Section_Five": "Thank You",
-  "Section_Four": "Maintaining a healthy work-life balance requires setting boundaries, prioritizing well-being, and making conscious choices about how we spend our time and energy.",
-  "Section_One": "In today's fast-paced world, achieving a healthy work-life balance can be a significant challenge. The demands of work, family, and personal commitments can often leave individuals feeling overwhelmed and stressed.",
-  "Section_Three": "Technology can blur the lines between work and personal life, making it difficult to disconnect and recharge. Setting boundaries and prioritizing self-care are essential for maintaining a healthy work-life balance in the digital age.",
-  "Section_Two": "A healthy work-life balance is essential for both physical and mental well-being. It can lead to reduced stress, improved productivity, and greater overall happiness and satisfaction.",
-  "Tag": "Medium",
-  "Title": "The Importance of Work-Life Balance",
-  "answerOne": "Demands of work, family, and personal commitments.",
-  "answerTwo": "Reduced stress, improved productivity, and greater happiness.",
-  "answerThree": "Setting boundaries and prioritizing self-care.",
-  "createdAt": "December 4, 2024 at 7:30:00 AM UTC+5:30",
-  "question_One": "What are some challenges to achieving a healthy work-life balance?",
-  "question_One_option_One": "Limited work responsibilities and ample free time.",
-  "question_One_option_Two": "Demands of work, family, and personal commitments.",
-  "question_One_option_Three": "No significant impact on stress levels or well-being.",
-  "question_Two": "What are the benefits of a healthy work-life balance?",
-  "question_Two_option_One": "Increased stress and reduced productivity.",
-  "question_Two_option_Two": "Reduced stress, improved productivity, and greater happiness.",
-  "question_Two_option_Three": "Negative impact on physical and mental health.",
-  "question_Three": "How can individuals maintain a healthy work-life balance in the digital age?",
-  "question_Three_option_One": "Allowing technology to blur the lines between work and personal life.",
-  "question_Three_option_Two": "Ignoring self-care and prioritizing work over everything else.",
-  "question_Three_option_Three": "Setting boundaries and prioritizing self-care."
-},{
-  "Id": "23",
-  "Section_Five": "Thank You",
-  "Section_Four": "The benefits of physical activity extend beyond physical health, impacting mental well-being, cognitive function, and overall quality of life. Making regular exercise a part of our lifestyle is crucial for maintaining a healthy and fulfilling life.",
-  "Section_One": "Physical activity is essential for maintaining a healthy lifestyle. Regular exercise has numerous benefits, including reducing the risk of chronic diseases, improving cardiovascular health, and strengthening muscles and bones.",
-  "Section_Three": "Despite the well-established benefits of exercise, many people struggle to incorporate regular physical activity into their lives. Sedentary lifestyles, long working hours, and lack of access to recreational facilities can be barriers to an active lifestyle.",
-  "Section_Two": "Physical activity can also improve mental health by reducing stress, anxiety, and depression. Exercise can boost mood, enhance self-esteem, and improve sleep quality.",
-  "Tag": "Medium",
-  "Title": "The Importance of Physical Activity",
-  "answerOne": "Reducing the risk of chronic diseases, improving cardiovascular health, and strengthening muscles and bones.",
-  "answerTwo": "Reducing stress, anxiety, and depression, and improving mood and sleep quality.",
-  "answerThree": "Sedentary lifestyles, long working hours, and lack of access to recreational facilities.",
-  "createdAt": "December 4, 2024 at 8:00:00 AM UTC+5:30",
-  "question_One": "What are the physical health benefits of regular exercise?",
-  "question_One_option_One": "Increased risk of chronic diseases and weakened muscles and bones.",
-  "question_One_option_Two": "Reducing the risk of chronic diseases, improving cardiovascular health, and strengthening muscles and bones.",
-  "question_One_option_Three": "No significant impact on physical health or well-being.",
-  "question_Two": "How does physical activity benefit mental health?",
-  "question_Two_option_One": "Increasing stress, anxiety, and depression, and disrupting sleep patterns.",
-  "question_Two_option_Two": "Reducing stress, anxiety, and depression, and improving mood and sleep quality.",
-  "question_Two_option_Three": "No significant impact on mental health or emotional well-being.",
-  "question_Three": "What are some barriers to an active lifestyle?",
-  "question_Three_option_One": "Easy access to recreational facilities and ample free time.",
-  "question_Three_option_Two": "Sedentary lifestyles, long working hours, and lack of access to recreational facilities.",
-  "question_Three_option_Three": "No significant challenges to incorporating exercise into daily routines."
-}
-,{
-  "Id": "24",
-  "Section_Five": "Thank You",
-  "Section_Four": "The responsible use of social media requires critical thinking, media literacy skills, and a commitment to ethical online behavior. By fostering a culture of respect, empathy, and accountability, we can harness the positive potential of social media while mitigating its risks.",
-  "Section_One": "Social media has become an integral part of our lives, connecting people across the globe and providing platforms for communication, information sharing, and social interaction. However, the widespread use of social media also presents challenges, including concerns about online privacy, cyberbullying, and the spread of misinformation.",
-  "Section_Three": "The anonymity and ease of information sharing on social media can contribute to the spread of harmful content, such as hate speech and online harassment. This can have detrimental effects on individuals and communities, creating a toxic online environment.",
-  "Section_Two": "Social media can also be a powerful tool for social and political activism, enabling individuals to connect, organize, and advocate for change. However, it is important to be mindful of the potential for echo chambers and filter bubbles, where users are primarily exposed to information that confirms their existing biases.",
-  "Tag": "Hard",
-  "Title": "The Impact of Social Media on Society",
-  "answerOne": "Connecting people, facilitating communication, and information sharing.",
-  "answerTwo": "Online privacy concerns, cyberbullying, and the spread of misinformation.",
-  "answerThree": "Social and political activism, but also potential for echo chambers and filter bubbles.",
-  "createdAt": "December 4, 2024 at 8:30:00 AM UTC+5:30",
-  "question_One": "What are the main functions of social media platforms?",
-  "question_One_option_One": "Limited to entertainment and leisure activities.",
-  "question_One_option_Two": "Connecting people, facilitating communication, and information sharing.",
-  "question_One_option_Three": "Primarily used for academic research and professional networking.",
-  "question_Two": "What are some of the negative aspects associated with social media?",
-  "question_Two_option_One": "Increased social interaction and community building.",
-  "question_Two_option_Two": "Online privacy concerns, cyberbullying, and the spread of misinformation.",
-  "question_Two_option_Three": "Improved access to information and diverse perspectives.",
-  "question_Three": "How can social media be used for positive change?",
-  "question_Three_option_One": "Promoting hate speech and online harassment.",
-  "question_Three_option_Two": "Creating echo chambers and reinforcing biases.",
-  "question_Three_option_Three": "Social and political activism, but also potential for echo chambers and filter bubbles."
-}
-,
-{
-  "Id": "25",
-  "Section_Five": "Thank You",
-  "Section_Four": "The responsible development and use of biotechnology require careful consideration of ethical implications, potential risks, and societal impact. Open dialogue and collaboration among scientists, policymakers, and the public are crucial for ensuring that biotechnology is used for the benefit of humanity and the planet.",
-  "Section_One": "Biotechnology is a rapidly evolving field with the potential to address some of the world's most pressing challenges, including food security, disease, and environmental degradation. From genetically modified crops and personalized medicine to biofuels and bioremediation, biotechnology offers innovative solutions to complex problems.",
-  "Section_Three": "However, the advancement of biotechnology also raises ethical concerns and societal questions. Gene editing technologies, such as CRISPR-Cas9, raise questions about the ethics of modifying human genes and the potential for unintended consequences.",
-  "Section_Two": "The use of biotechnology in agriculture has led to increased crop yields and reduced reliance on pesticides, but also raised concerns about the environmental impact of genetically modified organisms (GMOs) and the potential for corporate control of the food supply.",
-  "Tag": "Hard",
-  "Title": "The Promise and Challenges of Biotechnology",
-  "answerOne": "Addressing food security, disease, and environmental degradation.",
-  "answerTwo": "Ethical concerns about gene editing and the environmental impact of GMOs.",
-  "answerThree": "Increased crop yields and reduced reliance on pesticides.",
-  "createdAt": "December 4, 2024 at 11:00:00 AM UTC+5:30",
-  "question_One": "What are some potential applications of biotechnology?",
-  "question_One_option_One": "Limited applications and no significant impact on society.",
-  "question_One_option_Two": "Addressing food security, disease, and environmental degradation.",
-  "question_One_option_Three": "Primarily used for entertainment and leisure activities.",
-  "question_Two": "What are some ethical and societal concerns related to biotechnology?",
-  "question_Two_option_One": "No ethical concerns or potential risks associated with biotechnology.",
-  "question_Two_option_Two": "Ethical concerns about gene editing and the environmental impact of GMOs.",
-  "question_Two_option_Three": "No impact on food security or the environment.",
-  "question_Three": "What are some potential benefits of biotechnology in agriculture?",
-  "question_Three_option_One": "Reduced crop yields and increased reliance on pesticides.",
-  "question_Three_option_Two": "Negative impact on food security and environmental sustainability.",
-  "question_Three_option_Three": "Increased crop yields and reduced reliance on pesticides."
-}
+];
 
-,{
-  "Id": "26",
-  "Section_Five": "Thank You",
-  "Section_Four": "Addressing the challenges of urbanization requires sustainable planning, investment in infrastructure, and policies that promote social inclusion and environmental protection. By creating more livable, resilient, and equitable cities, we can ensure a better future for urban populations and the planet.",
-  "Section_One": "Urbanization, the increasing concentration of human populations in cities, is a global trend with significant social, economic, and environmental implications. Cities are centers of innovation, culture, and economic activity, but also face challenges such as overcrowding, poverty, and pollution.",
-  "Section_Three": "The rapid growth of cities can strain resources and infrastructure, leading to challenges in providing adequate housing, transportation, and sanitation. Urban planning and investment in sustainable infrastructure are crucial for creating livable and resilient cities.",
-  "Section_Two": "Urbanization can also exacerbate social inequalities, with disparities in access to education, healthcare, and economic opportunities. Promoting social inclusion and addressing poverty are essential for ensuring that the benefits of urbanization are shared by all.",
-  "Tag": "Hard",
-  "Title": "The Challenges and Opportunities of Urbanization",
-  "answerOne": "Overcrowding, poverty, and pollution.",
-  "answerTwo": "Strained resources, inadequate infrastructure, and social inequalities.",
-  "answerThree": "Sustainable planning, investment in infrastructure, and social inclusion policies.",
-  "createdAt": "December 4, 2024 at 11:30:00 AM UTC+5:30",
-  "question_One": "What are some challenges associated with urbanization?",
-  "question_One_option_One": "No significant challenges or negative impacts associated with urbanization.",
-  "question_One_option_Two": "Overcrowding, poverty, and pollution.",
-  "question_One_option_Three": "Improved living conditions and reduced environmental impact.",
-  "question_Two": "What are some consequences of rapid urban growth?",
-  "question_Two_option_One": "Abundant resources and adequate infrastructure to meet the needs of the population.",
-  "question_Two_option_Two": "Strained resources, inadequate infrastructure, and social inequalities.",
-  "question_Two_option_Three": "Reduced poverty and improved social inclusion.",
-  "question_Three": "How can the challenges of urbanization be addressed?",
-  "question_Three_option_One": "Ignoring urban planning and neglecting infrastructure development.",
-  "question_Three_option_Two": "Sustainable planning, investment in infrastructure, and social inclusion policies.",
-  "question_Three_option_Three": "Promoting unsustainable practices and neglecting environmental protection."
-},{
-  "Id": "27",
-  "Section_Five": "Thank You",
-  "Section_Four": "Promoting sustainable economic growth requires a balance between market forces and government intervention, with policies that encourage innovation, invest in education and infrastructure, and address income inequality.",
-  "Section_One": "Economic growth is a key driver of improved living standards, job creation, and social progress. It refers to an increase in the production of goods and services over time, typically measured by changes in Gross Domestic Product (GDP).",
-  "Section_Three": "However, economic growth can also lead to environmental degradation and social inequalities if not managed sustainably. Policies that promote environmental protection, social inclusion, and equitable distribution of resources are essential for ensuring that economic growth benefits all members of society.",
-  "Section_Two": "Factors that contribute to economic growth include technological advancements, investment in human capital, and sound macroeconomic policies. Innovation, education, and infrastructure development are crucial for fostering a dynamic and productive economy.",
-  "Tag": "Medium",
-  "Title": "The Importance of Economic Growth",
-  "answerOne": "Improved living standards, job creation, and social progress.",
-  "answerTwo": "Technological advancements, investment in human capital, and sound macroeconomic policies.",
-  "answerThree": "Environmental degradation and social inequalities.",
-  "createdAt": "December 4, 2024 at 02:15:00 AM UTC+5:30",
-  "question_One": "What are the benefits of economic growth?",
-  "question_One_option_One": "Reduced living standards and increased unemployment.",
-  "question_One_option_Two": "Improved living standards, job creation, and social progress.",
-  "question_One_option_Three": "No significant impact on society or individual well-being.",
-  "question_Two": "What factors contribute to economic growth?",
-  "question_Two_option_One": "Technological stagnation and lack of investment in human capital.",
-  "question_Two_option_Two": "Technological advancements, investment in human capital, and sound macroeconomic policies.",
-  "question_Two_option_Three": "Unsustainable practices and disregard for environmental protection.",
-  "question_Three": "What are some potential drawbacks of economic growth?",
-  "question_Three_option_One": "Environmental protection and social inclusion.",
-  "question_Three_option_Two": "Environmental degradation and social inequalities.",
-  "question_Three_option_Three": "No negative impacts on the environment or society."
-},{
-  "Id": "28",
-  "Section_Five": "Thank You",
-  "Section_Four": "Managing inflation requires careful monetary policy, including controlling the money supply and interest rates, as well as fiscal policies that address underlying economic imbalances.",
-  "Section_One": "Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. When prices rise, each unit of currency buys fewer goods and services; consequently, inflation reflects a reduction in the purchasing power per unit of money – a loss of real value in the medium of exchange and unit of account within the economy.",
-  "Section_Three": "High inflation can erode the value of savings, distort investment decisions, and create economic instability. It can disproportionately affect low-income households and those on fixed incomes, as their purchasing power is diminished.",
-  "Section_Two": "Inflation can be caused by various factors, including increased demand for goods and services, supply chain disruptions, and rising energy prices. Central banks play a key role in managing inflation through monetary policy.",
-  "Tag": "Hard",
-  "Title": "Understanding Inflation and Its Impact",
-  "answerOne": "Reduction in the purchasing power of money.",
-  "answerTwo": "Increased demand, supply chain disruptions, and rising energy prices.",
-  "answerThree": "Erosion of savings, distorted investment decisions, and economic instability.",
-  "createdAt": "December 4, 2024 at 02:45:00 AM UTC+5:30",
-  "question_One": "What is the primary effect of inflation?",
-  "question_One_option_One": "Increased purchasing power of money.",
-  "question_One_option_Two": "Reduction in the purchasing power of money.",
-  "question_One_option_Three": "No impact on the value of money or purchasing power.",
-  "question_Two": "What are some causes of inflation?",
-  "question_Two_option_One": "Decreased demand and oversupply of goods and services.",
-  "question_Two_option_Two": "Increased demand, supply chain disruptions, and rising energy prices.",
-  "question_Two_option_Three": "Stable prices and no fluctuations in the economy.",
-  "question_Three": "What are the potential consequences of high inflation?",
-  "question_Three_option_One": "Increased value of savings and improved economic stability.",
-  "question_Three_option_Two": "Erosion of savings, distorted investment decisions, and economic instability.",
-  "question_Three_option_Three": "No negative impact on individuals or the economy."
-},{
-  "Id": "29",
-  "Section_Five": "Thank You",
-  "Section_Four": "International trade plays a crucial role in the global economy, fostering economic growth, increasing efficiency, and promoting cooperation among nations. However, it also requires careful management and fair trade practices to ensure equitable benefits and minimize negative impacts.",
-  "Section_One": "International trade refers to the exchange of goods and services between countries. It has been a driving force of economic growth and development for centuries, allowing countries to specialize in the production of goods and services in which they have a comparative advantage.",
-  "Section_Three": "However, international trade can also lead to job losses in certain industries and increased competition for domestic businesses. It is important for governments to implement policies that support workers and businesses affected by trade liberalization.",
-  "Section_Two": "International trade can lead to lower prices for consumers, greater access to a wider variety of goods and services, and increased efficiency through specialization. It can also foster cooperation and interdependence among nations.",
-  "Tag": "Medium",
-  "Title": "The Role of International Trade",
-  "answerOne": "Exchange of goods and services between countries.",
-  "answerTwo": "Lower prices, greater access to goods and services, and increased efficiency.",
-  "answerThree": "Job losses in certain industries and increased competition.",
-  "createdAt": "December 4, 2024 at 03:15:00 AM UTC+5:30",
-  "question_One": "What is international trade?",
-  "question_One_option_One": "Limited exchange of goods and services between countries.",
-  "question_One_option_Two": "Exchange of goods and services between countries.",
-  "question_One_option_Three": "No impact on economic growth or development.",
-  "question_Two": "What are some potential benefits of international trade?",
-  "question_Two_option_One": "Higher prices and limited access to goods and services.",
-  "question_Two_option_Two": "Lower prices, greater access to goods and services, and increased efficiency.",
-  "question_Two_option_Three": "No impact on consumer prices or product variety.",
-  "question_Three": "What are some potential drawbacks of international trade?",
-  "question_Three_option_One": "Job creation and economic growth in all industries.",
-  "question_Three_option_Two": "Job losses in certain industries and increased competition.",
-  "question_Three_option_Three": "No impact on domestic businesses or employment."
-},
-  {
-  "Id": "30",
-  "Section_Five": "Thank You",
-  "Section_Four": "Addressing income inequality requires a multi-faceted approach, including progressive taxation, investment in education and social safety nets, and policies that promote fair wages and labor standards.",
-  "Section_One": "Income inequality refers to the unequal distribution of income and wealth among individuals and households within a society. It is a complex issue with social, economic, and political implications.",
-  "Section_Three": "High levels of income inequality can lead to social unrest, reduced economic mobility, and slower economic growth. It can also undermine social cohesion and trust in institutions.",
-  "Section_Two": "Causes of income inequality include technological advancements, globalization, declining unionization, and regressive tax policies. Addressing income inequality requires a combination of policies that promote fair wages, invest in education and skills training, and provide social safety nets for vulnerable populations.",
-  "Tag": "Hard",
-  "Title": "The Challenge of Income Inequality",
-  "answerOne": "Unequal distribution of income and wealth within a society.",
-  "answerTwo": "Technological advancements, globalization, declining unionization, and regressive tax policies.",
-  "answerThree": "Social unrest, reduced economic mobility, and slower economic growth.",
-  "createdAt": "December 4, 2024 at 03:45:00 AM UTC+5:30",
-  "question_One": "What is income inequality?",
-  "question_One_option_One": "Equal distribution of income and wealth among individuals.",
-  "question_One_option_Two": "Unequal distribution of income and wealth within a society.",
-  "question_One_option_Three": "No significant disparities in income or wealth distribution.",
-  "question_Two": "What are some causes of income inequality?",
-  "question_Two_option_One": "Progressive taxation and strong labor unions.",
-  "question_Two_option_Two": "Technological advancements, globalization, declining unionization, and regressive tax policies.",
-  "question_Two_option_Three": "Policies that promote fair wages and social mobility.",
-  "question_Three": "What are the potential consequences of high income inequality?",
-  "question_Three_option_One": "Social cohesion and increased economic mobility.",
-  "question_Three_option_Two": "Social unrest, reduced economic mobility, and slower economic growth.",
-  "question_Three_option_Three": "No negative impact on society or the economy."
-},{
-  "Id": "31",
-  "Section_Five": "Thank You",
-  "Section_Four": "The future of the global economy is likely to be shaped by technological advancements, demographic shifts, and the evolving geopolitical landscape. Adapting to these changes and promoting sustainable and inclusive growth will be crucial for ensuring prosperity and stability in the years to come.",
-  "Section_One": "The global economy is constantly evolving, shaped by a complex interplay of factors such as technological advancements, demographic shifts, and geopolitical events. Understanding these trends and their potential impact is crucial for navigating the challenges and opportunities of the 21st century.",
-  "Section_Three": "The rise of emerging markets, such as China and India, is shifting the balance of economic power and creating new opportunities for trade and investment. However, it also raises concerns about competition, resource scarcity, and environmental sustainability.",
-  "Section_Two": "Technological advancements, such as artificial intelligence and automation, are transforming industries and creating new jobs while also raising concerns about job displacement and the need for workforce adaptation.",
-  "Tag": "Hard",
-  "Title": "The Evolving Global Economy",
-  "answerOne": "Technological advancements, demographic shifts, and geopolitical events.",
-  "answerTwo": "Shifting balance of economic power and new opportunities for trade and investment.",
-  "answerThree": "Job displacement and the need for workforce adaptation.",
-  "createdAt": "December 4, 2024 at 04:15:00 AM UTC+5:30",
-  "question_One": "What are the main factors shaping the global economy?",
-  "question_One_option_One": "Static economic conditions and no significant global trends.",
-  "question_One_option_Two": "Technological advancements, demographic shifts, and geopolitical events.",
-  "question_One_option_Three": "Isolationist policies and reduced international trade.",
-  "question_Two": "What is the impact of the rise of emerging markets?",
-  "question_Two_option_One": "Declining economic power of emerging markets and limited trade opportunities.",
-  "question_Two_option_Two": "Shifting balance of economic power and new opportunities for trade and investment.",
-  "question_Two_option_Three": "No impact on the global economy or international trade.",
-  "question_Three": "What are some challenges associated with technological advancements in the economy?",
-  "question_Three_option_One": "No impact on employment or the workforce.",
-  "question_Three_option_Two": "Job displacement and the need for workforce adaptation.",
-  "question_Three_option_Three": "Reduced productivity and economic stagnation."
-},{
-  "Id": "32",
-  "Section_Five": "Thank You",
-  "Section_Four": "The role of government in the economy is a subject of ongoing debate, with varying perspectives on the appropriate level of intervention. However, there is a general consensus that governments have a role to play in providing public goods, regulating markets, and ensuring economic stability.",
-  "Section_One": "The role of government in the economy is a complex and multifaceted issue. Governments can influence economic activity through various policies, including taxation, spending, and regulation. The appropriate level of government intervention in the economy is a subject of ongoing debate among economists and policymakers.",
-  "Section_Three": "Some argue that government intervention can stifle innovation and distort market forces, while others contend that it is necessary to correct market failures, provide public goods, and ensure a stable and equitable economic environment.",
-  "Section_Two": "Governments play a crucial role in providing public goods, such as infrastructure, education, and healthcare, which are essential for economic growth and social well-being. They also regulate markets to protect consumers, ensure fair competition, and prevent monopolies.",
-  "Tag": "Hard",
-  "Title": "The Role of Government in the Economy",
-  "answerOne": "Influencing economic activity through taxation, spending, and regulation.",
-  "answerTwo": "Providing public goods, regulating markets, and ensuring economic stability.",
-  "answerThree": "Stifling innovation and distorting market forces versus correcting market failures and ensuring equity.",
-  "createdAt": "December 4, 2024 at 04:45:00 AM UTC+5:30",
-  "question_One": "How can governments influence economic activity?",
-  "question_One_option_One": "No influence on economic activity or market forces.",
-  "question_One_option_Two": "Influencing economic activity through taxation, spending, and regulation.",
-  "question_One_option_Three": "Limited role in providing public goods or regulating markets.",
-  "question_Two": "What are some key roles of government in the economy?",
-  "question_Two_option_One": "No role in providing public goods or regulating markets.",
-  "question_Two_option_Two": "Providing public goods, regulating markets, and ensuring economic stability.",
-  "question_Two_option_Three": "Hindering economic growth and creating market inefficiencies.",
-  "question_Three": "What are the differing perspectives on government intervention in the economy?",
-  "question_Three_option_One": "No debate or differing perspectives on government intervention.",
-  "question_Three_option_Two": "Stifling innovation and distorting market forces versus correcting market failures and ensuring equity.",
-  "question_Three_option_Three": "Universal agreement on the appropriate level of government intervention."
-}
-,{
-  "Id": "33",
-  "Section_Five": "Thank You",
-  "Section_Four": "The choice between a fixed exchange rate and a floating exchange rate regime depends on a country's specific economic circumstances and policy objectives. Each system has its own advantages and disadvantages in terms of stability, flexibility, and policy autonomy.",
-  "Section_One": "An exchange rate is the price of one currency in terms of another currency. Exchange rates can be fixed, where the government maintains a specific exchange rate, or floating, where the exchange rate is determined by market forces.",
-  "Section_Three": "A fixed exchange rate can provide stability and predictability for international trade and investment, but it can also limit a country's ability to respond to economic shocks. A floating exchange rate allows for greater flexibility and policy autonomy, but it can also lead to volatility and uncertainty.",
-  "Section_Two": "The choice of an exchange rate regime is an important policy decision with implications for a country's economic performance. It can affect trade, investment, inflation, and economic growth.",
-  "Tag": "Hard",
-  "Title": "Understanding Exchange Rates",
-  "answerOne": "Price of one currency in terms of another currency.",
-  "answerTwo": "Stability and predictability for trade versus flexibility and policy autonomy.",
-  "answerThree": "Trade, investment, inflation, and economic growth.",
-  "createdAt": "December 4, 2024 at 05:15:00 AM UTC+5:30",
-  "question_One": "What is an exchange rate?",
-  "question_One_option_One": "The value of a currency in terms of goods and services.",
-  "question_One_option_Two": "Price of one currency in terms of another currency.",
-  "question_One_option_Three": "The interest rate set by the central bank.",
-  "question_Two": "What are the advantages and disadvantages of different exchange rate regimes?",
-  "question_Two_option_One": "No significant differences between fixed and floating exchange rates.",
-  "question_Two_option_Two": "Stability and predictability for trade versus flexibility and policy autonomy.",
-  "question_Two_option_Three": "Both fixed and floating exchange rates have the same impact on the economy.",
-  "question_Three": "How can exchange rates affect the economy?",
-  "question_Three_option_One": "No impact on trade, investment, or economic growth.",
-  "question_Three_option_Two": "Trade, investment, inflation, and economic growth.",
-  "question_Three_option_Three": "Limited impact on economic performance."
-},{
-  "Id": "34",
-  "Section_Five": "Thank You",
-  "Section_Four": "The economic impact of immigration is a complex issue with varying perspectives. However, there is evidence to suggest that immigration can contribute to economic growth, innovation, and fiscal sustainability, while also posing challenges for certain sectors and communities.",
-  "Section_One": "Immigration, the movement of people from one country to another, has been a significant force shaping economies and societies throughout history. The economic impact of immigration is a complex issue with both potential benefits and challenges.",
-  "Section_Three": "Immigrants can bring new skills and ideas, fill labor shortages in certain sectors, and contribute to innovation and entrepreneurship. They can also increase consumer demand and contribute to the tax base.",
-  "Section_Two": "However, immigration can also lead to increased competition for jobs in certain sectors and put pressure on public services such as education and healthcare. It is important for governments to manage immigration flows and implement policies that promote integration and address potential challenges.",
-  "Tag": "Hard",
-  "Title": "The Economic Impact of Immigration",
-  "answerOne": "Movement of people from one country to another.",
-  "answerTwo": "Contributing to economic growth, innovation, and fiscal sustainability.",
-  "answerThree": "Increased competition for jobs and pressure on public services.",
-  "createdAt": "December 4, 2024 at 05:45:00 AM UTC+5:30",
-  "question_One": "What is immigration?",
-  "question_One_option_One": "Limited movement of people between countries.",
-  "question_One_option_Two": "Movement of people from one country to another.",
-  "question_One_option_Three": "No impact on economies or societies.",
-  "question_Two": "What are some potential benefits of immigration?",
-  "question_Two_option_One": "Negative impact on economic growth and innovation.",
-  "question_Two_option_Two": "Contributing to economic growth, innovation, and fiscal sustainability.",
-  "question_Two_option_Three": "Reduced labor supply and decreased consumer demand.",
-  "question_Three": "What are some potential challenges associated with immigration?",
-  "question_Three_option_One": "No impact on labor markets or public services.",
-  "question_Three_option_Two": "Increased competition for jobs and pressure on public services.",
-  "question_Three_option_Three": "Improved social cohesion and reduced inequality."
-},{
-  "Id": "35",
-  "Section_Five": "Thank You",
-  "Section_Four": "Understanding the economic impact of technological change requires a nuanced approach that considers both the potential benefits and challenges. Policies that promote innovation, invest in education and training, and support workers and communities affected by technological disruption are crucial for ensuring a smooth transition and maximizing the benefits of technological progress.",
-  "Section_One": "Technological change has been a driving force of economic growth and productivity improvements throughout history. However, it also raises concerns about job displacement, income inequality, and the need for workforce adaptation.",
-  "Section_Three": "Automation and artificial intelligence have the potential to increase productivity, create new jobs, and improve our quality of life. However, they can also lead to job losses in certain sectors and require workers to acquire new skills and adapt to changing labor market demands.",
-  "Section_Two": "The economic impact of technological change is not uniform across all industries and workers. Some sectors and individuals may benefit significantly from technological advancements, while others may face challenges and require support to adapt.",
-  "Tag": "Hard",
-  "Title": "The Economic Impact of Technological Change",
-  "answerOne": "Driving force of economic growth and productivity improvements.",
-  "answerTwo": "Increased productivity, new jobs, and improved quality of life.",
-  "answerThree": "Job displacement, income inequality, and the need for workforce adaptation.",
-  "createdAt": "December 4, 2024 at 06:15:00 AM UTC+5:30",
-  "question_One": "What is the role of technological change in the economy?",
-  "question_One_option_One": "Hindering economic growth and reducing productivity.",
-  "question_One_option_Two": "Driving force of economic growth and productivity improvements.",
-  "question_One_option_Three": "No significant impact on the economy or productivity.",
-  "question_Two": "What are some potential benefits of technological advancements?",
-  "question_Two_option_One": "Reduced productivity and job losses in all sectors.",
-  "question_Two_option_Two": "Increased productivity, new jobs, and improved quality of life.",
-  "question_Two_option_Three": "No impact on job creation or quality of life.",
-  "question_Three": "What are some challenges associated with technological change?",
-  "question_Three_option_One": "No impact on employment or income distribution.",
-  "question_Three_option_Two": "Job displacement, income inequality, and the need for workforce adaptation.",
-  "question_Three_option_Three": "Reduced inequality and no need for workforce adaptation."
-},{
-  "Id": "36",
-  "Section_Five": "Thank You",
-  "Section_Four": "Ultimately, while digital payments hold the promise of driving economic growth and,fostering financial inclusion, careful consideration must be given to the accompanying risks. Policymakers must strike a balance between promoting innovation and ensuring that privacy, security, and equality are not compromised.",
-  "Section_One": "The rise of digital payment systems has revolutionized the global economy. Traditional banking, with its reliance on cash and physical infrastructure, has long dominated financial transactions. However, in recent years, the shift towards digital payments, fueled by technological advancements and increasing internet penetration, has transformed how individuals and businesses interact financially. This shift is particularly noticeable in emerging markets, where digital payments have provided access to financial services for millions who were previously unbanked. In countries like India and China, government policies promoting financial inclusion have played a pivotal role in the adoption of digital payments. In India, for example, initiatives such as the Unified Payments Interface (UPI) have streamlined digital transactions, making them quick, cost-effective, and accessible to a large segment of the population. Similarly, China’s mobile payment platforms, such as Alipay and WeChat Pay, have become ubiquitous, rendering cash almost obsolete in many urban areas.",
-  "Section_Three": "Furthermore, the rise of cryptocurrencies, such as Bitcoin and Ethereum, presents another layer of complexity. While these decentralized digital currencies promise an alternative to government-controlled fiat currencies, they are highly volatile and have been linked to illicit activities, such as money laundering. Governments worldwide are grappling with the challenge of regulating these currencies while fostering innovation in the financial technology sector.",
-  "Section_Two": "While digital payment systems offer undeniable advantages—speed, convenience, and financial inclusion—they also pose significant challenges. One of the most critical concerns is the issue of data privacy. As transactions become increasingly digitized, vast amounts of personal and financial data are collected by corporations and governments, raising fears of misuse and data breaches. Moreover, the digital divide, particularly in rural and underdeveloped regions, means that not everyone has access to the infrastructure required for digital payments, creating new inequalities in financial access.",
-  "Tag": 
-  
-  
-  "Hard",
-  "Title": "digital payment systems has revolutionized the global economy",
-  "answerFour": "High transaction costs",
-  "answerOne": "The rise of digital payments is only beneficial to developed economies",
-  "answerThree": "Cryptocurrencies are fully accepted as a replacement for traditional currencies.",
-  "answerTwo": "Governments have discouraged the use of digital payment platforms to protect traditional banking.",
-  "createdAt": "October 20, 2024 at 4:17:54 AM UTC+5:30",
-  "question_Four": "What is one of the significant challenges associated with digital payments as highlighted in the passage?",
-  "question_Four_option_One": "Lack of government support",
-  "question_Four_option_Three": "The slow speed of digital transactions",
-  "question_Four_option_Two": "Privacy concerns and data security risks",
-  "question_One": "What is the main idea of the passage?",
-  "question_One_option_One": "Digital payments have revolutionized the global economy but come with challenges",
-  "question_One_option_Three": "Government policies in India and China hinder the growth of digital payments.",
-  "question_One_option_Two": "Cryptocurrencies will replace traditional banking systems.",
-  "question_Three": "Which of the following can be inferred about cryptocurrencies from the passage?",
-  "question_Three_option_One": "Cryptocurrencies are entirely safe and secure.",
-  "question_Three_option_Three": "Cryptocurrencies are regulated thoroughly by governments worldwide",
-  "question_Three_option_Two": "Cryptocurrencies present challenges due to their volatility and potential for misuse",
-  "question_Two": "According to the passage, what role have governments played in the adoption of digital payments in India and China?",
-  "question_Two_option_One": "Governments have enacted policies to promote financial inclusion and encourage digital transactions.",
-  "question_Two_option_Three": "Governments have allowed unregulated growth of digital payments, resulting in privacy concerns.",
-  "question_Two_option_Two": "Governments have focused on the regulation of cryptocurrencies over digital payment systems."
-},{
-  "Id": "37",
-  "Section_Five": "Thank You",
-  "Section_Four": "Ultimately, while digital payments hold the promise of driving economic growth and,fostering financial inclusion, careful consideration must be given to the accompanying risks. Policymakers must strike a balance between promoting innovation and ensuring that privacy, security, and equality are not compromised.",
-  "Section_One": "The rise of digital payment systems has revolutionized the global economy. Traditional banking, with its reliance on cash and physical infrastructure, has long dominated financial transactions. However, in recent years, the shift towards digital payments, fueled by technological advancements and increasing internet penetration, has transformed how individuals and businesses interact financially. This shift is particularly noticeable in emerging markets, where digital payments have provided access to financial services for millions who were previously unbanked. In countries like India and China, government policies promoting financial inclusion have played a pivotal role in the adoption of digital payments. In India, for example, initiatives such as the Unified Payments Interface (UPI) have streamlined digital transactions, making them quick, cost-effective, and accessible to a large segment of the population. Similarly, China’s mobile payment platforms, such as Alipay and WeChat Pay, have become ubiquitous, rendering cash almost obsolete in many urban areas.",
-  "Section_Three": "Furthermore, the rise of cryptocurrencies, such as Bitcoin and Ethereum, presents another layer of complexity. While these decentralized digital currencies promise an alternative to government-controlled fiat currencies, they are highly volatile and have been linked to illicit activities, such as money laundering. Governments worldwide are grappling with the challenge of regulating these currencies while fostering innovation in the financial technology sector.",
-  "Section_Two": "While digital payment systems offer undeniable advantages—speed, convenience, and financial inclusion—they also pose significant challenges. One of the most critical concerns is the issue of data privacy. As transactions become increasingly digitized, vast amounts of personal and financial data are collected by corporations and governments, raising fears of misuse and data breaches. Moreover, the digital divide, particularly in rural and underdeveloped regions, means that not everyone has access to the infrastructure required for digital payments, creating new inequalities in financial access.",
-  "Tag": "Hard",
-  "Title": "digital payment systems has revolutionized the global economy",
-  "answerFour": "High transaction costs",
-  "answerOne": "The rise of digital payments is only beneficial to developed economies",
-  "answerThree": "Cryptocurrencies are fully accepted as a replacement for traditional currencies.",
-  "answerTwo": "Governments have discouraged the use of digital payment platforms to protect traditional banking.",
-  "createdAt": "October 20, 2024 at 4:17:54 AM UTC+5:30",
-  "question_Four": "What is one of the significant challenges associated with digital payments as highlighted in the passage?",
-  "question_Four_option_One": "Lack of government support",
-  "question_Four_option_Three": "The slow speed of digital transactions",
-  "question_Four_option_Two": "Privacy concerns and data security risks",
-  "question_One": "What is the main idea of the passage?",
-  "question_One_option_One": "Digital payments have revolutionized the global economy but come with challenges",
-  "question_One_option_Three": "Government policies in India and China hinder the growth of digital payments.",
-  "question_One_option_Two": "Cryptocurrencies will replace traditional banking systems.",
-  "question_Three": "Which of the following can be inferred about cryptocurrencies from the passage?",
-  "question_Three_option_One": "Cryptocurrencies are entirely safe and secure.",
-  "question_Three_option_Three": "Cryptocurrencies are regulated thoroughly by governments worldwide",
-  "question_Three_option_Two": "Cryptocurrencies present challenges due to their volatility and potential for misuse",
-  "question_Two": "According to the passage, what role have governments played in the adoption of digital payments in India and China?",
-  "question_Two_option_One": "Governments have enacted policies to promote financial inclusion and encourage digital transactions.",
-  "question_Two_option_Three": "Governments have allowed unregulated growth of digital payments, resulting in privacy concerns.",
-  "question_Two_option_Two": "Governments have focused on the regulation of cryptocurrencies over digital payment systems."
-}
-,{
-  "Id": "38",
-  "Section_Five": "Thank You",
-  "Section_Four": "Promoting economic development in developing countries requires a multi-faceted approach that addresses poverty, inequality, and lack of access to education, healthcare, and infrastructure. International cooperation and support are crucial for helping developing countries achieve sustainable and inclusive growth.",
-  "Section_One": "Economic development is a process that aims to improve the standard of living and economic health of a community or nation. It involves creating jobs, increasing productivity, and raising incomes, particularly in developing countries.",
-  "Section_Three": "Developing countries often face challenges such as poverty, inequality, lack of infrastructure, and limited access to education and healthcare. These challenges can hinder economic growth and perpetuate a cycle of poverty.",
-  "Section_Two": "Strategies for promoting economic development include investing in education and human capital, building infrastructure, promoting entrepreneurship and innovation, and creating a favorable investment climate. International aid and trade can also play a role in supporting economic development.",
-  "Tag": "Hard",
-  "Title": "Promoting Economic Development",
-  "answerOne": "Improving the standard of living and economic health of a community or nation.",
-  "answerTwo": "Poverty, inequality, lack of infrastructure, and limited access to education and healthcare.",
-  "answerThree": "Investing in education, building infrastructure, promoting entrepreneurship, and creating a favorable investment climate.",
-  "createdAt": "December 4, 2024 at 06:45:00 AM UTC+5:30",
-  "question_One": "What is economic development?",
-  "question_One_option_One": "Declining living standards and economic stagnation.",
-  "question_One_option_Two": "Improving the standard of living and economic health of a community or nation.",
-  "question_One_option_Three": "No significant impact on living standards or economic well-being.",
-  "question_Two": "What challenges do developing countries often face?",
-  "question_Two_option_One": "No significant challenges or barriers to economic growth.",
-  "question_Two_option_Two": "Poverty, inequality, lack of infrastructure, and limited access to education and healthcare.",
-  "question_Two_option_Three": "Abundant resources and well-developed infrastructure.",
-  "question_Three": "What are some strategies for promoting economic development?",
-  "question_Three_option_One": "Neglecting education and discouraging entrepreneurship.",
-  "question_Three_option_Two": "Investing in education, building infrastructure, promoting entrepreneurs"
+addDataToFirebase(sampleData, "Quant/percentages/LevelTwo");
 
+export default addDataToFirebase;
 
-
-{
-  "Id": "39",
-  "Section_Five": "Thank You",
-  "Section_Four": "Addressing climate change is not just an environmental necessity but also an opportunity to create green jobs, enhance energy security, and promote economic growth. Global cooperation and individual actions are crucial to achieving a sustainable future.",
-  "Section_One": "Climate change is one of the most pressing challenges of our time, impacting ecosystems, economies, and societies globally. Addressing climate change requires adopting sustainable practices to reduce greenhouse gas emissions and mitigate its effects.",
-  "Section_Three": "Challenges to addressing climate change include political disagreements, lack of resources, and resistance to change from industries dependent on fossil fuels. These barriers hinder the global transition to sustainable practices.",
-  "Section_Two": "Key strategies include transitioning to renewable energy sources, promoting energy efficiency, sustainable agriculture, and investing in green technology. Encouraging global cooperation through climate agreements can further accelerate these efforts.",
-  "Tag": "Hard",
-  "Title": "Addressing Climate Change through Sustainable Practices",
-  "answerOne": "Adopting sustainable practices to reduce greenhouse gas emissions and mitigate effects on ecosystems, economies, and societies.",
-  "answerTwo": "Political disagreements, lack of resources, and resistance to change from industries dependent on fossil fuels.",
-  "answerThree": "Transitioning to renewable energy, promoting energy efficiency, sustainable agriculture, and green technology.",
-  "createdAt": "December 4, 2024 at 07:00:00 AM UTC+5:30",
-  "question_One": "What is climate change?",
-  "question_One_option_One": "A minor challenge with negligible impact on ecosystems and economies.",
-  "question_One_option_Two": "One of the most pressing challenges of our time, impacting ecosystems, economies, and societies globally.",
-  "question_One_option_Three": "An economic opportunity without environmental consequences.",
-  "question_Two": "What challenges hinder addressing climate change?",
-  "question_Two_option_One": "Abundant global resources and universal agreement.",
-  "question_Two_option_Two": "Political disagreements, lack of resources, and resistance to change from industries dependent on fossil fuels.",
-  "question_Two_option_Three": "No significant barriers to the global transition to sustainability.",
-  "question_Three": "What are some strategies for addressing climate change?",
-  "question_Three_option_One": "Neglecting renewable energy and encouraging fossil fuel use.",
-  "question_Three_option_Two": "Transitioning to renewable energy, promoting energy efficiency, sustainable agriculture, and green technology.",
-  "question_Three_option_Three": "Delaying global cooperation on climate agreements."
-},
-
-
-  {
-    "Id": "40",
-    "Section_Five": "Thank You",
-    "Section_Four": "Education is a powerful tool to break the cycle of poverty and create economic opportunities. Investing in education ensures inclusive and sustainable development for individuals and societies.",
-    "Section_One": "Education is a fundamental human right and a key driver of individual and societal development. It empowers people with knowledge, skills, and opportunities.",
-    "Section_Three": "Challenges to education include lack of access, inadequate infrastructure, gender inequality, and poverty, particularly in developing regions.",
-    "Section_Two": "Promoting education requires building schools, training teachers, providing financial aid, and addressing social barriers. International cooperation can amplify efforts in underserved areas.",
-    "Tag": "Hard",
-    "Title": "The Role of Education in Development",
-    "answerOne": "A fundamental human right and a key driver of individual and societal development.",
-    "answerTwo": "Lack of access, inadequate infrastructure, gender inequality, and poverty.",
-    "answerThree": "Building schools, training teachers, providing financial aid, and addressing social barriers.",
-    "createdAt": "December 4, 2024 at 07:05:00 AM UTC+5:30",
-    "question_One": "What is the role of education?",
-    "question_One_option_One": "A minor factor in societal development.",
-    "question_One_option_Two": "A fundamental human right and a key driver of individual and societal development.",
-    "question_One_option_Three": "An economic burden with limited societal benefits.",
-    "question_Two": "What challenges hinder access to education?",
-    "question_Two_option_One": "Widespread infrastructure and financial resources.",
-    "question_Two_option_Two": "Lack of access, inadequate infrastructure, gender inequality, and poverty.",
-    "question_Two_option_Three": "Universal access and high-quality systems.",
-    "question_Three": "What are some strategies to promote education?",
-    "question_Three_option_One": "Neglecting teacher training and reducing school funding.",
-    "question_Three_option_Two": "Building schools, training teachers, providing financial aid, and addressing social barriers.",
-    "question_Three_option_Three": "Reducing international aid for education."
-  },
-  {
-    "Id": "41",
-    "Section_Five": "Thank You",
-    "Section_Four": "Entrepreneurship fosters innovation, creates jobs, and boosts economic growth. Supporting entrepreneurs can lead to more inclusive and sustainable development.",
-    "Section_One": "Entrepreneurship is the process of identifying opportunities and creating businesses to address them. Entrepreneurs play a vital role in driving innovation and economic progress.",
-    "Section_Three": "Barriers to entrepreneurship include lack of access to capital, insufficient training, and regulatory hurdles. These factors can discourage potential entrepreneurs.",
-    "Section_Two": "Encouraging entrepreneurship involves providing access to funding, mentorship, education, and a supportive regulatory environment. Promoting a culture of innovation is also essential.",
-    "Tag": "Hard",
-    "Title": "Fostering Entrepreneurship for Economic Growth",
-    "answerOne": "The process of identifying opportunities and creating businesses to address them.",
-    "answerTwo": "Lack of access to capital, insufficient training, and regulatory hurdles.",
-    "answerThree": "Providing access to funding, mentorship, education, and a supportive regulatory environment.",
-    "createdAt": "December 4, 2024 at 07:10:00 AM UTC+5:30",
-    "question_One": "What is entrepreneurship?",
-    "question_One_option_One": "The process of dismantling businesses for economic decline.",
-    "question_One_option_Two": "The process of identifying opportunities and creating businesses to address them.",
-    "question_One_option_Three": "A minor activity with limited economic impact.",
-    "question_Two": "What are the barriers to entrepreneurship?",
-    "question_Two_option_One": "Universal access to resources and minimal regulations.",
-    "question_Two_option_Two": "Lack of access to capital, insufficient training, and regulatory hurdles.",
-    "question_Two_option_Three": "Excessive innovation and surplus funding.",
-    "question_Three": "How can entrepreneurship be encouraged?",
-    "question_Three_option_One": "By reducing funding and creating restrictive regulatory environments.",
-    "question_Three_option_Two": "Providing access to funding, mentorship, education, and a supportive regulatory environment.",
-    "question_Three_option_Three": "Eliminating innovation incentives."
-  },
-  
-
-
-{
-  "Id": "42",
-  "Section_Five": "Thank You",
-  "Section_Four": "Global trade drives economic growth, encourages innovation, and fosters international cooperation. However, it must be balanced with measures to address its challenges and ensure equitable benefits.",
-  "Section_One": "Global trade involves the exchange of goods, services, and capital across international borders. It is a cornerstone of economic development and globalization.",
-  "Section_Three": "Challenges in global trade include trade imbalances, protectionism, and environmental concerns. Developing nations often face unequal terms of trade.",
-  "Section_Two": "To promote equitable global trade, policies should emphasize fair trade practices, investment in developing economies, and addressing environmental sustainability.",
-  "Tag": "Hard",
-  "Title": "The Role of Global Trade in Economic Growth",
-  "answerOne": "The exchange of goods, services, and capital across international borders.",
-  "answerTwo": "Trade imbalances, protectionism, and environmental concerns.",
-  "answerThree": "Emphasizing fair trade practices and investing in developing economies.",
-  "createdAt": "December 4, 2024 at 07:15:00 AM UTC+5:30",
-  "question_One": "What is global trade?",
-  "question_One_option_One": "An isolated domestic activity.",
-  "question_One_option_Two": "The exchange of goods, services, and capital across international borders.",
-  "question_One_option_Three": "A practice limited to developed countries.",
-  "question_Two": "What are the challenges in global trade?",
-  "question_Two_option_One": "Widespread equal trade practices globally.",
-  "question_Two_option_Two": "Trade imbalances, protectionism, and environmental concerns.",
-  "question_Two_option_Three": "Abundant resources and no environmental concerns.",
-  "question_Three": "How can global trade be promoted equitably?",
-  "question_Three_option_One": "By imposing heavy trade restrictions.",
-  "question_Three_option_Two": "Emphasizing fair trade practices and investing in developing economies.",
-  "question_Three_option_Three": "Avoiding trade agreements."
-},
-{
-  "Id": "43",
-  "Section_Five": "Thank You",
-  "Section_Four": "Universal healthcare improves health outcomes, reduces inequalities, and fosters social and economic development. Investing in healthcare infrastructure and accessibility is essential for global progress.",
-  "Section_One": "Universal healthcare ensures that all individuals have access to essential health services without financial hardship. It is fundamental to achieving health equity.",
-  "Section_Three": "Challenges to universal healthcare include inadequate funding, shortage of healthcare workers, and lack of infrastructure in developing nations.",
-  "Section_Two": "Strategies to improve universal healthcare include increasing healthcare budgets, training medical professionals, and leveraging technology to expand access.",
-  "Tag": "Hard",
-  "Title": "The Importance of Universal Healthcare",
-  "answerOne": "Ensuring access to essential health services without financial hardship.",
-  "answerTwo": "Inadequate funding, shortage of healthcare workers, and lack of infrastructure.",
-  "answerThree": "Increasing healthcare budgets, training medical professionals, and leveraging technology.",
-  "createdAt": "December 4, 2024 at 07:20:00 AM UTC+5:30",
-  "question_One": "What is universal healthcare?",
-  "question_One_option_One": "Access to luxury health services for the wealthy.",
-  "question_One_option_Two": "Ensuring access to essential health services without financial hardship.",
-  "question_One_option_Three": "A system limited to private healthcare providers.",
-  "question_Two": "What challenges hinder universal healthcare?",
-  "question_Two_option_One": "Excess healthcare funding globally.",
-  "question_Two_option_Two": "Inadequate funding, shortage of healthcare workers, and lack of infrastructure.",
-  "question_Two_option_Three": "Surplus healthcare workers in every nation.",
-  "question_Three": "How can universal healthcare be improved?",
-  "question_Three_option_One": "By reducing healthcare budgets.",
-  "question_Three_option_Two": "Increasing healthcare budgets, training medical professionals, and leveraging technology.",
-  "question_Three_option_Three": "Restricting access to underserved areas."
-},
-{
-  "Id": "44",
-  "Section_Five": "Thank You",
-  "Section_Four": "Artificial intelligence has the potential to revolutionize industries, solve complex problems, and improve quality of life. Responsible innovation is key to ensuring its benefits are maximized.",
-  "Section_One": "Artificial intelligence (AI) refers to systems that simulate human intelligence through learning, problem-solving, and decision-making. AI is transforming various industries.",
-  "Section_Three": "Challenges of AI include ethical concerns, job displacement, and the risk of biased decision-making in AI algorithms.",
-  "Section_Two": "Addressing AI challenges requires transparent algorithms, regulatory frameworks, and reskilling the workforce to adapt to technological changes.",
-  "Tag": "Hard",
-  "Title": "The Impact of Artificial Intelligence",
-  "answerOne": "Systems that simulate human intelligence through learning, problem-solving, and decision-making.",
-  "answerTwo": "Ethical concerns, job displacement, and biased decision-making.",
-  "answerThree": "Transparent algorithms, regulatory frameworks, and reskilling the workforce.",
-  "createdAt": "December 4, 2024 at 07:25:00 AM UTC+5:30",
-  "question_One": "What is artificial intelligence?",
-  "question_One_option_One": "A concept unrelated to human intelligence.",
-  "question_One_option_Two": "Systems that simulate human intelligence through learning, problem-solving, and decision-making.",
-  "question_One_option_Three": "A static technology with no practical applications.",
-  "question_Two": "What are the challenges of AI?",
-  "question_Two_option_One": "Universal ethical acceptance and zero bias.",
-  "question_Two_option_Two": "Ethical concerns, job displacement, and biased decision-making.",
-  "question_Two_option_Three": "No significant challenges or risks.",
-  "question_Three": "How can AI challenges be addressed?",
-  "question_Three_option_One": "By avoiding regulatory frameworks and ignoring bias.",
-  "question_Three_option_Two": "Transparent algorithms, regulatory frameworks, and reskilling the workforce.",
-  "question_Three_option_Three": "Reducing workforce adaptability."
-},
-{
-  "Id": "45",
-  "Section_Five": "Thank You",
-  "Section_Four": "Nelson Mandela’s legacy as a leader of equality and justice continues to inspire movements worldwide. His vision of reconciliation and progress remains a guiding light for humanity.",
-  "Section_One": "Nelson Mandela was a South African anti-apartheid revolutionary, political leader, and philanthropist. He served as the first Black president of South Africa from 1994 to 1999.",
-  "Section_Three": "Mandela faced 27 years of imprisonment during his fight against apartheid. Despite challenges, his commitment to democracy and equality never wavered.",
-  "Section_Two": "Mandela’s leadership emphasized reconciliation, dismantling apartheid, and promoting social harmony. He received the Nobel Peace Prize in 1993 for his efforts.",
-  "Tag": "Hard",
-  "Title": "Nelson Mandela: A Legacy of Equality",
-  "answerOne": "A South African anti-apartheid revolutionary and the first Black president of South Africa.",
-  "answerTwo": "27 years of imprisonment and systemic racial discrimination under apartheid.",
-  "answerThree": "Reconciliation, dismantling apartheid, and promoting social harmony.",
-  "createdAt": "December 4, 2024 at 07:30:00 AM UTC+5:30",
-  "question_One": "Who was Nelson Mandela?",
-  "question_One_option_One": "A leader indifferent to social justice.",
-  "question_One_option_Two": "A South African anti-apartheid revolutionary and the first Black president of South Africa.",
-  "question_One_option_Three": "An advocate of apartheid policies.",
-  "question_Two": "What challenges did Mandela face?",
-  "question_Two_option_One": "Wide acceptance and support from the apartheid government.",
-  "question_Two_option_Two": "27 years of imprisonment and systemic racial discrimination under apartheid.",
-  "question_Two_option_Three": "No significant challenges during his political journey.",
-  "question_Three": "What were Mandela’s leadership goals?",
-  "question_Three_option_One": "Promoting apartheid and social division.",
-  "question_Three_option_Two": "Reconciliation, dismantling apartheid, and promoting social harmony.",
-  "question_Three_option_Three": "Ignoring racial inequalities."
-},
-{
-  "Id": "46",
-  "Section_Five": "Thank You",
-  "Section_Four": "Chronic stress can lead to significant mental health issues, including anxiety, depression, and burnout. Addressing stress requires a multi-layered approach that integrates self-care, professional support, and societal changes to reduce triggers such as workplace pressure or financial instability.",
-  "Section_One": "Stress is a natural response to challenging situations, but chronic stress can severely impact mental and physical health. It disrupts the hormonal balance, weakens the immune system, and impairs cognitive functions over time.",
-  "Section_Three": "People under chronic stress often experience difficulty concentrating, mood swings, sleep disturbances, and physical ailments such as headaches or digestive issues. Prolonged exposure to stressors can lead to long-term health problems.",
-  "Section_Two": "Managing stress involves techniques like mindfulness meditation, regular exercise, maintaining a healthy diet, and seeking therapy when needed. Creating supportive environments at work and home is equally critical.",
-  "Tag": "Hard",
-  "Title": "Understanding Stress and Its Consequences",
-  "answerOne": "A natural response to challenging situations that can impact mental and physical health.",
-  "answerTwo": "Difficulty concentrating, mood swings, sleep disturbances, and physical ailments.",
-  "answerThree": "Mindfulness meditation, regular exercise, a healthy diet, and seeking therapy.",
-  "createdAt": "December 4, 2024 at 07:40:00 AM UTC+5:30",
-  "question_One": "What is stress?",
-  "question_One_option_One": "An unnatural response with no impact on health.",
-  "question_One_option_Two": "A natural response to challenging situations that can impact mental and physical health.",
-  "question_One_option_Three": "A minor issue without significant consequences.",
-  "question_Two": "What are the effects of chronic stress?",
-  "question_Two_option_One": "Enhanced immune function and cognitive ability.",
-  "question_Two_option_Two": "Difficulty concentrating, mood swings, sleep disturbances, and physical ailments.",
-  "question_Two_option_Three": "No noticeable effects on mental or physical health.",
-  "question_Three": "How can stress be managed?",
-  "question_Three_option_One": "By ignoring it and continuing with daily routines.",
-  "question_Three_option_Two": "Mindfulness meditation, regular exercise, a healthy diet, and seeking therapy.",
-  "question_Three_option_Three": "Avoiding all forms of physical activity."
-},
-
-{
-  "Id": "48",
-  "Section_Five": "Thank You",
-  "Section_Four": "The paradox of choice suggests that while having options is empowering, an excess can lead to anxiety, indecision, and dissatisfaction. Striking a balance is key to improving decision-making and contentment.",
-  "Section_One": "In today’s world, individuals are often overwhelmed by the sheer number of choices available, from consumer goods to career paths. This abundance, while seemingly positive, can create psychological stress.",
-  "Section_Three": "A common example is spending excessive time comparing similar products online, only to feel dissatisfied after making a purchase. The fear of missing out on a better option compounds this stress.",
-  "Section_Two": "To navigate this paradox, individuals should focus on defining their priorities, limiting options, and embracing the outcomes of their choices. Cultivating gratitude can also alleviate regret and enhance satisfaction.",
-  "Tag": "Hard",
-  "Title": "The Paradox of Choice",
-  "answerOne": "An abundance of options creating psychological stress.",
-  "answerTwo": "Spending excessive time comparing options and feeling dissatisfied with decisions.",
-  "answerThree": "Defining priorities, limiting options, and cultivating gratitude.",
-  "createdAt": "December 4, 2024 at 08:00:00 AM UTC+5:30",
-  "question_One": "What is the paradox of choice?",
-  "question_One_option_One": "An absence of choices leading to psychological comfort.",
-  "question_One_option_Two": "An abundance of options creating psychological stress.",
-  "question_One_option_Three": "Unlimited choices with no psychological impact.",
-  "question_Two": "What is a common example of this paradox?",
-  "question_Two_option_One": "Making decisions without any stress or regret.",
-  "question_Two_option_Two": "Spending excessive time comparing options and feeling dissatisfied with decisions.",
-  "question_Two_option_Three": "Making impulsive decisions with perfect satisfaction.",
-  "question_Three": "How can the paradox of choice be navigated?",
-  "question_Three_option_One": "By avoiding decision-making altogether.",
-  "question_Three_option_Two": "Defining priorities, limiting options, and cultivating gratitude.",
-  "question_Three_option_Three": "Constantly seeking more options."
-},
-{
-  "Id": "49",
-  "Section_Five": "Thank You",
-  "Section_Four": "The bystander effect reveals the complexities of human behavior in emergencies. It highlights the interplay of social psychology concepts such as diffusion of responsibility and social influence. To counteract this effect, awareness and proactive interventions, such as explicitly assigning tasks or responsibilities, are critical.",
-  "Section_One": "The bystander effect occurs when individuals are less likely to help a victim in an emergency because they believe others will intervene. This phenomenon is more pronounced in large groups, where a diffusion of responsibility reduces individual accountability.",
-  "Section_Three": "For instance, in a crowded street, a person in distress may go unnoticed because each passerby assumes someone else will step in. This inaction often stems from uncertainty and fear of judgment.",
-  "Section_Two": "Overcoming the bystander effect requires fostering a sense of personal responsibility and educating individuals about its impact. Encouraging decisive action and direct communication, like pointing to someone and asking for help, can break the cycle of inaction.",
-  "Tag": "Hard",
-  "Title": "The Bystander Effect: A Social Dilemma",
-  "answerOne": "A phenomenon where individuals are less likely to help in emergencies due to group dynamics.",
-  "answerTwo": "Inaction caused by diffusion of responsibility and fear of judgment.",
-  "answerThree": "Fostering personal responsibility and direct communication in emergencies.",
-  "createdAt": "December 4, 2024 at 08:10:00 AM UTC+5:30",
-  "question_One": "What is the bystander effect?",
-  "question_One_option_One": "A tendency for individuals to always help in emergencies.",
-  "question_One_option_Two": "A phenomenon where individuals are less likely to help in emergencies due to group dynamics.",
-  "question_One_option_Three": "A concept unrelated to group behavior.",
-  "question_Two": "What contributes to the bystander effect?",
-  "question_Two_option_One": "Proactive intervention by all members of a group.",
-  "question_Two_option_Two": "Inaction caused by diffusion of responsibility and fear of judgment.",
-  "question_Two_option_Three": "Lack of emergencies in group settings.",
-  "question_Three": "How can the bystander effect be overcome?",
-  "question_Three_option_One": "By ignoring personal responsibility.",
-  "question_Three_option_Two": "Fostering personal responsibility and direct communication in emergencies.",
-  "question_Three_option_Three": "Leaving emergency intervention solely to authorities."
-},
-{
-  "Id": "50",
-  "Section_Five": "Thank You",
-  "Section_Four": "The placebo effect demonstrates the power of the mind in influencing physical health. It challenges traditional perspectives on treatment efficacy and underscores the importance of patient belief and perception in the healing process.",
-  "Section_One": "The placebo effect is a psychological phenomenon where patients experience real improvements in their health after receiving treatments with no active medical properties. This effect highlights the intricate connection between mind and body.",
-  "Section_Three": "An example includes patients reporting pain relief after taking sugar pills they believe are painkillers. The expectation of relief activates brain mechanisms that mimic actual drug responses.",
-  "Section_Two": "Understanding the placebo effect is crucial in clinical trials, where it serves as a benchmark to measure the true efficacy of new treatments. Ethical considerations arise when using placebos in medical practice.",
-  "Tag": "Hard",
-  "Title": "The Placebo Effect: Power of the Mind",
-  "answerOne": "A phenomenon where patients experience health improvements from inactive treatments.",
-  "answerTwo": "Patients reporting pain relief after believing they took painkillers.",
-  "answerThree": "A benchmark in clinical trials to measure treatment efficacy.",
-  "createdAt": "December 4, 2024 at 08:20:00 AM UTC+5:30",
-  "question_One": "What is the placebo effect?",
-  "question_One_option_One": "A phenomenon unrelated to patient perception.",
-  "question_One_option_Two": "A phenomenon where patients experience health improvements from inactive treatments.",
-  "question_One_option_Three": "A purely physical reaction without psychological factors.",
-  "question_Two": "What is an example of the placebo effect?",
-  "question_Two_option_One": "Patients not responding to active medications.",
-  "question_Two_option_Two": "Patients reporting pain relief after believing they took painkillers.",
-  "question_Two_option_Three": "A failure to observe any health changes.",
-  "question_Three": "Why is the placebo effect significant?",
-  "question_Three_option_One": "It serves no role in clinical trials.",
-  "question_Three_option_Two": "A benchmark in clinical trials to measure treatment efficacy.",
-  "question_Three_option_Three": "It has no impact on treatment outcomes."
-},
-{
-  "Id": "51",
-  "Section_Five": "Thank You",
-  "Section_Four": "The traveler's paradox illustrates the challenge of navigating decisions under uncertainty and information asymmetry. It encourages deeper analysis and strategic thinking to uncover the optimal path forward.",
-  "Section_One": "A traveler reaches a fork in the road with two paths: one leads to a bustling city of prosperity, and the other to a desolate wasteland. Two locals provide conflicting advice about which path to take. Both seem equally convincing, leaving the traveler uncertain and anxious.",
-  "Section_Three": "The traveler must weigh the credibility of each source, consider their motives, and decide which advice to trust. This dilemma highlights the broader challenge of making decisions with incomplete or unreliable information.",
-  "Section_Two": "To resolve the paradox, the traveler might seek additional clues, test each path cautiously, or rely on intuition. The outcome depends not just on external factors but also on the traveler’s analytical skills and risk tolerance.",
-  "Tag": "Hard",
-  "Title": "The Traveler’s Paradox",
-  "answerOne": "A decision-making dilemma involving uncertainty and conflicting information.",
-  "answerTwo": "Weighing credibility, motives, and making decisions under uncertainty.",
-  "answerThree": "Seeking additional clues, testing cautiously, or relying on intuition.",
-  "createdAt": "December 4, 2024 at 08:30:00 AM UTC+5:30",
-  "question_One": "What is the traveler’s paradox?",
-  "question_One_option_One": "A straightforward decision-making process.",
-  "question_One_option_Two": "A decision-making dilemma involving uncertainty and conflicting information.",
-  "question_One_option_Three": "An unimportant challenge in daily life.",
-  "question_Two": "What factors contribute to the traveler’s decision?",
-  "question_Two_option_One": "Complete and reliable information.",
-  "question_Two_option_Two": "Weighing credibility, motives, and making decisions under uncertainty.",
-  "question_Two_option_Three": "Ignoring all external input.",
-  "question_Three": "How can the paradox be resolved?",
-  "question_Three_option_One": "By ignoring analysis and intuition.",
-  "question_Three_option_Two": "Seeking additional clues, testing cautiously, or relying on intuition.",
-  "question_Three_option_Three": "Following conflicting advice blindly."
-},
-{
-  "Id": "53",
-  "Section_Five": "Thank You",
-  "Section_Four": "The bootstrap paradox challenges our understanding of causality and time. It provokes questions about the origin of information or objects in time loops, leaving the narrative of cause and effect unresolved.",
-  "Section_One": "The bootstrap paradox arises in time travel scenarios where an object or piece of information exists without a clear origin, creating a loop of causality. The paradox questions whether the object ever had an independent existence.",
-  "Section_Three": "For example, a scientist receives a blueprint for a time machine from their future self, builds the machine, and later travels back in time to give the blueprint to their past self. The origin of the blueprint remains undefined.",
-  "Section_Two": "This paradox highlights the philosophical and logical challenges of reconciling time loops with conventional causality. It pushes the boundaries of how we perceive time, existence, and the linearity of events.",
-  "Tag": "Hard",
-  "Title": "The Bootstrap Paradox",
-  "answerOne": "A time travel paradox where objects exist without a clear origin.",
-  "answerTwo": "A scientist receiving blueprints from their future self.",
-  "answerThree": "It challenges causality and questions the origin of objects in time loops.",
-  "createdAt": "December 4, 2024 at 08:50:00 AM UTC+5:30",
-  "question_One": "What is the bootstrap paradox?",
-  "question_One_option_One": "A scenario with clear causality and origin.",
-  "question_One_option_Two": "A time travel paradox where objects exist without a clear origin.",
-  "question_One_option_Three": "A situation unrelated to time loops.",
-  "question_Two": "What is an example of the bootstrap paradox?",
-  "question_Two_option_One": "A scientist designing a time machine independently.",
-  "question_Two_option_Two": "A scientist receiving blueprints from their future self.",
-  "question_Two_option_Three": "An object with a well-documented origin.",
-  "question_Three": "What does the bootstrap paradox challenge?",
-  "question_Three_option_One": "The simplicity of time travel.",
-  "question_Three_option_Two": "It challenges causality and questions the origin of objects in time loops.",
-  "question_Three_option_Three": "The concept of objects existing in a single timeline."
-},
-{
-  "Id": "54",
-  "Section_Five": "Thank You",
-  "Section_Four": "The Ship of Theseus prompts deep reflections on identity, continuity, and change. It challenges us to reconsider how we define the essence of an object or entity over time.",
-  "Section_One": "The Ship of Theseus is a philosophical paradox questioning whether an object that has all its components replaced remains the same object. It explores identity and the nature of change.",
-  "Section_Three": "For instance, a ship is gradually repaired over time, with each plank replaced. If all planks are eventually replaced, is it still the original ship? Further, if the old planks are used to reconstruct another ship, which is the real Ship of Theseus?",
-  "Section_Two": "This paradox is significant in fields ranging from metaphysics to practical issues like personal identity and heritage conservation. It highlights the tension between physical components and conceptual continuity.",
-  "Tag": "Hard",
-  "Title": "The Ship of Theseus: A Question of Identity",
-  "answerOne": "A paradox about whether an object remains the same after all its parts are replaced.",
-  "answerTwo": "A ship repaired with all parts replaced or reconstructed from old parts.",
-  "answerThree": "The tension between physical components and conceptual continuity.",
-  "createdAt": "December 4, 2024 at 09:00:00 AM UTC+5:30",
-  "question_One": "What is the Ship of Theseus?",
-  "question_One_option_One": "A straightforward question about shipbuilding.",
-  "question_One_option_Two": "A paradox about whether an object remains the same after all its parts are replaced.",
-  "question_One_option_Three": "An unrelated philosophical concept.",
-  "question_Two": "What is an example of the paradox?",
-  "question_Two_option_One": "A ship repaired with no changes to its structure.",
-  "question_Two_option_Two": "A ship repaired with all parts replaced or reconstructed from old parts.",
-  "question_Two_option_Three": "A ship with unchanging components.",
-  "question_Three": "What does the Ship of Theseus challenge?",
-  "question_Three_option_One": "The durability of physical objects.",
-  "question_Three_option_Two": "The tension between physical components and conceptual continuity.",
-  "question_Three_option_Three": "The process of physical decay."
-},
-{
-  "Id": "54",
-  "Section_Five": "Thank You",
-  "Section_Four": "The Ship of Theseus prompts deep reflections on identity, continuity, and change. It challenges us to reconsider how we define the essence of an object or entity over time.",
-  "Section_One": "The Ship of Theseus is a philosophical paradox questioning whether an object that has all its components replaced remains the same object. It explores identity and the nature of change.",
-  "Section_Three": "For instance, a ship is gradually repaired over time, with each plank replaced. If all planks are eventually replaced, is it still the original ship? Further, if the old planks are used to reconstruct another ship, which is the real Ship of Theseus?",
-  "Section_Two": "This paradox is significant in fields ranging from metaphysics to practical issues like personal identity and heritage conservation. It highlights the tension between physical components and conceptual continuity.",
-  "Tag": "Hard",
-  "Title": "The Ship of Theseus: A Question of Identity",
-  "answerOne": "A paradox about whether an object remains the same after all its parts are replaced.",
-  "answerTwo": "A ship repaired with all parts replaced or reconstructed from old parts.",
-  "answerThree": "The tension between physical components and conceptual continuity.",
-  "createdAt": "December 4, 2024 at 09:00:00 AM UTC+5:30",
-  "question_One": "What is the Ship of Theseus?",
-  "question_One_option_One": "A straightforward question about shipbuilding.",
-  "question_One_option_Two": "A paradox about whether an object remains the same after all its parts are replaced.",
-  "question_One_option_Three": "An unrelated philosophical concept.",
-  "question_Two": "What is an example of the paradox?",
-  "question_Two_option_One": "A ship repaired with no changes to its structure.",
-  "question_Two_option_Two": "A ship repaired with all parts replaced or reconstructed from old parts.",
-  "question_Two_option_Three": "A ship with unchanging components.",
-  "question_Three": "What does the Ship of Theseus challenge?",
-  "question_Three_option_One": "The durability of physical objects.",
-  "question_Three_option_Two": "The tension between physical components and conceptual continuity.",
-  "question_Three_option_Three": "The process of physical decay."
-},
-{
-  "Id": "56",
-  "Section_Five": "Thank You",
-  "Section_Four": "Epigenetics demonstrates how environmental factors can influence gene expression without altering DNA sequences. It bridges the gap between genetics and environmental biology, reshaping our understanding of heredity and health.",
-  "Section_One": "Epigenetics is the study of changes in gene expression caused by mechanisms other than changes in the underlying DNA sequence. These changes are influenced by environmental factors such as diet, stress, and toxins.",
-  "Section_Three": "For instance, identical twins with the same genetic makeup can exhibit significant differences in health and behavior due to epigenetic factors shaped by their unique environments.",
-  "Section_Two": "Epigenetics has significant implications in medicine, including understanding diseases like cancer, obesity, and mental health disorders. It also opens pathways to personalized medicine, where treatments are tailored to an individual’s epigenetic profile.",
-  "Tag": "Hard",
-  "Title": "Epigenetics: The Bridge Between Genes and Environment",
-  "answerOne": "The study of changes in gene expression caused by mechanisms other than DNA sequence changes.",
-  "answerTwo": "Identical twins showing different traits due to environmental influences.",
-  "answerThree": "Understanding diseases and enabling personalized medicine.",
-  "createdAt": "December 4, 2024 at 09:40:00 AM UTC+5:30",
-  "question_One": "What is epigenetics?",
-  "question_One_option_One": "The study of changes in DNA sequences over generations.",
-  "question_One_option_Two": "The study of changes in gene expression caused by mechanisms other than DNA sequence changes.",
-  "question_One_option_Three": "A field unrelated to genetics or the environment.",
-  "question_Two": "What is an example of epigenetic influence?",
-  "question_Two_option_One": "Genetic changes causing identical twins to be identical in every aspect.",
-  "question_Two_option_Two": "Identical twins showing different traits due to environmental influences.",
-  "question_Two_option_Three": "Environmental factors having no impact on gene expression.",
-  "question_Three": "What are the implications of epigenetics?",
-  "question_Three_option_One": "It offers no practical insights into medicine.",
-  "question_Three_option_Two": "Understanding diseases and enabling personalized medicine.",
-  "question_Three_option_Three": "It disproves the role of the environment in health."
-},
-{
-  "Id": "57",
-  "Section_Five": "Thank You",
-  "Section_Four": "The singularity represents a potential turning point in human history. While it offers unprecedented opportunities for progress, it also raises profound ethical and existential questions about humanity's role in a world dominated by superintelligent machines.",
-  "Section_One": "The singularity refers to a theoretical point where artificial intelligence surpasses human intelligence, leading to exponential technological growth and significant societal transformation.",
-  "Section_Three": "For instance, superintelligent systems could solve complex problems like climate change or disease but might also pose risks such as loss of control or societal inequality if not properly managed.",
-  "Section_Two": "Debates about the singularity revolve around its feasibility, timeline, and implications. Proponents view it as an opportunity to elevate humanity, while critics warn of potential dangers, including ethical dilemmas and unpredictable outcomes.",
-  "Tag": "Hard",
-  "Title": "The AI Singularity",
-  "answerOne": "A theoretical point where AI surpasses human intelligence.",
-  "answerTwo": "Superintelligent systems solving problems or creating risks.",
-  "answerThree": "Debates about its feasibility, timeline, and ethical implications.",
-  "createdAt": "December 4, 2024 at 09:50:00 AM UTC+5:30",
-  "question_One": "What is the singularity?",
-  "question_One_option_One": "A point where technology ceases to evolve.",
-  "question_One_option_Two": "A theoretical point where AI surpasses human intelligence.",
-  "question_One_option_Three": "An event unrelated to technological progress.",
-  "question_Two": "What are examples of the singularity's potential impact?",
-  "question_Two_option_One": "AI systems solving trivial problems.",
-  "question_Two_option_Two": "Superintelligent systems solving problems or creating risks.",
-  "question_Two_option_Three": "No observable changes in society or technology.",
-  "question_Three": "What are the debates surrounding the singularity?",
-  "question_Three_option_One": "Its lack of potential implications.",
-  "question_Three_option_Two": "Debates about its feasibility, timeline, and ethical implications.",
-  "question_Three_option_Three": "The improbability of AI development."
-},
-{
-  "Id": "58",
-  "Section_Five": "Thank You",
-  "Section_Four": "CRISPR's accessibility has democratized genetic research, but its ease of use raises ethical and regulatory questions. Who determines the acceptable limits of genetic modification? Should we allow human germline editing for non-therapeutic purposes? As we navigate these questions, CRISPR symbolizes both promise and peril in modern science.",
-  "Section_One": "CRISPR-Cas9 is a revolutionary gene-editing tool derived from bacterial immune systems. It enables precise alterations to DNA, allowing researchers to edit genes with unprecedented accuracy and efficiency.",
-  "Section_Three": "For example, scientists have used CRISPR to develop crops resistant to pests and diseases, reducing the need for chemical pesticides. In medicine, CRISPR holds potential for curing genetic disorders like sickle cell anemia and Duchenne muscular dystrophy.",
-  "Section_Two": "However, CRISPR is not without risks. Off-target effects, where unintended parts of the genome are edited, could have unpredictable consequences. Moreover, ethical concerns about designer babies and the potential misuse of the technology have sparked global debates.",
-  "Tag": "Hard",
-  "Title": "CRISPR and the Ethics of Gene Editing",
-  "answerOne": "A gene-editing tool derived from bacterial immune systems.",
-  "answerTwo": "Crops resistant to pests and potential cures for genetic disorders.",
-  "answerThree": "Off-target effects and ethical concerns about designer babies.",
-  "createdAt": "December 4, 2024 at 10:30:00 AM UTC+5:30",
-  "question_One": "What is CRISPR?",
-  "question_One_option_One": "A method for random genetic mutation.",
-  "question_One_option_Two": "A gene-editing tool derived from bacterial immune systems.",
-  "question_One_option_Three": "A process for cloning animals.",
-  "question_Two": "What are examples of CRISPR applications?",
-  "question_Two_option_One": "Random alterations with no practical outcomes.",
-  "question_Two_option_Two": "Crops resistant to pests and potential cures for genetic disorders.",
-  "question_Two_option_Three": "Technologies unrelated to genetics.",
-  "question_Three": "What are the risks and ethical issues of CRISPR?",
-  "question_Three_option_One": "No significant risks or ethical considerations.",
-  "question_Three_option_Two": "Off-target effects and ethical concerns about designer babies.",
-  "question_Three_option_Three": "Limited practical applications."
-},{
-  "Id": "59",
-  "Section_Five": "Thank You",
-  "Section_Four": "AI's influence on creativity prompts philosophical questions: If AI-generated works evoke emotions and inspire, does it matter that a human did not create them? Can machines truly 'create,' or are they merely reassembling pre-existing ideas? As AI advances, society must redefine creativity, authorship, and intellectual property in this evolving landscape.",
-  "Section_One": "Artificial intelligence is transforming creative fields by generating art, music, and literature. AI models like DALL-E and ChatGPT analyze patterns in data to produce outputs that mimic human creativity.",
-  "Section_Three": "For instance, AI has composed symphonies, painted canvases, and even written novels that are indistinguishable from human-created works. These achievements challenge the traditional view of creativity as a uniquely human trait.",
-  "Section_Two": "However, critics argue that AI lacks the emotional depth and intentionality inherent to human creativity. Its outputs, while impressive, are rooted in algorithms and lack the personal experiences that inspire genuine artistic expression.",
-  "Tag": "Hard",
-  "Title": "AI and the Future of Creativity",
-  "answerOne": "AI models analyze patterns in data to mimic human creativity.",
-  "answerTwo": "Composing symphonies and writing novels indistinguishable from human works.",
-  "answerThree": "Debates about the emotional depth and authenticity of AI-generated works.",
-  "createdAt": "December 4, 2024 at 10:40:00 AM UTC+5:30",
-  "question_One": "How is AI transforming creative fields?",
-  "question_One_option_One": "By eliminating all human involvement in creativity.",
-  "question_One_option_Two": "By analyzing patterns in data to mimic human creativity.",
-  "question_One_option_Three": "By solely replicating historical works without originality.",
-  "question_Two": "What are examples of AI's achievements in creativity?",
-  "question_Two_option_One": "Minor contributions to irrelevant fields.",
-  "question_Two_option_Two": "Composing symphonies and writing novels indistinguishable from human works.",
-  "question_Two_option_Three": "Producing works that are universally dismissed as inferior.",
-  "question_Three": "What criticisms are leveled against AI creativity?",
-  "question_Three_option_One": "It is universally acknowledged as superior to human creativity.",
-  "question_Three_option_Two": "Debates about the emotional depth and authenticity of AI-generated works.",
-  "question_Three_option_Three": "There are no significant criticisms of AI in creative fields."
-},{
-  "Id": "60",
-  "Section_Five": "Thank You",
-  "Section_Four": "Synthetic biology holds the potential to address global challenges but also necessitates caution. The ability to engineer life raises profound questions about ethics, safety, and the boundaries of human innovation. As we shape biology, we must ensure it aligns with humanity's broader goals for sustainability and equity.",
-  "Section_One": "Synthetic biology combines biology and engineering to design and construct new biological parts, devices, and systems. It represents a paradigm shift, enabling humanity to create life forms tailored for specific purposes.",
-  "Section_Three": "Applications include bioengineered microbes that clean up oil spills, synthetic organisms that produce vaccines, and artificial cells that mimic natural ones for research. These breakthroughs demonstrate the power of synthetic biology to tackle global challenges.",
-  "Section_Two": "Yet, synthetic biology is not without controversy. Concerns about biosecurity, unintended ecological impacts, and the ethical implications of 'playing God' highlight the need for robust oversight and international collaboration.",
-  "Tag": "Hard",
-  "Title": "Synthetic Biology: Engineering Life",
-  "answerOne": "A field combining biology and engineering to create new biological systems.",
-  "answerTwo": "Bioengineered microbes, synthetic vaccines, and artificial cells.",
-  "answerThree": "Biosecurity concerns and ethical implications of engineering life.",
-  "createdAt": "December 4, 2024 at 10:50:00 AM UTC+5:30",
-  "question_One": "What is synthetic biology?",
-  "question_One_option_One": "A natural evolution of biology with no engineering influence.",
-  "question_One_option_Two": "A field combining biology and engineering to create new biological systems.",
-  "question_One_option_Three": "A focus solely on preserving existing biological species.",
-  "question_Two": "What are examples of synthetic biology applications?",
-  "question_Two_option_One": "No practical applications have been developed.",
-  "question_Two_option_Two": "Bioengineered microbes, synthetic vaccines, and artificial cells.",
-  "question_Two_option_Three": "Preserving natural habitats exclusively.",
-  "question_Three": "What are the challenges of synthetic biology?",
-  "question_Three_option_One": "There are no significant challenges in this field.",
-  "question_Three_option_Two": "Biosecurity concerns and ethical implications of engineering life.",
-  "question_Three_option_Three": "Challenges are limited to funding issues."
-},{
-  "Id": "61",
-  "Section_Five": "Thank You",
-  "Section_Four": "Behavioral economics challenges the assumption that individuals always act rationally in their own self-interest. It provides insights into phenomena like procrastination, where immediate gratification outweighs long-term benefits. Understanding such biases enables policymakers and businesses to design better incentives and interventions to promote optimal decision-making.",
-  "Section_One": "Behavioral economics is a branch of economics that integrates insights from psychology to understand how individuals actually make decisions, often deviating from the purely rational behavior assumed by classical economic theories.",
-  "Section_Three": "For instance, the concept of 'loss aversion' explains why people prefer avoiding losses to acquiring equivalent gains. Similarly, the 'anchoring effect' shows how initial information influences subsequent judgments, regardless of its relevance.",
-  "Section_Two": "The field has practical applications, such as designing 'nudges'—subtle changes in choice architecture to influence behavior positively. Examples include automatically enrolling employees in retirement plans or displaying calorie counts on menus to encourage healthier eating.",
-  "Tag": "Hard",
-  "Title": "Behavioral Economics: The Psychology of Decision-Making",
-  "answerOne": "A branch of economics that integrates psychology to study decision-making.",
-  "answerTwo": "Loss aversion and the anchoring effect.",
-  "answerThree": "Designing nudges and improving choice architecture.",
-  "createdAt": "December 4, 2024 at 11:10:00 AM UTC+5:30",
-  "question_One": "What is behavioral economics?",
-  "question_One_option_One": "A purely mathematical approach to decision-making.",
-  "question_One_option_Two": "A branch of economics that integrates psychology to study decision-making.",
-  "question_One_option_Three": "An outdated theory of economics.",
-  "question_Two": "What are some key concepts in behavioral economics?",
-  "question_Two_option_One": "Irrational behavior and complete unpredictability.",
-  "question_Two_option_Two": "Loss aversion and the anchoring effect.",
-  "question_Two_option_Three": "Only the anchoring effect.",
-  "question_Three": "What are the applications of behavioral economics?",
-  "question_Three_option_One": "Designing nudges and improving choice architecture.",
-  "question_Three_option_Two": "Replacing classical economic theories entirely.",
-  "question_Three_option_Three": "Reducing focus on individual decision-making."
-}
-,{
-  "Id": "62",
-  "Section_Five": "Thank You",
-  "Section_Four": "While international agreements like the Paris Accord aim to limit temperature rise, enforcement mechanisms and funding gaps remain critical challenges. Moreover, balancing economic growth with environmental protection requires innovation in green technologies and systemic changes in global energy consumption patterns.",
-  "Section_One": "Climate change refers to long-term alterations in temperature and weather patterns, primarily driven by human activities such as burning fossil fuels, deforestation, and industrial processes. These activities increase greenhouse gas emissions, leading to global warming.",
-  "Section_Three": "The consequences of climate change are severe: rising sea levels threaten coastal cities, extreme weather events disrupt ecosystems and economies, and changing climate patterns jeopardize food and water security.",
-  "Section_Two": "Mitigation strategies include transitioning to renewable energy sources, implementing afforestation programs, and adopting sustainable agricultural practices. Global cooperation and innovative policies are essential to address this pressing issue effectively.",
-  "Tag": "Hard",
-  "Title": "Climate Change and Mitigation Strategies",
-  "answerOne": "Long-term alterations in temperature and weather patterns due to human activities.",
-  "answerTwo": "Rising sea levels, extreme weather events, and threats to food security.",
-  "answerThree": "Transitioning to renewable energy and afforestation programs.",
-  "createdAt": "December 4, 2024 at 11:20:00 AM UTC+5:30",
-  "question_One": "What is climate change?",
-  "question_One_option_One": "Short-term weather fluctuations.",
-  "question_One_option_Two": "Long-term alterations in temperature and weather patterns due to human activities.",
-  "question_One_option_Three": "Natural cycles unaffected by human activity.",
-  "question_Two": "What are the consequences of climate change?",
-  "question_Two_option_One": "Improved ecosystems and stable economies.",
-  "question_Two_option_Two": "Rising sea levels, extreme weather events, and threats to food security.",
-  "question_Two_option_Three": "Fewer weather disruptions globally.",
-  "question_Three": "What are mitigation strategies for climate change?",
-  "question_Three_option_One": "Transitioning to renewable energy and afforestation programs.",
-  "question_Three_option_Two": "Eliminating international cooperation on climate issues.",
-  "question_Three_option_Three": "Continuing reliance on fossil fuels."
-}
-,{
-  "Id": "63",
-  "Section_Five": "Thank You",
-  "Section_Four": "The future of AI depends on how society shapes its development. Ethical AI frameworks, transparency in algorithm design, and international agreements are essential to ensure that AI remains a force for good, fostering innovation while safeguarding humanity’s core values.",
-  "Section_One": "Artificial intelligence has the potential to revolutionize industries, from automating routine tasks to enabling predictive analytics in medicine and finance. However, its future impact extends beyond efficiency gains to profound societal shifts.",
-  "Section_Three": "For instance, AI could exacerbate inequalities if access to its benefits remains unevenly distributed. Additionally, autonomous systems raise ethical concerns, such as accountability in AI-driven decisions and the risks of biased algorithms.",
-  "Section_Two": "At the same time, AI offers opportunities to tackle global challenges. It can optimize energy consumption, improve disaster response strategies, and facilitate advancements in personalized healthcare, contributing to a more sustainable and equitable future.",
-  "Tag": "Hard",
-  "Title": "AI and Its Future Implications",
-  "answerOne": "Revolutionizing industries and enabling predictive analytics.",
-  "answerTwo": "Exacerbating inequalities and raising ethical concerns.",
-  "answerThree": "Optimizing energy use and improving disaster response strategies.",
-  "createdAt": "December 4, 2024 at 11:30:00 AM UTC+5:30",
-  "question_One": "What is one potential impact of AI on industries?",
-  "question_One_option_One": "Revolutionizing industries and enabling predictive analytics.",
-  "question_One_option_Two": "Eliminating technological advancements.",
-  "question_One_option_Three": "Reducing efficiency in medicine and finance.",
-  "question_Two": "What are the risks associated with AI?",
-  "question_Two_option_One": "Exacerbating inequalities and raising ethical concerns.",
-  "question_Two_option_Two": "Eliminating global challenges entirely.",
-  "question_Two_option_Three": "Universally accepted unbiased algorithms.",
-  "question_Three": "How can AI contribute to a sustainable future?",
-  "question_Three_option_One": "Optimizing energy use and improving disaster response strategies.",
-  "question_Three_option_Two": "Promoting inefficiency in disaster responses.",
-  "question_Three_option_Three": "Only addressing medical challenges."
-}
-,{
-  "Id": "64",
-  "Section_Five": "Thank You",
-  "Section_Four": "Despite these challenges, biotechnology's potential to revolutionize medicine is unparalleled. Personalized treatments based on genetic profiling can improve patient outcomes, and biotechnological advancements can address previously untreatable diseases.",
-  "Section_One": "Biotechnology integrates biology and technology to develop medical treatments and innovations. It encompasses fields like genetic engineering, molecular biology, and bioinformatics, promising groundbreaking healthcare solutions.",
-  "Section_Three": "However, challenges such as ethical concerns about genetic editing and the high costs of development can hinder widespread adoption. Balancing innovation with accessibility remains a critical focus.",
-  "Section_Two": "Applications include developing vaccines, creating targeted therapies for cancer, and advancing regenerative medicine using stem cells. Biotech innovations could significantly reduce disease burdens globally.",
-  "Tag": "Hard",
-  "Title": "Biotechnology and Medical Innovation",
-  "answerOne": "The integration of biology and technology for healthcare solutions.",
-  "answerTwo": "Ethical concerns and high costs of development.",
-  "answerThree": "Vaccines, cancer therapies, and regenerative medicine.",
-  "createdAt": "December 4, 2024 at 11:45:00 AM UTC+5:30",
-  "question_One": "What is biotechnology?",
-  "question_One_option_One": "A study of plants exclusively.",
-  "question_One_option_Two": "The integration of biology and technology for healthcare solutions.",
-  "question_One_option_Three": "A field unrelated to medicine.",
-  "question_Two": "What are the challenges of biotechnology in medicine?",
-  "question_Two_option_One": "Abundant resources and low costs.",
-  "question_Two_option_Two": "Ethical concerns and high costs of development.",
-  "question_Two_option_Three": "Universal acceptance without ethical dilemmas.",
-  "question_Three": "What are some applications of biotechnology?",
-  "question_Three_option_One": "Vaccines, cancer therapies, and regenerative medicine.",
-  "question_Three_option_Two": "Traditional medicine and home remedies.",
-  "question_Three_option_Three": "Simple medical equipment."
-}
-,{
-  "Id": "65",
-  "Section_Five": "Thank You",
-  "Section_Four": "While neuroplasticity enables recovery and adaptation, over-reliance on it can create maladaptive behaviors. Striking a balance between utilizing neuroplasticity and maintaining healthy habits is essential for optimal cognitive function.",
-  "Section_One": "Neuroplasticity refers to the brain's ability to reorganize itself by forming new neural connections in response to learning, experience, or injury. This ability challenges the traditional belief that the adult brain is static and unchangeable.",
-  "Section_Three": "For instance, individuals recovering from strokes can retrain their brains to regain lost functions through physical and cognitive therapy. Similarly, learning a new language or instrument enhances neural pathways, boosting cognitive abilities.",
-  "Section_Two": "The concept has implications for education and therapy, suggesting that targeted interventions can lead to lasting behavioral and cognitive improvements.",
-  "Tag": "Hard",
-  "Title": "Neuroplasticity: Adapting the Brain",
-  "answerOne": "The brain's ability to reorganize itself by forming new connections.",
-  "answerTwo": "Stroke recovery and enhanced learning.",
-  "answerThree": "Targeted interventions for lasting cognitive improvements.",
-  "createdAt": "December 4, 2024 at 11:50:00 AM UTC+5:30",
-  "question_One": "What is neuroplasticity?",
-  "question_One_option_One": "A static and unchanging brain.",
-  "question_One_option_Two": "The brain's ability to reorganize itself by forming new connections.",
-  "question_One_option_Three": "A phenomenon unrelated to learning.",
-  "question_Two": "What are some examples of neuroplasticity in action?",
-  "question_Two_option_One": "Stroke recovery and enhanced learning.",
-  "question_Two_option_Two": "Permanent inability to adapt.",
-  "question_Two_option_Three": "Random neural reorganization.",
-  "question_Three": "What does neuroplasticity suggest for education and therapy?",
-  "question_Three_option_One": "Targeted interventions for lasting cognitive improvements.",
-  "question_Three_option_Two": "Eliminating targeted interventions.",
-  "question_Three_option_Three": "Disregarding behavioral therapies."
-},{
-  "Id": "66",
-  "Section_Five": "Thank You",
-  "Section_Four": "Ultimately, ensuring AGI aligns with human values requires robust ethical frameworks, multidisciplinary collaboration, and transparency in its development. The stakes are high, as AGI could shape humanity's future for better or worse.",
-  "Section_One": "Artificial General Intelligence (AGI) represents a hypothetical AI capable of understanding, learning, and performing tasks across a wide range of fields at a human-like or superhuman level.",
-  "Section_Three": "The potential benefits include solving complex global challenges such as climate change and curing diseases. However, the risks are equally significant, ranging from loss of jobs to existential threats posed by misaligned goals.",
-  "Section_Two": "Ethical concerns involve ensuring AGI systems do not reinforce biases, remain under human control, and prioritize societal well-being. Governance and oversight are critical to mitigating risks.",
-  "Tag": "Hard",
-  "Title": "The Promise and Peril of Artificial General Intelligence",
-  "answerOne": "A hypothetical AI capable of performing tasks at human-like levels.",
-  "answerTwo": "Solving global challenges and existential risks.",
-  "answerThree": "Ensuring systems remain unbiased and under human control.",
-  "createdAt": "December 4, 2024 at 12:00:00 PM UTC+5:30",
-  "question_One": "What is AGI?",
-  "question_One_option_One": "A narrow AI limited to specific tasks.",
-  "question_One_option_Two": "A hypothetical AI capable of performing tasks at human-like levels.",
-  "question_One_option_Three": "A type of AI unrelated to human capabilities.",
-  "question_Two": "What are the potential benefits and risks of AGI?",
-  "question_Two_option_One": "Solving global challenges and existential risks.",
-  "question_Two_option_Two": "Limited global impact.",
-  "question_Two_option_Three": "Only addressing economic growth.",
-  "question_Three": "What are ethical concerns associated with AGI?",
-  "question_Three_option_One": "Ensuring systems remain unbiased and under human control.",
-  "question_Three_option_Two": "Removing all ethical oversight.",
-  "question_Three_option_Three": "Eliminating societal well-being."
-}
-,{
-  "Id": "67",
-  "Section_Five": "Thank You",
-  "Section_Four": "However, the transition to renewable energy is not without challenges. High initial costs, technological limitations, and resistance from traditional energy sectors slow progress. Nonetheless, sustainable energy is vital for global development.",
-  "Section_One": "Renewable energy sources such as solar, wind, and hydropower offer sustainable alternatives to fossil fuels. They promise to reduce greenhouse gas emissions and combat climate change while providing long-term energy security.",
-  "Section_Three": "Countries investing in renewable energy have seen economic benefits, including job creation and reduced energy import dependency. For instance, Denmark leads in wind energy production, generating over 40% of its electricity from this source.",
-  "Section_Two": "Adopting renewable energy requires a combination of governmental policies, technological innovation, and public awareness. Global cooperation is critical to scaling these solutions effectively.",
-  "Tag": "Hard",
-  "Title": "Renewable Energy and Global Sustainability",
-  "answerOne": "Sustainable alternatives to fossil fuels.",
-  "answerTwo": "High costs, technological limitations, and resistance.",
-  "answerThree": "Policies, innovation, and global cooperation.",
-  "createdAt": "December 4, 2024 at 12:15:00 PM UTC+5:30",
-  "question_One": "What are renewable energy sources?",
-  "question_One_option_One": "Non-renewable resources like coal and oil.",
-  "question_One_option_Two": "Sustainable alternatives to fossil fuels.",
-  "question_One_option_Three": "Limited and environmentally harmful options.",
-  "question_Two": "What challenges hinder renewable energy adoption?",
-  "question_Two_option_One": "Widespread acceptance.",
-  "question_Two_option_Two": "High costs, technological limitations, and resistance.",
-  "question_Two_option_Three": "Abundant resources with no barriers.",
-  "question_Three": "What facilitates the adoption of renewable energy?",
-  "question_Three_option_One": "Policies, innovation, and global cooperation.",
-  "question_Three_option_Two": "Avoiding technological advancement.",
-  "question_Three_option_Three": "Neglecting public awareness."
-}
-,{
-  "Id": "68",
-  "Section_Five": "Thank You",
-  "Section_Four": "Yet, the process of evolution is slow and subject to environmental pressures. While it explains much of the biological diversity, unanswered questions about specific evolutionary pathways remain.",
-  "Section_One": "Evolutionary biology studies how organisms change over generations due to genetic variation, mutation, and natural selection. This field provides insights into the development of species and their adaptations.",
-  "Section_Three": "The theory of natural selection, proposed by Charles Darwin, highlights the survival and reproduction of organisms best suited to their environment. Examples include the giraffe’s long neck and the camouflage of insects.",
-  "Section_Two": "Modern evolutionary studies use tools like DNA sequencing to trace genetic changes and understand ancestral relationships. These advancements bridge gaps in the fossil record and refine our understanding of evolution.",
-  "Tag": "Hard",
-  "Title": "Evolutionary Biology and Natural Selection",
-  "answerOne": "The study of changes in organisms over generations.",
-  "answerTwo": "Unanswered questions about evolutionary pathways.",
-  "answerThree": "Using DNA sequencing to trace genetic changes.",
-  "createdAt": "December 4, 2024 at 12:20:00 PM UTC+5:30",
-  "question_One": "What is evolutionary biology?",
-  "question_One_option_One": "A static view of organisms.",
-  "question_One_option_Two": "The study of changes in organisms over generations.",
-  "question_One_option_Three": "An unrelated study of fossils.",
-  "question_Two": "What challenges does evolution face?",
-  "question_Two_option_One": "Rapid environmental adaptation.",
-  "question_Two_option_Two": "Unanswered questions about evolutionary pathways.",
-  "question_Two_option_Three": "Perfect understanding of all biological processes.",
-  "question_Three": "What tools aid modern evolutionary studies?",
-  "question_Three_option_One": "Using DNA sequencing to trace genetic changes.",
-  "question_Three_option_Two": "Ignoring ancestral relationships.",
-  "question_Three_option_Three": "Fossil record alone."
-}
-,{
-  "Id": "69",
-  "Section_Five": "Thank You",
-  "Section_Four": "Despite these concerns, AI integration in the workforce can lead to the creation of new industries and jobs. Adaptation and reskilling are essential to harness AI's full potential while minimizing disruptions.",
-  "Section_One": "Artificial Intelligence (AI) is reshaping industries by automating tasks, analyzing data, and optimizing processes. While it boosts efficiency, it also raises concerns about job displacement and economic inequality.",
-  "Section_Three": "Jobs requiring repetitive tasks, like data entry and assembly line work, are most at risk. However, roles emphasizing creativity, critical thinking, and human interaction remain comparatively secure.",
-  "Section_Two": "To address these issues, governments and organizations must prioritize workforce reskilling, encourage AI-literacy programs, and create policies to protect displaced workers.",
-  "Tag": "Hard",
-  "Title": "The Impact of AI on Employment",
-  "answerOne": "Automating tasks and optimizing processes.",
-  "answerTwo": "Job displacement and economic inequality.",
-  "answerThree": "Reskilling programs and AI-literacy initiatives.",
-  "createdAt": "December 4, 2024 at 12:25:00 PM UTC+5:30",
-  "question_One": "What is AI's role in industries?",
-  "question_One_option_One": "Eliminating efficiency.",
-  "question_One_option_Two": "Automating tasks and optimizing processes.",
-  "question_One_option_Three": "Reducing innovation.",
-  "question_Two": "What challenges does AI pose for workers?",
-  "question_Two_option_One": "Increased job opportunities only.",
-  "question_Two_option_Two": "Job displacement and economic inequality.",
-  "question_Two_option_Three": "No significant challenges.",
-  "question_Three": "How can workforce challenges from AI be addressed?",
-  "question_Three_option_One": "Reskilling programs and AI-literacy initiatives.",
-  "question_Three_option_Two": "Avoiding any workforce policies.",
-  "question_Three_option_Three": "Eliminating reskilling programs."
-}
-,{
-  "Id": "70",
-  "Section_Five": "Thank You",
-  "Section_Four": "Addressing climate change requires collaborative international efforts. Governments, corporations, and individuals must contribute to adopting sustainable practices and reducing carbon emissions for a healthier planet.",
-  "Section_One": "Climate change refers to long-term shifts in global temperatures and weather patterns, primarily caused by human activities like burning fossil fuels and deforestation.",
-  "Section_Three": "Its impacts include rising sea levels, extreme weather events, and loss of biodiversity. Vulnerable populations often bear the brunt of these effects, exacerbating inequality.",
-  "Section_Two": "Mitigating climate change involves transitioning to renewable energy, enhancing energy efficiency, and protecting natural ecosystems. These actions are critical to preserving the planet for future generations.",
-  "Tag": "Hard",
-  "Title": "Understanding and Combating Climate Change",
-  "answerOne": "Long-term shifts in global temperatures due to human activities.",
-  "answerTwo": "Rising sea levels, extreme weather, and biodiversity loss.",
-  "answerThree": "Renewable energy, energy efficiency, and ecosystem protection.",
-  "createdAt": "December 4, 2024 at 12:30:00 PM UTC+5:30",
-  "question_One": "What is climate change?",
-  "question_One_option_One": "A temporary shift in local weather patterns.",
-  "question_One_option_Two": "Long-term shifts in global temperatures due to human activities.",
-  "question_One_option_Three": "A natural phenomenon unrelated to human activity.",
-  "question_Two": "What are the impacts of climate change?",
-  "question_Two_option_One": "Rising sea levels, extreme weather, and biodiversity loss.",
-  "question_Two_option_Two": "Improved weather patterns.",
-  "question_Two_option_Three": "Increased global stability.",
-  "question_Three": "How can climate change be mitigated?",
-  "question_Three_option_One": "Renewable energy, energy efficiency, and ecosystem protection.",
-  "question_Three_option_Two": "Ignoring natural ecosystems.",
-  "question_Three_option_Three": "Burning more fossil fuels."
-}
-,{
-  "Id": "71",
-  "Section_Five": "Thank You",
-  "Section_Four": "However, the Renaissance was not without contradictions. While it celebrated human potential, it also reinforced existing social hierarchies and excluded many, including women and marginalized communities, from its intellectual pursuits.",
-  "Section_One": "The Renaissance, which spanned roughly from the 14th to the 17th century, marked a period of cultural, artistic, and intellectual rebirth in Europe. Rooted in a rediscovery of classical Greco-Roman texts, it emphasized humanism and secularism.",
-  "Section_Three": "Notable figures of the Renaissance include Leonardo da Vinci, who epitomized the 'Renaissance Man,' and Galileo Galilei, whose work laid the foundation for modern science. These individuals challenged established norms and broadened intellectual horizons.",
-  "Section_Two": "The Renaissance's impact was profound, influencing art, literature, and science. The invention of the printing press during this period allowed for the dissemination of knowledge, accelerating Europe's transition to modernity.",
-  "Tag": "Hard",
-  "Title": "The Renaissance: A Cultural Reawakening",
-  "answerOne": "A period of cultural and intellectual rebirth in Europe.",
-  "answerTwo": "Exclusion of marginalized communities.",
-  "answerThree": "The invention of the printing press.",
-  "createdAt": "December 4, 2024 at 12:45:00 PM UTC+5:30",
-  "question_One": "What was the Renaissance?",
-  "question_One_option_One": "A decline in cultural achievements.",
-  "question_One_option_Two": "A period of cultural and intellectual rebirth in Europe.",
-  "question_One_option_Three": "A medieval conflict.",
-  "question_Two": "What contradictions existed in the Renaissance?",
-  "question_Two_option_One": "Inclusion of all communities.",
-  "question_Two_option_Two": "Exclusion of marginalized communities.",
-  "question_Two_option_Three": "Complete societal equality.",
-  "question_Three": "What invention significantly impacted the Renaissance?",
-  "question_Three_option_One": "The invention of the printing press.",
-  "question_Three_option_Two": "The steam engine.",
-  "question_Three_option_Three": "The compass."
-}
-,{
-  "Id": "72",
-  "Section_Five": "Thank You",
-  "Section_Four": "Despite its advantages, the Industrial Revolution also led to labor exploitation, environmental degradation, and significant social inequality, prompting reforms in labor laws and the rise of worker movements.",
-  "Section_One": "The Industrial Revolution, beginning in the late 18th century, was a transformative period in history marked by technological innovation and the shift from agrarian economies to industrialized societies.",
-  "Section_Three": "Innovations such as the steam engine and mechanized textile production revolutionized industries. These advancements improved productivity but also displaced traditional crafts and created a new working class.",
-  "Section_Two": "Urbanization increased rapidly as people migrated to cities in search of work. While this led to economic growth, overcrowded cities and poor working conditions presented new challenges.",
-  "Tag": "Hard",
-  "Title": "The Industrial Revolution: A Turning Point",
-  "answerOne": "A transformative period of technological innovation.",
-  "answerTwo": "Labor exploitation and social inequality.",
-  "answerThree": "The steam engine and mechanized textile production.",
-  "createdAt": "December 4, 2024 at 12:50:00 PM UTC+5:30",
-  "question_One": "What was the Industrial Revolution?",
-  "question_One_option_One": "A period of declining technology.",
-  "question_One_option_Two": "A transformative period of technological innovation.",
-  "question_One_option_Three": "An agricultural reform movement.",
-  "question_Two": "What were the negative outcomes of the Industrial Revolution?",
-  "question_Two_option_One": "Labor exploitation and social inequality.",
-  "question_Two_option_Two": "Improved rural life.",
-  "question_Two_option_Three": "Decreased urbanization.",
-  "question_Three": "What innovations characterized the Industrial Revolution?",
-  "question_Three_option_One": "The steam engine and mechanized textile production.",
-  "question_Three_option_Two": "Digital technology.",
-  "question_Three_option_Three": "Printing press only."
-}
-,{
-  "Id": "73",
-  "Section_Five": "Thank You",
-  "Section_Four": "The geopolitical outcomes of both World Wars reshaped the global order. The establishment of the United Nations and the onset of the Cold War were direct consequences, influencing international relations for decades.",
-  "Section_One": "The two World Wars of the 20th century were defining events that reshaped nations, societies, and global politics. They were characterized by unprecedented destruction and loss of life.",
-  "Section_Three": "World War I was marked by trench warfare and chemical weapons, while World War II introduced mechanized warfare and nuclear weapons, raising the stakes of global conflict.",
-  "Section_Two": "The economic and social consequences of the wars included the decline of colonial empires, the rise of the United States and the Soviet Union as superpowers, and the push for decolonization and self-determination.",
-  "Tag": "Hard",
-  "Title": "The World Wars and Their Legacy",
-  "answerOne": "Defining events that reshaped global politics.",
-  "answerTwo": "Decline of colonial empires and superpower rivalry.",
-  "answerThree": "The establishment of the United Nations.",
-  "createdAt": "December 4, 2024 at 12:55:00 PM UTC+5:30",
-  "question_One": "What were the World Wars?",
-  "question_One_option_One": "Minor conflicts with limited global impact.",
-  "question_One_option_Two": "Defining events that reshaped global politics.",
-  "question_One_option_Three": "Purely economic crises.",
-  "question_Two": "What were the economic consequences of the World Wars?",
-  "question_Two_option_One": "Decline of colonial empires and superpower rivalry.",
-  "question_Two_option_Two": "Increased global stability.",
-  "question_Two_option_Three": "Reduced international influence of nations.",
-  "question_Three": "What geopolitical institution emerged post-WWII?",
-  "question_Three_option_One": "The establishment of the United Nations.",
-  "question_Three_option_Two": "The League of Nations only.",
-  "question_Three_option_Three": "No global institutions emerged."
-}
-,{
-  "Id": "74",
-  "Section_Five": "Thank You",
-  "Section_Four": "However, the legacies of ancient civilizations also reveal conflicts, such as resource scarcity and social stratification, offering lessons for contemporary societies on sustainable development and equitable growth.",
-  "Section_One": "Ancient civilizations like Mesopotamia, Egypt, the Indus Valley, and China laid the foundations for modern society through innovations in writing, governance, and technology.",
-  "Section_Three": "For example, the Mesopotamians developed cuneiform writing and legal codes like the Code of Hammurabi, while the Egyptians excelled in architecture and medicine. These contributions influenced subsequent cultures.",
-  "Section_Two": "The Indus Valley civilization pioneered urban planning and water management, and ancient China’s inventions, such as paper and gunpowder, transformed global history.",
-  "Tag": "Hard",
-  "Title": "Ancient Civilizations: Pioneers of Progress",
-  "answerOne": "Foundations for modern society through innovations.",
-  "answerTwo": "Conflicts like resource scarcity and social stratification.",
-  "answerThree": "Urban planning and legal codes.",
-  "createdAt": "December 4, 2024 at 1:00:00 PM UTC+5:30",
-  "question_One": "What contributions did ancient civilizations make?",
-  "question_One_option_One": "Foundations for modern society through innovations.",
-  "question_One_option_Two": "No significant contributions.",
-  "question_One_option_Three": "Inhibiting cultural progress.",
-  "question_Two": "What challenges did ancient civilizations face?",
-  "question_Two_option_One": "Conflicts like resource scarcity and social stratification.",
-  "question_Two_option_Two": "Lack of innovation.",
-  "question_Two_option_Three": "Complete social harmony.",
-  "question_Three": "Which civilizations influenced urban planning?",
-  "question_Three_option_One": "The Indus Valley and Mesopotamia.",
-  "question_Three_option_Two": "Medieval Europe.",
-  "question_Three_option_Three": "No ancient civilizations."
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-   
-]
-addDataToFirebase(sampleData, "RC");
-export default addDataToFirebase
-  
-   
-
-
-
-*/
+/**
 
 
 const test = ()=>{
@@ -2022,3 +1351,5 @@ const test = ()=>{
 }
 
 export default test 
+
+*/
