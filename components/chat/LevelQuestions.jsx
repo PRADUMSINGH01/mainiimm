@@ -281,9 +281,7 @@ const LevelQuestions = ({
                 )}
 
                 {showSolution[indexOfFirstQuestion + index] && (
-                  <p className="mt-2  italic text-lg">
-                    {questionData.solution}
-                  </p>
+                  <MathJax> {questionData.solution}</MathJax>
                 )}
               </div>
             ))}
