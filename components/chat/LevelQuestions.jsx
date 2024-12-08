@@ -5,6 +5,20 @@ import { useRouter } from "next/navigation";
 import FETCHDATA from "@/module/fetchdata";
 import { IoMdDoneAll } from "react-icons/io";
 import { MathJaxContext, MathJax } from "better-react-mathjax";
+const mathJaxConfig = {
+  loader: { load: ["input/tex", "output/chtml"] },
+  tex: {
+    packages: { "[+]": ["html"] },
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"],
+    ],
+    displayMath: [
+      ["$$", "$$"],
+      ["\\[", "\\]"],
+    ],
+  },
+};
 
 import {
   FaSearch,
@@ -25,20 +39,7 @@ const LevelQuestions = ({
   LevelTwoURL,
 }) => {
   const router = useRouter();
-  const config = {
-    loader: { load: ["[tex]/html"] },
-    tex: {
-      packages: { "[+]": ["html"] },
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"],
-      ],
-      displayMath: [
-        ["$$", "$$"],
-        ["\\[", "\\]"],
-      ],
-    },
-  };
+
   const [mathQuestions, SETDATA] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("All");
@@ -129,7 +130,7 @@ const LevelQuestions = ({
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <MathJaxContext version={3} config={config}>
+    <MathJaxContext config={mathJaxConfig}>
       <MathJax>
         <div
           className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
