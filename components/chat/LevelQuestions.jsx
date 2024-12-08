@@ -131,7 +131,7 @@ const LevelQuestions = ({
 
   return (
     <MathJaxContext config={mathJaxConfig}>
-      <MathJax>
+      <MathJax dynamic>
         <div
           className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
             isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
@@ -229,9 +229,8 @@ const LevelQuestions = ({
                   </div>
                 </div>
                 <p className="mb-2 text-lg md:text-2xl ml-3">
-                  {questionData.Question}
+                  <MathJax dynamic>{questionData.Question}</MathJax>
                 </p>
-
                 <div className="flex flex-col  md:flex-row justify-between">
                   <button
                     onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
@@ -281,7 +280,7 @@ const LevelQuestions = ({
                 )}
 
                 {showSolution[indexOfFirstQuestion + index] && (
-                  <MathJax> {questionData.solution}</MathJax>
+                  <MathJax dynamic> {questionData.solution}</MathJax>
                 )}
               </div>
             ))}

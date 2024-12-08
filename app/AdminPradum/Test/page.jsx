@@ -1,4 +1,4 @@
-import app from "@/module/firebase";
+/**import app from "@/module/firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 // Initialize Firebase
@@ -128,7 +128,6 @@ addDataToFirebase(sampleData, "/Quant/Number-System/LevelTwo");
 
 export default addDataToFirebase;
 
-/**
 
 
 const test = ()=>{
