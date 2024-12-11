@@ -1,6 +1,6 @@
 'use client';
-/**
- * 
+
+ 
 import { useEffect, useState } from 'react';
 import Mock_Fetch_Data from '../../module/Mock_Fetch_Data'
 import Link from 'next/link'
@@ -63,7 +63,7 @@ export default function MockQuestionsPage() {
   );
 }
 
- */
+ 
 
 
 import Equestion from '@/components/Equestion'

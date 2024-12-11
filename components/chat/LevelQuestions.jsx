@@ -8,17 +8,19 @@ import { MathJaxContext, MathJax } from "better-react-mathjax";
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
   tex: {
-    packages: { "[+]": ["html"] },
+    packages: { "[+]": ["ams"] }, // Add AMS package for align environments
     inlineMath: [
       ["$", "$"],
       ["\\(", "\\)"],
     ],
     displayMath: [
       ["$$", "$$"],
-      ["\\[", "\\]"],
+      ["/[", "\\]"],
     ],
+    tags: "none", // Disable equation numbering by default
   },
 };
+
 
 import {
   FaSearch,
@@ -128,10 +130,10 @@ const LevelQuestions = ({
   );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+  
   return (
     <MathJaxContext config={mathJaxConfig}>
-      <MathJax dynamic>
+    
         <div
           className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
             isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
@@ -231,7 +233,7 @@ const LevelQuestions = ({
                 <p className="mb-2 text-lg md:text-2xl ml-3">
                   <MathJax dynamic>{questionData.Question}</MathJax>
                 </p>
-                <div className="flex flex-col  md:flex-row justify-between">
+                <div className="flex flex-col w-full md:flex-row justify-between">
                   <button
                     onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
                     className={`flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
@@ -280,7 +282,19 @@ const LevelQuestions = ({
                 )}
 
                 {showSolution[indexOfFirstQuestion + index] && (
-                  <MathJax dynamic> {questionData.solution}</MathJax>
+                  <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-hidden	 rounded-md break-words		 ">
+                    <p className="text-xl w-1/2"> Here Is Solution : </p>
+                    <MathJax dynamic hideUntilTypeset="first">
+      {String.raw`
+        \[
+        \begin{align*}
+        ${questionData.solution}
+        \end{align*}
+        \]
+      `}
+    </MathJax>
+
+                  </span>
                 )}
               </div>
             ))}
@@ -307,7 +321,7 @@ const LevelQuestions = ({
 
           {/* Tricks Section */}
         </div>
-      </MathJax>
+      
     </MathJaxContext>
   );
 };
