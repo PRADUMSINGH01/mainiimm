@@ -24,6 +24,7 @@ const [auth , setAuth]  = useState(false)
         <Link href="/" className="text-xl font-bold text-gray-800">
           IIM Target
         </Link>
+          { auth ?
         <ul className="flex space-x-4">
           <li>
         
@@ -35,19 +36,18 @@ const [auth , setAuth]  = useState(false)
 
 
             <li>
-          { auth ?
           <span className='flex items-center justify-between cursor-pointer' onClick={handleLogout}>
             <p   className=' px-1 '>LogOut</p>
             <FaSignOutAlt className='text-blue-600'/>
           </span>
-            :
+          </li>
+        </ul>
 
-            <Link href="/sign" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            :
+            <Link href="/signIn" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Login
             </Link>
           }
-          </li>
-        </ul>
       </div>
     </nav>
   );
