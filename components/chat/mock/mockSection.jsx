@@ -40,11 +40,10 @@ const [questions , setQuestion] = useState([])
 
   const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1 ) {
-      if(answers[currentQuestion]!==undefined){
+      if(answers[currentQuestion]===undefined){
           setalert(true)
       }else{
         setalert(false)
-
       setCurrentQuestion(currentQuestion + 1);
       }
       
@@ -97,6 +96,8 @@ useEffect(()=>{
 
 },[])
 
+
+console.log(answers )
  
 
   
