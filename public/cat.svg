@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f0f0f0" />
+  
+  <!-- Man's Body -->
+  <circle cx="150" cy="80" r="20" fill="#ffcc99" stroke="black" stroke-width="2" />
+  
+  <!-- Man's Legs (Walking Pose) -->
+  <line x1="150" y1="100" x2="130" y2="150" stroke="black" stroke-width="4" /> <!-- Left leg -->
+  <line x1="150" y1="100" x2="170" y2="150" stroke="black" stroke-width="4" /> <!-- Right leg -->
+  
+  <!-- Man's Arms -->
+  <line x1="150" y1="90" x2="130" y2="120" stroke="black" stroke-width="4" /> <!-- Left arm -->
+  <line x1="150" y1="90" x2="170" y2="120" stroke="black" stroke-width="4" /> <!-- Right arm -->
+  
+  <!-- Man's Hands -->
+  <circle cx="130" cy="120" r="5" fill="black" />
+  <circle cx="170" cy="120" r="5" fill="black" />
+  
+  <!-- Man's Feet -->
+  <ellipse cx="130" cy="160" rx="10" ry="5" fill="brown" />
+  <ellipse cx="170" cy="160" rx="10" ry="5" fill="brown" />
+  
+  <!-- Man's Clothes (Shirt and Pants) -->
+  <rect x="140" y="80" width="20" height="20" fill="#2e8b57" /> <!-- Shirt -->
+  <rect x="130" y="100" width="40" height="40" fill="#4682b4" /> <!-- Pants -->
+  
+  <!-- Book in Hand -->
+  <rect x="125" y="115" width="50" height="25" fill="#f4c542" stroke="black" stroke-width="2" />
+  <line x1="125" y1="115" x2="175" y2="115" stroke="black" stroke-width="2" /> <!-- Book pages -->
+
+  <!-- Movement Effect (Legs showing walking motion) -->
+  <circle cx="145" cy="120" r="3" fill="gray" />
+  <circle cx="155" cy="120" r="3" fill="gray" />
+
+  <!-- Path on Ground (Footprints or trail) -->
+  <circle cx="120" cy="160" r="4" fill="#d3d3d3" />
+  <circle cx="180" cy="160" r="4" fill="#d3d3d3" />
+  
+  <!-- Title: "Man Studying While Walking" -->
+  <text x="150" y="275" font-size="18" font-family="Arial" text-anchor="middle" fill="#333333">Man Studying While Walking</text>
+</svg>

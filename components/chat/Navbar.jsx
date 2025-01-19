@@ -7,9 +7,9 @@ import handleLogout from "@/module/singOut";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useSession, signOut } from "next-auth/react";
 // components/Navbar.js
+
 import Link from "next/link";
-import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function Navbar() {
   const { data: session } = useSession();
 
@@ -79,7 +79,7 @@ export default function Navbar() {
                     onClick={handleLogout}
                   >
                     <button
-                      onClick={() => signOut()}
+                      onClick={signOut}
                       className="text-white text-md mt-24 hover:text-blue-500"
                     >
                       Sign Out
@@ -100,8 +100,9 @@ export default function Navbar() {
         </div>
 
         {/*      ------------------------------  lg  navbar*/}
+
         {session ? (
-          <ul className=" hiddle md:flex space-x-4 items-center ">
+          <ul className=" hidden  md:flex lg:flex space-x-4 items-center ">
             <li>
               <Link href="/DashBoard" className=" hover:text-blue-500 mr-5">
                 Dashboard
@@ -136,7 +137,7 @@ export default function Navbar() {
         ) : (
           <Link
             href="/signIn"
-            className="  hidden  md:flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="  hidden  lg:flex md:flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Login
           </Link>

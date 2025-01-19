@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <style>
+    .title { font: bold 24px Arial, sans-serif; fill: #333; }
+    .header { font: bold 18px Arial, sans-serif; fill: #fff; }
+    .body { font: 16px Arial, sans-serif; fill: #444; }
+    .rect-header { fill: #2b5797; }
+    .rect-row { fill: #e7eff6; }
+    .rect-alt-row { fill: #d9e6f2; }
+  </style>
+  
+  <!-- Title -->
+  <text x="50" y="40" class="title">One-Month CAT Study Plan</text>
+  
+  <!-- Table Headers -->
+  <rect x="50" y="60" width="700" height="40" class="rect-header"/>
+  <text x="70" y="85" class="header">Week</text>
+  <text x="200" y="85" class="header">Objective</text>
+
+  <!-- Row 1 -->
+  <rect x="50" y="100" width="700" height="50" class="rect-row"/>
+  <text x="70" y="130" class="body">Week 1</text>
+  <text x="200" y="130" class="body">
+    Diagnostic test review and topic prioritization. Daily practice of high-weightage topics (Arithmetic, Reading Comprehension). Start with easy mock tests.
+  </text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="150" width="700" height="50" class="rect-alt-row"/>
+  <text x="70" y="180" class="body">Week 2</text>
+  <text x="200" y="180" class="body">
+    Focused preparation on weak areas. Increase the number of sectional tests (timed). Revise formula sheets and note key shortcuts.
+  </text>
+
+  <!-- Row 3 -->
+  <rect x="50" y="200" width="700" height="50" class="rect-row"/>
+  <text x="70" y="230" class="body">Week 3</text>
+  <text x="200" y="230" class="body">
+    Full-length mocks every 2 days. Prioritize speed and accuracy over sheer volume of questions. Analyze performance thoroughly after each test.
+  </text>
+
+  <!-- Row 4 -->
+  <rect x="50" y="250" width="700" height="50" class="rect-alt-row"/>
+  <text x="70" y="280" class="body">Week 4</text>
+  <text x="200" y="280" class="body">
+    High-intensity mock test week. Attempt 4–5 mocks. Finalize strategies for time management and question selection.
+  </text>
+</svg>

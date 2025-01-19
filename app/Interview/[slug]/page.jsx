@@ -77,7 +77,7 @@ export default async function PostPage({ params }) {
         className="w-full bg-black/80 underline decoration-white/70 hover:decoration-blue-700/50	underline-offset-4
  flex h-10 items-center justify-center text-white rounded-md shadow-md my-3"
       >
-        {post.titles[3]}{" "}
+        {post.linksTitle[1] || "Learn Every day Guys"}{" "}
       </Link>
 
       <h2 className="text-2xl font-bold m-4">{post.titles[3]}</h2>
@@ -95,7 +95,7 @@ export default async function PostPage({ params }) {
         className="w-full bg-black/80 underline decoration-white/70 hover:decoration-blue-700/50	underline-offset-4
  flex h-10 items-center justify-center text-white rounded-md shadow-md  my-3"
       >
-        {post.titles[5]}{" "}
+        {post.linksTitle[0] || "Practice More Guy"}{" "}
       </Link>
 
       <h2 className="text-2xl font-bold m-4">{post.titles[5]}</h2>
