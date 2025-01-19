@@ -16,7 +16,6 @@ export default function Navbar() {
         <Link href="/" className="text-xl font-bold text-gray-800">
           IIM Target
         </Link>
-<<<<<<< HEAD
         {session ? (
           <ul className="flex space-x-4 items-center ">
             <li>
@@ -58,32 +57,6 @@ export default function Navbar() {
             Login
           </Link>
         )}
-=======
-          { auth ?
-        <ul className="flex space-x-4">
-          <li>
-        
-            <Link href="/DashBoard" className="text-gray-600 hover:text-blue-500">
-              Dashboard
-            </Link>
-        
-          </li>
-
-
-            <li>
-          <span className='flex items-center justify-between cursor-pointer' onClick={handleLogout}>
-            <p   className=' px-1 '>LogOut</p>
-            <FaSignOutAlt className='text-blue-600'/>
-          </span>
-          </li>
-        </ul>
-
-            :
-            <Link href="/signIn" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Login
-            </Link>
-          }
->>>>>>> aed51d819786bc4a6e1ff7d3a35ef4d5e89ecadb
       </div>
     </nav>
   );
