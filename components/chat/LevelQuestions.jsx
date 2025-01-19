@@ -86,6 +86,7 @@ const LevelQuestions = ({
       [index]: !prevState[index],
     }));
   };
+  
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -282,16 +283,18 @@ const LevelQuestions = ({
                 )}
 
                 {showSolution[indexOfFirstQuestion + index] && (
-                  <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-hidden	 rounded-md break-words		 ">
+                  <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words		 ">
                     <p className="text-xl w-1/2"> Here Is Solution : </p>
-                    <MathJax dynamic hideUntilTypeset="first">
-      {String.raw`
-        \[
-        \begin{align*}
-        ${questionData.solution}
-        \end{align*}
-        \]
-      `}
+                    <MathJax dynamic hideUntilTypeset="first" className="text-center">
+                   
+       { `
+          
+          ${questionData.solution}
+    
+          
+  `}
+    
+  
     </MathJax>
 
                   </span>

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { FaCheckCircle } from 'react-icons/fa';
-import { GiNotebook } from 'react-icons/gi'; // Example for additional icons
-import { AiFillDashboard } from 'react-icons/ai';
+import Link from "next/link";
+import { FaCheckCircle } from "react-icons/fa";
+import { GiNotebook } from "react-icons/gi"; // Example for additional icons
+import { AiFillDashboard } from "react-icons/ai";
 
 const MembershipCard = () => {
   return (
@@ -13,7 +13,7 @@ const MembershipCard = () => {
             Unlock exclusive content and resources to boost your preparation.
           </p>
           <div className="mt-4">
-            <span className="text-4xl font-bold text-yellow-300">₹1999</span>
+            <span className="text-4xl font-bold text-yellow-300">₹1500</span>
             <span className="text-white text-sm"> / year</span>
           </div>
         </div>
@@ -44,7 +44,10 @@ const MembershipCard = () => {
               <span>Dashboard to analyze mock tests</span>
             </li>
           </ul>
-          <Link href="/Membership" className="w-full bg-yellow-500 hover:bg-yellow-400 text-white font-semibold py-2 rounded-lg transition duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
+          <Link
+            href="/Membership"
+            className="w-full bg-yellow-500 hover:bg-yellow-400 text-white font-semibold py-2 rounded-lg transition duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center"
+          >
             Join Now
           </Link>
         </div>

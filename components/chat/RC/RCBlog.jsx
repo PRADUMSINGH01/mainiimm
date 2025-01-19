@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillTags } from 'react-icons/ai';
 
-const RCBlog = ({ title, link, Id, tag }) => {
+const RCBlog = ({ title, link, Id, tag   }) => {
   return (
     <Link
       href={link}

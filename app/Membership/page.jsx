@@ -1,55 +1,61 @@
-  "use client"
-import { useState } from 'react';
-import RazorpayPayment from '@/components/chat/PaymentUI';
-const Checkout = () => {
+"use client";
 
+import RazorpayPayment from "@/components/chat/PaymentUI";
+import { RazorPayOrderCreate } from "@/module/RazorPay";
+import { verificationPayment } from "@/module/VerifyPayment";
+
+const Checkout = () => {
   // Step 1: Create Razorpay Order
   const createOrder = async () => {
-    const response = await fetch('https://us-central1-iimb-f94a0.cloudfunctions.net/createOrder');
-    const data = await response.json();
+    try {
+      const data = await RazorPayOrderCreate();
+      console.log(data);
 
-    if (response.ok) {
-      launchRazorpay(data.orderId);  // Step 2: Launch Razorpay
-    } else {
-      console.error('Order creation failed:', data.error);
+      if (data.staus === 200) {
+        launchRazorpay(data.order.id); // Step 2: Launch Razorpay
+      } else {
+        console.error("Order creation failed:", data.error);
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
     }
   };
 
   // Step 2: Launch Razorpay Checkout
   const launchRazorpay = (orderId) => {
     const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,  // Your Razorpay Key ID from .env
-      amount: 50000,  // Amount in paisa (500 INR = 50000 paisa)
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // Client-side accessible key
+      amount: 50000, // Amount in paisa (500 INR = 50000 paisa)
       currency: "INR",
-      name: "Your Company",
-      description: "Test Transaction",
-      image: "/your-logo.png",  // Optional
+      name: "IIM TARGET",
+      description: "Payment",
+      image: "/your-logo.png", // Optional
       order_id: orderId,
       handler: async function (response) {
-        // Step 3: Verify Payment after successful payment
-        const verificationResponse = await fetch('https://us-central1-iimb-f94a0.cloudfunctions.net/verifyPayment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            razorpayOrderId: response.razorpay_order_id,
-            razorpayPaymentId: response.razorpay_payment_id,
-            razorpaySignature: response.razorpay_signature,
-          }),
-        });
+        const { razorpay_payment_id, razorpay_order_id, razorpay_signature } =
+          response;
 
-        const verificationData = await verificationResponse.json();
-        if (verificationResponse.ok) {
-          alert('Payment Verified!');
-        } else {
-          alert('Payment Verification Failed!');
+        // Step 3: Verify Payment after successful payment
+        try {
+          const verificationResponse = await verificationPayment(
+            razorpay_payment_id,
+            razorpay_order_id,
+            razorpay_signature
+          );
+          console.log(verificationResponse);
+          if (verificationResponse.status === 200) {
+            alert("Payment Verified!");
+          } else {
+            alert("Payment Verification Failed!");
+          }
+        } catch (error) {
+          console.error("Payment verification failed:", error);
         }
       },
       prefill: {
-        name: "Customer Name",
-        email: "customer@example.com",
-        contact: "9999999999",
+        name: "",
+        email: "",
+        contact: "",
       },
       theme: {
         color: "#3399cc",
@@ -62,7 +68,7 @@ const Checkout = () => {
 
   return (
     <div>
-      <RazorpayPayment PaymentHandle={createOrder}/>
+      <RazorpayPayment PaymentHandle={createOrder} />
     </div>
   );
 };

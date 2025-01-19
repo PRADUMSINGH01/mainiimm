@@ -28,9 +28,9 @@ const CaseStudyPage = async ({ params }) => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col font-sans">
+    <div className="bg-gray-50 min-h-screen flex flex-col ">
       {/* Header Section */}
-      <header className="bg-indigo-600 py-6 text-white">
+      <header className="bg-stone-600 py-6 text-white">
         <div className="container mx-auto px-4">
           <h1 className="text-2xl md:text-4xl font-bold">{caseStudy.title}</h1>
         </div>
@@ -42,7 +42,9 @@ const CaseStudyPage = async ({ params }) => {
         <div className="w-full lg:w-3/4 bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm bg-green-100 text-green-800 font-semibold px-2 py-1 rounded">
-              {new Date(caseStudy.createdAt.seconds * 1000).toLocaleDateString()}
+              {new Date(
+                caseStudy.createdAt.seconds * 1000
+              ).toLocaleDateString()}
             </p>
             <div className="flex gap-4">
               <button className="text-gray-500 hover:text-indigo-600">
@@ -59,14 +61,22 @@ const CaseStudyPage = async ({ params }) => {
             { title: "Passage", content: caseStudy.passage },
             { title: caseStudy.subtitleOne, content: caseStudy.subpassageOne },
             { title: caseStudy.subtitletwo, content: caseStudy.subpassagetwo },
-            { title: caseStudy.subtitlethree, content: caseStudy.subpassagethree },
-            { title: caseStudy.subtitlefour, content: caseStudy.subpassagefour },
+            {
+              title: caseStudy.subtitlethree,
+              content: caseStudy.subpassagethree,
+            },
+            {
+              title: caseStudy.subtitlefour,
+              content: caseStudy.subpassagefour,
+            },
           ].map((section, idx) => (
             <div className="mb-10" key={idx}>
-              <h2 className="text-xl md:text-2xl font-bold bg-indigo-500 text-white p-2 rounded mb-4">
+              <h2 className="text-xl md:text-2xl font-bold bg-stone-500 text-white p-2 rounded mb-4">
                 {section.title}
               </h2>
-              <p className="text-gray-800 text-lg leading-relaxed md:text-xl">{section.content}</p>
+              <p className="text-gray-800 text-lg leading-relaxed md:text-xl">
+                {section.content}
+              </p>
             </div>
           ))}
         </div>
@@ -74,20 +84,20 @@ const CaseStudyPage = async ({ params }) => {
         {/* Sidebar Section */}
         <aside className="w-full lg:w-1/4">
           <div className="bg-white rounded-lg shadow p-4">
-            <h3 className="text-lg font-bold text-gray-700 mb-4">Related Case Studies</h3>
+            <h3 className="text-lg font-bold text-gray-700 mb-4">
+              Related Case Studies
+            </h3>
             <ul className="space-y-3">
-              {caseStudies
-                .slice(params.id + 1, params.id + 3)
-                .map((item) => (
-                  <li key={item.Id}>
-                    <a
-                      href={item.Id}
-                      className="text-indigo-600 hover:underline hover:text-indigo-800"
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
+              {caseStudies.slice(params.id + 1, params.id + 3).map((item) => (
+                <li key={item.Id}>
+                  <a
+                    href={item.Id}
+                    className="text-indigo-600 hover:underline hover:text-indigo-800"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </aside>
@@ -96,7 +106,9 @@ const CaseStudyPage = async ({ params }) => {
       {/* Footer Section */}
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto text-center">
-          <p className="text-sm">&copy; 2024 IIM Target. All rights reserved.</p>
+          <p className="text-sm">
+            &copy; 2024 IIM Target. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>

@@ -3,7 +3,7 @@ import MockTest from '@/components/chat/mock/mockSection';
 
 export async function generateStaticParams() {
   // Define the categories you want to generate paths for
-  const categories = ['Averages', 'Algebra', 'Geometry']; // Add more as needed
+  const categories = ['Averages', 'algebra', 'Geometry' ,'percentages']; // Add more as needed
 
   const paths = [];
 

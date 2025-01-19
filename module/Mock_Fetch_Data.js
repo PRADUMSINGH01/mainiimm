@@ -10,8 +10,9 @@ try {
     id: doc.id, // Document ID
     ...doc.data(), // Document data
   }));
+  const sortedData = mockQuestions.sort((a, b) => a.Id - b.Id);
 
-  const questions = [...mockQuestions];
+  const questions = [...sortedData];
   const numMocks = Math.ceil(questions.length / 26);
 
   const mocks = Array.from({ length: numMocks }, (_, index) => ({
