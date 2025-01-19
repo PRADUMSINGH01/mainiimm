@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function BlogCard({ post }) {
   const { titles, paragraph, image, slug } = post;
-  console.log(post);
+
   return (
     <Link
       href={`/Interview/${slug}`}
