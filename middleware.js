@@ -6,7 +6,9 @@ import { NextResponse } from "next/server";
 export async function middleware(req) {
   // Get the JWT token from the request (NextAuth automatically reads the cookie)
   const token = await getToken({ req });
-
+  if (!token && req.nextUrl.pathname === "/Membership") {
+    return NextResponse.redirect(new URL("/signIn", req.url)); // Redirect to home
+  }
   // If there is a valid token, redirect authenticated users from the sign-in page
   if (token && req.nextUrl.pathname === "/signIn") {
     return NextResponse.redirect(new URL("/", req.url)); // Redirect to home
@@ -16,5 +18,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/signIn"], // Match the sign-in page
+  matcher: ["/signIn", "/Membership"], // Match the sign-in page
 };

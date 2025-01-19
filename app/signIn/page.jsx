@@ -1,9 +1,10 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { AiFillGoogleCircle } from "react-icons/ai"; // Google icon from react-icons
 
 export default function Page() {
+  const router = useRouter();
   const { data: session } = useSession();
 
   if (!session) {
@@ -34,10 +35,9 @@ export default function Page() {
 
   return (
     <div>
-      <h1>Welcome, {session.user.name}</h1>
-      <p>Email: {session.user.email}</p>
-
-      <button onClick={() => signOut()}>Sign Out</button>
- </div>
+      {() => {
+        router.back();
+      }}
+    </div>
   );
 }

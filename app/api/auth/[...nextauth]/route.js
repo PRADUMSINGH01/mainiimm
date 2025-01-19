@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-const authOptions = {
+const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -9,11 +9,24 @@ const authOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: "/auth/signin", // Optional: Custom sign-in page
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      // Optional: Add custom logic for sign-in here
+      return true;
+    },
+    async redirect({ url, baseUrl }) {
+      // Ensure redirect URL matches your domain
+      return url.startsWith(baseUrl) ? url : baseUrl;
+    },
+    async session({ session, token }) {
+      // Attach additional info to session if needed
+      return session;
+    },
+    async jwt({ token, user }) {
+      // Customize token handling if needed
+      return token;
+    },
   },
-};
+});
 
-const handler = NextAuth(authOptions);
-
-export { handler as POST, handler as GET };
+export { handler as GET, handler as POST };
