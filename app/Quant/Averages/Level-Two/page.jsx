@@ -1,48 +1,31 @@
-"use client"
-import React,{useEffect} from 'react'
-import LevelQuestions from '@/components/chat/LevelQuestions'
+"use client";
+import React, { useEffect, useState } from "react";
+import LevelQuestions from "@/components/chat/LevelQuestions";
+import PaymentChecker from "@/module/PaymentCheck/paymentChecker";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import usePayment from "@/hook/usePayment";
 const page = () => {
-
-  useEffect(() => {
-    const disableRightClick = (event) => {
-      event.preventDefault();
-    };
-
-    const disableCopy = (event) => {
-      event.preventDefault();
-      alert('Copying is disabled on this website!');
-    };
-
-    const disableCut = (event) => {
-      event.preventDefault();
-      alert('Cutting is disabled on this website!');
-    };
-
-    const disablePaste = (event) => {
-      event.preventDefault();
-      alert('Pasting is disabled on this website!');
-    };
-
-    // Add event listeners
-    document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('copy', disableCopy);
-    document.addEventListener('cut', disableCut);
-    document.addEventListener('paste', disablePaste);
-
-    // Cleanup the event listeners on component unmount
-    return () => {
-      document.removeEventListener('contextmenu', disableRightClick);
-      document.removeEventListener('copy', disableCopy);
-      document.removeEventListener('cut', disableCut);
-      document.removeEventListener('paste', disablePaste);
-    };
-  }, []);
-
+  const { dataa, loading, error } = usePayment();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
   return (
     <div>
-        <LevelQuestions FETCHURL={'/Quant/Averages/LevelTwo'}  LEVELONE={"Level-One"} LEVELTWO={"Level-Three"} LevelTwoURL={"/Averages/Level-Three"} LevelOneURL={"/Averages/"}/>
-    </div>
-  )
-}
+      <h1 className="w-full h-screen absolute top-0 flex items-center justify-center text-blue-500 z-10 bg-white shadow-xl text-xl text-center">
+        {dataa}
+        <RiMoneyDollarCircleFill size={24} />
+      </h1>
 
-export default page
+      <LevelQuestions
+        FETCHURL={"/Quant/Averages/LevelTwo"}
+        LEVELONE={"Level-One"}
+        LEVELTWO={"Level-Three"}
+        LevelTwoURL={"/Averages/Level-Three"}
+        LevelOneURL={"/Averages/"}
+      />
+    </div>
+  );
+};
+
+export default page;

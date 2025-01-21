@@ -60,7 +60,11 @@ addDataToFirebase(Questions, "/Interview");
 
 export default addDataToFirebase;
 */
-const tapp = () => {
+
+import PaymentChecker from "@/module/PaymentCheck/paymentChecker";
+const tapp = async () => {
+  const pay = await PaymentChecker("hs947518@gmail.com");
+  console.log(pay);
   return <> hello welcome to iim </>;
 };
 

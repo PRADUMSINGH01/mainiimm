@@ -2,7 +2,6 @@
 
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
-
 export async function middleware(req) {
   // Get the JWT token from the request ()
   const token = await getToken({ req });
@@ -22,5 +21,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/signIn", "/Membership", "/Business-case-studies"],
+  matcher: ["/signIn", "/Membership", "/Business-case-studies", "/"],
 };

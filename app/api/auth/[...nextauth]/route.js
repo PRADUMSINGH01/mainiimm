@@ -19,11 +19,15 @@ const handler = NextAuth({
       return url.startsWith(baseUrl) ? url : baseUrl;
     },
     async session({ session, token }) {
-      // Attach additional info to session if needed
+      if (token.email) {
+        session.user.email = token.email;
+      }
       return session;
     },
     async jwt({ token, user }) {
-      // Customize token handling if needed
+      if (user) {
+        token.email = user.email;
+      }
       return token;
     },
   },
