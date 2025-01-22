@@ -133,7 +133,7 @@ const LevelQuestions = ({
   return (
     <MathJaxContext config={mathJaxConfig}>
       <div
-        className={`container ml-10 w-full p-4 md:p-8 font-roboto min-h-screen ${
+        className={`container md:ml-10 w-full p-4 md:p-8 font-roboto min-h-screen ${
           isDarkMode
             ? "bg-gray-800 text-white w-full "
             : "bg-white text-gray-800  w-full"
