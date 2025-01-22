@@ -6,6 +6,7 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
+
 const db = getFirestore(app);
 
 const PaymentChecker = async (email) => {
@@ -15,16 +16,18 @@ const PaymentChecker = async (email) => {
 
     if (snapshot.empty) {
       console.log("No matching documents.");
-      return;
+      return false;
     }
+
     const users = [];
     snapshot.forEach((doc) => {
-      users.push({ id: doc.id, ...doc.data() }); // Collect id and document data
+      users.push({ id: doc.id, ...doc.data() });
     });
-    //console.log(users[0].payment);
-    return users[0].payment;
+
+    return users.length > 0 ? users[0].payment : false;
   } catch (error) {
     console.error("Error fetching documents: ", error);
+    return false;
   }
 };
 

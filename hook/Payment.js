@@ -14,38 +14,27 @@ const usePayment = () => {
   useEffect(() => {
     const checkPayment = async () => {
       if (!session) {
-        setData("Please Login");
-        setTimeout(() => {
-          router.push("/signIn");
-        }, 2000);
+        handleRedirect("Please Login", "/signIn");
         return;
       }
 
       try {
         const response = await PaymentChecker(session.user.email);
         if (!response) {
-          setData("Please Login");
-          setTimeout(() => {
-            router.push("/signIn");
-          }, 2000);
-          return;
-        }
-
-        const result = await response;
-
-        if (result) {
-          return;
-        } else {
-          setData("Please Buy Membership");
-          setTimeout(() => {
-            router.push("/Membership");
-          }, 2000);
+          handleRedirect("Please Buy Membership", "/Membership");
         }
       } catch (err) {
         setError("An error occurred while checking payment.");
       } finally {
         setLoading(false);
       }
+    };
+
+    const handleRedirect = (message, path) => {
+      setData(message);
+      setTimeout(() => {
+        router.push(path);
+      }, 2000);
     };
 
     checkPayment();

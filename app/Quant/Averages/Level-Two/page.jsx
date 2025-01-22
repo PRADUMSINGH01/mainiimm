@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import LevelQuestions from "@/components/chat/LevelQuestions";
-import PaymentChecker from "@/module/PaymentCheck/paymentChecker";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
-import usePayment from "@/hook/usePayment";
+import usePayment from "@/hook/Payment";
 const page = () => {
   const { dataa, loading, error } = usePayment();
   if (loading) return <p>Loading...</p>;
