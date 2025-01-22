@@ -6,7 +6,7 @@ import bscGPT from "@/public/bcs.webp";
 import monthpre from "@/public/monthpre.svg";
 // Output the SVG as a string (could be inserted into HTML or saved as a file)
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, urltitle }) {
   const { titles, paragraph, slug } = post;
   const image = [
     monthpre,
@@ -34,7 +34,7 @@ export default function BlogCard({ post }) {
   const i = Math.floor(Math.random() * 20) + 1;
   return (
     <Link
-      href={`/Interview/${slug}`}
+      href={`${urltitle}/${slug}`}
       className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
     >
       <div className="relative h-48">

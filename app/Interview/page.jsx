@@ -32,7 +32,7 @@ export default async function Page() {
           </h3>
           <Link href={"Interview/Interview-See-All"}>See All</Link>
         </div>
-        <BlogGrid posts={posts} />
+        <BlogGrid posts={posts} UrlTitle={"/Interview"} />
       </section>
       {/* 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
