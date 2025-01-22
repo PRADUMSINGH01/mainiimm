@@ -133,12 +133,20 @@ const LevelQuestions = ({
   return (
     <MathJaxContext config={mathJaxConfig}>
       <div
-        className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
-          isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
+        className={`container ml-10 w-full p-4 md:p-8 font-roboto min-h-screen ${
+          isDarkMode
+            ? "bg-gray-800 text-white w-full "
+            : "bg-white text-gray-800  w-full"
         }`}
       >
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-[#5cec93]">
+          <h1
+            className={`${
+              isDarkMode
+                ? "text-white text-3xl md:text-4xl font-bold text-center"
+                : "text-3xl md:text-4xl font-bold text-center text-black/90"
+            } `}
+          >
             {LEVELINFO || "Level-Two"}
           </h1>
 
@@ -150,24 +158,24 @@ const LevelQuestions = ({
         {/* Search and Filter */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
           <Link href={`/Quant/${LevelOneURL}`} className="w-full md:w-auto">
-            <p className="w-full md:w-[10rem]   bg-blue-500  font-bold text-white p-2 text-md rounded-lg shadow-md font-semithin  font-roboto text-center">
+            <p className="w-full md:w-[10rem]   bg-black  font-bold text-white p-2 text-md rounded-lg shadow-md font-semithin  font-roboto text-center">
               {LEVELONE}
             </p>
           </Link>
           <Link href={`/Quant/${LevelTwoURL}`} className="w-full md:w-auto">
-            <p className="w-full md:w-[10rem] text-md bg-blue-500  font-bold text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">
+            <p className="w-full md:w-[10rem] text-md bg-black  font-bold text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">
               {LEVELTWO}
             </p>
           </Link>
           <div
             className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
               isDarkMode ? "bg-gray-700" : "bg-white"
-            } border `}
+            } border border border-black`}
           >
             <FaSearch
               className={`${
                 isDarkMode ? "text-gray-300" : "text-gray-400"
-              } mr-2`}
+              } mr-2 `}
             />
             <input
               type="text"
@@ -182,7 +190,7 @@ const LevelQuestions = ({
           <div
             className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
               isDarkMode ? "bg-gray-700" : "bg-white"
-            } border `}
+            } border border-black`}
           >
             <FaFilter
               className={`${
@@ -214,14 +222,14 @@ const LevelQuestions = ({
               className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${
                 isDarkMode
                   ? "bg-gray-700 text-white hover:bg-gray-600"
-                  : "border border-blue-300 hover:shadow-xl shadow-gray-100"
+                  : " hover:shadow-xl shadow-gray-100 border border-gray-300"
               }`}
             >
               <div
                 className="flex  items-center justify-between p-1"
                 key={index}
               >
-                <div className=" border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold ">
+                <div className=" border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-black flex text-sm bg-gray-100 font-bold ">
                   {questionData.Id}
                 </div>
                 <div
@@ -237,7 +245,7 @@ const LevelQuestions = ({
               <div className="flex flex-col w-full md:flex-row justify-between">
                 <button
                   onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
-                  className={`flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
+                  className={`flex items-center justify-center bg-black hover:bg-black/60 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
                     showAnswers[indexOfFirstQuestion + index]
                       ? "bg-[#F2CC8F] hover:bg-[#264653]"
                       : ""
@@ -255,7 +263,7 @@ const LevelQuestions = ({
 
                 <button
                   onClick={() => toggleTrick(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-black hover:bg-black/60 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showTricks[indexOfFirstQuestion + index]
                     ? "Hide Trick"
@@ -264,7 +272,7 @@ const LevelQuestions = ({
 
                 <button
                   onClick={() => toggleSolution(indexOfFirstQuestion + index)}
-                  className="mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                  className="mt-2 bg-black hover:bg-black/60 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
                 >
                   {showSolution[indexOfFirstQuestion + index]
                     ? "Hide Solution"
@@ -313,8 +321,8 @@ const LevelQuestions = ({
               onClick={() => paginate(index + 1)}
               className={`px-3 py-2 mx-1 rounded-lg ${
                 currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 hover:bg-gray-300"
+                  ? "bg-black text-white"
+                  : "bg-gray-600 text-white/70 hover:bg-black hover:text-white"
               }`}
             >
               {index + 1}
