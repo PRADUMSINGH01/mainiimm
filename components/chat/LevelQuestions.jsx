@@ -21,7 +21,6 @@ const mathJaxConfig = {
   },
 };
 
-
 import {
   FaSearch,
   FaFilter,
@@ -86,7 +85,6 @@ const LevelQuestions = ({
       [index]: !prevState[index],
     }));
   };
-  
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -131,200 +129,201 @@ const LevelQuestions = ({
   );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  
+
   return (
     <MathJaxContext config={mathJaxConfig}>
-    
-        <div
-          className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
-            isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
-          }`}
-        >
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-center text-[#5cec93]">
-              {LEVELINFO || "Level-Two"}
-            </h1>
+      <div
+        className={`container mx-auto p-4 md:p-8 font-roboto min-h-screen ${
+          isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
+        }`}
+      >
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-[#5cec93]">
+            {LEVELINFO || "Level-Two"}
+          </h1>
 
-            <button onClick={toggleDarkMode} className="text-2xl">
-              {isDarkMode ? <FaSun /> : <FaMoon />}
-            </button>
+          <button onClick={toggleDarkMode} className="text-2xl">
+            {isDarkMode ? <FaSun /> : <FaMoon />}
+          </button>
+        </div>
+        <hr className="mb-5 bg-[#5cec93] " />
+        {/* Search and Filter */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
+          <Link href={`/Quant/${LevelOneURL}`} className="w-full md:w-auto">
+            <p className="w-full md:w-[10rem]   bg-blue-500  font-bold text-white p-2 text-md rounded-lg shadow-md font-semithin  font-roboto text-center">
+              {LEVELONE}
+            </p>
+          </Link>
+          <Link href={`/Quant/${LevelTwoURL}`} className="w-full md:w-auto">
+            <p className="w-full md:w-[10rem] text-md bg-blue-500  font-bold text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">
+              {LEVELTWO}
+            </p>
+          </Link>
+          <div
+            className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
+              isDarkMode ? "bg-gray-700" : "bg-white"
+            } border `}
+          >
+            <FaSearch
+              className={`${
+                isDarkMode ? "text-gray-300" : "text-gray-400"
+              } mr-2`}
+            />
+            <input
+              type="text"
+              placeholder="Search questions..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className={`focus:outline-none w-full  ${
+                isDarkMode ? "bg-gray-700 text-white  " : ""
+              }`}
+            />
           </div>
-          <hr className="mb-5 bg-[#5cec93] " />
-          {/* Search and Filter */}
-          <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
-            <Link href={`/Quant/${LevelOneURL}`} className="w-full md:w-auto">
-              <p className="w-full md:w-[10rem]   bg-blue-500  font-bold text-white p-2 text-md rounded-lg shadow-md font-semithin  font-roboto text-center">
-                {LEVELONE}
-              </p>
-            </Link>
-            <Link href={`/Quant/${LevelTwoURL}`} className="w-full md:w-auto">
-              <p className="w-full md:w-[10rem] text-md bg-blue-500  font-bold text-white p-2 rounded-lg shadow-md font-semithin font-roboto text-center">
-                {LEVELTWO}
-              </p>
-            </Link>
-            <div
-              className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
-                isDarkMode ? "bg-gray-700" : "bg-white"
-              } border `}
+          <div
+            className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
+              isDarkMode ? "bg-gray-700" : "bg-white"
+            } border `}
+          >
+            <FaFilter
+              className={`${
+                isDarkMode ? "text-gray-300" : "text-gray-400"
+              } mr-2`}
+            />
+            <select
+              value={selectedTopic}
+              onChange={handleTopicChange}
+              className={`focus:outline-none w-full  ${
+                isDarkMode ? "bg-gray-700 text-white" : ""
+              }`}
             >
-              <FaSearch
-                className={`${
-                  isDarkMode ? "text-gray-300" : "text-gray-400"
-                } mr-2`}
-              />
-              <input
-                type="text"
-                placeholder="Search questions..."
-                value={searchTerm}
-                onChange={handleSearchChange}
-                className={`focus:outline-none w-full  ${
-                  isDarkMode ? "bg-gray-700 text-white  " : ""
-                }`}
-              />
-            </div>
-            <div
-              className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
-                isDarkMode ? "bg-gray-700" : "bg-white"
-              } border `}
-            >
-              <FaFilter
-                className={`${
-                  isDarkMode ? "text-gray-300" : "text-gray-400"
-                } mr-2`}
-              />
-              <select
-                value={selectedTopic}
-                onChange={handleTopicChange}
-                className={`focus:outline-none w-full  ${
-                  isDarkMode ? "bg-gray-700 text-white" : ""
-                }`}
-              >
-                <option value="All">All </option>
-                {topics.map((topic) => (
-                  <option key={topic} value={topic}>
-                    {topic}
-                  </option>
-                ))}
-              </select>
-            </div>
+              <option value="All">All </option>
+              {topics.map((topic) => (
+                <option key={topic} value={topic}>
+                  {topic}
+                </option>
+              ))}
+            </select>
           </div>
+        </div>
 
-          {/* Questions List */}
-          <div className="space-y-4">
-            {currentQuestions.map((questionData, index) => (
+        {/* Questions List */}
+        <div className="space-y-4">
+          {currentQuestions.map((questionData, index) => (
+            <div
+              key={index}
+              className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${
+                isDarkMode
+                  ? "bg-gray-700 text-white hover:bg-gray-600"
+                  : "border border-blue-300 hover:shadow-xl shadow-gray-100"
+              }`}
+            >
               <div
+                className="flex  items-center justify-between p-1"
                 key={index}
-                className={`rounded-lg shadow-lg p-4 transition-shadow duration-300 ${
-                  isDarkMode
-                    ? "bg-gray-700 text-white hover:bg-gray-600"
-                    : "border border-blue-300 hover:shadow-xl shadow-gray-100"
-                }`}
               >
-                <div className="flex  items-center justify-between p-1">
-                  <div className=" border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold ">
-                    {questionData.Id}
-                  </div>
-                  <div
-                    className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold"
-                    onClick={Done}
-                  >
-                    <IoMdDoneAll />
-                  </div>
+                <div className=" border-2 p-[1px] border-gray-200 rounded-full  shadow-md  w-8 items-center justify-center text-blue-700 flex text-sm bg-gray-100 font-bold ">
+                  {questionData.Id}
                 </div>
-                <p className="mb-2 text-lg md:text-2xl ml-3">
-                  <MathJax dynamic>{questionData.Question}</MathJax>
-                </p>
-                <div className="flex flex-col w-full md:flex-row justify-between">
-                  <button
-                    onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
-                    className={`flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
-                      showAnswers[indexOfFirstQuestion + index]
-                        ? "bg-[#F2CC8F] hover:bg-[#264653]"
-                        : ""
-                    }`}
-                  >
-                    {showAnswers[indexOfFirstQuestion + index] ? (
-                      <FaEyeSlash className="mr-2" />
-                    ) : (
-                      <FaEye className="mr-2" />
-                    )}
-                    {showAnswers[indexOfFirstQuestion + index]
-                      ? "Hide Answer"
-                      : "Reveal Answer"}
-                  </button>
-
-                  <button
-                    onClick={() => toggleTrick(indexOfFirstQuestion + index)}
-                    className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
-                  >
-                    {showTricks[indexOfFirstQuestion + index]
-                      ? "Hide Trick"
-                      : "Show Trick"}
-                  </button>
-
-                  <button
-                    onClick={() => toggleSolution(indexOfFirstQuestion + index)}
-                    className="mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
-                  >
-                    {showSolution[indexOfFirstQuestion + index]
-                      ? "Hide Solution"
-                      : "Show Solution"}
-                  </button>
+                <div
+                  className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold"
+                  onClick={Done}
+                >
+                  <IoMdDoneAll />
                 </div>
+              </div>
+              <p className="mb-2 text-lg md:text-2xl ml-3">
+                <MathJax dynamic>{questionData.Question}</MathJax>
+              </p>
+              <div className="flex flex-col w-full md:flex-row justify-between">
+                <button
+                  onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
+                  className={`flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
+                    showAnswers[indexOfFirstQuestion + index]
+                      ? "bg-[#F2CC8F] hover:bg-[#264653]"
+                      : ""
+                  }`}
+                >
+                  {showAnswers[indexOfFirstQuestion + index] ? (
+                    <FaEyeSlash className="mr-2" />
+                  ) : (
+                    <FaEye className="mr-2" />
+                  )}
+                  {showAnswers[indexOfFirstQuestion + index]
+                    ? "Hide Answer"
+                    : "Reveal Answer"}
+                </button>
 
-                {showAnswers[indexOfFirstQuestion + index] && (
-                  <div className="mt-2">
-                    <p>{questionData.Answer}</p>
-                  </div>
-                )}
+                <button
+                  onClick={() => toggleTrick(indexOfFirstQuestion + index)}
+                  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                >
+                  {showTricks[indexOfFirstQuestion + index]
+                    ? "Hide Trick"
+                    : "Show Trick"}
+                </button>
 
-                {showTricks[indexOfFirstQuestion + index] && (
-                  <p className="mt-2  italic text-lg">{questionData.trick}</p>
-                )}
+                <button
+                  onClick={() => toggleSolution(indexOfFirstQuestion + index)}
+                  className="mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 mx-3 my-3 rounded text-xs"
+                >
+                  {showSolution[indexOfFirstQuestion + index]
+                    ? "Hide Solution"
+                    : "Show Solution"}
+                </button>
+              </div>
 
-                {showSolution[indexOfFirstQuestion + index] && (
-                  <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words		 ">
-                    <p className="text-xl w-1/2"> Here Is Solution : </p>
-                    <MathJax dynamic hideUntilTypeset="first" className="text-center">
-                   
-       { `
+              {showAnswers[indexOfFirstQuestion + index] && (
+                <div className="mt-2">
+                  <p>{questionData.Answer}</p>
+                </div>
+              )}
+
+              {showTricks[indexOfFirstQuestion + index] && (
+                <p className="mt-2  italic text-lg">{questionData.trick}</p>
+              )}
+
+              {showSolution[indexOfFirstQuestion + index] && (
+                <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words		 ">
+                  <p className="text-xl w-1/2"> Here Is Solution : </p>
+                  <MathJax
+                    dynamic
+                    hideUntilTypeset="first"
+                    className="text-center"
+                  >
+                    {`
           
           ${questionData.solution}
     
           
   `}
-    
-  
-    </MathJax>
-
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex justify-center mt-6">
-            {Array.from({
-              length: Math.ceil(filteredQuestions.length / questionsPerPage),
-            }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => paginate(index + 1)}
-                className={`px-3 py-2 mx-1 rounded-lg ${
-                  currentPage === index + 1
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 hover:bg-gray-300"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
-
-          {/* Tricks Section */}
+                  </MathJax>
+                </span>
+              )}
+            </div>
+          ))}
         </div>
-      
+
+        {/* Pagination */}
+        <div className="flex justify-center mt-6">
+          {Array.from({
+            length: Math.ceil(filteredQuestions.length / questionsPerPage),
+          }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={`px-3 py-2 mx-1 rounded-lg ${
+                currentPage === index + 1
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200 hover:bg-gray-300"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+
+        {/* Tricks Section */}
+      </div>
     </MathJaxContext>
   );
 };

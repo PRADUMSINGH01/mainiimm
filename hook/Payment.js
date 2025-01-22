@@ -7,24 +7,28 @@ import { useRouter } from "next/navigation";
 const usePayment = () => {
   const { data: session } = useSession();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const router = useRouter();
   const [dataa, setData] = useState("Checking payment status...");
 
   useEffect(() => {
     const checkPayment = async () => {
       if (!session) {
+        console.log("useeffect");
         handleRedirect("Please Login", "/signIn");
-        return;
+        return false;
       }
 
       try {
         const response = await PaymentChecker(session.user.email);
+        console.log("res---->", response);
         if (!response) {
           handleRedirect("Please Buy Membership", "/Membership");
         }
       } catch (err) {
         setError("An error occurred while checking payment.");
+        handleRedirect("Please Login", "/signIn");
+        return false;
       } finally {
         setLoading(false);
       }
@@ -38,7 +42,7 @@ const usePayment = () => {
     };
 
     checkPayment();
-  }, [session, router]);
+  }, [session]);
 
   return { dataa, loading, error };
 };

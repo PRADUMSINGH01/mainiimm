@@ -4,8 +4,11 @@ import LevelQuestions from "@/components/chat/LevelQuestions";
 import usePayment from "@/hook/Payment";
 const page = () => {
   const { dataa, loading, error } = usePayment();
+
   if (loading) return <p>Loading...</p>;
+
   if (error) return <p>Error: {error}</p>;
+
   useEffect(() => {
     const disableRightClick = (event) => {
       event.preventDefault();
