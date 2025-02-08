@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import FETCHDATA from "@/module/fetchdata";
 import { IoMdDoneAll } from "react-icons/io";
 import { MathJaxContext, MathJax } from "better-react-mathjax";
+import { QuestionDone } from "@/module/QuestionDone";
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
   tex: {
@@ -170,7 +171,7 @@ const LevelQuestions = ({
           <div
             className={`flex items-center rounded-lg shadow-md p-2 w-full md:w-auto ${
               isDarkMode ? "bg-gray-700" : "bg-white"
-            } border border border-black`}
+            } border  border-black`}
           >
             <FaSearch
               className={`${
@@ -234,7 +235,7 @@ const LevelQuestions = ({
                 </div>
                 <div
                   className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold"
-                  onClick={Done}
+                  onClick={(e) => QuestionDone(FETCHURL, index)}
                 >
                   <IoMdDoneAll />
                 </div>
@@ -242,7 +243,7 @@ const LevelQuestions = ({
               <p className="mb-2 text-lg md:text-2xl ml-3">
                 <MathJax dynamic>{questionData.Question}</MathJax>
               </p>
-              <div className="flex flex-col w-full md:flex-row justify-between">
+              <div className="flex flex-col w-full md:flex-row justify-between  relative">
                 <button
                   onClick={() => toggleAnswer(indexOfFirstQuestion + index)}
                   className={`flex items-center justify-center bg-black hover:bg-black/60 text-white font-bold py-2 px-4 mx-3 my-3 rounded text-sm md:text-base transition-colors duration-300 ${
@@ -291,8 +292,10 @@ const LevelQuestions = ({
               )}
 
               {showSolution[indexOfFirstQuestion + index] && (
-                <span className=" h-full flex w-[100%] flex-col  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words		 ">
-                  <p className="text-xl w-1/2"> Here Is Solution : </p>
+                <span className=" h-full pb-1  flex w-[90%] left-[4.5rem] z-10  p-4 border shadow-2xl   flex-col  items-center  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words	absolute bg-black/95 text-white	 ">
+                  <div className="flex w-full justify-between p-3">
+                    <p className="text-xl w-1/2"> Here Is Solution : </p>
+                  </div>
                   <MathJax
                     dynamic
                     hideUntilTypeset="first"
