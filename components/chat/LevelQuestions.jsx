@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import FETCHDATA from "@/module/fetchdata";
 import { IoMdDoneAll } from "react-icons/io";
-import { MathJaxContext, MathJax } from "better-react-mathjax";
 import { QuestionDone } from "@/module/QuestionDone";
+import { MathJaxContext, MathJax } from "better-react-mathjax";
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
   tex: {
