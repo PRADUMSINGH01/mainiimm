@@ -283,12 +283,22 @@ const LevelQuestions = ({
 
               {showAnswers[indexOfFirstQuestion + index] && (
                 <div className="mt-2">
-                  <p>{questionData.Answer}</p>
+                   <MathJax
+                    dynamic
+                    hideUntilTypeset="first"
+                    className="text-center"
+                  >
+                  {questionData.Answer}
+                  </MathJax>
                 </div>
               )}
 
               {showTricks[indexOfFirstQuestion + index] && (
-                <p className="mt-2  italic text-lg">{questionData.trick}</p>
+                <p className="mt-2  italic text-lg">  <MathJax
+                dynamic
+                hideUntilTypeset="first"
+                className="text-center"
+              >{questionData.trick}   </MathJax></p>
               )}
 
               {showSolution[indexOfFirstQuestion + index] && (

@@ -19,6 +19,7 @@ const mathJaxConfig = {
 };
 
 const page = () => {
+  const data = [];
   return (
     <MathJaxContext config={mathJaxConfig}>
       {data.map((items) => (
@@ -31,7 +32,9 @@ const page = () => {
             {items.Question}
           </MathJax>
 
-{items.option?.map((options)=>(<div className="p-2 bg-red-500 m-5">{options}</div>))}
+          {items.option?.map((options) => (
+            <div className="p-2 bg-red-500 m-5">{options}</div>
+          ))}
           <MathJax dynamic hideUntilTypeset="first" className="text-center">
             {`${items.solution}`}
           </MathJax>
