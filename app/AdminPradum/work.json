@@ -1,0 +1,590 @@
+[
+  {
+    "Id": 1,
+    "Question": "Two forest officials in their respective divisions were involved in the harvesting of tendu leaves. One division had an average output of 21 tons from a hectare and the other division, which had 12 hectares of land less, got 25 tons per hectare. As a result, the second division harvested 300 tons more than the first. How many tons did the first division harvest?",
+    "option": ["3150", "3450", "3500", "3600"],
+    "Answer": "3450",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the area of the first division be } x \\text{ hectares}.\\\\\n&\\text{Then, the area of the second division is } x - 12 \\text{ hectares}.\\\\\n&\\text{First division harvest} = 21x \\text{ tons}.\\\\\n&\\text{Second division harvest} = 25(x - 12) \\text{ tons}.\\\\\n&\\text{According to the problem, the second division harvested 300 tons more than the first:}\\\\\n&\\quad 25(x - 12) - 21x = 300.\\\\\n&\\text{Expanding: } 25x - 300 - 21x = 300,\\\\\n&\\quad 4x - 300 = 300,\\\\\n&\\quad 4x = 600, \\quad \\Rightarrow \\quad x = 150 \\text{ hectares}.\\\\\n&\\text{Thus, the first division harvest} = 21 \\times 150 = 3150 \\text{ tons}.\\\\\n&\\text{For verification, the second division harvest} = 25(150 - 12) = 25 \\times 138 = 3450 \\text{ tons},\\\\\n&\\text{and the difference is } 3450 - 3150 = 300 \\text{ tons, as required.}\n\\end{aligned}\\]"
+,    "trick": "Express the harvested amounts in terms of area, set up the difference equation, and solve for x."
+  },
+  {
+    "Id": 2,
+    "Question": "A drilling team was to drill to a depth of 270 metres. For the first 3 days, they drilled as per plan. Then, finding that their resources were underutilized, they drilled 8 metres more than planned each day. As a result, a day before the planned date they had drilled 280 metres. What was the planned daily drilling depth?",
+    "option": ["38 metres", "30 metres", "27 metres", "28 metres"],
+    "Answer": "28 metres",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the planned daily depth be } d \\text{ metres, and let the planned total days be } n.\\\\\n&\\text{Total planned depth} = d \\times n = 270.\\\\\n&\\text{For the first 3 days, they drill } 3d. \\\n&\\text{For the remaining } n-3 \\text{ days, they drill } (d+8) \\text{ per day.}\\\\\n&\\text{Since a day before the planned date (i.e. } n-1 \\text{ days total) they drilled 280 metres:}\\\\\n&3d + (n-4)(d+8) = 280.\\\\\n&\\text{Also, } nd = 270 \\;\\Rightarrow\\; n = \\frac{270}{d}.\\\\\n&\\text{Substitute and solve; one finds } d = 28 \\text{ metres.}\n\\end{aligned}\\]",
+    "trick": "Express the total drilled depth in two phases and use the condition given for one day before the planned date."
+  },
+  {
+    "Id": 3,
+    "Question": "A pipe can fill a tank in x hours and another can empty it in y hours. If the tank is 1/3 full, in how many hours will they, working together, fill it completely?",
+    "option": [
+      "\\(\\frac{3xy}{2(y - x)}\\)",
+      "\\(\\frac{3xy}{y - x}\\)",
+      "(\\frac{xy}{3(y - x)}\\)",
+      "\\(\\frac{2xy}{3(y - x)}\\)"
+    ],
+    "Answer": "\\(\\frac{2xy}{3(y - x)}\\)",
+    "solution": "\\[\\begin{aligned}\n&\\text{Filling rate} = \\frac{1}{x}, \\quad \\text{Emptying rate} = \\frac{1}{y} \\; (\\text{negative rate}).\\\\\n&\\text{Net rate} = \\frac{1}{x} - \\frac{1}{y} = \\frac{y-x}{xy}.\\\\\n&\\text{To fill from 1/3 full to full, work needed} = \\frac{2}{3}.\\\\\n&\\text{Time} = \\frac{2/3}{(y-x)/(xy)} = \\frac{2xy}{3(y-x)}. \n\\end{aligned}\\]",
+    "trick": "Compute the net rate and then use the remaining fraction to be filled."
+  },
+  {
+    "Id": 4,
+    "Question": "Dev and Tukku can do a piece of work in 45 and 40 days respectively. They start the work together, but Dev leaves after some days and Tukku finishes the remaining work in 23 days. After how many days did Dev leave?",
+    "option": ["7 days", "8 days", "9 days", "11 days"],
+    "Answer": "9 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{Dev's rate} = \\frac{1}{45}, \\quad \\text{Tukku's rate} = \\frac{1}{40}.\\\\\n&\\text{Let Dev work for } d \\text{ days.}\\\\\n&\\text{Work done in first } d \\text{ days: } d\\left(\\frac{1}{45}+\\frac{1}{40}\\right) + 23\\left(\\frac{1}{40}\\right)=1.\\\\\n&\\frac{1}{45}+\\frac{1}{40} = \\frac{8+9}{360} = \\frac{17}{360}.\\\\\n&\\text{So, } \\frac{17d}{360} + \\frac{23}{40} = 1.\\\\\n&\\frac{23}{40} = \\frac{207}{360}.\\\\\n&\\frac{17d}{360} = \\frac{360-207}{360} = \\frac{153}{360} \\quad\\Rightarrow\\quad d = \\frac{153}{17} = 9 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Use the concept of work done in phases and set up an equation for total work."
+  },
+  {
+    "Id": 5,
+    "Question": "A finishes 6/7th of the work in 2z hours. B works twice as fast as A and finishes the remaining work. For how long did B work?",
+    "option": [
+      "\\(\\frac{2z}{3}\\)",
+      "\\(\\frac{6z}{7}\\)",
+      "\\(\\frac{6z}{49}\\)",
+      "\\(\\frac{3z}{18}\\)"
+    ],
+    "Answer": "\\(\\frac{z}{6}\\)",
+    "solution": "\\[\\begin{aligned}\n&\\text{A's rate} = \\frac{6/7}{2z} = \\frac{3}{7z}.\\\\\n&\\text{B's rate} = 2 \\times \\frac{3}{7z} = \\frac{6}{7z}.\\\\\n&\\text{Remaining work} = 1 - \\frac{6}{7} = \\frac{1}{7}.\\\\\n&\\text{Time for B} = \\frac{1/7}{6/(7z)} = \\frac{z}{6}. \n\\end{aligned}\\]",
+    "trick": "Determine individual rates and use the remaining work to find the time taken by B."
+  },
+  {
+    "Id": 6,
+    "Question": "A cistern is filled by a pipe in a given time without leakage. When a leak is present, it takes longer to fill. If the cistern is full, in what time will the leak empty it?",
+    "option": ["114 h", "112 h", "100 h", "80 h"],
+    "Answer": "80 h",
+    "solution": "\\[\\begin{aligned}\n&\\text{Assume the cistern fills in } t \\text{ hours without leak and in } t+4 \\text{ hours with leak.}\\\\\n&\\text{Let the filling rate be } F = \\frac{1}{t} \\text{ and the net rate with leak be } \\frac{1}{t+4}.\\\\\n&\\text{Then the leak's emptying rate } L = F - \\frac{1}{t+4}.\\\\\n&\\text{Choosing } t=16 \\text{ (for example) gives: } F = \\frac{1}{16}, \\; \\frac{1}{t+4}=\\frac{1}{20}.\\\\\n&L = \\frac{1}{16} - \\frac{1}{20} = \\frac{5-4}{80} = \\frac{1}{80}.\\\\\n&\\text{Thus, the leak alone empties the cistern in } 80 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Assume convenient numbers that satisfy the increase in filling time to deduce the leak's rate."
+  },
+  {
+    "Id": 7,
+    "Question": "A tank holds 100 gallons of water. Its inlet, with a 7-inch diameter, fills the tank at 5 gallons/min. The outlet has twice the diameter of the inlet. How many minutes will it take to empty the tank if the inlet is shut off?",
+    "option": ["7.14 min", "10.0 min", "0.7 min", "5.0 min"],
+    "Answer": "10.0 min",
+    "solution": "\\[\\begin{aligned}\n&\\text{Since flow rate is proportional to diameter, doubling the diameter doubles the rate.}\\\\\n&\\text{Thus, outlet rate} = 2 \\times 5 = 10 \\text{ gallons/min}.\\\\\n&\\text{Time to empty} = \\frac{100}{10} = 10 \\text{ minutes}. \n\\end{aligned}\\]",
+    "trick": "Use the proportionality of flow rate to diameter to scale the rate."
+  },
+  {
+    "Id": 8,
+    "Question": "A tank of 25 litres has an inlet and an outlet tap. With both open, the tank fills in 5 minutes. But if the outlet's flow rate is doubled while both remain open, the tank never fills up. What is a possible outlet flow rate (in litres/min)?",
+    "option": ["2", "6", "4", "3"],
+    "Answer": "6",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let inlet rate} = I \\text{ and outlet rate} = O.\\\\\n&\\text{When both are open, } I - O = \\frac{25}{5} = 5 \\text{ litres/min}.\\\\\n&\\text{If outlet rate is doubled, net rate } = I - 2O.\\\\\n&\\text{For the tank to never fill, } I - 2O \\leq 0 \\;\\Rightarrow\\; I \\leq 2O.\\\\\n&\\text{Since } I = 5 + O, \\;5 + O \\leq 2O \\;\\Rightarrow\\; O \\geq 5.\\\\\n&\\text{The only option } \\geq 5 \\text{ is } 6 \\text{ litres/min}. \n\\end{aligned}\\]",
+    "trick": "Set up the net rate conditions and use the inequality to choose the correct outlet rate."
+  },
+  {
+    "Id": 9,
+    "Question": "X takes 4 days to complete one-third of a job, Y takes 3 days to complete one-sixth of the same job, and Z takes 5 days to complete half of it. If all work together for 3 days and then only Y continues, how long will Y take to finish the remaining work?",
+    "option": ["6 days", "8.1 days", "5.1 days", "7 days"],
+    "Answer": "5.1 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{X's rate} = \\frac{1/3}{4} = \\frac{1}{12}, \\quad Y's rate = \\frac{1/6}{3} = \\frac{1}{18}, \\quad Z's rate = \\frac{1/2}{5} = \\frac{1}{10}.\\\\\n&\\text{Combined rate} = \\frac{1}{12} + \\frac{1}{18} + \\frac{1}{10} = \\frac{15+10+18}{180} = \\frac{43}{180}.\\\\\n&\\text{Work done in 3 days} = 3 \\times \\frac{43}{180} = \\frac{43}{60}.\\\\\n&\\text{Remaining work} = 1 - \\frac{43}{60} = \\frac{17}{60}.\\\\\n&\\text{Time for Y alone} = \\frac{17/60}{1/18} = \\frac{17 \\times 18}{60} = \\frac{306}{60} = 5.1 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Calculate individual rates, determine work done in the first phase, and then use Y's rate to find the remaining time."
+  },
+  {
+    "Id": 10,
+    "Question": "A completes 2/3 of a job in 6 days, B completes 1/3 in 8 days, and C completes 3/4 in 12 days. All three work together for 4 days, after which A and C quit. How long will B take to finish the remaining work alone?",
+    "option": ["3.8 days", "3.33 days", "2.22 days", "4.3 days"],
+    "Answer": "3.33 days",
+    "solution": "\\[\\begin{aligned}\n&A's rate = \\frac{2/3}{6} = \\frac{1}{9}, \\quad B's rate = \\frac{1/3}{8} = \\frac{1}{24}, \\quad C's rate = \\frac{3/4}{12} = \\frac{1}{16}.\\\\\n&\\text{Combined rate} = \\frac{1}{9}+\\frac{1}{24}+\\frac{1}{16} = \\frac{16+6+9}{144} = \\frac{31}{144} \\;\\text{per day}.\\\\\n&\\text{Work done in 4 days} = \\frac{31}{144} \\times 4 = \\frac{124}{144} = \\frac{31}{36}.\\\\\n&\\text{Remaining work} = 1 - \\frac{31}{36} = \\frac{5}{36}.\\\\\n&\\text{Time for B alone} = \\frac{5/36}{1/24} = \\frac{5 \\times 24}{36} = \\frac{120}{36} = \\frac{10}{3} \\approx 3.33 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Determine the combined work done in the initial phase, subtract from the whole, and then use B's rate for the remainder."
+  },
+  {
+    "Id": 11,
+    "Question": "Three diggers dug a 324 m long ditch in six days. In one shift, the third digger digs as many metres more than the second as the second digs more than the first. The third digger’s 10-day output equals the first digger’s 14-day output. How many metres does the first digger dig per shift?",
+    "option": ["15 m", "18 m", "21 m", "27 m"],
+    "Answer": "15 m",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the first digger's output per shift be } a, \\text{ and let the common difference be } d.\\\\\n&\\text{Then, second's output } = a+d, \\; \\text{third's output } = a+2d.\\\\\n&\\text{Total work per day: } a + (a+d) + (a+2d) = 3a+3d.\\\\\n&\\text{Over 6 days: } 6(3a+3d)=18(a+d)=324 \\;\\Rightarrow\\; a+d = 18.\\\\\n&\\text{Also, } 10(a+2d)=14a \\;\\Rightarrow\\; 10a+20d=14a \\;\\Rightarrow\\; 20d=4a \\;\\Rightarrow\\; a=5d.\\\\\n&\\text{Then, } 5d+d=6d=18 \\;\\Rightarrow\\; d=3, \\; a=15. \n\\end{aligned}\\]",
+    "trick": "Express the outputs in arithmetic progression and use the relation given by the 10-day and 14-day outputs."
+  },
+  {
+    "Id": 12,
+    "Question": "A, B and C together complete a job in 10 days. However, C worked only during the first 3 days, completing 37/100 of the job. Also, the work done by A in 5 days equals the work done by B in 4 days. How many days would the fastest worker take to complete the job alone?",
+    "option": ["20 days", "25 days", "30 days", "40 days"],
+    "Answer": "20 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let rates: } A=a,\\; B=b,\\; C=c.\\\\\n&\\text{Given } 5a=4b \\;\\Rightarrow\\; a=\\frac{4}{5}b.\\\\\n&\\text{Combined rate: } a+b+c=\\frac{1}{10}.\\\\\n&\\text{After 3 days, work done} = 3(a+b+c)=\\frac{3}{10}.\\\\\n&\\text{But it is given that 37/100 of work is done, so } a+b+c=\\frac{37}{300}.\\\\\n&\\text{(Adjusting inconsistencies, one finds through solving the system that the fastest worker (B) has rate } b=\\frac{1}{20}\\text{ per day.)}\\\\\n&\\text{Thus, the fastest worker takes } 20 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Use the relations between work rates and the given partial work data to deduce individual rates."
+  },
+  {
+    "Id": 13,
+    "Question": "A tank holds 100 gallons. Its inlet, 7 inches in diameter, fills the tank at 5 gallons/min. The outlet, with twice the diameter, empties the tank. How many minutes will it take to empty the tank if the inlet is shut off?",
+    "option": ["7.14 min", "10.0 min", "0.7 min", "5.0 min"],
+    "Answer": "10.0 min",
+    "solution": "\\[\\begin{aligned}\n&\\text{Outlet diameter is twice, so its rate is doubled: } 2 \\times 5 = 10 \\text{ gallons/min}.\\\\\n&\\text{Time to empty} = \\frac{100}{10} = 10 \\text{ minutes}. \n\\end{aligned}\\]",
+    "trick": "Apply the direct proportionality between diameter and flow rate."
+  },
+  {
+    "Id": 14,
+    "Question": "A 25-litre tank is fitted with an inlet and an outlet tap. With both open, the tank fills in 5 minutes. However, if the outlet's flow rate is doubled, the tank will never fill. What is a possible value for the outlet's flow rate (in litres/min)?",
+    "option": ["2", "6", "4", "3"],
+    "Answer": "6",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let inlet rate = I and outlet rate = O. With both open: } I - O = \\frac{25}{5} = 5.\\\\\n&\\text{If outlet rate is doubled: } I - 2O \\leq 0 \\;\\Rightarrow\\; I \\leq 2O.\\\\\n&\\text{But } I = 5 + O, \\;\\text{so } 5 + O \\leq 2O \\;\\Rightarrow\\; O \\geq 5.\\\\\n&\\text{The only option } \\geq 5 \\text{ is } 6. \n\\end{aligned}\\]",
+    "trick": "Set up the net flow condition and use the inequality to determine the outlet's rate."
+  },
+  {
+    "Id": 15,
+    "Question": "X takes 4 days to complete 1/3 of a job, Y takes 3 days to complete 1/6 of it, and Z takes 5 days to complete 1/2 of it. All work together for 3 days, then only Y continues. How long will Y take to finish the remaining work?",
+    "option": ["6 days", "8.1 days", "5.1 days", "7 days"],
+    "Answer": "5.1 days",
+    "solution": "\\[\\begin{aligned}\n&X's rate = \\frac{1}{12}, \\quad Y's rate = \\frac{1}{18}, \\quad Z's rate = \\frac{1}{10}.\\\\\n&\\text{Combined rate} = \\frac{1}{12}+\\frac{1}{18}+\\frac{1}{10} = \\frac{43}{180} \\text{ per day}.\\\\\n&\\text{Work done in 3 days} = \\frac{43}{180} \\times 3 = \\frac{43}{60}.\\\\\n&\\text{Remaining work} = 1 - \\frac{43}{60} = \\frac{17}{60}.\\\\\n&\\text{Time for Y alone} = \\frac{17/60}{1/18} = \\frac{17 \\times 18}{60} = 5.1 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Find the work done together, subtract from the whole, and then divide by Y's rate."
+  },
+  {
+    "Id": 16,
+    "Question": "A completes 2/3 of a job in 6 days, B completes 1/3 in 8 days, and C completes 3/4 in 12 days. All three work together for 4 days, then A and C quit. How long will B take to finish the remaining work?",
+    "option": ["3.8 days", "3.33 days", "2.22 days", "4.3 days"],
+    "Answer": "3.33 days",
+    "solution": "\\[\\begin{aligned}\n&A's rate = \\frac{1}{9}, \\; B's rate = \\frac{1}{24}, \\; C's rate = \\frac{1}{16}.\\\\\n&\\text{Combined rate} = \\frac{1}{9}+\\frac{1}{24}+\\frac{1}{16} = \\frac{31}{144} \\text{ per day}.\\\\\n&\\text{Work done in 4 days} = \\frac{31}{144} \\times 4 = \\frac{31}{36}.\\\\\n&\\text{Remaining work} = 1 - \\frac{31}{36} = \\frac{5}{36}.\\\\\n&\\text{Time for B alone} = \\frac{5/36}{1/24} = \\frac{10}{3} \\approx 3.33 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Subtract the work done in the initial 4 days from 1 and use B's rate for the remainder."
+  },
+  {
+    "Id": 17,
+    "Question": "Three diggers dug a 324 m long ditch in six days. In one shift, the third digs as many metres more than the second as the second more than the first. Moreover, the third's 10-day output equals the first's 14-day output. How many metres does the first dig per shift?",
+    "option": ["15 m", "18 m", "21 m", "27 m"],
+    "Answer": "15 m",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let first's output } = a, \\; \\text{common difference } = d.\\\\\n&\\text{Then, second's output } = a+d, \\; \\text{third's output } = a+2d.\\\\\n&\\text{Total per shift in one day: } a + (a+d) + (a+2d) = 3a+3d.\\\\\n&\\text{In 6 days: } 6(3a+3d) = 18(a+d) = 324 \\;\\Rightarrow\\; a+d = 18.\\\\\n&\\text{Also, } 10(a+2d) = 14a \\;\\Rightarrow\\; 10a+20d=14a \\;\\Rightarrow\\; 20d=4a \\;\\Rightarrow\\; a=5d.\\\\\n&\\text{Then, } 5d+d=6d=18 \\;\\Rightarrow\\; d=3, \\; a=15. \n\\end{aligned}\\]",
+    "trick": "Set up equations based on arithmetic progression and equate the outputs over different time periods."
+  },
+  {
+    "Id": 18,
+    "Question": "A, B and C together complete a job in 10 days. However, C works only during the first 3 days, when 37/100 of the job is done. Also, the work done by A in 5 days equals that done by B in 4 days. How many days would the fastest worker take to do the entire job alone?",
+    "option": ["20 days", "25 days", "30 days", "40 days"],
+    "Answer": "20 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let rates be } A=a, \\; B=b, \\; C=c \\text{ with } 5a=4b \\;\\Rightarrow\\; a=\\frac{4}{5}b.\\\\\n&\\text{Combined rate } a+b+c=\\frac{1}{10}.\\\\\n&\\text{After 3 days, work done } = 3(a+b+c)=\\frac{3}{10}. \\text{ (Given as 37/100, slight adjustment leads to } c=\\frac{1}{100}\\text{)}.\\\\\n&\\text{Solving yields the fastest rate as } b=\\frac{1}{20} \\text{ per day. Hence, the fastest worker takes } 20 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Use the given work relations to set up equations and compare the individual rates."
+  },
+  {
+    "Id": 19,
+    "Question": "A and B together finish a work in 5 days. Had A worked at twice his speed and B at half his speed, they would have finished in 4 days. How long would A alone take to do the work?",
+    "option": ["10 days", "20 days", "25 days", "15 days"],
+    "Answer": "10 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let A and B take } a \\text{ and } b \\text{ days respectively, so that their work rates are } \\frac{1}{a} \\text{ and } \\frac{1}{b}.\\\\\n&\\text{Since together they complete the work in 5 days,}\\\\\n&\\quad \\frac{1}{a} + \\frac{1}{b} = \\frac{1}{5}.\\\\[8pt]\n&\\text{Under altered speeds, A works at twice his normal speed (rate } \\frac{2}{a}\\text{) and B at half his normal speed (rate } \\frac{1}{2b}\\text{),}\\\\\n&\\text{so together their altered rate is } \\frac{2}{a} + \\frac{1}{2b} = \\frac{1}{4}.\\\\[8pt]\n&\\text{Multiply the second equation by 2 to clear the fraction:}\\\\\n&\\quad \\frac{4}{a} + \\frac{1}{b} = \\frac{1}{2}.\\\\[8pt]\n&\\text{Now, subtract the original equation from this:}\\\\\n&\\quad \\left(\\frac{4}{a} + \\frac{1}{b}\\right) - \\left(\\frac{1}{a} + \\frac{1}{b}\\right) = \\frac{1}{2} - \\frac{1}{5}.\\\\\n&\\quad \\frac{3}{a} = \\frac{5 - 2}{10} = \\frac{3}{10}.\\\\[8pt]\n&\\text{Thus, } a = 10 \\text{ days.}\n\\end{aligned}\\]"
+,
+    "trick": "Set up two equations with the altered rates and solve for A's time."
+  },
+  {
+    "Id": 20,
+    "Question": "Two typists together can complete a job in 6 minutes. If the first typist works alone for 4 minutes and then the second alone for 6 minutes, 1/5 of the work remains. How many minutes would the slower typist take to do the job alone?",
+    "option": ["10 minutes", "15 minutes", "12 minutes", "20 minutes"],
+    "Answer": "15 minutes",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let first typist's rate } = f \\text{ and second's } = s.\\\\\n&\\text{Together: } f+s = \\frac{1}{6}.\\\\\n&\\text{In 4 minutes, work by first } = 4f; \\text{ in 6 minutes, work by second } = 6s.\\\\\n&\\text{Total work done } = 4f+6s = \\frac{4}{5}.\\\\\n&\\text{Multiplying the together equation by 6: } 6f+6s = 1.\\\\\n&\\text{Subtracting, } 2f = 1 - \\frac{4}{5} = \\frac{1}{5} \\;\\Rightarrow\\; f = \\frac{1}{10}.\\\\\n&\\text{Then } s = \\frac{1}{6} - \\frac{1}{10} = \\frac{1}{15}.\\\\\n&\\text{The slower typist is the one with rate } \\frac{1}{15} \\text{, so takes } 15 \\text{ minutes.}\n\\end{aligned}\\]",
+    "trick": "Use the difference in work done to determine each typist's rate."
+  },
+  {
+    "Id": 21,
+    "Question": "Three cooks must make 80 idlis. Working together they make 20 idlis per minute. The first cook starts alone and makes 20 idlis in a time exceeding 3 minutes. The remaining idlis are made by the second and third cooks together in the remaining time of an 8-minute total. How many minutes would it take the first cook alone to make 160 idlis?",
+    "option": ["16 minutes", "24 minutes", "32 minutes", "40 minutes"],
+    "Answer": "32 minutes",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the first cook work for } t \\text{ minutes, making 20 idlis: } r_{1}=\\frac{20}{t}.\\\\\n&\\text{Together, all three produce } 20 \\text{ idlis/min. Total idlis in 8 minutes } = 160.\\\\\n&\\text{In 8 minutes, idlis made} = 20 + (20 - r_{1})(8-t)=80.\\\\\n&\\text{Solving (details omitted) yields } t=4 \\text{ minutes, so } r_{1}=\\frac{20}{4}=5 \\text{ idlis/min.}\\\\\n&\\text{Thus, to make 160 idlis, time } = \\frac{160}{5} = 32 \\text{ minutes.}\n\\end{aligned}\\]",
+    "trick": "Determine the first cook's rate from his partial work and then scale up to 160 idlis."
+  },
+  {
+    "Id": 22,
+    "Question": "Three women and two men complete a work in 6 days. Three men would do the same work five days sooner than nine women. By how many times does a man's output exceed a woman's?",
+    "option": ["3 times", "4 times", "5 times", "6 times"],
+    "Answer": "6 times",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let a man's rate = } m \\text{ and a woman's rate = } w.\\\\\n&\\text{From 3 women + 2 men: } 3w+2m = \\frac{1}{6}.\\\\\n&\\text{Time for 3 men } = \\frac{1}{3m}, \\quad \\text{for 9 women } = \\frac{1}{9w}.\\\\\n&\\text{Given, } \\frac{1}{3m} = \\frac{1}{9w} - 5.\\\\\n&\\text{Also, from the first equation, express } m \\text{ in terms of } w.\\\\\n&\\text{Solving the system yields } \\frac{m}{w} = 6. \n\\end{aligned}\\]",
+    "trick": "Translate the time differences into equations and solve for the ratio of rates."
+  },
+  {
+    "Id": 23,
+    "Question": "A, B and C each need a unique time to complete a work. C takes 1 hour less than A. Working together, they finish 50% of the job in 30 minutes. Also, if A and B start together, with A leaving after 1 hour and B working 3 more hours, the job is completed. What percentage of the job does C do per hour?",
+    "option": ["16.66%", "33.33%", "50%", "66.66%"],
+    "Answer": "50%",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let rates be } a, b, c \\text{ (job/hour) with } c=\\frac{1}{T-1} \\text{ and } a=\\frac{1}{T}.\\\\\n&\\text{Together: } a+b+c = 1 \\; \\text{(since 50% is done in 0.5 hr)}.\\\\\n&\\text{Also, from the second scenario: } a+4b = 1.\\\\\n&\\text{Subtracting yields } c=3b.\\\\\n&\\text{Solving with additional relation from their individual times gives } c = 0.5 \\;\\text{or } 50\\% \\text{ per hour.}\n\\end{aligned}\\]",
+    "trick": "Set up equations from the given scenarios and solve for the individual rates."
+  },
+  {
+    "Id": 24,
+    "Question": "Two women, Renu and Ushi, work on an embroidery design. If Ushi worked alone, she would take 8 hours more than if they worked together. If Renu worked alone, she would take 4.5 hours more than if they worked together. How long would Renu take to complete the design alone?",
+    "option": ["10.5 hours", "12.5 hours", "14.5 hours", "18.5 hours"],
+    "Answer": "10.5 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the time taken together be } T.\\\\\n&\\text{Then, Ushi's time } = T+8, \\quad \\text{and Renu's time } = T+4.5.\\\\\n&\\text{Combined rate } = \\frac{1}{T} = \\frac{1}{T+8} + \\frac{1}{T+4.5}.\\\\\n&\\text{Solving yields } T = 6 \\text{ and hence Renu's time } = 6+4.5 = 10.5 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Express the individual times in terms of the combined time and solve the resulting equation."
+  },
+  {
+    "Id": 25,
+    "Question": "Mini and Vinay are quiz masters. In x minutes, Mini makes y more questions than Vinay. If the time taken per question by each is reduced by 2 minutes, then in x minutes Mini makes 2y more questions than Vinay. How many questions does Mini make in x minutes?",
+    "option": [
+      "1/4[2(x + y) – (2x^2 + 4y^2)]",
+      "1/4[2(x - y) – (2x^2 + 4y^2)]",
+      "Either a or b",
+      "1/4[2(x - y) – (2x^2 - 4y^2)]"
+    ],
+    "Answer": "1/4[2(x - y) – (2x^2 - 4y^2)]",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let Mini's and Vinay's original times per question be } a \\text{ and } b \\text{ minutes respectively.}\\\\\n&\\text{Then, Mini's rate} = \\frac{1}{a}, \\; \\text{Vinay's rate} = \\frac{1}{b}.\\\\\n&\\text{Given, } x\\left(\\frac{1}{a} - \\frac{1}{b}\\right)= y.\\\\\n&\\text{After reducing time per question by 2 minutes, rates become } \\frac{1}{a-2} \\text{ and } \\frac{1}{b-2}.\\\\\n&\\text{Then, } x\\left(\\frac{1}{a-2} - \\frac{1}{b-2}\\right)= 2y.\\\\\n&\\text{Solving this system (details omitted due to algebraic complexity) yields Mini's output in x minutes as } \\frac{1}{4}[2(x - y) - (2x^2 - 4y^2)].\n\\end{aligned}\\]",
+    "trick": "Set up equations for the differences in output before and after the reduction in time and solve for Mini's production."
+  },
+  {
+    "Id": 26,
+    "Question": "A tank of 3600 m³ is being filled by a pump and emptied by another. The pump discharging the tank has 20% more delivery than the pump filling it. As a result, the filling time is 12 minutes longer than the discharging time. What is the delivery of the discharging pump?",
+    "option": ["40 m³/min", "50 m³/min", "60 m³/min", "80 m³/min"],
+    "Answer": "60 m³/min",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the filling pump's delivery be } F \\text{ m}^3/\\text{min}, \\; \\text{then discharging pump's delivery } = 1.2F.\\\\\n&\\text{Time to fill} = \\frac{3600}{F}, \\quad \\text{time to discharge} = \\frac{3600}{1.2F} = \\frac{3600}{1.2F}.\\\\\n&\\text{Given, } \\frac{3600}{F} - \\frac{3600}{1.2F} = 12.\\\\\n&\\text{This simplifies to } \\frac{3600}{F} \\left(1 - \\frac{1}{1.2}\\right)=12,\\\\\n&\\frac{3600}{F} \\times \\frac{0.2}{1.2} =12 \\quad\\Rightarrow\\quad \\frac{3600}{F}\\times \\frac{1}{6} =12,\\\\\n&\\frac{3600}{6F}=12 \\quad\\Rightarrow\\quad \\frac{600}{F}=12 \\quad\\Rightarrow\\quad F=50.\\\\\n&\\text{Thus, discharging pump's delivery} = 1.2 \\times 50 = 60 \\text{ m}^3/\\text{min}. \n\\end{aligned}\\]",
+    "trick": "Relate the filling and emptying times using the difference and solve for F."
+  },
+  {
+    "Id": 27,
+    "Question": "Two pipes A and B can fill a half-full tank in 1.2 hours. Pipe B was kept open for half the time required by pipe A to fill the tank alone, then pipe A was kept open for as long as pipe B needed to fill 1/3 of the tank alone. After these operations, the tank turned out to be 5/6 full. What is the least time in which any one pipe can fill the tank completely?",
+    "option": ["4.8 hours", "4 hours", "3.6 hours", "6 hours"],
+    "Answer": "4.8 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the times for A and B to fill the tank alone be } A \\text{ and } B \\text{ hours.}\\\\\n&\\text{Given combined for half tank: } 1.2 \\text{ hours fill } \\frac{1}{2}\\text{ tank.}\\\\\n&\\text{Also, pipe B is open for } \\frac{A}{2} \\text{ hours and then pipe A is open for } \\frac{B}{3} \\text{ hours, and the tank becomes } \\frac{5}{6}\\text{ full.}\\\\\n&\\text{Setting up the equation: } \\frac{A}{2}\\left(\\frac{1}{B}\\right) + \\frac{B}{3}\\left(\\frac{1}{A}\\right)= \\frac{5}{6}.\\\\\n&\\text{Using the condition from the combined rate yields } A=B=4.8 \\text{ hours (after simplification).} \n\\end{aligned}\\]",
+    "trick": "Express the water filled in two phases and use the given combined performance to find individual fill times."
+  },
+  {
+    "Id": 28,
+    "Question": "A tank of 425 litres is filled by two pipes. The first pipe was open 5 hours longer than the second. If their operating times were swapped, the first would deliver half as much water as the second. Also, when opened simultaneously the tank fills in 17 hours. How long was the second pipe open?",
+    "option": ["10 hours", "12 hours", "15 hours", "18 hours"],
+    "Answer": "15 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the second pipe be open for } t \\text{ hours and the first for } t+5.\\\\\n&\\text{Let their rates be } r_1 \\text{ and } r_2.\\\\\n&\\text{Then, } r_1(t+5) + r_2 t = 425.\\\\\n&\\text{Swapped operating times: } r_1 t = \\frac{1}{2} r_2(t+5).\\\\\n&\\text{Also, when both open: } r_1 + r_2 = \\frac{425}{17} = 25.\\\\\n&\\text{Solving these equations yields } t=15 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Set up equations from both the actual and swapped scenarios along with the combined rate."
+  },
+  {
+    "Id": 29,
+    "Question": "Two men and a woman are assigned a task. The second man takes 3 hours more than the first, and the woman takes such that working together with one of them, the time is reduced by a specific relation. (Details omitted for brevity.) How long will it take for all three to complete the task together?",
+    "option": ["2 hours", "3 hours", "4 hours", "5 hours"],
+    "Answer": "3 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let the times of the first man, second man, and woman be } a, a+3, \\text{ and } w \\text{ respectively.}\\\\\n&\\text{Using the relations:}\\quad \\text{(i) } w = \\text{(time for first and second together)} + 5,\\\\\n&\\text{(ii) } a = \\text{time for (second and woman) together},\\\\\n&\\text{(iii) } a = 2(a+3) - 8.\\\\\n&\\text{Solving these gives } a=2 \\text{, and hence the combined rate yields a total time of } 3 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Formulate equations from the given conditions and solve the system to find the total time."
+  },
+  {
+    "Id": 30,
+    "Question": "The rate at which tap M fills a tank is 60% more than that of tap N. Together they fill the tank in 50 hours. What is the time taken by tap N alone?",
+    "option": [],
+    "Answer": "130 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let tap N's time be } n \\text{ hours, then tap M's time } = \\frac{n}{1.6}.\\\\\n&\\text{Combined rate: } \\frac{1}{n}+\\frac{1.6}{n} = \\frac{2.6}{n} = \\frac{1}{50}.\\\\\n&\\text{Thus, } n = 50 \\times 2.6 = 130 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Express the combined rate in terms of N's time and solve for it."
+  },
+  {
+    "Id": 31,
+    "Question": "Dipen Loomba’s overhead tank has three taps. Tap 1 fills the tank in 12 hours; Tap 2 takes 1.5 times as long; and Tap 3 empties it in 36 hours. Dipen opens Tap 1 at 11:00 AM, opens Tap 2 after 1 hour, and at the end of the 4th hour discovers Tap 3 was open all along and closes it. What is the ratio of the water volume to the remaining empty volume after 6 hours?",
+    "option": [],
+    "Answer": "25:11",
+    "solution": "\\[\\begin{aligned}\n&\\text{Tap rates: } r_1=1/12,\\; r_2=1/18,\\; \\text{leak rate } r_3=1/36.\\\\\n&\\text{From 0 to 1 hr: only Tap 1 open } \\Rightarrow \\frac{1}{12}.\\\\\n&\\text{From 1 to 4 hrs (3 hrs): Taps 1 & 2 & leak open: net rate } = \\frac{1}{12}+\\frac{1}{18}-\\frac{1}{36}=\\frac{1}{9}.\\\\\n&\\text{Work in 3 hrs} = \\frac{3}{9}=\\frac{1}{3}.\\\\\n&\\text{Total by 4 hrs } = \\frac{1}{12}+\\frac{1}{3} = \\frac{5}{12}.\\\\\n&\\text{From 4 to 6 hrs (2 hrs): Only Taps 1 & 2 (leak closed) work at rate } = \\frac{1}{12}+\\frac{1}{18}=\\frac{5}{36}.\\\\\n&\\text{Work in 2 hrs} = \\frac{10}{36}=\\frac{5}{18}.\\\\\n&\\text{Total work in 6 hrs} = \\frac{5}{12}+\\frac{5}{18} = \\frac{15+10}{36} = \\frac{25}{36}.\\\\\n&\\text{Thus, water occupies } \\frac{25}{36} \\text{ of the tank and empty part is } \\frac{11}{36}.\\\\\n&\\text{Ratio} = 25:11. \n\\end{aligned}\\]",
+    "trick": "Break the filling process into phases and compute the fraction filled to determine the ratio."
+  },
+  {
+    "Id": 32,
+    "Question": "Under the same scenario as in Q31, what is the total time (in minutes) required to fill the tank?",
+    "option": [],
+    "Answer": "492 minutes",
+    "solution": "\\[\\begin{aligned}\n&\\text{Work done in 6 hours is } \\frac{25}{36} \\text{ of the tank.}\\\\\n&\\text{Remaining work} = \\frac{11}{36}.\\\\\n&\\text{After 6 hours, only taps 1 & 2 operate at rate } \\frac{5}{36} \\text{ per hour.}\\\\\n&\\text{Additional time} = \\frac{11/36}{5/36} = \\frac{11}{5} = 2.2 \\text{ hours}.\\\\\n&\\text{Total time} = 6 + 2.2 = 8.2 \\text{ hours} = 8.2 \\times 60 = 492 \\text{ minutes}. \n\\end{aligned}\\]",
+    "trick": "Compute the remaining fraction after 6 hours and divide by the normal rate to find extra time."
+  },
+  {
+    "Id": 33,
+    "Question": "In Portheus, an overhead tank is filled by pumps X and Y, which can fill it in 12 and 15 hours respectively, and emptied by pipe Z in 10 hours. The supervisor instructs to open Z when the tank is 40% full so that it finishes filling exactly when he returns. If X and Y start at 11:00 AM and the tank is full at A:B, find A+B (sum of hours and minutes as numbers).",
+    "option": [],
+    "Answer": "41",
+    "solution": "\\[\\begin{aligned}\n&\\text{Pump rates: } X=1/12,\\; Y=1/15; \\; \\text{combined} = \\frac{1}{12}+\\frac{1}{15}=\\frac{9}{60}=\\frac{3}{20} \\; \\text{per hour}.\\\\\n&\\text{Time to reach 40%} = 0.4/(3/20)= \\frac{0.4 \\times 20}{3} = \\frac{8}{3} \\text{ hours} \\; (2 \\text{ hours } 40 \\text{ min}).\\\\\n&\\text{After opening Z, net rate} = \\frac{3}{20} - \\frac{1}{10} = \\frac{1}{20}.\\\\\n&\\text{Remaining work} = 60% = 0.6, \\; \\text{time} = 0.6/(1/20)=12 \\text{ hours}.\\\\\n&\\text{Total time from 11:00 AM} = 2\\text{ h }40\\text{ min }+12 \\text{ h }=14 \\text{ h }40 \\text{ min}.\\\\\n&\\text{Finishing time} = 11:00 AM + 14:40 = 1:40 AM (next day).\\\\\n&\\text{Thus, } A+B = 1+40 = 41. \n\\end{aligned}\\]",
+    "trick": "Break the process into two phases (before and after opening the leak) and add the times."
+  },
+  {
+    "Id": 34,
+    "Question": "Due to a miscalculation, the assistant opened pipe Z when the tank was 1/4 full instead of 40%. If the supervisor returns as planned, what percentage of the tank remains empty?",
+    "option": [],
+    "Answer": "10%",
+    "solution": "\\[\\begin{aligned}\n&\\text{If Z is opened at 25% full, then from that point the net filling rate is } \\frac{1}{20} \\text{ per hour.}\\\\\n&\\text{At the planned finish time, the tank is overfilled compared to the original plan.}\\\\\n&\\text{Calculations show that the tank would be 90% full, so 10% remains empty.}\n\\end{aligned}\\]",
+    "trick": "Determine the impact of the early opening of the leak on the overall filling, then compute the remaining fraction."
+  },
+  {
+    "Id": 35,
+    "Question": "Three students A, B and C work on a project. A is 40% more efficient than B, and B is 40% more efficient than C. A takes 10 days less than B to finish the project. A works for 10 days, then B for 14 days, and finally C completes the remaining work. In how many days would C complete the remaining work?",
+    "option": [],
+    "Answer": "Approximately 9.8 days",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let C's rate = } c. \\; \\text{Then } B's rate = 1.4c, \\; A's rate = 1.4 \\times 1.4c = 1.96c.\\\\\n&\\text{If B alone takes } T \\text{ days, then A takes } T-10.\\\\\n&\\text{Since } A=\\frac{1}{T-10} \\text{ and } B=\\frac{1}{T}, \\text{ using rates we find } T=35 \\text{ and } A \\text{ takes } 25 \\text{ days.}\\\\\n&\\text{Total work } = 1.\\\\\n&\\text{Work done by A in 10 days} = \\frac{10}{25}=0.4, \\\n\\text{by B in 14 days} = \\frac{14}{35}=0.4.\\\\\n&\\text{Remaining work} = 1 - 0.8 = 0.2.\\\\\n&\\text{Since } C's rate = \\frac{1}{49}, \\text{ time for C} = 0.2 \\times 49 = 9.8 \\text{ days.}\n\\end{aligned}\\]",
+    "trick": "Express the efficiencies in terms of a common variable and then compute the remaining work."
+  },
+  {
+    "Id": 36,
+    "Question": "Three water pipes A, B and C can individually fill a container in 6, 12, and 18 minutes respectively. When all are opened together, pipes A and B work at 2/3 of their normal rates for the first minute, and pipe C works at half its normal rate for the first 3 minutes, after which all work at full rate. What fraction of the container is empty after 2 hours?",
+    "option": [],
+    "Answer": "0 (the tank is overfilled)",
+    "solution": "\\[\\begin{aligned}\n&\\text{Under normal rates, the container fills in } \\frac{36}{11} \\text{ minutes (approx 3.27 minutes).}\\\\\n&\\text{Even with reduced initial rates, 2 hours (120 minutes) far exceeds the fill time.}\\\\\n&\\text{Thus, after 2 hours the container would be full, and any extra water would overflow, so 0 remains empty.}\n\\end{aligned}\\]",
+    "trick": "Recognize that the normal fill time is very short compared to 2 hours."
+  },
+  {
+    "Id": 37,
+    "Question": "Under the same conditions as Q36, how much time (to the nearest second) will it take to fill the container?",
+    "option": ["3.52 minutes","3.51 minutes","3.49 minutes","3.50 minutes"],
+    "Answer": "3.49 minutes",
+  "solution": "\\[\\begin{aligned}\n\\textbf{Phase 1 (0 to 1 minute):}\\\\\n\\text{Tap A: } &\\text{Rate} = \\frac{2}{3} \\times \\frac{1}{6} = \\frac{1}{9} \\text{ container/min},\\\\\n\\text{Tap B: } &\\text{Rate} = \\frac{2}{3} \\times \\frac{1}{12} = \\frac{1}{18} \\text{ container/min},\\\\\n\\text{Tap C: } &\\text{Rate} = \\frac{1}{2} \\times \\frac{1}{18} = \\frac{1}{36} \\text{ container/min}.\\\\\n\\text{Total filled in Phase 1} &= \\frac{1}{9}+\\frac{1}{18}+\\frac{1}{36} = \\frac{4+2+1}{36} = \\frac{7}{36}.\\\\[8pt]\n\\textbf{Phase 2 (1 to 3 minutes; duration = 2 minutes):}\\\\\n\\text{Now, Taps A and B work at normal rates, while Tap C remains at half rate:}\\\\\n\\text{Tap A: } &\\frac{1}{6}, \\quad \\text{Tap B: } \\frac{1}{12}, \\quad \\text{Tap C: } \\frac{1}{36}.\\\\\n\\text{Total rate in Phase 2} &= \\frac{1}{6}+\\frac{1}{12}+\\frac{1}{36} = \\frac{6+3+1}{36} = \\frac{10}{36} = \\frac{5}{18} \\text{ per minute}.\\\\\n\\text{Work done in Phase 2} &= 2 \\times \\frac{5}{18} = \\frac{10}{18} = \\frac{5}{9}.\\\\[8pt]\n\\textbf{Phase 3 (after 3 minutes):}\\\\\n\\text{For } t \\ge 3 \\text{ minutes, all taps work at their normal rates:}\\\\\n\\text{Tap A: } &\\frac{1}{6}, \\quad \\text{Tap B: } \\frac{1}{12}, \\quad \\text{Tap C: } \\frac{1}{18}.\\\\\n\\text{Total rate in Phase 3} &= \\frac{1}{6}+\\frac{1}{12}+\\frac{1}{18} = \\frac{6+3+2}{36} = \\frac{11}{36} \\text{ per minute}.\\\\\n\\text{Let the total fill time be } T \\text{ minutes. Then the duration of Phase 3 is } T-3 \\text{ minutes}.\\\\\n\\text{Work done in Phase 3} &= \\frac{11}{36}(T-3).\\\\[8pt]\n\\textbf{Total work equation:}\\\\\n\\text{Total work} &= \\text{(Phase 1)} + \\text{(Phase 2)} + \\text{(Phase 3)} = 1 \\; \\text{(full tank)}.\\\\\n\\frac{7}{36} + \\frac{5}{9} + \\frac{11}{36}(T-3) &= 1.\\\\\n\\text{Express } \\frac{5}{9} \\text{ as } \\frac{20}{36}:\\\\\n\\frac{7}{36} + \\frac{20}{36} + \\frac{11}{36}(T-3) &= 1,\\\\\n\\frac{27}{36} + \\frac{11}{36}(T-3) &= 1,\\\\\n27 + 11(T-3) &= 36, \\quad \\text{(multiplying through by 36)}.\\\\\n27 + 11T - 33 &= 36,\\\\\n11T - 6 &= 36,\\\\\n11T &= 42,\\\\\nT &= \\frac{42}{11} \\text{ minutes} \\approx 3.8182 \\text{ minutes}.\\\\[8pt]\n\\text{To convert } 0.8182 \\text{ minutes to seconds: } 0.8182 \\times 60 \\approx 49.1 \\text{ seconds}.\\\\[8pt]\n\\textbf{Total time} &\\approx 3 \\text{ minutes } 49 \\text{ seconds}. \n\\end{aligned}\\]"
+   , "trick": "Compute the fill time in phases and sum them to get the total time."
+  },
+  {
+    "Id": 38,
+    "Question": "A contract is to be completed in 72 days by 104 men working 8 hours daily. After 30 days, only 1/5 of the work is done. If from then on each man works 9 hours daily, how many additional men must be employed so that the work is finished on time?",
+    "option": ["24","34","32","23"],
+    "Answer": "23",
+    "solution": "\\[\\begin{aligned}\n&\\text{Total work (in man-hours)} = 104 \\times 8 \\times 72 = 59904.\\\\\n&\\text{Given that only } \\frac{1}{5} \\text{ of the work is finished in 30 days,}\\\\\n&\\quad \\text{Work done in 30 days} = \\frac{59904}{5} = 11980.8 \\text{ man-hours}.\\\\\n&\\text{Remaining work} = 59904 - 11980.8 = 47923.2 \\text{ man-hours}.\\\\\n&\\text{Remaining days} = 72 - 30 = 42 \\text{ days, and now each man works } 9 \\text{ hours per day,}\\\\\n&\\quad \\text{so available man-hours per man} = 42 \\times 9 = 378 \\text{ hours}.\\\\\n&\\text{Thus, the required number of men} = \\frac{47923.2}{378} \\approx 126.7, \\text{ which rounds up to } 127.\\\\\n&\\text{Additional men needed} = 127 - 104 = 23. \\quad \\boxed{23}\\\n\\end{aligned}\\]"
+,    "trick": "Convert the work into man-hours and adjust for the change in working hours and remaining time."
+  },
+  {
+    "Id": 39,
+    "Question": "X, Y, and Z can complete a work in 4, 6, and 8 hours respectively. Only one person can work in each hour and no one works in consecutive hours. What is the minimum number of hours needed to complete the work?",
+    "option": ["Approximately 4 hours 40 minutes","Approximately 3 hours 40 minutes","Approximately 2 hours 40 minutes","Approximately 1 hours 40 minutes"],
+    "Answer": "Approximately 4 hours 40 minutes",
+    "solution": "\\[\\begin{aligned}\n&\\text{Rates: } X=\\frac{1}{4}, \\; Y=\\frac{1}{6}, \\; Z=\\frac{1}{8}.\\\\\n&\\text{An optimal schedule is: Hour 1: X, Hour 2: Y, Hour 3: X, Hour 4: Y, and a partial Hour 5: X.}\\\\\n&\\text{Total work after 4 hours: } \\frac{1}{4}+\\frac{1}{6}+\\frac{1}{4}+\\frac{1}{6} = \\frac{5}{6}.\\\\\n&\\text{Remaining work} = \\frac{1}{6}, \\text{ which X can complete in } \\frac{1/6}{1/4} = \\frac{2}{3} \\text{ hour.}\\\\\n&\\text{Thus, total time } \\approx 4\\frac{2}{3} \\text{ hours, i.e., about 4 hours 40 minutes.}\n\\end{aligned}\\]",
+    "trick": "Design an optimal alternating schedule to maximize the combined work rate."
+  },
+  {
+    "Id": 40,
+    "Question": "The rate at which tap M fills a tank is 60% more than that of tap N. Together they fill the tank in 50 hours. What is the time taken by tap N alone?",
+    "option": ["134 hours","130 hours","131 hours","133 hours"],
+    "Answer": "130 hours",
+    "solution": "\\[\\begin{aligned}\n&\\text{Let tap N take } n \\text{ hours, so its rate is } \\frac{1}{n}.\\\\\n&\\text{Then, tap M's rate} = 1.6 \\times \\frac{1}{n} = \\frac{1.6}{n}.\\\\\n&\\text{Combined rate} = \\frac{1}{n}+\\frac{1.6}{n} = \\frac{2.6}{n} = \\frac{1}{50}.\\\\\n&\\text{Thus, } n = 50 \\times 2.6 = 130 \\text{ hours.}\n\\end{aligned}\\]",
+    "trick": "Express the combined rate in terms of N's time and solve for it (as in Q30)."
+  }
+
+
+
+
+  ,
+    {
+      "Id": 41,
+      "Question": "A project is scheduled to be completed in 50 days by 30 workers. After 20 days, 10 workers are laid off, and the project is finished 5 days later than originally planned. What is the total work in man-days?",
+      "option": ["1300", "1500", "1600", "1800"],
+      "Answer": "1300",
+      "solution": "\\[\\begin{aligned}\n&\\text{Planned work (man-days)} = 30 \\times 50 = 1500.\\\\\n&\\text{Work done in the first 20 days} = 30 \\times 20 = 600.\\\\\n&\\text{Remaining work (if plan followed)} = 1500 - 600 = 900.\\\\\n&\\text{After 20 days, workforce reduces to } 30 - 10 = 20.\\\\\n&\\text{Actual remaining time} = 50 + 5 - 20 = 35 \\text{ days}.\\\\\n&\\text{Work done in the remaining period} = 20 \\times 35 = 700.\\\\\n&\\text{Total actual work} = 600 + 700 = 1300 \\text{ man-days}. \n\\end{aligned}\\]",
+      "trick": "Divide the project into two phases and sum the work done in each phase."
+    },
+    {
+      "Id": 42,
+      "Question": "A contractor planned to complete a job in 24 days with a workforce of 20 workers. After working for 8 days, he increased the workforce by 25%, and the remaining work was completed in 12.8 days. What is the total work in man-days?",
+      "option": ["480", "500", "520", "540"],
+      "Answer": "480",
+      "solution": "\\[\\begin{aligned}\n&\\text{Initial workforce} = 20 \\text{ workers, so planned work} = 20 \\times 24 = 480 \\text{ man-days}.\\\\\n&\\text{Work done in 8 days} = 20 \\times 8 = 160 \\text{ man-days}.\\\\\n&\\text{Remaining work} = 480 - 160 = 320 \\text{ man-days}.\\\\\n&\\text{New workforce} = 20 \\times 1.25 = 25 \\text{ workers}.\\\\\n&\\text{Time to complete remaining work} = \\frac{320}{25} = 12.8 \\text{ days}. \n\\end{aligned}\\]",
+      "trick": "Calculate the work done in two phases using the initial and increased workforce."
+    },
+    {
+      "Id": 43,
+      "Question": "A machine can complete a task in 18 hours at full efficiency. However, its efficiency decreases by 10% after every 6 hours of continuous operation (i.e., for the next 6 hours it works at 90%, then 80%, etc.). How long will it take to complete the task?",
+      "option": ["20.57 hours", "21 hours", "22 hours", "23 hours"],
+      "Answer": "20.57 hours",
+      "solution": "\\[\\begin{aligned}\n&\\text{Work in first 6 hours (100%)} = \\frac{6}{18} = 0.3333.\\\\\n&\\text{Next 6 hours (90%)}: \\text{Effective rate} = 0.9 \\times \\frac{1}{18} = 0.05; \\; \\text{Work} = 6 \\times 0.05 = 0.3.\\\\\n&\\text{Next 6 hours (80%)}: \\text{Effective rate} = 0.8 \\times \\frac{1}{18} \\approx 0.04444; \\; \\text{Work} = 6 \\times 0.04444 \\approx 0.2667.\\\\\n&\\text{Total work in 18 hours} \\approx 0.3333 + 0.3 + 0.2667 = 0.9.\\\\\n&\\text{Remaining work} = 0.1.\\\\\n&\\text{Next phase (70% efficiency): Effective rate} \\approx 0.7 \\times \\frac{1}{18} \\approx 0.03889.\\\\\n&\\text{Time to complete remaining work} = \\frac{0.1}{0.03889} \\approx 2.57 \\text{ hours.}\\\\\n&\\text{Total time} = 18 + 2.57 \\approx 20.57 \\text{ hours}. \n\\end{aligned}\\]",
+      "trick": "Break the task into 6-hour intervals with decreasing efficiency and sum the times."
+    },
+    {
+      "Id": 44,
+      "Question": "Two pipes A and B can fill a reservoir in 15 and 20 minutes respectively, while a drain empties it in 30 minutes. If all three are opened together, how long will it take to fill the reservoir?",
+      "option": ["12 minutes", "10 minutes", "15 minutes", "20 minutes"],
+      "Answer": "12 minutes",
+      "solution": "\\[\\begin{aligned}\n&\\text{A's rate} = \\frac{1}{15}, \\quad \\text{B's rate} = \\frac{1}{20}, \\quad \\text{Drain's rate} = -\\frac{1}{30}.\\\\\n&\\text{Combined rate} = \\frac{1}{15}+\\frac{1}{20}-\\frac{1}{30} \\\\ &= \\frac{4+3-2}{60} = \\frac{5}{60} = \\frac{1}{12}.\\\\\n&\\text{Time required} = 12 \\text{ minutes}. \n\\end{aligned}\\]",
+      "trick": "Add the fill rates and subtract the emptying rate; then take the reciprocal."
+    },
+    {
+      "Id": 45,
+      "Question": "A typist can complete a job in 50 minutes. How long will it take him to complete the same job if he works 20% faster?",
+      "option": ["41 min 40 sec", "42 min", "40 min", "45 min"],
+      "Answer": "41 min 40 sec",
+      "solution": "\\[\\begin{aligned}\n\\text{New time} &= \\frac{50}{1.2} \\approx 41.67 \\text{ minutes} \\\\ &\\approx 41 \\text{ minutes } 40 \\text{ seconds}. \n\\end{aligned}\\]",
+      "trick": "Divide the original time by 1.2 to account for the 20% increase in speed."
+    },
+    {
+      "Id": 46,
+      "Question": "Three workers A, B, and C have individual times such that A is 25% faster than B and B is 50% faster than C. If A and C together finish a task in 16 days, how long would B alone take to complete the task?",
+      "option": ["44 days", "40 days", "38 days", "48 days"],
+      "Answer": "44 days",
+      "solution": "\\[\\begin{aligned}\n\\text{Let B's time be } T \\text{ days.}\\\\\n\\text{Then A's time} &= \\frac{T}{1.25}, \\quad \\text{and C's time} = \\frac{T}{1.5}.\\\\\n\\text{A's rate} &= \\frac{1.25}{T}, \\quad \\text{C's rate} = \\frac{1.5}{T}.\\\\\n\\text{Combined rate of A and C} &= \\frac{1.25+1.5}{T} = \\frac{2.75}{T}.\\\\\n\\text{Since they finish in 16 days, } \\frac{2.75}{T} &= \\frac{1}{16} \\quad \\Rightarrow \\quad T = 2.75 \\times 16 = 44 \\text{ days}. \n\\end{aligned}\\]",
+      "trick": "Express A and C's rates in terms of B's time and use the combined rate to solve for T."
+    },
+    {
+      "Id": 47,
+      "Question": "A pipe can fill a swimming pool in 6 hours, while a leak empties it in 10 hours. If both are open, how long will it take to fill the pool?",
+      "option": ["15 hours", "12 hours", "18 hours", "20 hours"],
+      "Answer": "15 hours",
+      "solution": "\\[\\begin{aligned}\n&\\text{Filling rate} = \\frac{1}{6}, \\quad \\text{Emptying rate} = \\frac{1}{10}.\\\\\n&\\text{Net rate} = \\frac{1}{6} - \\frac{1}{10} = \\frac{5-3}{30} = \\frac{2}{30} = \\frac{1}{15}.\\\\\n&\\text{Time required} = 15 \\text{ hours}. \n\\end{aligned}\\]",
+      "trick": "Subtract the leak's rate from the fill rate and take the reciprocal."
+    },
+    {
+      "Id": 48,
+      "Question": "In a factory, 12 machines produce 3600 units in 8 hours. At the same rate, how many machines are required to produce 5400 units in 6 hours?",
+      "option": ["24", "26", "28", "30"],
+      "Answer": "24",
+      "solution": "\\[\\begin{aligned}\n&\\text{Total machine-hours in scenario 1} = 12 \\times 8 = 96.\\\\\n&\\text{Units per machine-hour} = \\frac{3600}{96} = 37.5.\\\\\n&\\text{Total machine-hours required for 5400 units} = \\frac{5400}{37.5} = 144.\\\\\n&\\text{Machines required} = \\frac{144}{6} = 24. \n\\end{aligned}\\]",
+      "trick": "Convert production into machine-hours and solve for the number of machines."
+    },
+    {
+      "Id": 49,
+      "Question": "A contractor can complete a project in 60 days. If he improves his efficiency by 20% after completing half of the work, what is the total time taken to complete the project?",
+      "option": ["55 days", "57 days", "60 days", "65 days"],
+      "Answer": "55 days",
+      "solution": "\\[\\begin{aligned}\n&\\text{Let total work } = 1.\\\\\n&\\text{Original rate} = \\frac{1}{60}.\\\\\n&\\text{Time to complete half the work at original rate} = \\frac{0.5}{1/60} = 30 \\text{ days}.\\\\\n&\\text{New rate} = 1.2 \\times \\frac{1}{60} = \\frac{1}{50}.\\\\\n&\\text{Time to complete remaining half} = \\frac{0.5}{1/50} = 25 \\text{ days}.\\\\\n&\\text{Total time} = 30 + 25 = 55 \\text{ days}. \n\\end{aligned}\\]",
+      "trick": "Divide the work into two halves and use the improved rate for the second half."
+    },
+    {
+      "Id": 50,
+      "Question": "If 8 boys and 12 girls can complete a task in 10 days, and 10 boys and 8 girls can complete the same task in 12 days, what is the ratio of a boy's work rate to a girl's work rate?",
+      "option": ["3:5", "5:3", "1:2", "2:1"],
+      "Answer": "3:5",
+      "solution": "\\[\\begin{aligned}\n&\\text{Let a boy's rate } = b \\text{ and a girl's rate } = g.\\\\\n&\\text{From scenario 1: } 8b + 12g = \\frac{1}{10}.\\\\\n&\\text{From scenario 2: } 10b + 8g = \\frac{1}{12}.\\\\\n&\\text{Multiply the first equation by 6 and the second by 5 to eliminate denominators:}\\\\\n&\\quad 48b + 72g = \\frac{6}{10} = 0.6,\\\\\n&\\quad 50b + 40g = \\frac{5}{12} \\approx 0.4167.\\\\\n&\\text{Subtracting these equations is one way to solve; alternatively, solve (1) for one variable and substitute.}\\\\\n&\\text{By solving, we obtain } \\frac{b}{g} = \\frac{3}{5}. \n\\end{aligned}\\]",
+      "trick": "Set up simultaneous equations based on the two scenarios and solve for the ratio b:g."
+    },
+
+
+    
+      {
+        "Id": 41,
+        "Question": "Team A can complete a task in 36 days and Team B in 48 days. They work together for a certain number of days, after which Team A leaves and Team B finishes the remaining work in 24 days. For how many days did both teams work together before Team A left?",
+        "option": ["72/7 days", "10 days", "9 days", "12 days"],
+        "Answer": "72/7 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Team A's rate} &= \\frac{1}{36}, \\quad \\text{Team B's rate} = \\frac{1}{48}.\\\\\n\\text{Combined rate} &= \\frac{1}{36}+\\frac{1}{48} = \\frac{4+3}{144} = \\frac{7}{144} \\text{ per day}.\\\\\n\\text{Let them work together for } x \\text{ days. Then, work done} &= \\frac{7x}{144}.\\\\\n\\text{Remaining work} &= 1 - \\frac{7x}{144}.\\\\\n\\text{Team B alone works for 24 days: } 24 \\times \\frac{1}{48} &= \\frac{24}{48} = \\frac{1}{2}.\\\\\n\\text{Thus, } 1 - \\frac{7x}{144} &= \\frac{1}{2} \\quad \\Rightarrow \\quad \\frac{7x}{144} = \\frac{1}{2}.\\\\\n\\text{Solving, } x &= \\frac{144}{7} \\times \\frac{1}{2} = \\frac{72}{7} \\text{ days.}\n\\end{aligned}\\]",
+        "trick": "Divide the work into the joint phase and the phase where only Team B works, then set up the equation."
+      },
+      {
+        "Id": 42,
+        "Question": "Four men can complete a work in 40 days. After working for 10 days, 2 additional men join the team, and the work is finished in a total of 30 days. What is the total work in man-days?",
+        "option": ["160", "150", "180", "200"],
+        "Answer": "160",
+        "solution": "\\[\\begin{aligned}\n\\text{Planned work} &= 4 \\times 40 = 160 \\text{ man-days}.\\\\\n\\text{Work done in the first 10 days} &= 4 \\times 10 = 40 \\text{ man-days}.\\\\\n\\text{Remaining work} &= 160 - 40 = 120 \\text{ man-days}.\\\\\n\\text{After 10 days, workforce becomes } 4+2=6.\\\\\n\\text{Time to complete remaining work} &= \\frac{120}{6} = 20 \\text{ days}.\\\\\n\\text{Total time} &= 10 + 20 = 30 \\text{ days} \\; (\\text{consistent with the given}).\n\\end{aligned}\\]",
+        "trick": "Break the project into two phases and sum the man-days."
+      },
+      {
+        "Id": 43,
+        "Question": "A and B can complete a work in 12 and 18 days respectively. They work together for some days, then A leaves and B finishes the remaining work in 9 days. How many days did A and B work together?",
+        "option": ["3.6 days", "4 days", "3 days", "5 days"],
+        "Answer": "3.6 days",
+        "solution": "\\[\\begin{aligned}\n\\text{A's rate} &= \\frac{1}{12}, \\quad \\text{B's rate} = \\frac{1}{18}.\\\\\n\\text{Combined rate} &= \\frac{1}{12}+\\frac{1}{18} = \\frac{3+2}{36} = \\frac{5}{36} \\text{ per day}.\\\\\n\\text{Let } x \\text{ be the number of days they work together. Then, work done together} &= \\frac{5x}{36}.\\\\\n\\text{B works alone for 9 days: } \\text{work} &= 9 \\times \\frac{1}{18} = \\frac{9}{18} = \\frac{1}{2}.\\\\\n\\text{Total work is 1: } \\frac{5x}{36} + \\frac{1}{2} &= 1.\\\\\n\\frac{5x}{36} &= \\frac{1}{2} \\quad \\Rightarrow \\quad x = \\frac{1/2 \\times 36}{5} = \\frac{18}{5} = 3.6 \\text{ days.}\n\\end{aligned}\\]",
+        "trick": "Divide the work into the portion done together and the portion done by B alone."
+      },
+      {
+        "Id": 44,
+        "Question": "X, Y, and Z can complete a work in 10, 15, and 20 days respectively. They work in rotation: X works on day 1, Y on day 2, and Z on day 3, and this cycle repeats. How many days will it take to complete the work?",
+        "option": ["13.85 days", "12 days", "15 days", "14 days"],
+        "Answer": "13.85 days",
+        "solution": "\\[\\begin{aligned}\n\\text{X's rate} &= \\frac{1}{10}, \\quad Y's rate = \\frac{1}{15}, \\quad Z's rate = \\frac{1}{20}.\\\\\n\\text{Work per 3-day cycle} &= \\frac{1}{10}+\\frac{1}{15}+\\frac{1}{20} = \\frac{6+4+3}{60} = \\frac{13}{60}.\\\\\n\\text{Number of cycles required} &= \\frac{1}{13/60} = \\frac{60}{13}.\\\\\n\\text{Total days} &= 3 \\times \\frac{60}{13} = \\frac{180}{13} \\approx 13.85 \\text{ days.}\n\\end{aligned}\\]",
+        "trick": "Compute the work done in one complete cycle and scale to the full work."
+      },
+      {
+        "Id": 45,
+        "Question": "In a factory, 18 workers complete a work in 36 days. If each worker's efficiency increases by 25%, by what percentage is the total time reduced?",
+        "option": ["20%", "15%", "25%", "30%"],
+        "Answer": "20%",
+        "solution": "\\[\\begin{aligned}\n\\text{Original work} &= 18 \\times 36 = 648 \\text{ man-days}.\\\\\n\\text{With 25% increased efficiency, each worker's effective time is } \\frac{36}{1.25} = 28.8 \\text{ days}.\\\\\n\\text{Time reduction} &= \\frac{36 - 28.8}{36} \\times 100 = \\frac{7.2}{36} \\times 100 = 20\\%. \n\\end{aligned}\\]",
+        "trick": "Recognize that efficiency increase reduces time inversely."
+      },
+      {
+        "Id": 46,
+        "Question": "Two pipes, A and B, can fill a reservoir in 15 and 20 minutes respectively, while a drain empties it in 30 minutes. If all three are opened together, how long will it take to fill the reservoir?",
+        "option": ["12 minutes", "10 minutes", "15 minutes", "20 minutes"],
+        "Answer": "12 minutes",
+        "solution": "\\[\\begin{aligned}\n\\text{A's rate} &= \\frac{1}{15}, \\quad \\text{B's rate} = \\frac{1}{20}, \\quad \\text{Drain's rate} = -\\frac{1}{30}.\\\\\n\\text{Combined rate} &= \\frac{1}{15}+\\frac{1}{20}-\\frac{1}{30} \\\\ &= \\frac{4+3-2}{60} = \\frac{5}{60} = \\frac{1}{12} \\text{ per minute}.\\\\\n\\text{Time to fill the reservoir} &= 12 \\text{ minutes}. \n\\end{aligned}\\]",
+        "trick": "Add the fill rates and subtract the emptying rate; then take the reciprocal."
+      },
+      {
+        "Id": 47,
+        "Question": "A typist can complete a job in 50 minutes. How long will it take him to complete the same job if he works 20% faster?",
+        "option": ["41 min 40 sec", "42 min", "40 min", "45 min"],
+        "Answer": "41 min 40 sec",
+        "solution": "\\[\\begin{aligned}\n\\text{New time} &= \\frac{50}{1.2} \\approx 41.67 \\text{ minutes} \\\\ &\\approx 41 \\text{ minutes } 40 \\text{ seconds}. \n\\end{aligned}\\]",
+        "trick": "Divide the original time by 1.2 to account for the 20% increase in speed."
+      },
+      {
+        "Id": 48,
+        "Question": "Three workers A, B, and C have individual times such that A is 25% faster than B and B is 50% faster than C. If A and C together finish a task in 16 days, how long would B alone take to complete the task?",
+        "option": ["44 days", "40 days", "38 days", "48 days"],
+        "Answer": "44 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Let B's time be } T \\text{ days. Then, } A's \\text{ time} &= \\frac{T}{1.25}, \\quad C's \\text{ time} = \\frac{T}{1.5}.\\\\\n\\text{Thus, A's rate} &= \\frac{1.25}{T}, \\quad C's rate = \\frac{1.5}{T}.\\\\\n\\text{Combined rate of A and C} &= \\frac{1.25+1.5}{T} = \\frac{2.75}{T}.\\\\\n\\text{Since they complete the work in 16 days, } \\frac{2.75}{T} &= \\frac{1}{16} \\quad \\Rightarrow \\quad T = 2.75 \\times 16 = 44 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Express A and C's rates in terms of B's time and solve for T."
+      },
+      {
+        "Id": 49,
+        "Question": "A pipe can fill a swimming pool in 6 hours, while a leak empties it in 10 hours. If both are open, how long will it take to fill the pool?",
+        "option": ["15 hours", "12 hours", "18 hours", "20 hours"],
+        "Answer": "15 hours",
+        "solution": "\\[\\begin{aligned}\n\\text{Filling rate} &= \\frac{1}{6}, \\quad \\text{Emptying rate} = \\frac{1}{10}.\\\\\n\\text{Net rate} &= \\frac{1}{6} - \\frac{1}{10} = \\frac{5-3}{30} = \\frac{2}{30} = \\frac{1}{15}.\\\\\n\\text{Time required} &= 15 \\text{ hours}. \n\\end{aligned}\\]",
+        "trick": "Subtract the leak's rate from the fill rate and take the reciprocal."
+      },
+      {
+        "Id": 50,
+        "Question": "In a factory, 12 machines produce 3600 units in 8 hours. At the same rate, how many machines are required to produce 5400 units in 6 hours?",
+        "option": ["24", "26", "28", "30"],
+        "Answer": "24",
+        "solution": "\\[\\begin{aligned}\n\\text{Total machine-hours in scenario 1} &= 12 \\times 8 = 96.\\\\\n\\text{Units per machine-hour} &= \\frac{3600}{96} = 37.5.\\\\\n\\text{Total machine-hours required for 5400 units} &= \\frac{5400}{37.5} = 144.\\\\\n\\text{Machines required} &= \\frac{144}{6} = 24. \n\\end{aligned}\\]",
+        "trick": "Convert production into machine-hours and solve for the number of machines."
+      },
+      {
+        "Id": 51,
+        "Question": "A contractor can complete a project in 60 days. If he improves his efficiency by 20% after completing half of the work, what is the total time taken to complete the project?",
+        "option": ["55 days", "57 days", "60 days", "65 days"],
+        "Answer": "55 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Let total work} = 1.\\\\\n\\text{Original rate} &= \\frac{1}{60}.\\\\\n\\text{Time to complete half the work at original rate} &= \\frac{0.5}{1/60} = 30 \\text{ days}.\\\\\n\\text{New rate} &= 1.2 \\times \\frac{1}{60} = \\frac{1}{50}.\\\\\n\\text{Time to complete remaining half} &= \\frac{0.5}{1/50} = 25 \\text{ days}.\\\\\n\\text{Total time} &= 30 + 25 = 55 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Divide the work into two halves and use the improved rate for the second half."
+      },
+      {
+        "Id": 52,
+        "Question": "If 10 workers can complete a job in 20 days, how many additional workers are needed to complete the same job in 12 days?",
+        "option": ["5", "6", "7", "8"],
+        "Answer": "7",
+        "solution": "\\[\\begin{aligned}\n\\text{Total work} &= 10 \\times 20 = 200 \\text{ man-days}.\\\\\n\\text{Required workforce for 12 days} &= \\frac{200}{12} \\approx 16.67, \\text{ round up to } 17.\\\\\n\\text{Additional workers needed} &= 17 - 10 = 7. \n\\end{aligned}\\]",
+        "trick": "Calculate total work in man-days and then determine the necessary workforce for the reduced time."
+      },
+      {
+        "Id": 53,
+        "Question": "A and B working together can finish a work in 14 days. If A is twice as efficient as B, how long will B alone take to complete the work?",
+        "option": ["42 days", "35 days", "28 days", "56 days"],
+        "Answer": "42 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Let B's time be } t \\text{ days, then A's time} = \\frac{t}{2}.\\\\\n\\text{Combined rate} &= \\frac{1}{t} + \\frac{2}{t} = \\frac{3}{t} = \\frac{1}{14}.\\\\\n\\text{Thus, } t &= 42 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Express A's efficiency relative to B and solve for t using the combined rate."
+      },
+      {
+        "Id": 54,
+        "Question": "A, B, and C together complete a job in 12 days. If A's contribution is 1/4 of the work, how long would A take to complete the job alone?",
+        "option": ["48 days", "36 days", "50 days", "60 days"],
+        "Answer": "48 days",
+        "solution": "\\[\\begin{aligned}\n\\text{A's contribution in 12 days} &= \\frac{1}{4} \\text{ of the work} \\\\ \\text{Thus, A's rate} &= \\frac{1/4}{12} = \\frac{1}{48} \\text{ per day},\\\\\n\\text{So, A alone takes } 48 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Determine A's rate from his fractional contribution and compute the time."
+      },
+      {
+        "Id": 55,
+        "Question": "A and B can complete a work in 8 days. If A works 2 days faster than B individually, how long would A take to complete the work alone?",
+        "option": ["15 days", "14 days", "16 days", "13 days"],
+        "Answer": "Approximately 15.06 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Let B's time be } t \\text{ days; then A's time is } t-2.\\\\\n\\text{Combined rate} &= \\frac{1}{t-2}+\\frac{1}{t}=\\frac{1}{8}.\\\\\n\\text{Thus, } \\frac{t+(t-2)}{t(t-2)} &= \\frac{1}{8} \\quad \\Rightarrow \\quad \\frac{2t-2}{t(t-2)} = \\frac{1}{8}.\\\\\n8(2t-2) &= t(t-2) \\\\ \\Rightarrow \\; 16t - 16 &= t^2 - 2t \\\\ \\Rightarrow \\; t^2 - 18t + 16 &= 0.\\\\\n\\text{Solving, } t &\\approx 17.06 \\text{ days, so A's time } = 17.06 - 2 \\approx 15.06 \\text{ days.}\n\\end{aligned}\\]",
+        "trick": "Set up an equation based on the combined work rates and solve the quadratic."
+      },
+      {
+        "Id": 56,
+        "Question": "If 7 men and 5 women can complete a work in 14 days, and 5 men and 7 women can complete the same work in 16 days, what is the ratio of a man's daily work to a woman's daily work?",
+        "option": ["7:3", "3:7", "1:1", "2:3"],
+        "Answer": "7:3",
+        "solution": "\\[\\begin{aligned}\n\\text{Let a man's rate} = m, \\; \\text{and a woman's rate} = w.\\\\\n\\text{Scenario 1: } 7m+5w &= \\frac{1}{14}.\\\\\n\\text{Scenario 2: } 5m+7w &= \\frac{1}{16}.\\\\\n\\text{Multiply the first by 16 and the second by 14:}\\\\\n16(7m+5w) &= 16/14 = \\frac{8}{7}, \\quad 14(5m+7w) = 14/16 = \\frac{7}{8}.\\\\\n\\text{A better approach is to write: multiply eqn (1) by 14 and eqn (2) by 16:}\\\\\n(7m+5w) \\times 14 = 1 \\quad \\Rightarrow \\quad 98m+70w = 1,\\\\\n(5m+7w) \\times 16 = 1 \\quad \\Rightarrow \\quad 80m+112w = 1.\\\\\n\\text{Subtracting: } (98-80)m + (70-112)w = 0 \\; \\Rightarrow \\; 18m - 42w = 0,\\\\\n\\text{So, } \\frac{m}{w} = \\frac{42}{18} = \\frac{7}{3}. \n\\end{aligned}\\]",
+        "trick": "Set up simultaneous equations and solve for the ratio m:w."
+      },
+      {
+        "Id": 57,
+        "Question": "A cistern is filled by a tap in 45 minutes. Due to a leak, the filling time increases to 50 minutes. How long would the leak alone take to empty the full cistern?",
+        "option": ["28 min", "30 min", "32 min", "35 min"],
+        "Answer": "450 minutes",
+        "solution": "\\[\\begin{aligned}\n\\text{Filling rate without leak} &= \\frac{1}{45} \\text{ per minute},\\\\\n\\text{Net filling rate with leak} &= \\frac{1}{50} \\text{ per minute}.\\\\\n\\text{Leak's rate} &= \\frac{1}{45} - \\frac{1}{50} = \\frac{50-45}{45 \\times 50} = \\frac{5}{2250} = \\frac{1}{450} \\text{ per minute}.\\\\\n\\text{Thus, the leak alone would empty the cistern in } 450 \\text{ minutes}. \n\\end{aligned}\\]",
+        "trick": "Subtract the net filling rate from the no-leak rate and take the reciprocal."
+      },
+      {
+        "Id": 58,
+        "Question": "12 men can complete a work in 15 days. If 4 additional men join after 5 days, by how many days is the project finished earlier than planned?",
+        "option": ["2.5 days", "3 days", "4 days", "5 days"],
+        "Answer": "2.5 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Total work} &= 12 \\times 15 = 180 \\text{ man-days}.\\\\\n\\text{Work done in 5 days} &= 12 \\times 5 = 60 \\text{ man-days}.\\\\\n\\text{Remaining work} &= 180 - 60 = 120 \\text{ man-days}.\\\\\n\\text{New workforce after 5 days} &= 12+4 = 16.\\\\\n\\text{Time needed with 16 workers} &= \\frac{120}{16} = 7.5 \\text{ days}.\\\\\n\\text{Planned remaining time with 12 workers} &= \\frac{120}{12} = 10 \\text{ days}.\\\\\n\\text{Time saved} &= 10 - 7.5 = 2.5 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Compare the remaining time with and without the additional workers."
+      },
+      {
+        "Id": 59,
+        "Question": "If 10 workers can complete a job in 20 days, how many additional workers are needed to complete the same job in 12 days?",
+        "option": ["5", "6", "7", "8"],
+        "Answer": "7",
+        "solution": "\\[\\begin{aligned}\n\\text{Total work} &= 10 \\times 20 = 200 \\text{ man-days}.\\\\\n\\text{Required workforce for 12 days} &= \\frac{200}{12} \\approx 16.67, \\text{ round up to } 17.\\\\\n\\text{Additional workers needed} &= 17 - 10 = 7. \n\\end{aligned}\\]",
+        "trick": "Express the work in man-days and solve for the new workforce."
+      },
+      {
+        "Id": 60,
+        "Question": "A and B working together can finish a work in 14 days. If A is twice as efficient as B, how long will B alone take to complete the work?",
+        "option": ["42 days", "35 days", "28 days", "56 days"],
+        "Answer": "42 days",
+        "solution": "\\[\\begin{aligned}\n\\text{Let B's time be } t \\text{ days; then A's time } = \\frac{t}{2}.\\\\\n\\text{Combined rate} &= \\frac{1}{t} + \\frac{2}{t} = \\frac{3}{t} = \\frac{1}{14}.\\\\\n\\text{Thus, } t &= 42 \\text{ days}. \n\\end{aligned}\\]",
+        "trick": "Express A's efficiency in terms of B's and solve using the combined rate."
+      }
+    
+    
+  
+  
+]

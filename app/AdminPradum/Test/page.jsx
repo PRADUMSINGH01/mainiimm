@@ -1,4 +1,5 @@
 /**
+
 import app from "@/module/firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
@@ -7,19 +8,6 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 const db = getFirestore(app);
 
 async function addDataToFirebase(dataArray, collectionName) {
-
-
-
-
-
-
-
-
-
-
-
-
-
   try {
     const collectionRef = collection(db, collectionName);
 
@@ -38,14 +26,14 @@ async function addDataToFirebase(dataArray, collectionName) {
   }
 }
 
-addDataToFirebase(dataa, "/Quant/Geometry/LevelTwo");
+
+const dataa = addDataToFirebase(array, "/Quant/Work-and-Time/LevelTwo");
 
 export default addDataToFirebase;
+*/
 
- */
+const page = () => {
+  return <>test</>;
+};
 
-const page =()=>{
-  return (<>test</>)
-}
-
-export default page
+export default page;

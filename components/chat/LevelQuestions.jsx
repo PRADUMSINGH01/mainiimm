@@ -283,34 +283,35 @@ const LevelQuestions = ({
 
               {showAnswers[indexOfFirstQuestion + index] && (
                 <div className="mt-2">
-                   <MathJax
-                    dynamic
-                    hideUntilTypeset="first"
-                    className="text-center"
-                  >
-                  {questionData.Answer}
-                  </MathJax>
-                </div>
-              )}
-
-              {showTricks[indexOfFirstQuestion + index] && (
-                <p className="mt-2  italic text-lg">  <MathJax
-                dynamic
-                hideUntilTypeset="first"
-                className="text-center"
-              >{questionData.trick}   </MathJax></p>
-              )}
-
-              {showSolution[indexOfFirstQuestion + index] && (
-                <span className=" h-full pb-1  flex w-[90%] left-[4.5rem] z-10  p-4 border shadow-2xl   flex-col  items-center  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words	absolute bg-black/95 text-white	 ">
-                  <div className="flex w-full justify-between p-3">
-                    <p className="text-xl w-1/2"> Here Is Solution : </p>
-                  </div>
                   <MathJax
                     dynamic
                     hideUntilTypeset="first"
                     className="text-center"
                   >
+                    {questionData.Answer}
+                  </MathJax>
+                </div>
+              )}
+
+              {showTricks[indexOfFirstQuestion + index] && (
+                <p className="mt-2  italic text-lg">
+                  {" "}
+                  <MathJax
+                    dynamic
+                    hideUntilTypeset="first"
+                    className="text-left"
+                  >
+                    {questionData.trick}{" "}
+                  </MathJax>
+                </p>
+              )}
+
+              {showSolution[indexOfFirstQuestion + index] && (
+                <span className=" h-full pb-1  flex md:w-[90%] left-[4.5rem] z-10  p-4 border shadow-2xl   flex-col  items-center  font-bold overflow-scroll md:overflow-auto	 rounded-md break-words	absolute bg-black/95 text-white	 ">
+                  <div className="flex w-full justify-between p-3">
+                    <p className="text-xl w-1/2"> Here Is Solution : </p>
+                  </div>
+                  <MathJax dynamic hideUntilTypeset="first" className="p-1">
                     {`
           
           ${questionData.solution}
