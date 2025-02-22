@@ -1,5 +1,5 @@
 "use client";
-import Cookies from "js-cookie";
+import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import FETCHDATA from "@/module/fetchdata";
@@ -41,6 +41,7 @@ const LevelQuestions = ({
   LevelTwoURL,
 }) => {
   const router = useRouter();
+  const { data: session } = useSession();
 
   const [mathQuestions, SETDATA] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -51,21 +52,23 @@ const LevelQuestions = ({
   const [Count, SetCount] = useState(0);
 
   const questionsPerPage = 20;
-
   useEffect(() => {
-    const Auth = Cookies.get("Profile");
+    const checkUser = async () => {
+      const name = session.user.name;
+      if (!name) {
+        router.push("/sign");
+      }
+      const Payment = true;
+      if (!Payment) {
+        return router.push("/Membership");
+      }
 
-    const Payment = true;
-
-    if (!Payment) {
-      router.push("/sign");
-    } else if (!Payment) {
-      router.push("/Membership");
-    } else {
-      const fetch = FETCHDATA(FETCHURL).then((item) => {
+      await FETCHDATA(FETCHURL).then((item) => {
+        // console.log(item);
         SETDATA(item);
       });
-    }
+    };
+    checkUser();
   }, []);
 
   // State to track which tricks are visible
