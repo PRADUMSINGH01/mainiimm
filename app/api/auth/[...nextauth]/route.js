@@ -15,14 +15,14 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       // Optional: Add custom logic for sign-in here
-      const collectionRef = collection(db, "user");
-      const data = {
-        email: email,
-        payment: false,
-        QuantCourse: false,
-        LRDI: false,
-      };
-      const res = await addDoc(collectionRef, data);
+      // const collectionRef = collection(db, "user");
+      // const data = {
+      //   email: email,
+      //   payment: false,
+      //   QuantCourse: false,
+      //   LRDI: false,
+      // };
+      // const res = await addDoc(collectionRef, data);
       return true;
     },
     async redirect({ url, baseUrl }) {
