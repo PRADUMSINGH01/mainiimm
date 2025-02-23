@@ -9,7 +9,7 @@ export async function RazorPayOrderCreateLIDI() {
   });
 
   const options = {
-    amount: 2999 * 100, // Amount in paise (100 paise = 1 INR)
+    amount: 999 * 100, // Amount in paise (100 paise = 1 INR)
     currency: "INR",
     receipt: "receipt#1", // A unique receipt identifier
   };

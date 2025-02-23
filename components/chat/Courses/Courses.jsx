@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import image from "@/app/math.jpg";
-import DILR from "@/app/DILR.svg";
+import DILR from "@/app/data.svg";
 import Image from "next/image";
 import { RazorPayOrderCreateQuant } from "@/module/CoursePayment/QuantPayment";
 import { RazorPayOrderCreateLIDI } from "@/module/CoursePayment/LIDIPayment";
@@ -96,8 +96,8 @@ const CourseCard = () => {
       title: "DILR Decoded for CAT: Strategies, Practice & Live Doubt Clearing",
       description:
         "Mastering DILR for CAT: Data Interpretation & Logical Reasoning Simplified",
-      image: image,
-      price: 2999.0,
+      image: DILR,
+      price: 999.0,
       Action: createOrderLIDI,
       topics: [
         "Structured Live Sessions",

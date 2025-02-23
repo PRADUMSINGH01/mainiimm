@@ -5,11 +5,11 @@ import Link from "next/link";
 const userss = await FETCHDATA("/RC");
 
 export async function generateStaticParams() {
-  return userss.map((user) => ({ id: user.Id }));
+  return userss.map((user) => ({ id: user.Slug }));
 }
 
 const UserPage = async ({ params }) => {
-  const post = userss.find((user) => user.Id === params.id);
+  const post = userss.find((user) => user.Slug === params.id);
 
   if (!post) {
     return (
@@ -19,162 +19,55 @@ const UserPage = async ({ params }) => {
 
   const rn = Math.floor(Math.random() * userss.length) || 0;
   const relatedPosts = userss.slice(rn, rn + 4);
-
+  const arr = ["A", "B ", "C", "D"];
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-white py-4 shadow-md shadow-black rounded-b-md">
-        <h1 className="text-xl md:text-3xl text-black text-center  first-letter:uppercase font-bold">
+      <header className="bg-white p-2 shadow-md shadow-black rounded-b-md">
+        <h1 className="text-xl md:text-3xl text-white p-2 bg-black/85 text-center  first-letter:uppercase font-bold">
           {post.Title}
         </h1>
+        <h1 className="text-2xl lg:p-2  p-1 m-5 tracking-wide">
+          {post.passage.text}
+        </h1>
+
+        <h3 className="text-center text-2xl bg-black text-white p-2">
+          {" "}
+          Question{" "}
+        </h3>
+        {post.questions.map((items, index) => (
+          <>
+            <h2 className="text-xl m-5 font-bold ">
+              {index + 1} {items.question}
+            </h2>
+            {items.options.map((items, index) => (
+              <span className="p-2 mx-10 text-xl flex flex-col text-blue-500">
+                {arr[index]} {items}
+              </span>
+            ))}
+            <div className="flex w-full justify-center">
+              <button className="mx-5 text-sm bg-black p-2 rounded-xl text-white">
+                Show Answer{" "}
+              </button>
+            </div>
+          </>
+        ))}
       </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
         {/* Post Content */}
-        <section className="w-full lg:w-full bg-white rounded-lg shadow-lg p-6">
-          {[
-            post.Section_One,
-            post.Section_Two,
-            post.Section_Three,
-            post.Section_Four,
-            post.Section_Five,
-          ].map(
-            (section, index) =>
-              section && (
-                <p
-                  key={index}
-                  className="text-xl mt-5 tracking-wide text-gray-700 first-letter:text-2xl first-letter:text-blue-500 w-full"
-                >
-                  {section}
-                </p>
-              )
-          )}
-
-          <h2 className="mt-10 text-xl font-bold bg-blue-600 text-white p-2 rounded">
-            Questions
-          </h2>
-
-          <section className="w-full lg:w-full bg-white rounded-lg md:p-6">
-            {/* Dynamic Content Sections */}
-
-            {/* Questions Section */}
-            <div className="mt-6 space-y-8 w-full">
-              {/* Question 1 */}
-              {post.question_One && (
-                <div className="w-full">
-                  <p className="font-semibold text-blue-800 w-full flex">
-                    1. {post.question_One}
-                  </p>
-                  <div className="md:ml-4 space-y-2">
-                    <label className="block text-gray-700">
-                      {post.question_One_option_One}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_One_option_Two}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_One_option_Three}
-                    </label>
-                    {post.answerOne && (
-                      <p className="text-green-600 mt-2 font-medium">
-                        Answer: {post.answerOne}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Question 2 */}
-              {post.question_Two && (
-                <div>
-                  <p className="font-semibold text-blue-800">
-                    2. {post.question_Two}
-                  </p>
-                  <div className="md:ml-4">
-                    <div className="flex items-center space-x-2">
-                      <label className="text-gray-700">
-                        {post.question_Two_option_One}
-                      </label>
-                    </div>
-                    <label className="block text-gray-700 mt-2">
-                      {post.question_Two_option_Two}
-                    </label>
-                    <label className="block text-gray-700 mt-2">
-                      {post.question_Two_option_Three}
-                    </label>
-                    {post.answerTwo && (
-                      <p className="text-green-600 mt-2 font-medium">
-                        Answer: {post.answerTwo}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Question 3 */}
-              {post.question_Three && (
-                <div>
-                  <p className="font-semibold text-blue-800">
-                    3. {post.question_Three}
-                  </p>
-                  <div className="md:ml-4 space-y-2">
-                    <label className="block text-gray-700">
-                      {post.question_Three_option_One}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_Three_option_Two}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_Three_option_Three}
-                    </label>
-                    {post.answerThree && (
-                      <p className="text-green-600 mt-2 font-medium">
-                        Answer: {post.answerThree}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Question 4 */}
-              {post.question_Four && (
-                <div>
-                  <p className="font-semibold text-blue-800">
-                    4. {post.question_Four}
-                  </p>
-                  <div className="md:ml-4 space-y-2">
-                    <label className="block text-gray-700">
-                      {post.question_Four_option_One}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_Four_option_Two}
-                    </label>
-                    <label className="block text-gray-700">
-                      {post.question_Four_option_Three}
-                    </label>
-                    {post.answerFour && (
-                      <p className="text-green-600 mt-2 font-medium">
-                        Answer: {post.answerFour}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
-        </section>
 
         {/* Sidebar */}
-        <aside className="w-full lg:w-1/4 space-y-6">
+        <aside className="w-full space-y-6">
           {/* Related Posts */}
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-bold mb-4">Related Posts</h3>
             <ul className="space-y-2">
-              {relatedPosts.map((item) => (
-                <li key={item.Id}>
+              {relatedPosts.map((item, index) => (
+                <li key={index}>
                   <Link
-                    href={`${item.Id}`}
+                    href={`${item.Slug}`}
                     className="text-blue-500 hover:underline"
                   >
                     {item.Title || `Related Post ${item.Id}`}

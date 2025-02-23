@@ -32,11 +32,11 @@ const page = () => {
       </h1>
 
       <div className="flex flex-wrap justify-betbeen items-center w-full mt-10">
-        {data.slice(0, More).map((item) => (
+        {data.slice(0, More).map((item, index) => (
           <RCBlog
             title={item.Title}
-            link={`/Reading-compre/RC/${item.Id}`}
-            Id={item.Id}
+            link={`/Reading-compre/RC/${item.Slug}`}
+            Id={index + 1}
           />
         ))}
       </div>
