@@ -25,9 +25,14 @@ const page = () => {
       {data.map((items) => (
         <div className="p-3 m-3  bg-gray-400">
           <p>{items.Id}</p>
-          <p>
-            <MermaidDiagram code={items.Diagram} />
-          </p>
+
+          <MathJax
+            dynamic
+            hideUntilTypeset="first"
+            className="text-center text-2xl text-white "
+          >
+            {items.Answer}
+          </MathJax>
 
           <MathJax
             dynamic

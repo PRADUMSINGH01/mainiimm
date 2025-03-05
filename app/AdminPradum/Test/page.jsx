@@ -1,8 +1,6 @@
-/**
-
-import app from "@/module/firebase";
+/*import app from "@/module/firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-
+import array from "../glt.json";
 // Initialize Firebase
 
 const db = getFirestore(app);
@@ -26,12 +24,11 @@ async function addDataToFirebase(dataArray, collectionName) {
   }
 }
 
-
-const dataa = addDataToFirebase(array, "/Quant/Work-and-Time/LevelTwo");
+const dataa = addDataToFirebase(array, "/Quant/Inequalities");
 
 export default addDataToFirebase;
-*/
 
+*/
 const page = () => {
   return <>test</>;
 };
