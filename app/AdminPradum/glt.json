@@ -1,1 +1,260 @@
-[]
+[
+    {
+      "Id": 1,
+      "Question": "In triangle ABC, point D is on side AB and point E is on side AC, such that BCED forms a trapezium with DE : BC = 3 : 5. Calculate the ratio of the area of triangle ADE to the area of trapezium BCED.",
+      "Answer": "9:16",
+      "Options": ["3:4", "9:16", "3:5", "9:25"],
+      "Diagram": "flowchart TD\n    A[\"A (0,3)\"]\n    D[\"D (-1.5,2)\"]\n    E[\"E (1.5,2)\"]\n    B[\"B (-3,0)\"]\n    C[\"C (3,0)\"]\n    A --> D\n    A --> E\n    D --> B\n    E --> C\n    B --- C\n    D --- E"
+    },
+    {
+      "Id": 2,
+      "Question": "D, E, F are the mid-points of the sides BC, CA and AB respectively of triangle ABC. Determine the ratio of the area of triangle DEF to the area of triangle ABC.",
+      "Answer": "1:4",
+      "Options": ["1:4", "1:2", "2:3", "4:5"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    F[F]:::mid\n    D[D]:::mid\n    E[E]:::mid\n    A --> B\n    B --> C\n    C --> A\n    F --- E\n    E --- D\n    D --- F\n\nclassDef mid fill:#f9f,stroke:#333,stroke-width:1px;\n```"
+    },
+    {
+      "Id": 3,
+      "Question": "In trapezium ABCD with AB || DC and AB = 3·DC, determine the ratio of the areas of regions DAOB and DCOD (formed by the intersection of the diagonals).",
+      "Answer": "9:1",
+      "Options": ["9:1", "1:9", "3:1", "1:3"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    O[O]\n    A --> B\n    B --> C\n    C --> D\n    D --> A\n    A --- C\n    B --- D\n    O --- A\n    O --- B\n    O --- C\n    O --- D\n```"
+    },
+    {
+      "Id": 4,
+      "Question": "A ladder of length 13 m reaches a window 8 m above the ground on one side of a street. Keeping its foot fixed, the ladder is rotated to reach a window 12 m high on the opposite wall. Find the width of the street.",
+      "Answer": "15.2 m",
+      "Options": ["15.2 m", "14 m", "14.6 m", "12 m"],
+      "Diagram": "```mermaid\nflowchart TD\n    Foot[Foot (fixed)]\n    W1[Wall 1 (8 m window)]\n    W2[Wall 2 (12 m window)]\n    Foot -->|13 m| W1\n    Foot -->|13 m| W2\n    W1 --- W2\n```"
+    },
+    {
+      "Id": 5,
+      "Question": "In a figure, if ∠A = 60° and ∠ABC = 80°, then what is ∠BQC?",
+      "Answer": "40°",
+      "Options": ["40°", "80°", "20°", "30°"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    Q[Q]\n    A --> B\n    B --> C\n    C --> A\n    B --- Q\n    Q --- C\n```"
+    },
+    {
+      "Id": 6,
+      "Question": "Three circular garbage cans, each of diameter 2 m, are arranged so that they touch each other. A rope is drawn tightly around the three cans. Find the perimeter of the rope.",
+      "Answer": "2π + 6",
+      "Options": ["2π + 6", "3π + 4", "4π + 6", "6π + 6"],
+      "Diagram": "```mermaid\nflowchart TD\n    O1((O1))\n    O2((O2))\n    O3((O3))\n    O1 --- O2\n    O2 --- O3\n    O3 --- O1\n    style O1 fill:#bbf,stroke:#333,stroke-width:2px\n    style O2 fill:#bbf,stroke:#333,stroke-width:2px\n    style O3 fill:#bbf,stroke:#333,stroke-width:2px\n    %% Dashed lines and labels for rope segments can be added as needed\n```"
+    },
+    {
+      "Id": 7,
+      "Question": "In a figure, given that PQ = QS, QR = RS and ∠SRQ = 100°, find ∠QPS.",
+      "Answer": "20°",
+      "Options": ["20°", "40°", "15°", "30°"],
+      "Diagram": "```mermaid\nflowchart TD\n    P[P]\n    Q[Q]\n    R[R]\n    S[S]\n    P --> Q\n    Q --> R\n    R --> S\n    S --> P\n    %% Use annotations to indicate equal segments and the 100° angle\n```"
+    },
+    {
+      "Id": 8,
+      "Question": "In cyclic quadrilateral ABDC with O as the centre of the circle, if ∠BOC = 136°, find ∠BDC.",
+      "Answer": "112°",
+      "Options": ["110°", "112°", "109°", "115°"],
+      "Diagram": "```mermaid\nflowchart TD\n    O[O]\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    O --> B\n    O --> C\n    %% Dashed lines to show arcs\n    B --- C\n    %% Label: ∠BOC = 136°, so inscribed angle over major arc = (360-136)/2 = 112°\n```"
+    },
+    {
+      "Id": 9,
+      "Question": "In a trapezium with AD || BC, given AO = 3, OC = x - 3, BO = 3x - 19, and OD = x - 5, find the value(s) of x.",
+      "Answer": "x = 8, 9",
+      "Options": ["x = 8, 9", "x = 7, 8", "x = 8, 10", "x = 7, 10"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    O[O]\n    A --> B\n    B --> C\n    C --> D\n    D --> A\n    A --- C\n    B --- D\n    %% O is intersection of diagonals\n```"
+    },
+    {
+      "Id": 10,
+      "Question": "In the given figure, it is given that AO:OC = 1:2 and OD:OB = 1:2, and AB = 4 cm. Find the value of BC.",
+      "Answer": "8 cm",
+      "Options": ["7 cm", "8 cm", "9 cm", "10 cm"],
+      "Diagram": "Not applicable"
+    },
+    {
+      "Id": 11,
+      "Question": "In triangle ABC, AD is the bisector of ∠BAC. Given AB = 6 cm, AC = 5 cm, and BD = 3 cm, find DC (with ∠ABD = ∠ACD).",
+      "Answer": "2.5 cm",
+      "Options": ["11.3 cm", "2.5 cm", "3.5 cm", "4 cm"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    A --> B\n    A --> C\n    B --- C\n    A --> D\n    D --- B\n    D --- C\n```"
+    },
+    {
+      "Id": 12,
+      "Question": "In triangle ABC, AD is the bisector of ∠BAC. Given AB = 8 cm, BD = 6 cm, and DC = 3 cm, and also ∠ABC = ∠ACB, find AC.",
+      "Answer": "4 cm",
+      "Options": ["4 cm", "6 cm", "3 cm", "5 cm"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    A --> B\n    A --> C\n    B --- C\n    A --> D\n    D --- B\n    D --- C\n```"
+    },
+    {
+      "Id": 13,
+      "Question": "If a quarter circle has radius 1 cm (given by AB = 1 cm) and a circle is inscribed in it, find the radius of the inscribed circle.",
+      "Answer": "√2 - 1",
+      "Options": ["√2 - 1", "(√2 + 1)/2", "2 - 1/2", "1 - 2/2"],
+      "Diagram": "```mermaid\nflowchart TD\n    Q[Quarter Circle radius=1]\n    I[Inscribed Circle]\n    Q --> I\n    %% Note: The inscribed circle touches both radii and the arc\n```"
+    },
+    {
+      "Id": 14,
+      "Question": "ABC is an equilateral triangle. Point D is on AC such that AD = 2·CD, and point E is on BC such that CE = EB. If perpendiculars are dropped from D and E onto the opposite sides and their lengths are summed, compare the sums (per(D) and per(E)).",
+      "Answer": "per(D) = per(E)",
+      "Options": ["per(D) > per(E)", "per(D) < per(E)", "per(D) = per(E)", "None of these"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    E[E]\n    %% D is on AC with AD:DC = 2:1; E is midpoint of BC\n    A --> B\n    B --> C\n    C --> A\n    %% Add dashed lines to indicate perpendiculars (conceptual)\n```"
+    },
+    {
+      "Id": 15,
+      "Question": "In trapezium ABCD, where AB || DC, AD = BC, and AB = 6 cm. If lines AF and BE are drawn such that the area of quadrilateral ABEF is half that of ABCD, and given DF = EC, find the ratio DF/CD.",
+      "Answer": "1/3",
+      "Options": ["1/4", "1/3", "2/5", "1/6"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    F[F]  %% on AB\n    E[E]  %% on DC\n    A --> B\n    B --> C\n    C --> D\n    D --> A\n    %% Lines AF and BE (dashed)\n    A --- F\n    B --- E\n```"
+    },
+    {
+      "Id": 16,
+      "Question": "In the given figure, quadrilateral ABCD is composed of two right-angled triangles (with sides satisfying x²+y²=z²) using the minimal integral Pythagorean triple. Find the area of ABCD.",
+      "Answer": "24 cm²",
+      "Options": ["36 cm²", "64 cm²", "24 cm²", "25 cm²"],
+      "Diagram": "```mermaid\nflowchart TD\n    T1[Triangle1: 3,4,5]\n    T2[Triangle2: 3,4,5]\n    T1 --> T2\n    %% Combined area = 2 * (1/2*3*4) = 12*2 = 24 cm²\n```"
+    },
+    {
+      "Id": 17,
+      "Question": "In a triangle, if OD, OE, and OF are the perpendicular bisectors of its sides (with O as the circumcenter), what is the relationship between ∠BAC and ∠BOC?",
+      "Answer": "m–BOC = 2m–BAC",
+      "Options": ["m–BAC = 180 – m–BOC", "m–BOC = 90 + 1/2 m–BAC", "m–BAC = 90 + 1/2 m–BOC", "m–BOC = 2m–BAC"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    O[O]\n    A --> O\n    B --> O\n    C --> O\n    %% Central angle BOC is twice inscribed angle BAC\n```"
+    },
+    {
+      "Id": 18,
+      "Question": "Two equal circles of radius 5 cm have two common tangents AB and CD which touch the circles at A, B and C, D respectively. If CD = 24 cm, find the length of AB.",
+      "Answer": "26 cm",
+      "Options": ["27 cm", "25 cm", "26 cm", "30 cm"],
+      "Diagram": "```mermaid\nflowchart TD\n    O[O]\n    Oprime[O']\n    A[A]\n    B[B]\n    %% Illustrative: external tangent from below (CD) and internal tangent (AB) equals distance between centers\n    O --- Oprime\n    %% Note: Computation gives distance = 26 cm, so AB = 26 cm\n```"
+    },
+    {
+      "Id": 19,
+      "Question": "If a circle is marked with a central angle of 19° and one wishes to divide the circle into 360 equal parts, is it possible?",
+      "Answer": "Possible if one more measure of 21° is given",
+      "Options": ["Never", "Possible when one more measure of 20° is given", "Always", "Possible if one more measure of 21° is given"],
+      "Diagram": "Not applicable"
+    },
+    {
+      "Id": 20,
+      "Question": "O is the centre of a circle of radius 5 cm. The chord AB subtends an angle of 60° at O. Find the area of the shaded portion (assumed to be the area of the circle minus the area of triangle OAB).",
+      "Answer": "67.67 cm² (approx.)",
+      "Options": ["50 cm²", "62.78 cm²", "49.88 cm²", "67.67 cm²"],
+      "Diagram": "```mermaid\nflowchart TD\n    O[O]\n    A[A]\n    B[B]\n    O --> A\n    O --> B\n    A --- B\n    %% Label angle AOB as 60°\n```"
+    },
+    {
+      "Id": 21,
+      "Question": "Two circles C(O, r) and C(O', r') intersect at A and B, with O lying on C(O', r'). A tangent CD is drawn to C(O', r') at A. Then which angle equality holds?",
+      "Answer": "∠OAC = ∠OAB",
+      "Options": ["∠OAC = ∠OAB", "∠OAB = ∠AO'O", "∠AO'B = ∠AOB", "∠OAC = ∠AOB"],
+      "Diagram": "```mermaid\nflowchart TD\n    Oprime[O']\n    A[A]\n    B[B]\n    %% Tangent at A (illustrative)\n    A ---|tangent| A\n    %% By tangent-chord theorem: ∠OAC = ∠OAB\n```"
+    },
+    {
+      "Id": 22,
+      "Question": "PP' and QQ' are two direct common tangents to two circles that intersect at points A and B. The extended common chord meets PP' at R and QQ' at S. Which relation is true?",
+      "Answer": "RS² = (PP')² + (QQ')²",
+      "Options": ["RA² + BS² = AB²", "RS² = (PP')² + AB²", "RS² = (PP')² + (QQ')²", "RS² = BS² + (PP')²"],
+      "Diagram": "```mermaid\nflowchart TD\n    Circle1[(Circle1)]\n    Circle2[(Circle2)]\n    A[A]\n    B[B]\n    R[R]\n    S[S]\n    %% Schematic positions with tangents PP' and QQ'\n```"
+    },
+    {
+      "Id": 23,
+      "Question": "Two circles touch internally at P. A chord AB of the larger circle intersects the smaller circle at C and D. Which angle relation holds?",
+      "Answer": "∠CPA = ∠DPB",
+      "Options": ["∠CPA = ∠DPB", "2∠CPA = ∠CPD", "∠APX = ∠ADP", "∠BPY = ∠CPD + ∠CPA"],
+      "Diagram": "```mermaid\nflowchart TD\n    Large[Large Circle]\n    Small[Small Circle]\n    P[P]\n    A[A]\n    B[B]\n    %% Chord AB cuts small circle at C and D; internal tangency at P\n```"
+    },
+    {
+      "Id": 24,
+      "Question": "In trapezium ABCD with AB || CD and AD = BC, if P is the intersection of diagonals AC and BD, which relation is correct?",
+      "Answer": "PA · PB = PC · PD",
+      "Options": ["PA · PB = PC · PD", "PA · PC = PB · PD", "PA · AB = PD · DC", "PA · PD = AB · DC"],
+      "Diagram": "```mermaid\nflowchart TD\n    A[A]\n    B[B]\n    C[C]\n    D[D]\n    P[P]\n    A --> B\n    B --> C\n    C --> D\n    D --> A\n    A --- C\n    B --- D\n    %% P is the intersection of diagonals\n```"
+    },
+    {
+      "Id": 25,
+      "Question": "All of the following statements are true except: (a) The points of intersection of direct and indirect common tangents of two circles divide the line joining the centres externally and internally in the ratio of their radii. (b) In a cyclic quadrilateral, if the diagonal CA bisects ∠C, then diagonal BD is parallel to the tangent at A. (c) If TA and TB are tangent segments from an external point T to a circle C(O, r) and OT meets the circle at P, then AP bisects ∠TAB. (d) In a right triangle, if BD is the perpendicular on the hypotenuse AC, then (i) AC · AD = AB² and (ii) AC · AD = BC².",
+      "Answer": "The statement in option (c) is false",
+      "Options": ["(a)", "(b)", "(c)", "(d)"],
+      "Diagram": "Not applicable"
+    },
+    {
+      "Id": 26,
+      "Question": "Two cows are tethered at the mid-points of two adjacent sides of a square field (side = 10 m). Each cow is tied with a rope so that its grazing area is a semicircular region (with diameter = 10 m). What is the area of the grazing field that is grazed by both cows?",
+      "Answer": "12.5(π - 2)",
+      "Options": ["12.5(π + 2)", "12.5(π - 2)", "25(2π + 1)", "25(2π - 1)"],
+      "Diagram": "```mermaid\nflowchart TD\n    Field[Square Field 10x10]\n    Cow1[Semicircle 1]\n    Cow2[Semicircle 2]\n    %% Overlap region indicated conceptually\n```"
+    },
+    {
+      "Id": 27,
+      "Question": "For the same square field and cows as in question 26, what is the area of the non-grazed region?",
+      "Answer": "75 - 12.5π",
+      "Options": ["75 + 12.5π", "75 - 12.5π", "75 + 25π", "75 - 13π"],
+      "Diagram": "```mermaid\nflowchart TD\n    Field[Square Field (100 m²)]\n    Grazed[Total Grazed Area]\n    NonGrazed[Non-grazed Area]\n    Field --> NonGrazed\n    %% Calculation: 100 - (12.5π+25)\n```"
+    },
+    {
+      "Id": 28,
+      "Question": "In rectangle PQRS with SR = 4 cm and RQ = 3 cm, points M and N lie on SR and PQ respectively such that MN bisects SQ perpendicularly at O. Find MO/SO.",
+      "Answer": "0.75",
+      "Options": ["0.8", "0.75", "0.65", "None of these"],
+      "Diagram": "```mermaid\nflowchart TD\n    S[(S)]\n    P[(P)]\n    Q[(Q)]\n    R[(R)]\n    O[(O)]\n    S --> R\n    R --> Q\n    Q --> P\n    P --> S\n    %% Diagonal SQ with midpoint O indicated\n```"
+    },
+    {
+      "Id": 29,
+      "Question": "In the same rectangle PQRS as in question 28, find the area of quadrilateral SONP.",
+      "Answer": "3.65 cm² (approx.)",
+      "Options": ["3.65 cm²", "4.66 cm²", "2.66 cm²", "None of these"],
+      "Diagram": "```mermaid\nflowchart TD\n    S[(S)]\n    O[(O)]\n    N[(N)]\n    P[(P)]\n    S --> O\n    O --> N\n    N --> P\n    P --> S\n    %% Quadrilateral SONP inside rectangle PQRS\n```"
+    },
+    {
+      "Id": 30,
+      "Question": "A rectangle PQRS is inscribed in a semicircle with centre O and diameter MN (with M, S, R, N collinear). Given RN = 2 cm and QR = 4 cm, find the area of the part of the semicircle not overlapped by the rectangle.",
+      "Answer": "(12.5π - 24) cm²",
+      "Options": ["(12.5π + 12) cm²", "(12.5π - 12) cm²", "(12.5π + 24) cm²", "(12.5π - 24) cm²"],
+      "Diagram": "```mermaid\nflowchart TD\n    M[M]\n    N[N]\n    S[S]\n    R[R]\n    %% Rectangle PQRS inside a semicircle (schematic)\n```"
+    },
+    {
+      "Id": 31,
+      "Question": "In the diagram, quadrilateral PQRS is divided into six smaller triangles (areas given inside them). If SN/NR = 1.25, find the value of a + b.",
+      "Answer": "54",
+      "Options": ["42", "52", "54", "60"],
+      "Diagram": "Not applicable"
+    },
+    {
+      "Id": 32,
+      "Question": "In an isosceles triangle with altitudes QM, PN, and RT, given PQ = QR = 15 cm and PR = 18 cm, find the ratio QT/QO.",
+      "Answer": "0.8",
+      "Options": ["0.8", "0.6", "0.7", "0.9"],
+      "Diagram": "```mermaid\nflowchart TD\n    P[P]\n    Q[Q]\n    R[R]\n    O[O]\n    %% Diagram of an isosceles triangle with altitude from Q intersecting PR at O; QT is a segment of the altitude\n```"
+    },
+    {
+      "Id": 33,
+      "Question": "In the same isosceles triangle as in question 32, find the length of OT.",
+      "Answer": "3.15 cm",
+      "Options": ["3.15 cm", "3.35 cm", "3.05 cm", "3.55 cm"],
+      "Diagram": "```mermaid\nflowchart TD\n    P[P]\n    Q[Q]\n    R[R]\n    O[O]\n    T[T]\n    %% T lies on the altitude from Q, with OT labeled\n```"
+    },
+    {
+      "Id": 34,
+      "Question": "In right triangle PQR (with ∠P = 90°), let O be the incenter. Two circles with centers O1 and O2 are drawn so that each touches the incircle and two sides of the triangle. If the incircle has radius 1 cm and BR:BQ = 2:3, find the ratio r₁ : r₂ (where r₁ and r₂ are the radii of the circles with centers O1 and O2 respectively).",
+      "Answer": "(33 - 11√5 + 6√10 - 10√2)/18",
+      "Options": [
+        "(33 - 11√5 - 6√10 + 10√2)/18",
+        "(33 + 11√5 - 6√10 - 10√2)/18",
+        "(33 - 11√5 + 6√10 - 10√2)/18",
+        "(33 + 11√5 - 6√10 - 10√2)/18"
+      ],
+      "Diagram": "```mermaid\nflowchart TD\n    P[P]\n    Q[Q]\n    R[R]\n    %% Right triangle PQR with incircle and two smaller circles (O1 and O2) indicated schematically\n```"
+    },
+    {
+      "Id": 35,
+      "Question": "A circle is inscribed in triangle PQR. It touches side PQ at X. If ∠P = 60° and PX = 3 cm, QX = 5 cm, find the radius of the incircle.",
+      "Answer": "None of these",
+      "Options": ["(3√5)/7", "(5√3)/7", "(3√5)/17", "None of these"],
+      "Diagram": "```mermaid\nflowchart TD\n    P[P]\n    Q[Q]\n    R[R]\n    X[X]\n    %% Indicate that X is on PQ with PX=3, QX=5\n```"
+    },
+    {
+      "Id": 36,
+      "Question": "With the same triangle PQR and incircle as in question 35, find the length of side PR.",
+      "Answer": "None of these",
+      "Options": ["2√19", "19", "2√17", "None of these"],
+      "Diagram": "Not applicable"
+    }
+  ]
+  

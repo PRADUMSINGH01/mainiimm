@@ -18,7 +18,7 @@ const mathJaxConfig = {
     tags: "none", // Disable equation numbering by default
   },
 };
-
+import MermaidDiagram from "@/components/chat/MermaidDiagram";
 const page = () => {
   return (
     <MathJaxContext config={mathJaxConfig}>
@@ -26,14 +26,7 @@ const page = () => {
         <div className="p-3 m-3  bg-gray-400">
           <p>{items.Id}</p>
           <p>
-            {" "}
-            <MathJax
-              dynamic
-              hideUntilTypeset="first"
-              className="text-center text-2xl text-white "
-            >
-              {items.Answer}
-            </MathJax>
+            <MermaidDiagram code={items.Diagram} />
           </p>
 
           <MathJax
