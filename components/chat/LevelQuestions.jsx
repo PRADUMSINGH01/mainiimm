@@ -54,15 +54,6 @@ const LevelQuestions = ({
   const questionsPerPage = 20;
   useEffect(() => {
     const checkUser = async () => {
-      const name = session.user.name;
-      if (!name) {
-        router.push("/sign");
-      }
-      const Payment = true;
-      if (!Payment) {
-        return router.push("/Membership");
-      }
-
       await FETCHDATA(FETCHURL).then((item) => {
         // console.log(item);
         SETDATA(item);
