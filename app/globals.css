@@ -1,5 +1,82 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+/* Dark mode transitions */
+body {
+  @apply transition-colors duration-200;
+}
+
+@layer components {
+  .sticky-note {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  .sticky-note:hover {
+    @apply shadow-xl;
+  }
+}
+
+@layer components {
+  .sticky-note {
+    @apply transform transition-transform duration-300;
+    transform: rotate(1deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1.02);
+    z-index: 10;
+  }
+
+  .sticky-note::before {
+    content: "";
+    @apply absolute top-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/50 rounded-full;
+  }
+
+  .sticky-note-popup {
+    transform: rotate(-1deg);
+    animation: popup 0.3s ease-out;
+  }
+
+  @keyframes popup {
+    0% {
+      transform: scale(0.9) rotate(-5deg);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) rotate(-1deg);
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

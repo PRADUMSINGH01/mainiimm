@@ -1,37 +1,4 @@
-/*
-import app from "@/module/firebase";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import array from "../glt.json";
-// Initialize Firebase
-
-const db = getFirestore(app);
-
-async function addDataToFirebase(dataArray, collectionName) {
-  try {
-    const collectionRef = collection(db, collectionName);
-
-    const promises = dataArray.map(async (data) => {
-      if (data) {
-        return await addDoc(collectionRef, data);
-      } else {
-        throw new Error("Each item in the array must be an object.");
-      }
-    });
-
-    const results = await Promise.all(promises);
-    console.log("Data added successfully:", results);
-  } catch (error) {
-    console.error("Error adding data to Firebase:", error.message);
-  }
-}
-
-const dataa = addDataToFirebase(array, "/Quant/Trigonometry/Questions");
-
-export default addDataToFirebase;
-*/
-// app/dashboard/page.tsx
 "use client";
-import DailyTracker from "@/components/chat/Dash/DailyTime";
 import { useState, useEffect } from "react";
 import {
   CalendarDays,
@@ -161,20 +128,22 @@ export default function Dashboard() {
             </p>
           </div>
 
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            {/* Time Tracker Component */}
-
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm">
+          {/* Grid Layout with Sticky Notes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Time Tracker Sticky */}
+            <div className="relative bg-blue-100 p-6 rounded-lg shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/50 rounded-full"></div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-lg">Study Time Today</h3>
-                <Clock className="text-blue-500" size={20} />
+                <h3 className="font-bold text-lg text-blue-800 flex items-center gap-2">
+                  <Clock className="text-blue-600" size={20} />
+                  Study Time
+                </h3>
               </div>
               <div className="flex flex-col items-center">
-                <div className="relative w-24 h-24 lg:w-32 lg:h-32 mb-4">
+                <div className="relative w-32 h-32 mb-4">
                   <svg className="w-full h-full" viewBox="0 0 100 100">
                     <circle
-                      className="text-gray-200"
+                      className="text-blue-200"
                       strokeWidth="8"
                       stroke="currentColor"
                       fill="transparent"
@@ -183,7 +152,7 @@ export default function Dashboard() {
                       cy="50"
                     />
                     <circle
-                      className="text-blue-500"
+                      className="text-blue-600"
                       strokeWidth="8"
                       strokeLinecap="round"
                       stroke="currentColor"
@@ -197,75 +166,75 @@ export default function Dashboard() {
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-xl lg:text-2xl font-bold">
+                      <div className="text-2xl font-bold text-blue-800">
                         {formatTime(timeSpent)}
                       </div>
-                      <div className="text-xs lg:text-sm text-gray-500">
-                        of 8h goal
-                      </div>
+                      <div className="text-sm text-blue-600/80">of 8h goal</div>
                     </div>
                   </div>
                 </div>
-                <div className="text-sm text-gray-600 text-center">
-                  {progress >= 100
-                    ? "🎉 Daily goal achieved!"
-                    : `Keep going! ${Math.floor(
-                        8 - timeSpent / 3600
-                      )}h ${Math.floor(
-                        60 - (timeSpent % 3600) / 60
-                      )}m remaining`}
-                </div>
+                <p className="text-center text-blue-700/90">
+                  {progress >= 100 ? "🎉 Goal Achieved!" : "Keep it up!"}
+                </p>
               </div>
             </div>
 
-            {/* Schedule Card */}
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm">
+            {/* Schedule Sticky */}
+            <div className="relative bg-green-100 p-6 rounded-lg shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/50 rounded-full"></div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-lg">Today's Schedule</h3>
-                <Clock className="text-blue-500" size={20} />
+                <h3 className="font-bold text-lg text-green-800 flex items-center gap-2">
+                  <CalendarDays className="text-green-600" size={20} />
+                  Today's Plan
+                </h3>
               </div>
-              <div className="space-y-3 lg:space-y-4">
+              <div className="space-y-3">
                 {schedule.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <span className="text-sm text-gray-500">{item.time}</span>
+                  <div key={index} className="flex items-start gap-3">
+                    <span className="text-sm text-green-700/90 font-medium">
+                      {item.time}
+                    </span>
                     <div
-                      className={`flex-1 p-2 lg:p-3 rounded-lg ${
+                      className={`flex-1 p-2 rounded-md ${
                         item.type === "lecture"
-                          ? "bg-blue-50"
+                          ? "bg-blue-200/50"
                           : item.type === "lab"
-                          ? "bg-green-50"
-                          : "bg-purple-50"
+                          ? "bg-green-200/50"
+                          : "bg-purple-200/50"
                       }`}
                     >
-                      <p className="text-sm font-medium">{item.title}</p>
+                      <p className="text-sm text-green-900">{item.title}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Tasks Card */}
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm">
+            {/* Tasks Sticky */}
+            <div className="relative bg-yellow-100 p-6 rounded-lg shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/50 rounded-full"></div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-lg">Tasks</h3>
-                <ClipboardList className="text-green-500" size={20} />
+                <h3 className="font-bold text-lg text-yellow-800 flex items-center gap-2">
+                  <ClipboardList className="text-yellow-600" size={20} />
+                  My Tasks
+                </h3>
               </div>
-              <div className="space-y-2 lg:space-y-3">
+              <div className="space-y-2">
                 {tasks.map((task, index) => (
                   <label
                     key={index}
-                    className="flex items-center space-x-3 p-2 hover:bg-gray-50 rounded-lg"
+                    className="group flex items-center gap-3 p-2 hover:bg-yellow-200/30 rounded-md transition-colors"
                   >
                     <input
                       type="checkbox"
                       checked={task.completed}
-                      className="w-4 h-4 text-blue-500 rounded border-gray-300"
+                      className="w-5 h-5 text-yellow-600 border-2 border-yellow-500 rounded-md focus:ring-yellow-500"
                     />
                     <span
                       className={`flex-1 text-sm ${
                         task.completed
-                          ? "text-gray-400 line-through"
-                          : "text-gray-700"
+                          ? "text-yellow-700/60 line-through"
+                          : "text-yellow-900"
                       }`}
                     >
                       {task.title}

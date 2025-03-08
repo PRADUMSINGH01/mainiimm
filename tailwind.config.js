@@ -7,10 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-      f   rstfont:"  Roboto+Mono"
-,,     }
-,,   },
-  },
+        },     },
   plugins: [],
 };
