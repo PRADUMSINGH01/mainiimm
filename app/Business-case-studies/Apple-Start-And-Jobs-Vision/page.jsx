@@ -1,166 +1,294 @@
-const Page = () => {
+import Head from "next/head";
+
+export const metadata = {
+  title: "Apple's Garage Era: Business Case Study of Steve Jobs' Leadership",
+  description:
+    "In-depth analysis of Apple's founding period, early business strategies, and Steve Jobs' leadership style. Explore how a garage startup revolutionized the tech industry.",
+  keywords: [
+    "Apple case study",
+    "Steve Jobs leadership",
+    "Apple I development",
+    "Tech startup strategy",
+    "Business model analysis",
+    "Entrepreneurship case study",
+    "Apple history",
+    "Silicon Valley startups",
+    "Technology innovation",
+    "Business strategy",
+  ],
+  openGraph: {
+    title: "Apple Garage Era: Business Strategy Case Study",
+    description:
+      "Detailed analysis of Apple's early business decisions and leadership strategies",
+    url: "https://yourdomain.com/case-studies/apple-garage-era",
+    type: "article",
+    images: [
+      {
+        url: "https://yourdomain.com/images/apple-garage-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Apple Garage Case Study Visual",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apple's Founding Strategy Case Study",
+    description:
+      "Analyzing Steve Jobs' early leadership and Apple's business model",
+    images: "https://yourdomain.com/images/apple-garage-twitter.jpg",
+  },
+};
+
+const AppleCaseStudy = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    name: "Apple's Garage Era Business Analysis",
+    description:
+      "Comprehensive business case study of Apple's founding period and early strategies",
+    image: "https://yourdomain.com/images/apple-garage-case-study.jpg",
+    author: {
+      "@type": "Organization",
+      name: "Tech Business Insights",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Business Case Studies Hub",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://yourdomain.com/logo.png",
+      },
+    },
+    datePublished: "2024-03-15",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://yourdomain.com/case-studies/apple-garage-era",
+    },
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center bg-white text-black ">
-      <h1 className="text-white text-4xl  p-2  w-full  text-center  bg-black shadow-xl">
-        The Humble Beginnings: The Garage Era
-      </h1>
-      <p className="p-2  text-lg bg-white text-black">
-        Founding Story : In 1976, in a modest garage in Los Altos, California,
-        two young visionaries—Steve Jobs and Steve Wozniak—along with a brief
-        involvement by Ronald Wayne, took a giant leap into the unknown. While
-        Jobs had the knack for spotting opportunities and telling compelling
-        stories, Wozniak was the technical wizard behind the scenes. Their
-        shared passion for technology and innovation set the stage for what
-        would become one of the world’s most influential companies.
-      </p>
-      <h2 className=" text-xl">Early Struggles</h2>
+    <>
+      <Head>
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href="https://yourdomain.com/case-studies/apple-garage-era"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Head>
 
-      <div className="flex flex-col p-3 m-3">
-        <span className="font-bold">Financial and Technical Hurdles</span>
-        <p className="text-gray-700">
-          In those early days, funding was scarce. The duo often had to
-          improvise with limited resources—purchasing parts piecemeal and
-          working around the clock in a cramped garage.
-        </p>
-      </div>
-      <div className="flex flex-col p-3 m-3">
-        <span className="font-bold">Convincing the Market</span>
-        <p className="text-gray-700">
-          Personal computers were a novel idea. They faced the uphill battle of
-          convincing investors, retailers, and potential customers that a
-          computer designed for personal use could be both practical and
-          desirable.
-        </p>
-      </div>
+      <main className="min-h-screen bg-gray-50 py-12">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <header className="mb-12 text-center">
+            <nav aria-label="Breadcrumb" className="text-sm text-gray-600 mb-4">
+              <ol className="flex justify-center space-x-2">
+                <li>
+                  <a href="/" className="hover:text-gray-900">
+                    Home
+                  </a>
+                </li>
+                <li>/</li>
+                <li>
+                  <a href="/case-studies" className="hover:text-gray-900">
+                    Case Studies
+                  </a>
+                </li>
+                <li>/</li>
+                <li aria-current="page" className="text-gray-900">
+                  Apple Garage Era
+                </li>
+              </ol>
+            </nav>
 
-      <h3 className="text-xl">
-        The First Project: Apple I and Early Revenue The Apple I – A Modest Yet
-        Pivotal Start{" "}
-      </h3>
-      <div className="flex flex-col p-3 m-3">
-        <span>Innovation on a Shoestring</span>
-        <p className="text-gray-700">
-          The Apple I was more than just a circuit board—it was a pioneering
-          step toward making computing accessible to hobbyists and early
-          adopters. Wozniak built the machine largely by hand, while Jobs saw
-          the potential for a product that could revolutionize the market.
-        </p>
-      </div>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Apple&#39;s Garage Era: A Business Strategy Case Study
+            </h1>
 
-      <div className="flex flex-col p-3 m-3">
-        <span>Early Revenue Generation</span>
-        <p className="text-gray-700">
-          {" "}
-          Although sold as a kit (requiring users to add their own case, power
-          supply, and keyboard), the Apple I generated the first streams of
-          revenue. This income, modest as it was, validated their efforts and
-          encouraged them to push further.
-        </p>
-      </div>
+            <div className="bg-black p-6 rounded-2xl shadow-lg mb-8">
+              <p className="text-gray-200 text-lg leading-relaxed">
+                {`1976 Startup Analysis: Explore how Steve Jobs and Steve Wozniak transformed `}
+                {`a $1,300 investment into a tech empire. This case study examines `}
+                {`early business decisions, product strategies, and leadership approaches.`}
+              </p>
+            </div>
+          </header>
 
-      <div className="flex flex-col m-3 p-3 ">
-        <span>From Niche to Mainstream</span>
-        <p className="text-gray-700">
-          {" "}
-          Learning from the challenges of the Apple I, the team developed the
-          Apple II in 1977—a complete, ready-to-use personal computer. Its
-          innovative features, like color graphics and a more user-friendly
-          design, resonated with a broader audience, marking the beginning of
-          substantial revenue growth
-        </p>
-      </div>
+          {/* Main Content */}
+          <div className="prose prose-lg max-w-none">
+            {/* Founding Challenges Section */}
+            <section aria-labelledby="early-challenges">
+              <h2
+                id="early-challenges"
+                className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4"
+              >
+                Foundational Challenges: Building Apple Computer
+              </h2>
 
-      <div className="flex flex-col m-3 p-3">
-        <span>Market Impact</span>
-        <p className="text-gray-700">
-          {" "}
-          The Apple II’s success was a turning point. It not only solidified
-          Apple’s reputation for innovation but also laid the financial
-          foundation that would support further research, development, and
-          expansion.
-        </p>
-      </div>
+              <div className="grid gap-8 md:grid-cols-2 mb-12">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Financial Constraints & Resource Management
+                  </h3>
+                  <p className="text-gray-600">
+                    Initial capital: $1,300 from selling Jobs&#39; VW bus and
+                    Wozniak&#39;s calculator. Strategic prioritization of
+                    component sourcing and minimal overhead costs.
+                  </p>
+                </div>
 
-      <h3 className="text-xl">Steve Jobs: The Visionary Behind the Brand</h3>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Market Validation Strategy
+                  </h3>
+                  <p className="text-gray-600">
+                    Targeting hobbyist market through Homebrew Computer Club.
+                    Early adoption of direct sales model to maintain margins.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-      <div className="flex flex-col m-3 p-3">
-        <span className="font-bold">A Unique Blend of Art and Technology</span>
-        <p className="text-gray-700">
-          Even in Apple’s nascent days, Jobs was determined to blend
-          cutting-edge technology with elegant design. His appreciation for
-          calligraphy, art, and Zen Buddhism played a crucial role in shaping
-          the company’s aesthetic and philosophy—“technology infused with
-          liberal arts.”
-        </p>
-      </div>
+            {/* Product Development Section */}
+            <section aria-labelledby="product-evolution" className="mb-16">
+              <h2
+                id="product-evolution"
+                className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4"
+              >
+                Product Strategy: From Apple I to Market Dominance
+              </h2>
 
-      <div className="flex flex-col p-3 m-3">
-        <span className="font-bold">Daily Discipline</span>
-        <p className="text-gray-700">
-          <span className="uppercase ">Intense Focus:</span> Jobs was known for
-          his relentless work ethic. Stories from that era tell of long days in
-          the garage, where he would push boundaries, challenge conventional
-          thinking, and expect nothing short of perfection from himself and his
-          team. The ‘Reality Distortion Field’: Colleagues often remarked how
-          Jobs’ persuasive charisma could inspire his team to achieve what
-          seemed impossible. His ability to frame challenges in a way that made
-          them appear surmountable became a hallmark of his leadership style.
-          Mindfulness and Reflection: Even amidst the chaos of a startup, Jobs
-          practiced routines that kept his creativity alive. He was known to
-          take time for quiet reflection and meditation, helping him focus on
-          the bigger picture even when details were demanding.
-        </p>
-      </div>
+              <div className="space-y-8">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    MVP Approach: Apple I (1976)
+                  </h3>
+                  <p className="text-gray-600">
+                    Specifications: 1MHz processor, 4KB RAM. Pricing strategy:
+                    $666.66 with 33% markup. Production cost optimization
+                    through manual assembly.
+                  </p>
+                </div>
 
-      <h4 className="text-xl">Thinking Pattern and Leadership Style:</h4>
-      <div className="flex flex-col m-3 p-3">
-        <p className="first-letter:text-2xl m-2">
-          Perfectionism with a Purpose: Jobs was famously meticulous, often
-          scrutinizing even the smallest design elements. His philosophy was
-          that the beauty of a product lay in its simplicity and functionality—a
-          belief that transformed how products were designed not just at Apple,
-          but across the tech industry.
-        </p>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Product Evolution: Apple II (1977)
+                  </h3>
+                  <p className="text-gray-600">
+                    Market expansion through integrated design. Pricing power:
+                    $1,298-$2,638 range. First-year revenue: $770,000 growing to
+                    $7.9M in 1978.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-        <p className="first-letter:text-2xl m-2">
-          Storytelling as Strategy: Whether unveiling a new product or rallying
-          his team, Jobs used storytelling to connect emotionally with his
-          audience. He believed that products should not only work flawlessly
-          but also resonate with people on a personal level.
-        </p>
-        <p className="first-letter:text-2xl m-2">
-          Embracing Risk and Failure: The early years were fraught with
-          uncertainty. Jobs’ willingness to take risks, learn from failures, and
-          iterate quickly was critical in turning Apple from a garage project
-          into a burgeoning company with a clear vision for the future.
-        </p>
-      </div>
+            {/* Leadership Analysis */}
+            <section aria-labelledby="leadership-analysis" className="mb-16">
+              <h2
+                id="leadership-analysis"
+                className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4"
+              >
+                Jobs-Wozniak Partnership: Leadership Dynamics
+              </h2>
 
-      <h5>Achievements and the Path Forward</h5>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Technical Innovation (Wozniak)
+                  </h3>
+                  <p className="text-gray-600">
+                    Engineering breakthroughs: Reduced chip count by 50% vs
+                    competitors. User-focused design: Built-in keyboard support
+                    and video output.
+                  </p>
+                </div>
 
-      <div className="flex flex-col p-2 m-3">
-        <span className="font-bold">Building on Early Success:</span>
-        <p>
-          The success of the Apple II provided Apple with the capital and
-          confidence to innovate further, paving the way for future milestones
-          like the Macintosh, iPod, iPhone, and beyond. Each product was a
-          testament to the early lessons learned in that garage—from embracing
-          user-friendly design to the importance of marrying technology with
-          art.
-        </p>
-      </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Business Vision (Jobs)
+                  </h3>
+                  <p className="text-gray-600">
+                    Brand positioning: "Computer for the masses". Distribution
+                    strategy: Partnering with Byte Shop retailers. Investor
+                    relations: Securing $250k from Mike Markkula.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-      <div className="flex flex-col p-2 m-3">
-        <span className="font-bold">A Lasting Legacy:</span>
-        <p>
-          Steve Jobs’ approach to leadership and product design has left an
-          indelible mark on the tech world. His blend of visionary thinking,
-          uncompromising quality, and an innate sense of aesthetics continues to
-          inspire entrepreneurs and innovators worldwide.
-        </p>
-      </div>
-    </div>
+            {/* Long-term Impact */}
+            <section
+              aria-labelledby="business-impact"
+              className="bg-blue-50 p-8 rounded-2xl"
+            >
+              <h2
+                id="business-impact"
+                className="text-2xl font-bold text-gray-900 mb-6"
+              >
+                Strategic Outcomes & Industry Impact
+              </h2>
+
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Market Transformation
+                  </h3>
+                  <p className="text-gray-600">
+                    Created personal computing market segment. 1977-1983 CAGR:
+                    40% revenue growth. Established Silicon Valley startup
+                    model.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-900">
+                    Leadership Legacy
+                  </h3>
+                  <p className="text-gray-600">
+                    Jobs&#39; product philosophy: "It's not just what it looks
+                    like, but how it works". Wozniak&#39;s engineering
+                    principles: "Simplify and perfect".
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="mt-16">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Key Questions Addressed
+              </h2>
+              <dl className="space-y-8">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <dt className="font-semibold text-lg text-gray-900">
+                    What was Apple's initial market entry strategy?
+                  </dt>
+                  <dd className="mt-2 text-gray-600">
+                    Targeted hobbyist community with affordable, modifiable
+                    computers while establishing premium brand positioning.
+                  </dd>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <dt className="font-semibold text-lg text-gray-900">
+                    How did leadership roles evolve in the early days?
+                  </dt>
+                  <dd className="mt-2 text-gray-600">
+                    Jobs focused on business strategy and marketing, while
+                    Wozniak led technical development, creating complementary
+                    leadership model.
+                  </dd>
+                </div>
+              </dl>
+            </section>
+          </div>
+        </article>
+      </main>
+    </>
   );
 };
 
-export default Page;
+export default AppleCaseStudy;
