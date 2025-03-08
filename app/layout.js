@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <title>My App</title>
+        <title>IIM Target </title>
         <meta name="description" content="My App Description" />
         <Script
           strategy="afterInteractive"

@@ -29,7 +29,7 @@ const page = () => {
           <MathJax
             dynamic
             hideUntilTypeset="first"
-            className="text-center text-2xl text-white "
+            className="text-center text-2xl text-red-500 "
           >
             {items.Answer}
           </MathJax>

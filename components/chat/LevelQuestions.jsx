@@ -229,7 +229,7 @@ const LevelQuestions = ({
                 </div>
                 <div
                   className=" border  p-1 rounded-full cursor-pointer shadow-md text-md text-blue-700 bg-gray-100 font-bold"
-                  onClick={(e) => QuestionDone(FETCHURL, index)}
+                  onClick={(e) => QuestionDone(FETCHURL, questionData.Id)}
                 >
                   <IoMdDoneAll />
                 </div>

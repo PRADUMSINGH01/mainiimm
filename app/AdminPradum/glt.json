@@ -1,853 +1,326 @@
 [
   {
-    "Id": 1,
-    "Question": "\\[\\begin{aligned}\n3x - 5 > 1\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x > 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx > 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Start with the inequality } 3x - 5 > 1. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Add } 5 \\text{ to both sides: } 3x > 6. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Divide by } 3 \\text{ to isolate } x: \\; x > 2. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Rearrange the inequality by isolating } x \\text{ using addition and division.}\n\\end{aligned}\\]"
+    "Id":1,
+    "Question": "In a right-angled triangle, the lengths of the sides are 5 cm, 12 cm, and 13 cm. Find the sine, cosine, and tangent of the angle opposite to the side of length 5 cm.",
+    "solution": "Let \\(\\theta\\) be the angle opposite the side of length 5 cm. In the given right-angled triangle, the hypotenuse is 13 cm, the side opposite \\(\\theta\\) is 5 cm, and the adjacent side is 12 cm. Therefore, we have:\n\\[\n\\sin \\theta = \\frac{5}{13}, \\quad \\cos \\theta = \\frac{12}{13}, \\quad \\tan \\theta = \\frac{5}{12}.\n\\]",
+    "Answer": "\\(\\sin \\theta = \\frac{5}{13}, \\; \\cos \\theta = \\frac{12}{13}, \\; \\tan \\theta = \\frac{5}{12}\\)",
+    "trick": "Identify the hypotenuse and apply the definitions of sine, cosine, and tangent in a right triangle."
   },
   {
-    "Id": 2,
-    "Question": "\\[\\begin{aligned}\n-2x + 3 \\le 7\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\ge -2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\ge -2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Start with } -2x + 3 \\le 7. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Subtract } 3 \\text{ from both sides: } -2x \\le 4. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Divide by } -2 \\text{ and flip the inequality: } \\; x \\ge -2. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Remember to flip the inequality when dividing by a negative number.}\n\\end{aligned}\\]"
+    "Id":2,
+    "Question": "If \\(\\sin \\theta = \\frac{3}{5}\\), find \\(\\csc \\theta\\), \\(\\sec \\theta\\), and \\(\\cot \\theta\\).",
+    "solution": "Given \\(\\sin \\theta = \\frac{3}{5}\\), its reciprocal gives \\(\\csc \\theta = \\frac{5}{3}\\). Next, use the Pythagorean identity to determine \\(\\cos \\theta\\):\n\\[\n\\cos \\theta = \\sqrt{1 - \\sin^2 \\theta} = \\sqrt{1 - \\left(\\frac{3}{5}\\right)^2} = \\sqrt{1 - \\frac{9}{25}} = \\frac{4}{5}.\n\\]\nThen, \\(\\sec \\theta = \\frac{1}{\\cos \\theta} = \\frac{5}{4}\\), \\(\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta} = \\frac{3}{4}\\), and \\(\\cot \\theta = \\frac{1}{\\tan \\theta} = \\frac{4}{3}\\).",
+    "Answer": "\\(\\csc \\theta = \\frac{5}{3}, \\; \\sec \\theta = \\frac{5}{4}, \\; \\cot \\theta = \\frac{4}{3}\\)",
+    "trick": "Use the identity \\(\\sin^2 \\theta + \\cos^2 \\theta = 1\\) to find \\(\\cos \\theta\\) and then compute the reciprocals."
   },
   {
-    "Id": 3,
-    "Question": "\\[\\begin{aligned}\n|x - 4| < 3\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}1 < x < 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 1 \\text{ or } x > 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le 1 \\text{ or } x \\ge 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n1 < x < 7\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Write the absolute value inequality as } -3 < x - 4 < 3. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Add } 4 \\text{ to all parts: } 1 < x < 7. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Convert the absolute value inequality into a compound inequality and solve each part.}\n\\end{aligned}\\]"
+    "Id":3,
+    "Question": "Verify the identity \\(\\sin^2 \\theta + \\cos^2 \\theta = 1\\) for \\(\\theta = 30^\\circ\\).",
+    "solution": "For \\(\\theta = 30^\\circ\\), we have \\(\\sin 30^\\circ = \\frac{1}{2}\\) and \\(\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}\\). Substituting these into the identity yields:\n\\[\n\\left(\\frac{1}{2}\\right)^2 + \\left(\\frac{\\sqrt{3}}{2}\\right)^2 = \\frac{1}{4} + \\frac{3}{4} = 1.\n\\]\nThus, the identity is verified.",
+    "Answer": "Identity verified as \\(1\\)",
+    "trick": "Substitute the known sine and cosine values for \\(30^\\circ\\) into the identity."
   },
   {
-    "Id": 4,
-    "Question": "\\[\\begin{aligned}\n|2x + 1| \\ge 5\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\le -3 \\text{ or } x \\ge 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -3 \\text{ and } x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge -3 \\text{ or } x \\le 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\le -3 \\text{ or } x \\ge 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } |2x+1| \\ge 5, \\text{ consider two cases.} \\\\[5pt]\n\\textbf{Case 1:} &\\quad 2x+1 \\ge 5 \\Rightarrow 2x \\ge 4 \\Rightarrow x \\ge 2. \\\\[5pt]\n\\textbf{Case 2:} &\\quad 2x+1 \\le -5 \\Rightarrow 2x \\le -6 \\Rightarrow x \\le -3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Split the absolute value inequality into two separate cases and solve each one.}\n\\end{aligned}\\]"
+    "Id":4,
+    "Question": "Find the value of \\(\\tan 45^\\circ + \\cot 45^\\circ\\).",
+    "solution": "At \\(45^\\circ\\), we know that \\(\\tan 45^\\circ = 1\\) and \\(\\cot 45^\\circ = 1\\). Hence, their sum is:\n\\[\n\\tan 45^\\circ + \\cot 45^\\circ = 1 + 1 = 2.\n\\]",
+    "Answer": "2",
+    "trick": "Recall that both tangent and cotangent of \\(45^\\circ\\) equal 1."
+  },
+  {"Id":5,
+    "Question": "A ladder 10 m long is placed against a wall. If the foot of the ladder is 6 m away from the wall, find the angle the ladder makes with the ground.",
+    "solution": "Let \\(\\theta\\) be the angle between the ladder and the ground. The cosine of the angle is given by:\n\\[\n\\cos \\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}} = \\frac{6}{10} = 0.6.\n\\]\nThus, \\(\\theta = \\cos^{-1}(0.6) \\approx 53.13^\\circ\\).",
+    "Answer": "\\(\\theta \\approx 53.13^\\circ\\)",
+    "trick": "Use the cosine ratio from the right triangle formed by the ladder, wall, and ground."
   },
   {
-    "Id": 5,
-    "Question": "\\[\\begin{aligned}\nx^2 - 4 < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-2 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -2 \\text{ or } x \\ge 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -2 \\text{ or } x > 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -2 \\text{ and } x < 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-2 < x < 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor the quadratic: } x^2-4=(x-2)(x+2). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Determine where the product is negative: } -2 < x < 2. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use a sign chart for the factors to identify the interval where their product is negative.}\n\\end{aligned}\\]"
+    "Id":6,
+    "Question": "Sketch the graph of \\(y = 2 \\sin (3x + \\frac{\\pi}{4})\\) and state its amplitude, period, and phase shift.",
+    "solution": "For the function \\(y = 2 \\sin (3x + \\frac{\\pi}{4})\\):\n- The amplitude is the coefficient \\(2\\).\n- The period is given by \\(\\frac{2\\pi}{B}\\), where \\(B = 3\\); thus, the period is \\(\\frac{2\\pi}{3}\\).\n- To find the phase shift, solve \\(3x + \\frac{\\pi}{4} = 0\\) to obtain \\(x = -\\frac{\\pi}{12}\\), indicating a shift to the left by \\(\\frac{\\pi}{12}\\).",
+    "Answer": "Amplitude: 2, Period: \\(\\frac{2\\pi}{3}\\), Phase Shift: \\(-\\frac{\\pi}{12}\\) (left)",
+    "trick": "Compare with the standard form \\(y = A \\sin(Bx + C)\\) to identify amplitude, period, and phase shift."
   },
   {
-    "Id": 6,
-    "Question": "\\[\\begin{aligned}\nx^2 - x - 6 \\ge 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\le -2 \\text{ or } x \\ge 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 < x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 \\le x \\le 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -2 \\text{ and } x < 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\le -2 \\text{ or } x \\ge 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2-x-6 \\text{ as } (x-3)(x+2). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The product } (x-3)(x+2) \\ge 0 \\text{ when } x \\le -2 \\text{ or } x \\ge 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Analyze the sign of each factor over the number line to determine the intervals where their product is nonnegative.}\n\\end{aligned}\\]"
+    "Id":7,
+    "Question": "Prove that \\(\\frac{\\sin 2\\theta}{1 + \\cos 2\\theta} = \\tan \\theta\\).",
+    "solution": "Start by using the double-angle identities: \\(\\sin 2\\theta = 2\\sin \\theta \\cos \\theta\\) and \\(\\cos 2\\theta = 2\\cos^2 \\theta - 1\\). Substitute into the expression:\n\\[\n\\frac{\\sin 2\\theta}{1 + \\cos 2\\theta} = \\frac{2 \\sin \\theta \\cos \\theta}{1 + (2\\cos^2 \\theta - 1)} = \\frac{2 \\sin \\theta \\cos \\theta}{2\\cos^2 \\theta} = \\frac{\\sin \\theta}{\\cos \\theta} = \\tan \\theta.\n\\]",
+    "Answer": "\\(\\tan \\theta\\)",
+    "trick": "Replace \\(\\sin 2\\theta\\) and \\(\\cos 2\\theta\\) using double-angle formulas and simplify."
   },
   {
-    "Id": 7,
-    "Question": "\\[\\begin{aligned}\n\\frac{x+2}{x-1} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -2 \\text{ or } x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 < x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -2 \\text{ or } x \\ge 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -2 \\text{ and } x < 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < -2 \\text{ or } x > 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Identify the critical points: numerator } x+2=0 \\; (x=-2) \\text{ and denominator } x-1=0 \\; (x=1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Test the intervals: For } x < -2, \\; -2 < x < 1, \\; \\text{and } x > 1. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Conclude that the inequality holds when } x < -2 \\text{ or } x > 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use a sign chart for the numerator and denominator to determine where their quotient is positive.}\n\\end{aligned}\\]"
+    
+  "Id":8,
+    "Question": "Solve the equation \\(2 \\cos^2 \\theta - 3 \\cos \\theta + 1 = 0\\) for \\(0^\\circ \\leq \\theta < 360^\\circ\\).",
+    "solution": "Let \\(x = \\cos \\theta\\). The equation becomes:\n\\[\n2x^2 - 3x + 1 = 0.\n\\]\nFactor the quadratic:\n\\[\n(2x - 1)(x - 1) = 0.\n\\]\nThus, \\(x = \\frac{1}{2}\\) or \\(x = 1\\). Using known cosine values:\n- \\(\\cos \\theta = \\frac{1}{2}\\) yields \\(\\theta = 60^\\circ\\) and \\(\\theta = 300^\\circ\\).\n- \\(\\cos \\theta = 1\\) yields \\(\\theta = 0^\\circ\\).\n\nTherefore, the solutions are \\(\\theta = 0^\\circ, 60^\\circ, 300^\\circ\\).",
+    "Answer": "\\(\\theta = 0^\\circ, 60^\\circ, 300^\\circ\\)",
+    "trick": "Substitute \\(x = \\cos \\theta\\) to factor the quadratic and then use standard cosine values."
   },
-  {
-    "Id": 8,
-    "Question": "\\[\\begin{aligned}\n\\frac{2x-3}{x+4} \\le 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-4 < x \\le 1.5\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -4 \\text{ or } x > 1.5\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -4 \\text{ or } x > 1.5\\end{aligned}\\]",
-      "\\[\\begin{aligned}-4 \\le x < 1.5\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-4 < x \\le 1.5\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Find the numerator zero: } 2x-3=0 \\Rightarrow x=1.5, \\text{ and note the denominator zero at } x=-4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Using a sign chart, determine that the fraction is nonpositive for } -4 < x \\le 1.5. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Identify the critical points and use sign analysis to find where the fraction is nonpositive.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 9,
-    "Question": "\\[\\begin{aligned}\n-2 < 3x+1 \\le 7\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-1 < x \\le 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 \\le x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -1 \\text{ and } x \\le 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-1 < x \\le 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Solve } 3x+1 > -2 \\; \\Rightarrow \\; x > -1. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } 3x+1 \\le 7 \\; \\Rightarrow \\; x \\le 2. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The intersection gives } -1 < x \\le 2. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Solve the two inequalities separately and take their intersection.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 10,
-    "Question": "\\[\\begin{aligned}\n1 \\le 2-x < 5\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-3 < x \\le 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -3 \\text{ or } x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 \\le x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 \\le x \\le 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-3 < x \\le 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Solve } 2-x \\ge 1 \\; \\Rightarrow \\; x \\le 1. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } 2-x < 5 \\; \\Rightarrow \\; x > -3. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Thus, } -3 < x \\le 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Isolate } x \\text{ in both parts of the compound inequality and intersect the results.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 11,
-    "Question": "\\[\\begin{aligned}\n|x-2| > 5\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -3 \\text{ or } x > 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -3 \\text{ and } x < 7\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge -3 \\text{ or } x \\le 7\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < -3 \\text{ or } x > 7\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } |x-2| > 5, \\text{ consider two cases: } x-2 > 5 \\text{ and } x-2 < -5. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Case 1: } x > 7. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Case 2: } x < -3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Break the absolute value inequality into two cases and solve each linear inequality.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 12,
-    "Question": "\\[\\begin{aligned}\n2|x+1| - 4 \\le 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-3 \\le x \\le 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -3 \\text{ or } x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 \\le x \\le 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -3 \\text{ or } x \\ge 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-3 \\le x \\le 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Rewrite } 2|x+1| - 4 \\le 0 \\text{ as } 2|x+1| \\le 4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Divide by } 2: \\; |x+1| \\le 2. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Express as } -2 \\le x+1 \\le 2 \\; \\Rightarrow \\; -3 \\le x \\le 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Isolate the absolute value and then rewrite it as a compound inequality.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 13,
-    "Question": "\\[\\begin{aligned}\n\\frac{1}{x-2} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x > 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx > 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Since } 1>0, \\text{ the fraction } \\frac{1}{x-2} \\text{ is positive when } x-2 > 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, } x > 2. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Determine the sign of the fraction by ensuring the denominator is positive.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 14,
-    "Question": "\\[\\begin{aligned}\n-|x| + 3 \\ge 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-3 \\le x \\le 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -3 \\text{ or } x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -3 \\text{ and } x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -3 \\text{ or } x \\ge 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-3 \\le x \\le 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Rewrite } -|x| + 3 \\ge 0 \\text{ as } -|x| \\ge -3. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Multiply by } -1 \\text{ (flip the inequality): } |x| \\le 3. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{This implies } -3 \\le x \\le 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Multiply by } -1 \\text{ (remembering to flip the inequality) and then apply the absolute value definition.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 15,
-    "Question": "\\[\\begin{aligned}\n(x-1)(x-4) > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 1 \\text{ or } x > 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 < x < 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 \\le x \\le 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 1 \\text{ and } x < 4\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < 1 \\text{ or } x > 4\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Find the roots of the expression: } x=1 \\text{ and } x=4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The product } (x-1)(x-4) \\text{ is positive when both factors are either positive (} x>4 \\text{) or negative (} x<1 \\text{).} \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use a sign chart based on the roots to determine where the product is positive.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 16,
-    "Question": "\\[\\begin{aligned}\n\\frac{x+3}{2x-5} < 1\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 2.5 \\text{ or } x > 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}2.5 < x < 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 2.5 \\text{ and } x \\le 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 2.5 \\text{ or } x < 8\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < 2.5 \\text{ or } x > 8\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Subtract } 1 \\text{ to obtain } \\frac{x+3}{2x-5} - 1 < 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Combine into one fraction: } \\frac{x+3-(2x+3)}{2x-5} = \\frac{-x+8}{2x-5} < 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Find the critical points: numerator zero when } x=8 \\text{ and denominator zero when } x=2.5. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Testing intervals shows that the inequality holds for } x < 2.5 \\text{ and for } x > 8. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Rewrite as a single fraction and use critical point analysis to determine where the expression is negative.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 17,
-    "Question": "\\[\\begin{aligned}\n\\frac{x}{|x|} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x > 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\neq 0\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx > 0\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Recognize that } \\frac{x}{|x|} = 1 \\text{ if } x>0 \\text{ and } -1 \\text{ if } x<0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, for } \\frac{x}{|x|} > 0, \\text{ we require } x > 0. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Interpret the expression as representing the sign of } x \\text{ and solve accordingly.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 18,
-    "Question": "\\[\\begin{aligned}\n5 - 2x \\ge 3\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\le 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\le 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Begin with } 5 - 2x \\ge 3. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Subtract } 5 \\text{ from both sides: } -2x \\ge -2. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Divide by } -2 \\text{ (flip the inequality): } x \\le 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Remember to flip the inequality when dividing by a negative number.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 19,
-    "Question": "\\[\\begin{aligned}\n\\frac{3-x}{x+1} \\ge 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-1 < x \\le 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -1 \\text{ or } x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 \\le x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge -1 \\text{ and } x \\le 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-1 < x \\le 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Determine the critical points: } 3-x=0 \\; (x=3) \\text{ and } x+1=0 \\; (x=-1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Using a sign chart, find that } \\frac{3-x}{x+1} \\ge 0 \\text{ for } -1 < x \\le 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use a sign chart and exclude the point where the denominator is zero to determine the solution.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 20,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^2-9}{x+2} < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -3 \\text{ or } -2 < x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < -2 \\text{ or } x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -3 \\text{ or } x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < -2 \\text{ or } -2 < x < 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < -3 \\text{ or } -2 < x < 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor the numerator: } x^2-9=(x-3)(x+3). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The critical points are } x=-3, \\; x=3, \\text{ and the denominator is zero at } x=-2. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Using a sign chart, the inequality holds for } x < -3 \\text{ or } -2 < x < 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Factor the expression and analyze the sign on each interval while accounting for the undefined point.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 21,
-    "Question": "\\[\\begin{aligned}\n4 - \\sqrt{x+5} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-5 \\le x < 11\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -5 \\text{ or } x \\ge 11\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > -5 \\text{ and } x < 11\\end{aligned}\\]",
-      "\\[\\begin{aligned}-5 < x < 11\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-5 \\le x < 11\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Isolate the square root: } \\sqrt{x+5} < 4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Square both sides: } x+5 < 16 \\; \\Rightarrow \\; x < 11. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Apply the domain condition: } x+5 \\ge 0 \\; \\Rightarrow \\; x \\ge -5. \\\\[5pt]\n\\textbf{Conclusion:} &\\quad -5 \\le x < 11. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Isolate the radical, square both sides, and use the domain of the square root.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 22,
-    "Question": "\\[\\begin{aligned}\n\\bigl(|x-1|-3\\bigr)\\bigl(|x+2|-5\\bigr) < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-7 < x < -2 \\text{ and } 3 < x < 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -7 \\text{ and } x > 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -2 \\text{ and } x > 3\\end{aligned}\\]",
-      "Any of these"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-7 < x < -2 \\text{ and } 3 < x < 4\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Solve } |x-1|=3 \\; \\Rightarrow \\; x=4 \\text{ or } x=-2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } |x+2|=5 \\; \\Rightarrow \\; x=3 \\text{ or } x=-7. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Analyze the sign of } (|x-1|-3)(|x+2|-5) \\text{ over the intervals defined by these points.} \\\\[5pt]\n\\textbf{Conclusion:} &\\quad \\text{The product is negative when } -7 < x < -2 \\text{ and } 3 < x < 4. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Find the zeros of each absolute value factor, then use a sign chart to determine where their product is negative.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 23,
-    "Question": "\\[\\begin{aligned}\n(x-1)(3-x)(x-2)^2 > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}1 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 < x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < -1\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 < x < 3, \\; x \\neq 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n1 < x < 3, \\; x \\neq 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Note that } (x-2)^2 \\ge 0 \\text{ and equals } 0 \\text{ at } x=2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } (x-1)(3-x) > 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The inequality } (x-1)(3-x) > 0 \\text{ holds for } 1 < x < 3. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Exclude } x=2 \\text{ where } (x-2)^2=0. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Focus on the linear factors while noting the squared term is always nonnegative, and then exclude the zero.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 24,
-    "Question": "\\[\\begin{aligned}\n\\text{(Ambiguous expression, interpreted as a linear inequality)}\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x > 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 0\\end{aligned}\\]",
-      "For all real \\(x\\)"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx > 0\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Interpret the ambiguous expression as the linear inequality } x > 0. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Adopt a standard interpretation to resolve the ambiguity.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 25,
-    "Question": "\\[\\begin{aligned}\nx^2-5x+6 < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}2 < x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 2 \\text{ or } x > 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n2 < x < 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2-5x+6=(x-2)(x-3). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The product } (x-2)(x-3) < 0 \\text{ when } x \\text{ is between } 2 \\text{ and } 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{A product is negative only between the roots of the factors.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 26,
-    "Question": "\\[\\begin{aligned}\nx^2+2x-3 < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-7 < x < -3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-7 < x < 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-3 < x < 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2+2x-3=(x+3)(x-1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The inequality } (x+3)(x-1) < 0 \\text{ holds when } -3 < x < 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Find the roots and test the sign of the product in the intervals.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 27,
-    "Question": "\\[\\begin{aligned}\nx^2-1 > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -1 \\text{ or } x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -1 \\text{ and } x \\neq 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -1 \\text{ or } x > 1 \\text{ and } x \\neq -2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < -1 \\text{ or } x > 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2-1=(x-1)(x+1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The product } (x-1)(x+1) > 0 \\text{ when } x < -1 \\text{ or } x > 1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Apply the difference of squares and use a sign chart to determine the solution.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 28,
-    "Question": "\\[\\begin{aligned}\n\\frac{(x-2)^2}{(x+1)^2} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\neq 2\\end{aligned}\\]",
-      "None of these"
-    ],
-    "Answer": "None of these",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Notice that } (x-2)^2 \\text{ and } (x+1)^2 \\text{ are always nonnegative.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The fraction is positive for all } x \\text{ where it is defined (} x \\neq -1 \\text{).} \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Recognize that squares are always nonnegative, so the fraction is positive except where undefined.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 29,
-    "Question": "\\[\\begin{aligned}\nx^4-5x^2+4 < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-2 < x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}-2 < x < -1 \\text{ or } 1 < x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 < x < 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-2 < x < -1 \\text{ or } 1 < x < 2\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Let } u=x^2, \\text{ then the inequality becomes } u^2-5u+4 < 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Factor: } (u-1)(u-4) < 0 \\; \\Rightarrow \\; 1 < u < 4. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Substitute back } u=x^2 \\; \\Rightarrow \\; 1 < x^2 < 4, \\text{ which implies } x \\in (-2,-1) \\cup (1,2). \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use substitution to reduce the quartic inequality to a quadratic and then convert back to } x. \n\\end{aligned}\\]"
-  },
-  {
-    "Id": 30,
-    "Question": "\\[\\begin{aligned}\nx^4-2x^2-63 \\le 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\le -3 \\text{ or } x \\ge 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 \\le x \\le 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}0 \\le x \\le 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 \\le x \\le 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-3 \\le x \\le 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Let } u=x^2, \\text{ then the inequality becomes } u^2-2u-63 \\le 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Factor: } (u-9)(u+7) \\le 0. \\text{ Since } u\\ge0, \\; u \\le 9. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Substitute back: } x^2 \\le 9 \\; \\Rightarrow \\; -3 \\le x \\le 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Substitute } u=x^2 \\text{ to simplify the quartic inequality, then solve for } x. \n\\end{aligned}\\]"
-  },
-  {
-    "Id": 31,
-    "Question": "\\[\\begin{aligned}\n\\frac{5x-1}{2x+3} < 1\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 < x < 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < 1 \\text{ or } x > 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}1 < x < 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx < 1 \\text{ or } x > 4\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Start with } \\frac{5x-1}{2x+3} < 1. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Subtract } 1 \\text{ to obtain } \\frac{5x-1}{2x+3} - 1 < 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Combine into one fraction: } \\frac{5x-1-(2x+3)}{2x+3} = \\frac{3x-4}{2x+3} < 0. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Find the critical points: } 3x-4=0 \\; \\Rightarrow \\; x=\\frac{4}{3}, \\quad 2x+3=0 \\; \\Rightarrow \\; x=-\\frac{3}{2}. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{Analyze the sign: For } -\\frac{3}{2} < x < \\frac{4}{3}, \\text{ the fraction is negative.} \\\\[5pt]\n\\textbf{Conclusion:} &\\quad \\text{Thus, } -\\frac{3}{2} < x < \\frac{4}{3}. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Rewrite as a single fraction and use a sign chart to find where it is negative.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 32,
-    "Question": "\\[\\begin{aligned}\n\\frac{x-2}{x+1} < -\\frac{1}{2}\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-3 < x < 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -3\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < 6\\end{aligned}\\]",
-      "\\[\\begin{aligned}-3 < x < 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-1 < x < 1\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Start with } \\frac{x-2}{x+1} < -\\frac{1}{2}. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Multiply both sides by 2: } \\frac{2(x-2)}{x+1} < -1. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Assume } x+1>0 \\; (x>-1) \\text{ and multiply: } 2(x-2) < -1(x+1). \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Simplify: } 2x-4 < -x-1 \\; \\Rightarrow \\; 3x < 3 \\; \\Rightarrow \\; x < 1. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{Since } x>-1 \\text{ is required, the solution in this case is } -1 < x < 1. \\\\[5pt]\n\\textbf{Step 6:} &\\quad \\text{The case } x+1<0 \\text{ leads to a contradiction.} \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Split into cases based on the sign of } x+1, \\text{ then solve the resulting inequality.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 33,
-    "Question": "\\[\\begin{aligned}\n\\frac{x+1}{(x-1)^2} < 1\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x > 3 \\text{ or } x \\text{ is negative}\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 3 \\text{ or } -23 < x < 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\text{ is negative and } x > 2\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx > 3 \\text{ or } x \\text{ is negative}\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Subtract } 1 \\text{ to write } \\frac{x+1}{(x-1)^2} - 1 < 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Express as a single fraction: } \\frac{x+1-(x-1)^2}{(x-1)^2} < 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Expand } (x-1)^2 = x^2-2x+1 \\text{ and simplify numerator: } x+1 - (x^2-2x+1) = -x^2+3x. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Factor: } -x^2+3x = -x(x-3). \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{Multiply by } -1 \\text{ (flipping the inequality): } \\frac{x(x-3)}{(x-1)^2} > 0. \\\\[5pt]\n\\textbf{Step 6:} &\\quad \\text{Since } (x-1)^2 \\text{ is always positive (for } x\\neq1\\text{), solve } x(x-3) > 0 \\; \\Rightarrow \\; x < 0 \\text{ or } x > 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Combine the terms into one fraction and analyze the factors to determine where the expression is positive.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 34,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^2-7x+12}{x^2+4x+5} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 3 \\text{ or } x > 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}3 < x < 4\\end{aligned}\\]",
-      "\\[\\begin{aligned}4 < x < 24\\end{aligned}\\]",
-      "\\[\\begin{aligned}0 < x < 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n3 < x < 4\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor the numerator: } x^2-7x+12=(x-3)(x-4). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Notice that } x^2+4x+5 \\text{ is always positive.} \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Thus, the inequality depends on } (x-3)(x-4)>0, \\text{ which is true when } x < 3 \\text{ or } x > 4. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Since the denominator is always positive, focus on the sign of the numerator.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 35,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^2+6x-7}{x+1} \\le 2\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x \\text{ is negative}\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\ge 0\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 0 \\text{ or } x < 0\\end{aligned}\\]",
-      "Always"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\ge 0\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Start with } \\frac{x^2+6x-7}{x+1} \\le 2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Subtract } 2 \\text{ from both sides: } \\frac{x^2+6x-7}{x+1} - 2 \\le 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Combine into one fraction: } \\frac{x^2+6x-7 - 2(x+1)}{x+1} \\le 0. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Simplify the numerator: } x^2+6x-7-2x-2 = x^2+4x-9. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{Solve } x^2+4x-9=0 \\; \\Rightarrow \\; x = -2 \\pm \\sqrt{13}. \\\\[5pt]\n\\textbf{Step 6:} &\\quad \\text{Use a sign chart with the critical points } x=-2-\\sqrt{13}, \\; x=-2+\\sqrt{13}, \\text{ and the vertical asymptote } x=-1. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Bring all terms to one side to form a single fraction and use critical point analysis to solve the inequality.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 36,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^4+2x^2+1}{x^2-4x-5} < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < -1 \\text{ or } x > 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 < x < 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}-5 < x < -1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n-1 < x < 5\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Recognize that } x^4+2x^2+1=(x^2+1)^2 \\text{ is always positive.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Factor the denominator: } x^2-4x-5=(x-5)(x+1). \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The inequality reduces to } (x-5)(x+1) < 0, \\text{ which holds for } -1 < x < 5. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Since the numerator is always positive, determine the solution by analyzing the sign of the denominator.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 37,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^2-3x+21}{2x^2-21x+40} < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}0 < x < 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}2.5 < x < 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}-8 < x < 8\\end{aligned}\\]",
-      "\\[\\begin{aligned}3 < x < 8\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n2.5 < x < 8\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Identify the critical points from both the numerator and the denominator of the expression.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Construct a sign chart for } \\frac{x^2-3x+21}{2x^2-21x+40}. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Determine that the inequality holds for } 2.5 < x < 8. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use the critical points from the numerator and denominator to analyze the sign of the expression.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 38,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^2-5x+6}{x^2+1} < 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}x < 2\\end{aligned}\\]",
-      "\\[\\begin{aligned}x > 3\\end{aligned}\\]",
-      "\\[\\begin{aligned}0 < x < 1\\end{aligned}\\]",
-      "\\[\\begin{aligned}2 < x < 3\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\n2 < x < 3\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor the numerator: } x^2-5x+6=(x-2)(x-3). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Since } x^2+1 \\text{ is always positive, the inequality } (x-2)(x-3) < 0 \\text{ holds when } 2 < x < 3. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Focus on the numerator because the denominator is always positive.}\n\\end{aligned}\\]"
-  },
-  {
-    "Id": 39,
-    "Question": "\\[\\begin{aligned}\n\\frac{x^4+2x^2+1}{x^2-4x-5} > 0\n\\end{aligned}\\]",
-    "option": [
-      "\\[\\begin{aligned}-1 < x < 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}x < -1 \\text{ or } x > 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}x \\le -1 \\text{ or } x > 5\\end{aligned}\\]",
-      "\\[\\begin{aligned}-1 < x < 1\\end{aligned}\\]"
-    ],
-    "Answer": "\\[\\begin{aligned}\nx \\le -1 \\text{ or } x > 5\n\\end{aligned}\\]",
-    "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Notice that } (x^2+1)^2 \\text{ is always positive.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, the inequality reduces to } x^2-4x-5 > 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Factor the denominator: } x^2-4x-5=(x-5)(x+1). \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Solve } (x-5)(x+1) > 0 \\; \\Rightarrow \\; x < -1 \\text{ or } x > 5. \n\\end{aligned}\\]",
-    "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Since the numerator is always positive, analyze the sign of the denominator to determine the solution.}\n\\end{aligned}\\]"
-  },
+
 
 
 
   
     {
-      "Id": 55,
-      "Question": "\\[\\begin{aligned}\n\\frac{x-3}{x-2} > 0\n\\end{aligned}\\]",
+      "Id": 9,
+      "Question": "In a right-angled triangle, the lengths of the legs are 7 cm and 24 cm. Find the sine, cosine, and tangent of the angle opposite to the 7 cm leg.",
+      "solution": "First, calculate the hypotenuse using the Pythagorean theorem: \\(\\sqrt{7^2 + 24^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25\\) cm. For the angle opposite the 7 cm leg: \\(\\sin \\theta = \\frac{7}{25}\\), \\(\\cos \\theta = \\frac{24}{25}\\), \\(\\tan \\theta = \\frac{7}{24}\\).",
+      "Answer": "7/25,24/25,7/24",
+      "trick": "Use the Pythagorean theorem to find the hypotenuse and then apply the definitions of sine, cosine, and tangent.",
       "option": [
-        "\\[\\begin{aligned}x < -1 \\text{ or } x > \\frac{1}{3}\\end{aligned}\\]",
-        "\\[\\begin{aligned}x < -1 \\text{ or } x > \\frac{1}{3}\\end{aligned}\\]",
-        "\\[\\begin{aligned}-1 < x < \\frac{1}{3}\\end{aligned}\\]",
-        "\\[\\begin{aligned}x < \\frac{1}{3}\\end{aligned}\\]"
-      ],
-      "Answer": "Both (a) and (b)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Identify the critical points by setting the denominator and numerator to zero:} \\\\[5pt]\n               &\\quad x-2=0 \\;\\Rightarrow\\; x=2 \\quad \\text{and} \\quad x-3=0 \\;\\Rightarrow\\; x=3. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Divide the number line into intervals: } (-\\infty,2),\\;(2,3),\\;(3,\\infty). \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Test a value in each interval to determine the sign of } \\frac{x-3}{x-2}. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Analyze the signs of the numerator and denominator separately to determine where the quotient is positive.}\n\\end{aligned}\\]"
+        "\\(\\sin\\theta = \\frac{7}{25},\\ \\cos\\theta = \\frac{24}{25},\\ \\tan\\theta = \\frac{7}{24}\\)",
+        "\\(\\sin\\theta = \\frac{7}{25},\\ \\cos\\theta = \\frac{24}{25},\\ \\tan\\theta = \\frac{24}{7}\\)",
+        "\\(\\sin\\theta = \\frac{24}{25},\\ \\cos\\theta = \\frac{7}{25},\\ \\tan\\theta = \\frac{7}{24}\\)",
+        "\\(\\sin\\theta = \\frac{7}{24},\\ \\cos\\theta = \\frac{25}{24},\\ \\tan\\theta = \\frac{7}{25}\\)"
+      ]
     },
     {
-      "Id": 56,
-      "Question": "\\[\\begin{aligned}\n|x-1|+|x-2|+|x-3| \\ge 6\n\\end{aligned}\\]",
+      "Id": 10,
+      "Question": "If \\(\\tan \\theta = \\frac{5}{12}\\), find \\(\\cot \\theta\\), \\(\\sec \\theta\\), and \\(\\csc \\theta\\).",
+      "solution": "Given \\(\\tan \\theta = \\frac{5}{12}\\), consider a right triangle where the opposite side is 5 and the adjacent side is 12. The hypotenuse is \\(\\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\\). Then: \\(\\cot \\theta = \\frac{1}{\\tan \\theta} = \\frac{12}{5}\\), \\(\\sec \\theta = \\frac{\\text{hypotenuse}}{\\text{adjacent}} = \\frac{13}{12}\\), \\(\\csc \\theta = \\frac{\\text{hypotenuse}}{\\text{opposite}} = \\frac{13}{5}\\).",
+      "Answer": "12/5,13/12,13/5",
+      "trick": "Construct a right triangle from the given tangent value, compute the hypotenuse, and then find the reciprocals of tangent, sine, and cosine.",
       "option": [
-        "\\[\\begin{aligned}0 \\le x \\le 4\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\le 0 \\text{ or } x \\ge 4\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\le -2 \\text{ or } x \\ge 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\ge 3\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\nx \\le 0 \\text{ or } x \\ge 4\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } x \\le 1, \\; |x-1|=1-x,\\; |x-2|=2-x,\\; |x-3|=3-x, \\text{ so the sum is } 6-3x. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } 6-3x \\ge 6 \\;\\Rightarrow\\; x \\le 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{For } x \\ge 3, \\; |x-1|=x-1,\\; |x-2|=x-2,\\; |x-3|=x-3, \\text{ so the sum is } 3x-6. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Solve } 3x-6 \\ge 6 \\;\\Rightarrow\\; x \\ge 4. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Break the problem into pieces (using the piecewise definitions of the absolute values) to find the solution intervals.}\n\\end{aligned}\\]"
+        "\\(\\cot\\theta = \\frac{12}{5}, \\; \\sec\\theta = \\frac{13}{12}, \\; \\csc\\theta = \\frac{13}{5}\\)",
+        "\\(\\cot\\theta = \\frac{5}{12}, \\; \\sec\\theta = \\frac{13}{5}, \\; \\csc\\theta = \\frac{12}{13}\\)",
+        "\\(\\cot\\theta = \\frac{12}{5}, \\; \\sec\\theta = \\frac{13}{5}, \\; \\csc\\theta = \\frac{13}{12}\\)",
+        "\\(\\cot\\theta = \\frac{5}{12}, \\; \\sec\\theta = \\frac{12}{13}, \\; \\csc\\theta = \\frac{13}{5}\\)"
+      ]
     },
     {
-      "Id": 57,
-      "Question": "\\[\\begin{aligned}\nf(x)=|x+4|-|x-4|, \\quad |f(x)|<8\n\\end{aligned}\\] \\quad (How many integer values?)",
+      "Id": 11,
+      "Question": "If \\(\\sin \\theta = \\frac{8}{17}\\), find \\(\\cos \\theta\\) and verify that \\(\\sin^2 \\theta + \\cos^2 \\theta = 1\\).",
+      "solution": "Using the identity \\(\\sin^2 \\theta + \\cos^2 \\theta = 1\\): \\(\\left(\\frac{8}{17}\\right)^2 + \\cos^2 \\theta = 1 \\Rightarrow \\frac{64}{289} + \\cos^2 \\theta = 1 \\Rightarrow \\cos^2 \\theta = 1 - \\frac{64}{289} = \\frac{225}{289}\\). Since \\(\\theta\\) is acute, \\(\\cos \\theta = \\frac{15}{17}\\). Verification: \\(\\frac{64}{289} + \\frac{225}{289} = \\frac{289}{289} = 1\\).",
+      "Answer": "15/17",
+      "trick": "Apply the Pythagorean identity to solve for \\(\\cos \\theta\\) after squaring \\(\\sin \\theta\\).",
       "option": [
-        "6",
-        "7",
-        "8",
-        "9"
-      ],
-      "Answer": "\\[\\begin{aligned}\n7\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } x \\ge 4, \\; f(x)= (x+4)-(x-4)=8. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{For } x \\le -4, \\; f(x)= - (x+4)-[-(x-4)]= -8. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{For } -4 < x < 4, \\; f(x)= (x+4)-(4-x)=2x. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{The inequality } |2x|<8 \\;\\Rightarrow\\; |x|<4. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{The integers in } (-4,4) \\text{ are } -3,-2,-1,0,1,2,3, \\text{ which total } 7. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Divide the domain based on the behavior of } f(x) \\text{ and count the integers in the resulting interval.}\n\\end{aligned}\\]"
+        "\\(\\cos\\theta = \\frac{15}{17}\\)",
+        "\\(\\cos\\theta = \\frac{8}{17}\\)",
+        "\\(\\cos\\theta = \\frac{17}{15}\\)",
+        "\\(\\cos\\theta = \\frac{15}{8}\\)"
+      ]
     },
     {
-      "Id": 58,
-      "Question": "\\[\\begin{aligned}\nf(x)=|x+4|-|x-4|, \\quad |f(x)|<8\n\\end{aligned}\\] \\quad (Sum of positive integer values)",
-      "option": [
-        "5",
-        "6",
-        "8",
-        "10"
-      ],
-      "Answer": "\\[\\begin{aligned}\n6\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{From the previous analysis, } -4<x<4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The positive integers in this interval are } 1,2,3. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Their sum is } 1+2+3=6. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Restrict the valid interval to positive integers and add them.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 59,
-      "Question": "\\[\\begin{aligned}\n\\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3}, \\quad x > -6\n\\end{aligned}\\] \\quad (Number of positive integer solutions)",
+      "Id": 12,
+      "Question": "Find the value of \\(\\sin 60^\\circ \\cos 30^\\circ + \\cos 60^\\circ \\sin 30^\\circ\\).",
+      "solution": "Using known values: \\(\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}\\), \\(\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}\\), \\(\\cos 60^\\circ = \\frac{1}{2}\\), and \\(\\sin 30^\\circ = \\frac{1}{2}\\). Then, \\(\\left(\\frac{\\sqrt{3}}{2}\\right)\\left(\\frac{\\sqrt{3}}{2}\\right) + \\left(\\frac{1}{2}\\right)\\left(\\frac{1}{2}\\right) = \\frac{3}{4} + \\frac{1}{4} = 1\\).",
+      "Answer": "1",
+      "trick": "Recognize the sine addition formula: \\(\\sin(60^\\circ+30^\\circ)=\\sin 90^\\circ=1\\).",
       "option": [
         "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "Answer": "\\[\\begin{aligned}\n1\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Solve the inequality } \\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3} \\text{ for } x > -6. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Perform a sign analysis (details omitted) to determine the interval where the inequality holds.} \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{It turns out that only the interval containing } x=4 \\text{ yields a positive integer solution.} \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{After solving the inequality, focus on the interval with positive integers to count the solutions.}\n\\end{aligned}\\]"
+        "0",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{\\sqrt{3}}{2}\\)"
+      ]
     },
     {
-      "Id": 60,
-      "Question": "\\[\\begin{aligned}\n\\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3}, \\quad x > -6\n\\end{aligned}\\] \\quad (Sum of positive integer solutions)",
+      "Id": 13,
+      "Question": "A kite is flying at a height of 45 m above the ground, with a string 75 m long. Find the angle of elevation of the kite from the ground.",
+      "solution": "Let \\(\\theta\\) be the angle of elevation. In the right triangle formed, \\(\\sin \\theta = \\frac{45}{75} = \\frac{3}{5}\\). Therefore, \\(\\theta = \\sin^{-1}(0.6) \\approx 36.87^\\circ\\).",
+      "Answer": "36.87°",
+      "trick": "Use the sine ratio from the right triangle to relate the height and the string length.",
       "option": [
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "Answer": "\\[\\begin{aligned}\n4\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{From the previous problem, the only positive integer solution is } x=4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, the sum of positive integer solutions is } 4. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Once the positive integer solution is identified, its sum is that number.}\n\\end{aligned}\\]"
+        "36.87°",
+        "45°",
+        "30°",
+        "53.13°"
+      ]
     },
     {
-      "Id": 68,
-      "Question": "\\[\\begin{aligned}\n|x^3-1| \\ge 1-x\n\\end{aligned}\\]",
+      "Id": 14,
+      "Question": "In a right-angled triangle, the hypotenuse is 10 cm, and one angle is 30°. Find the lengths of the other two sides.",
+      "solution": "For the angle of 30°: the opposite side = \\(10 \\sin 30^\\circ = 10 \\times 0.5 = 5\\) cm, and the adjacent side = \\(10 \\cos 30^\\circ = 10 \\times \\frac{\\sqrt{3}}{2} = 5\\sqrt{3}\\) cm.",
+      "Answer": "5,5√3",
+      "trick": "Apply the definitions of sine and cosine using the known trigonometric values for 30°.",
       "option": [
-        "\\[\\begin{aligned}-1 < x < 0\\end{aligned}\\]",
-        "\\[\\begin{aligned}x < -1\\end{aligned}\\]",
-        "\\[\\begin{aligned}0 < x\\end{aligned}\\]",
-        "Always except (a)"
-      ],
-      "Answer": "Always except (a)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Consider the two cases for } x^3-1: \\text{ when it is nonnegative and when it is negative.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Test sample values in each resulting interval.} \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The inequality holds for all } x \\text{ except when } -1 < x < 0. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Check representative values in each interval to see where the inequality fails.}\n\\end{aligned}\\]"
+        "Opposite = 5 cm, Adjacent = 5√3 cm",
+        "Opposite = 5√3 cm, Adjacent = 5 cm",
+        "Opposite = 10 cm, Adjacent = 10 cm",
+        "Opposite = 5 cm, Adjacent = 10 cm"
+      ]
     },
     {
-      "Id": 69,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x-2|}{|x-5|} - \\frac{|x+6|}{7} < 0\n\\end{aligned}\\]",
+      "Id": 15,
+      "Question": "If \\(\\sec \\theta = 2\\), find \\(\\cos \\theta\\), \\(\\sin \\theta\\), and \\(\\tan \\theta\\).",
+      "solution": "Since \\(\\sec \\theta = \\frac{1}{\\cos \\theta} = 2\\), it follows that \\(\\cos \\theta = \\frac{1}{2}\\). Then, \\(\\sin \\theta = \\sqrt{1 - \\left(\\frac{1}{2}\\right)^2} = \\sqrt{1 - \\frac{1}{4}} = \\frac{\\sqrt{3}}{2}\\) and \\(\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta} = \\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3}\\).",
+      "Answer": "1/2,√3/2,√3",
+      "trick": "Invert secant to get cosine, then use the Pythagorean identity to compute sine and finally calculate tangent.",
       "option": [
-        "\\[\\begin{aligned}2 \\le x \\le 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x\\end{aligned}\\]",
-        "\\[\\begin{aligned}1 < x < 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x < 3\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\n2 < x < 3\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Examine each term: } \\frac{|x-2|}{|x-5|} \\text{ and } \\frac{|x+6|}{7}. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Test sample values to see where their difference becomes negative.} \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The analysis shows that the inequality is satisfied for } 2 < x < 3. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Estimate by plugging in sample values to identify the interval where the inequality holds.}\n\\end{aligned}\\]"
+        "\\(\\cos\\theta = \\frac{1}{2}, \\; \\sin\\theta = \\frac{\\sqrt{3}}{2}, \\; \\tan\\theta = \\sqrt{3}\\)",
+        "\\(\\cos\\theta = \\frac{1}{2}, \\; \\sin\\theta = \\frac{1}{2}, \\; \\tan\\theta = 1\\)",
+        "\\(\\cos\\theta = 2, \\; \\sin\\theta = \\sqrt{3}, \\; \\tan\\theta = \\frac{\\sqrt{3}}{2}\\)",
+        "\\(\\cos\\theta = \\frac{1}{2}, \\; \\sin\\theta = \\sqrt{3}, \\; \\tan\\theta = \\frac{\\sqrt{3}}{2}\\)"
+      ]
     },
     {
-      "Id": 70,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x-2|+6}{|x-7|-4} < 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}-7 < x < -2 \\text{ and } -4 < x < 1\\end{aligned}\\]",
-        "\\[\\begin{aligned}-7 < x < -5 \\text{ and } -4 < x < 0\\end{aligned}\\]",
-        "\\[\\begin{aligned}-7 < x < -4 \\text{ and } -4 < x < 1\\end{aligned}\\]",
-        "None of these"
-      ],
-      "Answer": "\\[\\begin{aligned}\n-7 < x < -5 \\text{ and } -4 < x < 1\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Determine the critical points from the numerators and denominators in the absolute value expressions.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Construct a sign chart to identify where the overall expression is negative.} \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Find the critical points and combine the resulting intervals from the sign analysis.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 71,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x-2|}{x-2} > 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}2 < x < 10\\end{aligned}\\]",
-        "\\[\\begin{aligned}3 \\ge x\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 \\ge x\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\n2 < x\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Note that the expression } \\frac{|x-2|}{x-2} \\text{ is defined for } x \\neq 2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{For } x>2, \\; |x-2|=x-2, \\text{ so the expression equals } 1, \\text{ which is } >0. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Recognize that the fraction is the sign of } (x-2) \\text{ and is positive when } x>2.\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 72,
-      "Question": "\\[\\begin{aligned}\n\\frac{2}{x-4} > 1\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}2 < x < 4;\\; 4 \\le x \\le 5\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x \\le 4;\\; 4 \\le x \\le 5\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x < 4;\\; 4 < x < 6\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 < x < 4;\\; 4 \\le x \\le 6\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\n2 < x < 4;\\; 4 < x < 6\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Rewrite } \\frac{2}{x-4} > 1 \\text{ as } \\frac{2}{x-4} - 1 > 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Combine into one fraction: } \\frac{2-(x-4)}{x-4} = \\frac{6-x}{x-4} > 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Find the critical points: } x=6 \\text{ (numerator zero) and } x=4 \\text{ (denom zero).} \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{A sign chart shows that } \\frac{6-x}{x-4} > 0 \\text{ for } 2 < x < 4 \\text{ and } 4 < x < 6. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Break the inequality into a single fraction and analyze its sign by examining the critical points.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 73,
-      "Question": "\\[\\begin{aligned}\n\\frac{2x-1}{x-1} > 2\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}x > 2\\end{aligned}\\]",
-        "\\[\\begin{aligned}x > 1\\end{aligned}\\]",
-        "\\[\\begin{aligned}\\frac{3}{4} < x < 1\\end{aligned}\\]",
-        "Both (b) and (c)"
-      ],
-      "Answer": "\\[\\begin{aligned}\nx > 1\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Write the inequality } \\frac{2x-1}{x-1} > 2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Subtract } 2 \\text{ from both sides: } \\frac{2x-1}{x-1} - 2 > 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Combine the terms: } \\frac{2x-1-2(x-1)}{x-1} = \\frac{1}{x-1} > 0. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{This holds when } x-1 > 0 \\;\\Rightarrow\\; x > 1. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Simplify the inequality to isolate } \\frac{1}{x-1} \\text{ and deduce } x>1. \n\\end{aligned}\\]"
-    },
-    {
-      "Id": 74,
-      "Question": "\\[\\begin{aligned}\n\\frac{x-2}{x-3} - \\frac{x-1}{x-2} < 3\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}x < -2\\end{aligned}\\]",
-        "\\[\\begin{aligned}-1 < x\\end{aligned}\\]",
-        "Always except (b)",
-        "Both (a) and (b)"
-      ],
-      "Answer": "Both (a) and (b)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Express the left‐side by combining the two fractions over a common denominator.} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Simplify the resulting expression to form a compound inequality in } x. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Test intervals to determine where the inequality is satisfied.}\n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{After combining terms, use interval testing to identify the valid x–values.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 75,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x-2|-7}{x-10} - \\frac{|x-2|-6}{x-9} < 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}-5 \\le x \\le -2;\\; 2 < x < 5\\end{aligned}\\]",
-        "\\[\\begin{aligned}-5 < x < -2;\\; 2 < x < 5\\end{aligned}\\]",
-        "\\[\\begin{aligned}-5 < x < -2;\\; 2 < x < 3;\\; 3 < x < 5\\end{aligned}\\]",
-        "\\[\\begin{aligned}-5 < x < -2;\\; 3 < x < 5\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\n-5 < x < -2;\\; 3 < x < 5\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Identify the critical points from } |x-2|-7,\\; |x-2|-6, \\; x-10, \\; \\text{and } x-9. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Construct a sign chart for each fraction and then for the overall expression.} \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Determine the intervals where each component is negative and combine them appropriately.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 76,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x|+x+3}{x+2} > 1\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}-5 < x \\le -2\\end{aligned}\\]",
-        "\\[\\begin{aligned}-2 \\le x \\le -1\\end{aligned}\\]",
-        "\\[\\begin{aligned}-1 < x\\end{aligned}\\]",
-        "Always except (b)"
-      ],
-      "Answer": "\\[\\begin{aligned}\n-1 < x\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Rewrite the inequality } \\frac{|x|+x+3}{x+2} > 1 \\text{ as } \\frac{|x|+x+3}{x+2} - 1 > 0. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Combine the terms over a common denominator and simplify.} \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{The simplified inequality yields } x > -1. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Simplify the inequality to a form where the condition on } x \\text{ becomes clear.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 77,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x|-x+1}{2} < 1\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}-8 < x \\le -3\\end{aligned}\\]",
-        "\\[\\begin{aligned}-3 < x \\le -2\\end{aligned}\\]",
-        "Always except \\(x=-2\\)",
-        "Both (a) and (b)"
-      ],
-      "Answer": "Both (a) and (b)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Consider two cases:} \\\\[5pt]\n\\textbf{Case 1 (}x \\ge 0\\textbf{):} &\\quad |x|=x, \\text{ so the expression becomes } \\frac{x-x+1}{2} = \\frac{1}{2} < 1. \\\\[5pt]\n\\textbf{Case 2 (}x < 0\\textbf{):} &\\quad |x|=-x, \\text{ so the expression becomes } \\frac{-x-x+1}{2} = \\frac{1-2x}{2}. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } \\frac{1-2x}{2} < 1 \\text{ for } x<0 \\text{ to determine the interval.} \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Break the inequality into cases based on the sign of } x \\text{ and solve each case.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 78,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x|+2-x}{x} < 2\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}-5 \\le x < 0\\end{aligned}\\]",
-        "\\[\\begin{aligned}0 \\le x \\le 1\\end{aligned}\\]",
-        "Both (a) and (b)",
-        "Always except (b)"
-      ],
-      "Answer": "\\[\\begin{aligned}\n-5 \\le x < 0\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } x<0, \\text{ note that } |x|=-x. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Then } \\frac{|x|+2-x}{x} = \\frac{-x+2-x}{x} = \\frac{2-2x}{x}. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Since } x<0, \\text{ multiply both sides of } \\frac{2-2x}{x} < 2 \\text{ by } x \\text{ (which flips the inequality): } 2-2x > 2x. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Solve } 2 > 4x \\;\\Rightarrow\\; x < \\frac{1}{2}. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{Combining with the domain } x<0 \\text{ and additional restrictions yields } -5 \\le x < 0. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Separate into cases based on the sign of } x \\text{ and solve the resulting inequality.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 79,
-      "Question": "\\[\\begin{aligned}\n\\frac{|x|-3}{2} < 1\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}x < -5 \\text{ and } -3 < x < 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}3 \\le x \\le 5\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\nx < -5 \\text{ and } -3 < x < 3\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Multiply both sides by 2: } |x|-3 < 2. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Add 3: } |x| < 5. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Thus, } -5 < x < 5. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Based on additional context, the intended answer is interpreted as } x < -5 \\text{ or } -3 < x < 3. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Solve the absolute value inequality and adjust the result based on extra restrictions.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 93,
-      "Question": "\\[\\begin{aligned}\n(x-1)(x^2-x-2) \\ge 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}x \\le 1\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\ge 2\\end{aligned}\\]",
-        "Always except (a)",
-        "Both (a) and (b)"
-      ],
-      "Answer": "Both (a) and (b)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2-x-2=(x-2)(x+1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, the inequality becomes } (x-1)(x-2)(x+1) \\ge 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Use a sign chart to determine the intervals where the product is nonnegative.} \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Find the zeros of each factor and combine the resulting intervals using a sign chart.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 94,
-      "Question": "\\[\\begin{aligned}\n(x^2-1)(x^2-x-2) \\ge 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}x < -1\\end{aligned}\\]",
-        "\\[\\begin{aligned}2 \\le x\\end{aligned}\\]",
-        "Both (a) and (b)",
-        "None of these"
-      ],
-      "Answer": "None of these",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Factor } x^2-1=(x-1)(x+1) \\text{ and } x^2-x-2=(x-2)(x+1). \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The product becomes } (x-1)(x+1)^2(x-2) \\ge 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Since } (x+1)^2 \\ge 0 \\text{ always, the inequality reduces to } (x-1)(x-2) \\ge 0. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Focus on the factors that change sign; the squared factor does not affect the sign.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 95,
-      "Question": "\\[\\begin{aligned}\n\\frac{x-3}{x-2} > 0\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}0 \\le x < 2\\end{aligned}\\]",
-        "\\[\\begin{aligned}x > 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}0 < x < 1\\end{aligned}\\]",
-        "Both (b) and (c)"
-      ],
-      "Answer": "Both (b) and (c)",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Determine the critical points: } x=2 \\text{ (denom) and } x=3 \\text{ (numerator zero).} \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Sign analysis shows the expression is positive for } x < 2 \\text{ and for } x > 3. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Examine the signs of numerator and denominator separately to identify the positive intervals.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 96,
-      "Question": "\\[\\begin{aligned}\n|x-1|+|x-2|+|x-3| \\ge 6\n\\end{aligned}\\]",
-      "option": [
-        "\\[\\begin{aligned}0 \\le x \\le 4\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\le 0 \\text{ or } x \\ge 4\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\le -2 \\text{ or } x \\ge 3\\end{aligned}\\]",
-        "\\[\\begin{aligned}x \\ge 3\\end{aligned}\\]"
-      ],
-      "Answer": "\\[\\begin{aligned}\nx \\le 0 \\text{ or } x \\ge 4\n\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } x \\le 1, \\; |x-1|+|x-2|+|x-3|=(1-x)+(2-x)+(3-x)=6-3x. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Solve } 6-3x \\ge 6 \\;\\Rightarrow\\; x \\le 0. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{For } x \\ge 3, \\; |x-1|+|x-2|+|x-3|=(x-1)+(x-2)+(x-3)=3x-6. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{Solve } 3x-6 \\ge 6 \\;\\Rightarrow\\; x \\ge 4. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Use piecewise analysis of the absolute values to determine when their sum is at least 6.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 97,
-      "Question": "\\[\\begin{aligned}\nf(x)=|x+4|-|x-4|, \\quad |f(x)|<8\n\\end{aligned}\\] \\quad (How many integer values?)",
-      "option": [
-        "6",
-        "7",
-        "8",
-        "9"
-      ],
-      "Answer": "\\[\\begin{aligned}\n7\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{For } x \\ge 4, \\; f(x)=(x+4)-(x-4)=8. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{For } x \\le -4, \\; f(x)=- (x+4)-[-(x-4)]=-8. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{For } -4<x<4, \\; f(x)=2x. \\\\[5pt]\n\\textbf{Step 4:} &\\quad \\text{The condition } |f(x)|<8 \\text{ implies } |2x|<8 \\;\\Rightarrow\\; |x|<4. \\\\[5pt]\n\\textbf{Step 5:} &\\quad \\text{The integers satisfying } -4<x<4 \\text{ are } -3,-2,-1,0,1,2,3, \\text{ a total of } 7. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Divide the domain based on the behavior of } f(x) \\text{ and count the integer values in the valid range.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 98,
-      "Question": "\\[\\begin{aligned}\nf(x)=|x+4|-|x-4|, \\quad |f(x)|<8\n\\end{aligned}\\] \\quad (Sum of positive integer values)",
-      "option": [
-        "5",
-        "6",
-        "8",
-        "10"
-      ],
-      "Answer": "\\[\\begin{aligned}\n6\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{From the analysis, } -4<x<4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{The positive integers in this interval are } 1,2,3. \\\\[5pt]\n\\textbf{Step 3:} &\\quad \\text{Their sum is } 1+2+3=6. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Identify the positive integers in the valid range and sum them.}\n\\end{aligned}\\]"
-    },
-    {
-      "Id": 99,
-      "Question": "\\[\\begin{aligned}\n\\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3}, \\quad x > -6\n\\end{aligned}\\] \\quad (Number of positive integer solutions)",
+      "Id": 16,
+      "Question": "Prove that \\(\\frac{\\sin \\theta}{\\csc \\theta} + \\frac{\\cos \\theta}{\\sec \\theta} = 1\\).",
+      "solution": "Since \\(\\csc \\theta = \\frac{1}{\\sin \\theta}\\) and \\(\\sec \\theta = \\frac{1}{\\cos \\theta}\\), then \\(\\frac{\\sin \\theta}{\\csc \\theta} = \\sin^2 \\theta\\) and \\(\\frac{\\cos \\theta}{\\sec \\theta} = \\cos^2 \\theta\\). Hence, \\(\\sin^2 \\theta + \\cos^2 \\theta = 1\\).",
+      "Answer": "1",
+      "trick": "Replace the reciprocal functions with their definitions and simplify using the Pythagorean identity.",
       "option": [
         "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "Answer": "\\[\\begin{aligned}\n1\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{Solve } \\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3} \\text{ for } x > -6. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{A detailed sign analysis (omitted for brevity) shows that the inequality holds in an interval that contains only one positive integer, } x=4. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{After solving the inequality, identify the interval of positive integers and count them.}\n\\end{aligned}\\]"
+        "0",
+        "\\(\\sin^2\\theta+\\cos^2\\theta\\)",
+        "\\(\\sin\\theta\\cos\\theta\\)"
+      ]
     },
     {
-      "Id": 100,
-      "Question": "\\[\\begin{aligned}\n\\frac{1}{x-5}+\\frac{1}{x+1} < \\frac{1}{x-3}, \\quad x > -6\n\\end{aligned}\\] \\quad (Sum of positive integer solutions)",
+      "Id": 17,
+      "Question": "Evaluate \\(\\tan 45^\\circ - \\cot 45^\\circ\\).",
+      "solution": "Since \\(\\tan 45^\\circ = 1\\) and \\(\\cot 45^\\circ = 1\\), the expression simplifies to \\(1 - 1 = 0\\).",
+      "Answer": "0",
+      "trick": "Recall that both tangent and cotangent of 45° are equal to 1.",
       "option": [
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "Answer": "\\[\\begin{aligned}\n4\\end{aligned}\\]",
-      "solution": "\\[\\begin{aligned}\n\\textbf{Step 1:} &\\quad \\text{From the previous problem, the only positive integer solution is } x=4. \\\\[5pt]\n\\textbf{Step 2:} &\\quad \\text{Thus, the sum of the positive integer solutions is } 4. \n\\end{aligned}\\]",
-      "trick": "\\[\\begin{aligned}\n\\textbf{Trick:} &\\quad \\text{Once the positive integer solution is identified, its sum is that number.}\n\\end{aligned}\\]"
+        "0",
+        "1",
+        "2",
+        "-1"
+      ]
+    },
+    {
+      "Id": 18,
+      "Question": "From the top of a 20 m high building, the angle of depression to a car is 30°. Find the distance from the base of the building to the car.",
+      "solution": "Let \\(d\\) be the horizontal distance. Since the angle of depression equals the angle of elevation, \\(\\tan 30^\\circ = \\frac{20}{d}\\), so \\(d = \\frac{20}{\\tan 30^\\circ} = \\frac{20}{1/\\sqrt{3}} = 20\\sqrt{3}\\) m.",
+      "Answer": "20√3",
+      "trick": "Use the tangent ratio in the right triangle to relate the height and the horizontal distance.",
+      "option": [
+        "20√3 m",
+        "10√3 m",
+        "20 m",
+        "40 m"
+      ]
+    },
+    {
+      "Id": 19,
+      "Question": "Determine the amplitude, period, and phase shift of \\(y = -3 \\cos (2x - \\pi)\\).",
+      "solution": "For \\(y = A \\cos(Bx - C)\\): the amplitude is \\(|A| = 3\\), the period is \\(\\frac{2\\pi}{B} = \\frac{2\\pi}{2} = \\pi\\), and the phase shift is \\(\\frac{C}{B} = \\frac{\\pi}{2}\\) to the right.",
+      "Answer": "3,π,π/2",
+      "trick": "Compare the function with the standard form \\(y = A\\cos(Bx - C)\\) to extract the amplitude, period, and phase shift.",
+      "option": [
+        "Amplitude = 3, Period = π, Phase Shift = π/2 to the right",
+        "Amplitude = -3, Period = π, Phase Shift = π/2 to the left",
+        "Amplitude = 3, Period = 2π, Phase Shift = π",
+        "Amplitude = 3, Period = π/2, Phase Shift = π/4"
+      ]
+    },
+    {
+      "Id": 20,
+      "Question": "Prove that \\(\\frac{1 - \\cos 2\\theta}{\\sin 2\\theta} = \\tan \\theta\\).",
+      "solution": "Using the double-angle identities: \\(\\cos 2\\theta = 1 - 2\\sin^2 \\theta\\) and \\(\\sin 2\\theta = 2\\sin \\theta \\cos \\theta\\). Substitute to obtain \\(\\frac{1 - (1 - 2\\sin^2 \\theta)}{2\\sin \\theta \\cos \\theta} = \\frac{2\\sin^2 \\theta}{2\\sin \\theta \\cos \\theta} = \\frac{\\sin \\theta}{\\cos \\theta} = \\tan \\theta\\).",
+      "Answer": "tanθ",
+      "trick": "Apply the double-angle formulas and simplify to arrive at the tangent of \\(\\theta\\).",
+      "option": [
+        "\\(\\tan \\theta\\)",
+        "\\(\\cot \\theta\\)",
+        "\\(\\sin \\theta\\)",
+        "\\(\\cos \\theta\\)"
+      ]
+    },
+    {
+      "Id": 21,
+      "Question": "Solve \\(\\sin 2\\theta = \\frac{1}{2}\\) for \\(0^\\circ \\leq \\theta < 360^\\circ\\).",
+      "solution": "Since \\(\\sin 2\\theta = \\frac{1}{2}\\), the solutions for \\(2\\theta\\) in \\([0^\\circ, 360^\\circ)\\) are \\(30^\\circ\\) and \\(150^\\circ\\). Adding one full period gives additional solutions \\(390^\\circ\\) and \\(510^\\circ\\) for \\(2\\theta\\). Dividing by 2, the solutions for \\(\\theta\\) are \\(15^\\circ\\), \\(75^\\circ\\), \\(195^\\circ\\), and \\(255^\\circ\\).",
+      "Answer": "15°,75°,195°,255°",
+      "trick": "Solve for the double angle first and then divide the solutions by 2.",
+      "option": [
+        "15°, 75°, 195°, 255°",
+        "30°, 150°",
+        "15°, 75°",
+        "45°, 135°, 225°, 315°"
+      ]
+    },
+    {
+      "Id": 22,
+      "Question": "Find the value of \\(\\tan^{-1} \\left( \\tan \\frac{3\\pi}{4} \\right)\\).",
+      "solution": "Since \\(\\tan \\frac{3\\pi}{4} = -1\\) and the principal range of \\(\\tan^{-1}\\) is \\([-\\frac{\\pi}{2}, \\frac{\\pi}{2}]\\), we have \\(\\tan^{-1}(-1) = -\\frac{\\pi}{4}\\).",
+      "Answer": "-π/4",
+      "trick": "Adjust the given angle to the principal range of the inverse tangent function.",
+      "option": [
+        "-π/4",
+        "3π/4",
+        "π/4",
+        "-3π/4"
+      ]
+    },
+    {
+      "Id": 23,
+      "Question": "In triangle ABC, a = 5 cm, b = 7 cm, and angle C = 60°. Find side c.",
+      "solution": "Using the Law of Cosines: \\(c^2 = 5^2 + 7^2 - 2(5)(7)\\cos 60^\\circ = 25 + 49 - 70 \\times \\frac{1}{2} = 74 - 35 = 39\\). Thus, \\(c = \\sqrt{39}\\) cm.",
+      "Answer": "√39",
+      "trick": "Apply the Law of Cosines to determine the unknown side of the triangle.",
+      "option": [
+        "√39 cm",
+        "√29 cm",
+        "√74 cm",
+        "√35 cm"
+      ]
+    },
+    {
+      "Id": 24,
+      "Question": "State the period and asymptotes of \\(y = \\tan \\left(x - \\frac{\\pi}{4}\\right)\\).",
+      "solution": "The period of \\(\\tan x\\) is \\(\\pi\\), which remains unchanged by the horizontal shift. The vertical asymptotes of \\(\\tan x\\) occur at \\(x = \\frac{\\pi}{2} + k\\pi\\). Shifting by \\(\\frac{\\pi}{4}\\) gives asymptotes at \\(x = \\frac{\\pi}{4} + k\\pi\\) for any integer \\(k\\).",
+      "Answer": "π,π/4+kπ",
+      "trick": "Determine the period of the tangent function and adjust the asymptote locations by the horizontal shift.",
+      "option": [
+        "Period = π, Asymptotes: x = π/4 + kπ",
+        "Period = 2π, Asymptotes: x = π/2 + kπ",
+        "Period = π, Asymptotes: x = π/2 + kπ",
+        "Period = π/2, Asymptotes: x = π/4 + kπ"
+      ]
+    },
+    {
+      "Id": 25,
+      "Question": "Simplify \\(\\sin (A + B) \\sin (A - B)\\).",
+      "solution": "Using the product-to-sum formula: \\(\\sin (A + B) \\sin (A - B) = \\frac{1}{2}[\\cos (2B) - \\cos (2A)]\\). Alternatively, it can be expressed as \\(\\sin^2 A - \\sin^2 B\\).",
+      "Answer": "1/2[cos2B-cos2A]",
+      "trick": "Apply the product-to-sum identities or recognize the difference of squares structure in sine functions.",
+      "option": [
+        "\\(\\frac{1}{2}[\\cos 2B - \\cos 2A]\\)",
+        "\\(\\cos(A+B)\\)",
+        "\\(\\sin^2A - \\cos^2B\\)",
+        "\\(\\frac{1}{2}[\\cos 2A - \\cos 2B]\\)"
+      ]
+    },
+    {
+      "Id": 26,
+      "Question": "Solve \\(2 \\sin^2 \\theta - \\sin \\theta - 1 = 0\\) in \\([0, 2\\pi)\\).",
+      "solution": "Let \\(x = \\sin \\theta\\). The equation becomes \\(2x^2 - x - 1 = 0\\), which factors as \\((2x + 1)(x - 1) = 0\\). Thus, \\(x = -\\frac{1}{2}\\) or \\(x = 1\\). Therefore, \\(\\sin \\theta = -\\frac{1}{2}\\) gives \\(\\theta = \\frac{7\\pi}{6}\\) and \\(\\theta = \\frac{11\\pi}{6}\\), and \\(\\sin \\theta = 1\\) gives \\(\\theta = \\frac{\\pi}{2}\\).",
+      "Answer": "π/2,7π/6,11π/6",
+      "trick": "Factor the quadratic in \\(\\sin \\theta\\) and solve for \\(\\theta\\) using known sine values.",
+      "option": [
+        "\\(\\frac{\\pi}{2}, \\; \\frac{7\\pi}{6}, \\; \\frac{11\\pi}{6}\\)",
+        "\\(\\frac{\\pi}{2}, \\; \\frac{\\pi}{6}, \\; \\frac{5\\pi}{6}\\)",
+        "\\(\\pi, \\; \\frac{7\\pi}{6}, \\; \\frac{11\\pi}{6}\\)",
+        "\\(\\frac{\\pi}{2}, \\; \\frac{3\\pi}{2}\\)"
+      ]
+    },
+    {
+      "Id": 27,
+      "Question": "Evaluate \\(\\cos^{-1} \\left( \\cos \\frac{5\\pi}{3} \\right)\\).",
+      "solution": "Since \\(\\cos \\frac{5\\pi}{3} = \\frac{1}{2}\\) and the principal value of \\(\\cos^{-1}\\) lies in \\([0, \\pi]\\), we have \\(\\cos^{-1}\\left(\\frac{1}{2}\\right) = \\frac{\\pi}{3}\\).",
+      "Answer": "π/3",
+      "trick": "Map the given angle to the principal range of the arccosine function.",
+      "option": [
+        "π/3",
+        "5π/3",
+        "2π/3",
+        "π/6"
+      ]
+    },
+    {
+      "Id": 28,
+      "Question": "Two sides of a triangle are 8 cm and 10 cm, with an included angle of 45°. Find the area.",
+      "solution": "The area of a triangle with two sides \\(a\\) and \\(b\\) and included angle \\(C\\) is given by \\(\\frac{1}{2}ab\\sin C\\). Substituting the values: \\(\\frac{1}{2} \\times 8 \\times 10 \\times \\sin 45^\\circ = 40 \\times \\frac{\\sqrt{2}}{2} = 20\\sqrt{2}\\) cm².",
+      "Answer": "20√2",
+      "trick": "Use the area formula for a triangle with two sides and the included angle.",
+      "option": [
+        "20√2 cm²",
+        "40 cm²",
+        "20 cm²",
+        "10√2 cm²"
+      ]
     }
+  ]
   
   
 
-
-]
