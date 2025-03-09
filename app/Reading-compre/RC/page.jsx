@@ -26,7 +26,7 @@ const page = () => {
 
   return (
     <div className="flex flex-col">
-      <RCPassageList passages={data} />
+      <RCPassageList passages={data}  />
     </div>
   );
 };
