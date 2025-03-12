@@ -80,7 +80,7 @@ export default function StickyNoteCalendar() {
   return (
     <div className="bg-yellow-50 min-h-screen p-4">
       {/* Calendar Header */}
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full p-2 mx-auto">
         <div className="bg-yellow-100 p-4 rounded-lg shadow-lg mb-6 sticky-note">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold text-gray-800">
@@ -94,13 +94,21 @@ export default function StickyNoteCalendar() {
                 Today
               </button>
               <button
-                onClick={() => setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() - 1)))}
+                onClick={() =>
+                  setCurrentDate(
+                    new Date(currentDate.setMonth(currentDate.getMonth() - 1))
+                  )
+                }
                 className="px-3 py-1 bg-yellow-200 hover:bg-yellow-300 rounded-lg text-sm font-medium"
               >
                 ←
               </button>
               <button
-                onClick={() => setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() + 1)))}
+                onClick={() =>
+                  setCurrentDate(
+                    new Date(currentDate.setMonth(currentDate.getMonth() + 1))
+                  )
+                }
                 className="px-3 py-1 bg-yellow-200 hover:bg-yellow-300 rounded-lg text-sm font-medium"
               >
                 →
@@ -111,7 +119,10 @@ export default function StickyNoteCalendar() {
           {/* Calendar Grid */}
           <div className="grid grid-cols-7 gap-2">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-              <div key={day} className="text-center font-medium p-1 text-gray-600">
+              <div
+                key={day}
+                className="text-center font-medium p-1 text-gray-600"
+              >
                 {day.slice(0, 1)}
               </div>
             ))}
@@ -127,15 +138,23 @@ export default function StickyNoteCalendar() {
                   className={`min-h-[100px] p-2 rounded-lg cursor-pointer transition-transform
                     bg-yellow-100 shadow-md sticky-note
                     ${!isSameMonth(day, currentDate) ? "opacity-50" : ""}
-                    ${isSameDay(day, new Date()) ? "border-2 border-yellow-400" : ""}
+                    ${
+                      isSameDay(day, new Date())
+                        ? "border-2 border-yellow-400"
+                        : ""
+                    }
                     ${index % 7 === 0 ? "rotate-1" : "rotate--1"}
                     hover:rotate-0 hover:z-10
                   `}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className={`text-sm font-medium ${
-                      isSameDay(day, new Date()) ? "text-yellow-700" : "text-gray-700"
-                    }`}>
+                    <span
+                      className={`text-sm font-medium ${
+                        isSameDay(day, new Date())
+                          ? "text-yellow-700"
+                          : "text-gray-700"
+                      }`}
+                    >
                       {format(day, "d")}
                     </span>
                     {dayTasks.length > 0 && (
@@ -149,7 +168,9 @@ export default function StickyNoteCalendar() {
                     {dayTasks.slice(0, 2).map((task) => (
                       <div
                         key={task.id}
-                        className={`${taskTypeConfig[task.type].color} p-1 rounded text-xs flex items-center gap-1`}
+                        className={`${
+                          taskTypeConfig[task.type].color
+                        } p-1 rounded text-xs flex items-center gap-1`}
                       >
                         {taskTypeConfig[task.type].icon}
                         <span className="truncate">{task.text}</span>
@@ -183,7 +204,9 @@ export default function StickyNoteCalendar() {
                   tasks[format(selectedDate, "yyyy-MM-dd")].map((task) => (
                     <div
                       key={task.id}
-                      className={`${taskTypeConfig[task.type].color} p-2 rounded flex items-center gap-2`}
+                      className={`${
+                        taskTypeConfig[task.type].color
+                      } p-2 rounded flex items-center gap-2`}
                     >
                       <input
                         type="checkbox"
@@ -192,7 +215,9 @@ export default function StickyNoteCalendar() {
                           const updatedTasks = tasks[
                             format(selectedDate, "yyyy-MM-dd")
                           ].map((t) =>
-                            t.id === task.id ? { ...t, completed: !t.completed } : t
+                            t.id === task.id
+                              ? { ...t, completed: !t.completed }
+                              : t
                           );
                           setTasks((prev) => ({
                             ...prev,
@@ -201,9 +226,13 @@ export default function StickyNoteCalendar() {
                         }}
                         className="w-4 h-4 accent-yellow-600"
                       />
-                      <span className={`flex-1 text-sm ${
-                        task.completed ? "line-through text-gray-500" : "text-gray-700"
-                      }`}>
+                      <span
+                        className={`flex-1 text-sm ${
+                          task.completed
+                            ? "line-through text-gray-500"
+                            : "text-gray-700"
+                        }`}
+                      >
                         {task.text}
                       </span>
                     </div>
@@ -222,7 +251,9 @@ export default function StickyNoteCalendar() {
                       onChange={(e) => setNewTask(e.target.value)}
                       placeholder="New task..."
                       className="flex-1 p-2 bg-white rounded border border-yellow-200 focus:ring-1 focus:ring-yellow-400"
-                      onKeyPress={(e) => e.key === "Enter" && handleAddTask(selectedDate)}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && handleAddTask(selectedDate)
+                      }
                     />
                     <button
                       onClick={() => handleAddTask(selectedDate)}
