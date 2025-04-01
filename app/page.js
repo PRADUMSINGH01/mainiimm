@@ -6,6 +6,7 @@ import Footer from "@/components/chat/Footer";
 import MembershipCard from "@/components/chat/Membership";
 import CourseCard from "@/components/chat/Courses/Courses";
 import Image from "next/image";
+import CATCourseSections from "@/components/chat/Courses/Courses";
 export default function Home() {
   return (
     <>
@@ -13,7 +14,7 @@ export default function Home() {
       <Dashboard />
       <HowToUseComponent />
       <MembershipCard />
-      <CourseCard />
+      <CATCourseSections />
       <FAQ />
       <Footer />
     </>
