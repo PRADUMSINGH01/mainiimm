@@ -12,7 +12,7 @@ export default async function UserPage({ params }) {
   const post = userss.find((user) => user.Slug === params.id);
   const rn = Math.floor(Math.random() * userss.length) || 0;
   const relatedPosts = userss.slice(rn, rn + 4);
-
+  console.log(post);
   if (!post) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">

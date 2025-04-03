@@ -130,7 +130,7 @@ export default function UserContent({ post, relatedPosts }) {
                   {showAnswer === index && (
                     <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
                       <p className="text-green-700 font-medium">
-                        {item.correctAnswer}
+                        {item.answer}
                       </p>
                     </div>
                   )}
@@ -142,26 +142,36 @@ export default function UserContent({ post, relatedPosts }) {
 
         {/* Related Content */}
         <section className="mb-16">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 md:text-3xl">
             Continue Learning
           </h3>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
             {relatedPosts.map((post) => (
               <Link
                 key={post.Slug}
-                href={`/${post.Slug}`}
-                className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+                href={`/Reading-compre/RC/${post.Slug}`}
+                className="group relative block h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10" />
-                <div className="p-6 relative z-20">
-                  <span className="inline-block mb-2 px-3 py-1 bg-white/90 text-sm rounded-full">
+                {/* Background Image */}
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gray-500 z-10" />
+
+                {/* Content */}
+                <div className="relative z-20 flex flex-col justify-end h-full p-6 lg:p-8">
+                  {/* Category Badge */}
+                  <span className="inline-block mb-4 px-4 py-1.5 bg-primary-500 text-white text-xs font-medium rounded-full uppercase tracking-wide">
                     {post.category}
                   </span>
-                  <h3 className="text-lg font-semibold text-white group-hover:text-blue-200 transition-colors">
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white lg:text-2xl [text-shadow:_0_2px_8px_rgb(0_0_0_/_50%)]">
                     {post.Title}
                   </h3>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-white/80">
-                    <Clock className="w-4 h-4" />
+
+                  {/* Read Time */}
+                  <div className="mt-4 flex items-center gap-2 text-sm text-gray-200">
+                    <Clock className="w-5 h-5 text-gray-300" />
                     <span>{post.readTime || 5} min read</span>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 import { BookOpen, ArrowUpRight, Clock, Signal } from "lucide-react";
-
+import Link from "next/link";
 export default function RCPassageList({ passages }) {
   return (
     <div className="max-w-7xl mx-auto p-6">
@@ -60,13 +60,13 @@ export default function RCPassageList({ passages }) {
                   <Clock className="w-4 h-4" />
                   <span>{passage.readTime} min</span>
                 </div>
-                <a
-                  href={passage.readMoreLink}
+                <Link
+                  href={`/Reading-compre/RC/${passage.Slug}`}
                   className="flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-full transition-colors"
                 >
                   Read
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
