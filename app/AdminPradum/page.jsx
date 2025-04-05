@@ -48,7 +48,7 @@ const page = () => {
             </MathJax>
           ))}
           <MathJax dynamic hideUntilTypeset="first" className="text-left ">
-            {items.solution}
+            {items.Solution}
           </MathJax>
 
           <p>
@@ -58,7 +58,7 @@ const page = () => {
               hideUntilTypeset="first"
               className="text-center text-2xl text-yellow-400 "
             >
-              {items.trick}
+              {items.Trick}
             </MathJax>
           </p>
         </div>

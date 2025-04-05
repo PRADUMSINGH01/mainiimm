@@ -1,138 +1,171 @@
 "use client";
 import { useState, useEffect } from "react";
 import FETCHDATAID from "@/module/fetchdataId";
-import { FaCaretRight } from "react-icons/fa";
-import { FaCaretLeft } from "react-icons/fa";
-import { PiBoulesFill } from "react-icons/pi";
+import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
+import { PiInfoBold } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Para = ({ database }) => {
-  const [show, setShow] = useState(false);
-  const [data, setdata] = useState([]);
-  const [next, setnext] = useState(0);
-  const [Loading, setLoading] = useState(true);
-  const [alert, setalert] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [data, setData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [alert, setAlert] = useState(false);
+
   useEffect(() => {
-    async function fetchdata() {
-      const userss = await FETCHDATAID(database);
+    const fetchData = async () => {
+      const users = await FETCHDATAID(database);
+      setData(users);
       setLoading(false);
-      return setdata(userss);
-    }
+    };
+    fetchData();
+  }, [database]);
 
-    fetchdata();
-  }, []);
-
-  const showpara = () => {
-    if (show) {
-      setShow(false);
+  const handleNext = () => {
+    if (currentIndex < data.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+      setShowAnswer(false);
     } else {
-      setShow(true);
+      setAlert(true);
+      setTimeout(() => setAlert(false), 3000);
     }
   };
 
-  const Next = () => {
-    if (next < data.length - 1) {
-      setnext(next + 1);
-    } else {
-      setalert(true);
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+      setShowAnswer(false);
     }
   };
 
-  const Prev = () => {
-    if (next > 0) setnext(next - 1);
-  };
+  const currentQuestion = data[currentIndex] || {};
 
   return (
-    <div>
-      <div
-        className={`${
-          alert ? "flex" : "hidden"
-        } absolute top-12 w-full h-20 bg-green-500 text-white  text-center items-center justify-center font-semibold `}
-      >
-        {" "}
-        <PiBoulesFill />
-        You have Completed this section{" "}
-        <button onClick={() => setalert(false)} className="items-left ml-10">
-          {" "}
-          <IoMdClose />
-        </button>{" "}
-      </div>
-
-      <h1 className="w-full h-14 bg-white shadow-lg border border-b-blue-200 flex justify-center items-center text-2xl fixed ">
-        Para Jumble
-      </h1>
-
-      <div className=" w-full h-screen flex flex-col justify-between items-center p-5">
-        {Loading ? (
-          <span className=" animate-spin w-10 h-10 border rounded-full border-black mt-20 ">
-            {" "}
-          </span>
-        ) : (
-          data.slice(next, next + 1).map((data) => (
-            <div className="flex flex-col items-left w-full   justify-between  mt-10 ">
-              <span className=" md:ml-2 m-1  w-[2rem] h-[2rem] text-indigo-500 border-2 border-indigo-600 flex justify-center items-center rounded-full shadow-md">
-                {data.id}
-              </span>
-
-              <div className="md:m-3 m-1   text-md md:text-2xl">
-                <span className="text-red-500">A : ) </span>
-                {data.question_One}
-              </div>
-
-              <div className="md:m-3 m-1   text-md md:text-2xl">
-                <span className="text-yellow-500">B : ) </span>
-                {data.question_Two}
-              </div>
-
-              <div className="md:m-3 m-1   text-md md:text-2xl">
-                <span className="text-orange-500">C : ) </span>
-                {data.question_Three}
-              </div>
-
-              <div className="md:m-3 m-1   text-md md:text-2xl">
-                <span className="text-blue-500">D : ) </span>
-                {data.question_Four}
-              </div>
-              <div className="md:m-3 m-1   text-md md:text-2xl">
-                <span className="text-green-500">E : ) </span>
-                {data.question_Five}
-              </div>
-              <div
-                className={`${
-                  show ? "flex" : "hidden"
-                } text-green-500 shadow-md border border-green-500 p-2 mt-2 `}
-              >
-                {" "}
-                Correct Answer {data.answerOne}
-              </div>
-            </div>
-          ))
+    <div className="min-h-screen bg-gray-50">
+      {/* Alert Notification */}
+      <AnimatePresence>
+        {alert && (
+          <motion.div
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -50, opacity: 0 }}
+            className="fixed top-4 left-4 right-4 sm:left-1/2 sm:-translate-x-1/2 max-w-md flex items-center bg-emerald-500 text-white px-4 py-3 rounded-lg shadow-lg text-sm"
+          >
+            <PiInfoBold className="mr-2 flex-shrink-0" />
+            <span className="flex-grow">All questions completed!</span>
+            <button
+              onClick={() => setAlert(false)}
+              className="ml-2 hover:bg-white/10 p-1 rounded-full"
+              aria-label="Close notification"
+            >
+              <IoMdClose />
+            </button>
+          </motion.div>
         )}
+      </AnimatePresence>
 
-        <div className=" flex flex-wrap justify-around w-full text-white mt-4 ">
-          <button
-            className=" w-[4rem] flex items-center bg-yellow-500 p-2 rounded-md  shadow-lg "
-            onClick={Prev}
-          >
-            {" "}
-            <FaCaretLeft /> Prev{" "}
-          </button>
-          <button
-            className=" w-[4.3rem] flex items-center bg-red-500 p-2 rounded-md  shadow-lg "
-            onClick={showpara}
-          >
-            {" "}
-            {show ? "Hide" : "Answer"}{" "}
-          </button>
-          <button
-            className="w-[4rem] flex items-center bg-green-500 p-2 rounded-md  shadow-lg  "
-            onClick={Next}
-          >
-            {" "}
-            Next <FaCaretRight />{" "}
-          </button>
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl md:text-2xl font-semibold text-gray-800">
+              Para Jumble
+            </h1>
+            <div className="text-sm text-gray-500 bg-blue-100 px-3 py-1 rounded-full">
+              {currentIndex + 1} / {data.length}
+            </div>
+          </div>
+          <div className="mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-blue-600 transition-all duration-300"
+              style={{ width: `${((currentIndex + 1) / data.length) * 100}%` }}
+            />
+          </div>
         </div>
-      </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-4 py-6">
+        {loading ? (
+          <div className="flex justify-center py-12">
+            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {/* Questions */}
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-xl shadow-sm p-4 md:p-6 space-y-4"
+            >
+              {["One", "Two", "Three", "Four", "Five"].map((q, idx) => (
+                <div key={q} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 bg-blue-50 rounded-md flex items-center justify-center">
+                    <span className="text-blue-600 font-medium text-sm md:text-base">
+                      {String.fromCharCode(65 + idx)}
+                    </span>
+                  </div>
+                  <p className="text-gray-700 text-base md:text-lg leading-relaxed break-words">
+                    {currentQuestion[`question_${q}`]}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Answer Reveal */}
+            <AnimatePresence>
+              {showAnswer && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-emerald-50 border border-emerald-200 rounded-xl p-4"
+                >
+                  <div className="flex items-center text-emerald-800 space-x-2">
+                    <PiInfoBold className="flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-sm">Correct Sequence:</p>
+                      <p className="font-medium text-base">
+                        {currentQuestion.answerOne}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Controls */}
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+              <button
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="w-full md:w-auto flex items-center justify-center px-5 py-3 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:hover:bg-white transition-all"
+              >
+                <FaCaretLeft className="mr-2" />
+                Previous
+              </button>
+
+              <button
+                onClick={() => setShowAnswer(!showAnswer)}
+                className="w-full md:w-auto px-5 py-3 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-all"
+              >
+                {showAnswer ? "Hide Answer" : "Show Answer"}
+              </button>
+
+              <button
+                onClick={handleNext}
+                disabled={currentIndex === data.length - 1}
+                className="w-full md:w-auto flex items-center justify-center px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:hover:bg-blue-600 transition-all"
+              >
+                Next
+                <FaCaretRight className="ml-2" />
+              </button>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
