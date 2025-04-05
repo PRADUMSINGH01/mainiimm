@@ -1,5 +1,5 @@
 // pages/dashboard.js
-
+import { FiArrowRight, FiUsers } from "react-icons/fi";
 import Link from "next/link";
 import { FaChartBar, FaBrain, FaBookReader, FaBriefcase } from "react-icons/fa"; // Assuming you're using Font Awesome
 //import {FaChartBar, FaBrain, FaBookReader, FaBriefcase} from '@fortawesome/react-fontawesome'
@@ -101,6 +101,23 @@ export default function Dashboard() {
             className="bg-pink-800 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded"
           >
             Start Reading
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transition-transform duration-300">
+          <div className="flex items-center mb-4">
+            <FaBriefcase className="mr-2 text-purple-500" />
+
+            <h2 className="text-2xl font-semibold text-gray-800">Contest</h2>
+          </div>
+          <p className="text-gray-600 mb-4">
+            Test your All knowladge with your Friends.{" "}
+          </p>
+          <Link
+            href="/Contest"
+            className="bg-indigo-500 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded"
+          >
+            Start participating
           </Link>
         </div>
       </div>
