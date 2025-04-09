@@ -1,9 +1,9 @@
 //import BlogGrid from "../components/BlogGrid";
 import Link from "next/link";
-import BlogGrid from "@/components/Interview/BlogGrid";
+import BusinessGrid from "@/components/chat/Business/BusinessGrid";
 import FETCHDATAID from "@/module/fetchdataId";
 async function fetchPosts() {
-  const data = await FETCHDATAID("/Interview");
+  const data = await FETCHDATAID("/bcs");
   // Simulating data fetching (Replace with your API or database call)
   return data;
 }
@@ -32,7 +32,7 @@ export default async function Page() {
           </h3>
           <Link href={"Interview/Interview-See-All"}>See All</Link>
         </div>
-        <BlogGrid posts={posts} UrlTitle={"/Business-case-studies"} />
+        <BusinessGrid posts={posts} UrlTitle={"/Business-case-studies"} />
       </section>
     </div>
   );

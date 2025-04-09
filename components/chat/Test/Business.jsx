@@ -41,8 +41,7 @@ const iconMap = {
 const BusinessCaseStudy = ({ caseStudyData }) => {
   const [activeSection, setActiveSection] = useState("");
   const [progress, setProgress] = useState(0);
-
-  // Destructure data from props for easier access
+  const s = caseStudyData;
   const {
     metaTitle,
     metaDescription,
@@ -54,7 +53,6 @@ const BusinessCaseStudy = ({ caseStudyData }) => {
     sectionsContent = {}, // Default to empty object
     themeColor = "blue", // Default theme color if not provided (e.g., 'red', 'green')
   } = caseStudyData || {}; // Add default empty object for safety
-
   // --- Static Section Structure ---
   // Kept static for consistent layout, but content is dynamic
   // Icons here are also static, matching the visual structure
@@ -250,7 +248,7 @@ const BusinessCaseStudy = ({ caseStudyData }) => {
         </div>
 
         {/* Interactive Table of Contents (Structure remains static) */}
-        <nav className="mb-16 bg-white rounded-xl shadow-md p-6 sticky top-5 z-40 border border-gray-100">
+        <nav className=" hidden md:flex mb-16 bg-white rounded-xl shadow-md p-6 sticky top-5 z-40 border border-gray-100">
           <h2 className="text-xl font-bold mb-4 text-gray-800">
             Case Study Navigation
           </h2>
