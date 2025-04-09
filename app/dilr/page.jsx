@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import LevelQuestions from "@/components/chat/LevelQuestions";
 import usePayment from "@/hook/Payment";
 import { AiOutlineLoading3Quarters } from "react-icons/ai"; // Example icon
+import DILRPractice from "@/components/chat/DILR/QuestionDILR";
 
 const page = () => {
   const { dataa, error, loading } = usePayment();
@@ -15,16 +16,7 @@ const page = () => {
     );
   if (error) return <p>Error: {error}</p>;
 
-  return (
-    <div>
-      <LevelQuestions
-        FETCHURL={"/Quant/Averages/Questions"}
-        LEVELINFO={" LRDI Level-One"}
-        LEVELONE={"Level-Two"}
-        LEVELTWO={"Level-Three"}
-      />
-    </div>
-  );
+  return <DILRPractice />;
 };
 
 export default page;
