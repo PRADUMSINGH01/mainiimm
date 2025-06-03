@@ -1,5 +1,10 @@
-import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import React from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -11,24 +16,19 @@ const Footer = () => {
             <p className="text-gray-400 mt-1">Your gateway to IIM success!</p>
           </div>
           <nav className="flex flex-col md:flex-row md:space-x-10 mb-4 md:mb-0">
-            <a href="/AboutUs" className="hover:text-blue-400 transition-colors text-lg">About Us</a>
-            <a href="/services" className="hover:text-blue-400 transition-colors text-lg">Services</a>
-            <a href="/Term-and-Condition" className="hover:text-blue-400 transition-colors text-lg">Term&Conditions</a>
+            <a
+              href="/AboutUs"
+              className="hover:text-blue-400 transition-colors text-lg"
+            >
+              About Us
+            </a>
+            <a
+              href="/Term-and-Condition"
+              className="hover:text-blue-400 transition-colors text-lg"
+            >
+              Term&Conditions
+            </a>
           </nav>
-          <div className="flex space-x-4">
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              <FaFacebookF className="text-2xl" />
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              <FaTwitter className="text-2xl" />
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              <FaInstagram className="text-2xl" />
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              <FaLinkedinIn className="text-2xl" />
-            </a>
-          </div>
         </div>
 
         <div className="border-t border-gray-700 mt-4 pt-4 text-center">
